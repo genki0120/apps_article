@@ -1,0 +1,22 @@
+# secrets
+.env
+*.key
+*.pem
+serviceAccount*.json
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# node
+node_modules/
+
+# logs / db / local data
+*.log
+*.db
+data/
+
+# OS
+.DS_Store
+Thumbs.db

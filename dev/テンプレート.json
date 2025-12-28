@@ -1,0 +1,70 @@
+window.__PAGE__ = {
+  site: {
+    title: "",                    // 例: "～個人開発の便利アプリ紹介～"
+    note: "",                     // 例: "PR & AD: Advertisements from Google etc."
+    homeUrl: ""                   // 例: "https://god-apps-introduction.netlify.app/"
+  },
+
+  article: {
+    breadcrumbTitle: "",          // パンくずに出すタイトル（未指定なら title）
+    title: "",                    // 記事タイトル（H1）
+    publishedText: "",            // 例: "Published: 2025-12-26"
+
+    officialUrl: "",              // 公式サイトURL
+    officialText: "",             // 例: "公式サイトはこちら"（未指定ならデフォルト）
+
+    // リードは HTML文字列（<p>や<img>を含めてOK）
+    leadHtml: "",
+
+    // セクション配列：見出し + 本文HTML
+    sections: [
+      {
+        heading: "",              // 例: "1. ○○○"
+        bodyHtml: "",             // 例: "<p>本文...</p><div class='soft-box'>...</div>"
+        divider: true             // trueなら最後に<hr/>を出す（任意）
+      }
+    ],
+
+    emphasisLine: "",             // 1行強調（.em）
+
+    // 記事末尾にも出す関連リンク（タイトル直後とは別枠）
+    relatedLinks: [
+      { label: "", url: "" }      // 例: { label:"公式サイトのガイド", url:"https://..." }
+    ],
+
+    pager: {
+      prevUrl: "",
+      selfUrl: "",
+      nextUrl: ""
+    },
+
+    followMain: "",               // 記事末尾の一言まとめ
+
+    banner: {
+      tile2: {
+        href: "",
+        img: "",
+        imgAlt: "",
+        title: "",
+        badge: ""                 // 例: "完全無料"
+      }
+    },
+
+    // 黄色枠：HTMLで渡す（<p><strong>…</strong>…</p> など）
+    yellowPickHtml: ""
+  },
+
+  sidebar: {
+    x: {
+      title: "",                  // 例: "Follow @FreeKontaktina"
+      url: "",                    // 例: "https://x.com/xxxxx"
+      desc: ""                    // サイドバー説明文
+    },
+    popular: {
+      title: "",                  // 例: "Popular Post"
+      img: "",                    // 画像URL or dataURI
+      imgAlt: "",
+      textHtml: ""                // 例: "人気記事タイトル<br/>サブ文"
+    }
+  }
+};

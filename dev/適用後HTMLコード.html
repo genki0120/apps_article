@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ClockClock｜打刻から請求書まで、業務委託の「めんどい」を一本にする勤怠アプリ</title>
+
+  <!-- ===== AdSense: Auto ads / 共通スクリプト（1ページ1回だけ） ===== -->
+  <script async crossorigin="anonymous"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+
+  <style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .controls{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    select.lang{
+      font-size:14px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(229,231,235,.9);
+      background:#fff;
+      color:#111;
+      box-shadow: 0 6px 18px rgba(17,24,39,.06);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb (YOU ARE HERE削除) ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+    /* ===== Links block ===== */
+    .links-block{
+      margin: 18px 0 6px;
+      font-size: 16px;
+      max-inline-size: 72ch;
+    }
+    .links-block a{
+      display:inline-block;
+      margin: 10px 0;
+      color: var(--pink);
+      font-weight: 900;
+    }
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+    /* ===== Follow text & banners ===== */
+    .follow-main{
+      margin: 18px 0 8px;
+      font-weight: 950;
+      font-size: 18px;
+      color:#0b0f1a;
+      max-inline-size: 72ch;
+      line-height: 1.7;
+    }
+
+    .big-banner{
+      margin-top: 16px;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .tile{
+      background:#fff;
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px;
+      text-align:center;
+      font-size: 12px;
+    }
+    .tile:last-child{ border-right:none; }
+    .tile img{
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      border-radius: 12px;
+      display:block;
+      margin-bottom:10px;
+      border:1px solid rgba(229,231,235,.9);
+    }
+    .tile .money{
+      color:#16a34a;
+      font-weight: 950;
+      margin-top: 6px;
+    }
+
+    .yellow-pick{
+      margin-top: 14px;
+      background: rgba(255,244,163,.85);
+      border: 1px solid rgba(240,224,138,.95);
+      padding: 14px 14px;
+      border-radius: 16px;
+      font-weight: 900;
+      line-height: 1.7;
+      max-inline-size: 72ch;
+      box-shadow: 0 14px 36px rgba(17,24,39,.08);
+    }
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1100px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody,
+      .links-block,
+      .follow-main,
+      .yellow-pick{
+        max-inline-size: 100%;
+      }
+      .big-banner{ grid-template-columns: 1fr; }
+      .tile{ border-right:none; border-bottom: 1px solid rgba(229,231,235,.9); }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="site-title">～個人開発の便利アプリ紹介～</div>
+        <p class="note">PR &amp; AD: Advertisements from Google etc.</p>
+      </div>
+
+      <div class="controls">
+        <!-- 6：検索ボックス削除（予定なし） -->
+        <select aria-label="Language" class="lang">
+          <option>日本語</option>
+          <option>English</option>
+          <option>Deutsch</option>
+          <option>Français</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="layout">
+
+      <!-- ===== Main column ===== -->
+      <section class="main-col">
+        <article class="card">
+          <div class="post">
+            <span class="pill">PR</span>
+
+            <!-- 1：YOU ARE HERE を消す -->
+            <div class="breadcrumb">
+              <!-- 2：Home押下で指定URLへ -->
+              <button class="home-link" type="button"
+                onclick="location.href='https://god-apps-introduction.netlify.app/'"
+                aria-label="Homeへ移動">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 10.5 12 3l9 7.5"></path>
+                  <path d="M5 10v10h14V10"></path>
+                </svg>
+                <span>Home</span>
+              </button>
+
+              <span class="crumb-sep">/</span>
+              <div class="crumb-current">ClockClock｜打刻から請求書まで、業務委託の「めんどい」を一本にする勤怠アプリ</div>
+            </div>
+
+            <!-- 5：記事タイトル重複を解消（このH1のみ） -->
+            <header class="post-header">
+              <h1 class="page-title">ClockClock｜打刻から請求書まで、業務委託の「めんどい」を一本にする勤怠アプリ</h1>
+
+              <div class="meta-row">
+                <div class="date">Published: 2025-12-26</div>
+
+                <!-- 4：公式サイトリンクを記事タイトル直後にも追加 -->
+                <a class="cta" href="https://site.clock-clock.biz/post/1" target="_blank" rel="noopener noreferrer">
+                  <span class="dot" aria-hidden="true"></span>
+                  公式サイトはこちら
+                </a>
+              </div>
+            </header>
+
+            <!-- [No.3] appsite_article_top_hero_v1 -->
+            <div class="ad-wrap ad-hero" aria-label="ad-hero">
+              <ins class="adsbygoogle ad-slot"
+                data-ad-client="ca-pub-2305117750688740"
+                data-ad-format="auto"
+                data-ad-slot="4600335308"
+                data-full-width-responsive="true"
+                style="display:block"></ins>
+              <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            </div>
+
+            <div class="article">
+              <!-- JSON本文（章/tableなど全部ここに入る） -->
+              <div id="articleBody">
+                <!-- 5：重複していたh1を削除（コンテンツは本文以降そのまま） -->
+                <div class="lead"><p>稼働報告のたびに、記憶とチャット履歴を掘り返すのが地味につらい。</p><p>ClockClockは、フリーランスや業務委託向けの完全無料・即日導入可能な打刻勤怠管理アプリです。ログインのみで使えて、日々の打刻から請求書の自動作成までをワンストップで完結します。</p><p>「打刻しておけば、あとがラク」。この手触りを一度知ると戻れません。</p><img alt="ClockClock ロゴ" src="https://izanami.dev/_next/static/media/logo.69628d85.svg"/></div>
+                <h2>1. まずは“失われる時間”を取り戻す：稼働メモ地獄のBefore/After</h2>
+                <div class="section-body"><p>月末になると、なぜか記憶が薄くなるんだよね。</p><p>業務委託やフリーランスの稼働管理って、作業そのものより「説明するための整形」が面倒です。今日何時から何時まで動いたか、どの案件にどれだけ寄せたか、確認されて初めて慌てて埋める。しかも、埋めた後に待っているのが請求処理。やる気はあっても、雑務のせいで気持ちが削られるのがいちばんきつい。</p>
+                  <div class="soft-box"><strong>Before：</strong>打刻の代わりにカレンダーやメモを寄せ集め、稼働報告と請求の整合性を自分の頭で合わせ続ける。</div>
+                  <div class="soft-box"><strong>After：</strong>ClockClockで日々打刻しておき、稼働→報告→請求書の流れを同じ場所でつなげていく。</div>
+                  <p>ClockClockは「ログインのみで利用できる」と明記されていて、導入でつまずきやすい初期設定の壁を薄くしてくれます。思い立った日から始められるのは、こういう系のツールでは正義です。</p><p class="em">“月末に思い出す”から、“毎日少しだけ残す”へ。</p><p>そして大事なのは、自分だけじゃなく相手（発注側）にも効くこと。稼働報告が整うと、確認の往復が減って、結果的に心理的ストレスが小さくなる。ClockClockが狙っているのは、まさにこの「往復」だと思います。</p></div>
+                <hr/>
+                <h2>2. ワンストップが刺さる理由：打刻→請求書自動作成までの“つながり”</h2>
+                <div class="section-body"><p>勤怠ツールって、打刻だけだと結局つらい。</p><p>打刻はできる。でも請求書は別。稼働報告はまた別。ここが分断されていると、結局「転記」が発生して、ミスの芽が生まれます。ClockClockは、日々の打刻から請求書の自動作成までをワンストップで完結するとされていて、この“つながり”が強みです。</p><p>おすすめしたいのは、完璧主義をやめられる点。最初から立派な報告フォーマットを作るより、まずは打刻の習慣を置く。そうすると、請求のときに必要な材料が同じ場所に揃っていきます。稼働報告って、相手のためというより「後の自分のため」に整っているほうが強い。</p><p>しかもClockClockは、発注・受注双方の事務負担と心理的ストレスを解消すると説明されています。言い換えると、あなたが提出物に追われて焦る時間も、相手が確認に追われて疑心暗鬼になる時間も、まとめて薄くする設計です。</p><p class="em">“請求のための作業”ではなく、“稼働の記録”がそのまま請求につながる感覚。</p><p>もし今、打刻と請求が別々で、月末にだけエンジンをかけているなら、ClockClockの一体型は相性がいいはず。無料で始められるので、「合うかどうか」を短いスパンで試せるのも気がラクです。</p></div>
+                <hr/>
+                <h2>3. 利用シーンで想像すると速い（定番→意外→さらに意外）</h2>
+                <div class="section-body"><p>使いどころが見えると、導入は一瞬です。</p><p>ClockClockは「業務委託」「フリーランス」「打刻」という文脈にど真ん中で刺さります。ここでは、私が友達に説明するときの順番で、定番から少しずつ外していきます。どれも“打刻が起点になる”のがポイントです。</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>シーン</th>
+                        <th>ClockClockで起きる変化</th>
+                        <th>心理的なラクさ</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>定番：毎日の稼働を打刻して、月末にまとめて報告</td>
+                        <td>日々の打刻が残り、報告と請求書作成の材料が散らからない</td>
+                        <td>「思い出す」作業が減る</td>
+                      </tr>
+                      <tr>
+                        <td>意外：複数案件を並行していて、稼働報告の整合性が怖い</td>
+                        <td>打刻の積み上げを起点に、請求書自動作成まで一気通貫で揃えやすい</td>
+                        <td>「数字が合わないかも」の不安が薄まる</td>
+                      </tr>
+                      <tr>
+                        <td>さらに意外：発注側が“確認コスト”に疲れている</td>
+                        <td>受注側の記録と提出が整う前提ができ、往復確認が減りやすい</td>
+                        <td>疑い合いではなく、淡々と確認できる</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>「打刻アプリでしょ？」で終わらせるのはもったいなくて、ClockClockは“請求まで含めた事務の線”を引き直してくれます。受注側がラクになるだけじゃなく、発注側の確認作業が減るのは、関係性の温度を下げてくれる地味な効果です。</p><p class="em">定番の打刻を、意外なところ（相手のストレス）まで効かせるのがClockClock。</p></div>
+                <hr/>
+                <h2>4. 発注側・受注側の“すれ違い”を減らす：事務負担とストレスの整理</h2>
+                <div class="section-body"><p>揉める原因って、だいたい「手間の放置」なんだよね。</p><p>業務委託の現場だと、受注側は「稼働を証明する作業」に追われがちで、発注側は「支払う根拠を確認する作業」に追われがちです。両者の目的は同じ（正しく進めたい）なのに、やり方がバラバラだと、確認が増えて気持ちが荒れます。</p><p>ClockClockは、煩雑な稼働報告や請求業務を効率化し、発注・受注双方の事務負担と心理的ストレスを解消するとされています。ここで言う“効率化”は、単に作業時間が短くなるだけじゃなくて、「相手に説明するための再編集」が減ることだと思います。説明の再編集が減ると、余計な言い訳も減る。これはかなり大きい。</p>
+                  <div class="soft-box"><strong>Before：</strong>月末に報告が固まり、確認の往復が増えて、どちらも気が重くなる。</div>
+                  <div class="soft-box"><strong>After：</strong>日々の打刻が土台になり、報告と請求書作成が同じ流れに乗るので、確認が短く済みやすい。</div>
+                  <p>このタイプのツールは「機能が多い」より「線が途切れない」ほうが効きます。打刻→請求書自動作成までが一続きなら、途中のどこかで手作業が爆発しません。しかも完全無料なので、発注側に提案するときも変に気を遣わずに済みます。</p>
+                  <p>「次の契約更新までに、いったんこれで運用してみない？」って言いやすいのが、ClockClockの強いところ。</p></div>
+                <hr/>
+                <h2>5. 1分で始める3ステップ＋逃げ道つき：迷ったら“小さく試す”</h2>
+                <div class="section-body"><p>導入のコツは、でかく変えないこと。</p><p>ClockClockはログインのみで利用でき、即日導入可能とされています。だからこそ、最初から全部を置き換えようとせず、1案件・1週間だけでいいので“打刻だけ”から始めるのが相性いいです。手元の運用を壊さずに、良い部分だけ持っていけます。</p><p>Step1：まずログインして、今日の稼働から打刻する（過去分を埋めようとして止まらない）。</p><p>Step2：数日分たまったら、稼働報告と請求書作成まで同じ場所で流してみる（ワンストップの感触を確かめる）。</p><p>Step3：月末を待たずに一度だけ“ミニ締め”して、どこがラクになったか確認する（改善点が見える）。</p>
+                  <p class="em">無料で試せるなら、“正しく始める”より“続く形で始める”。</p>
+                  <p>逃げ道も用意しておきます。もし合わなければ、やめればいいだけです。完全無料なので「費用を回収しなきゃ」というプレッシャーがありません。あるいは、請求書までは使わず「打刻だけ残す」でもOK。ワンストップをフルで使うかどうかは、後で決めれば十分です。</p><p>もう少し具体的な使い方は、公式サイトのガイド https://site.clock-clock.biz/post/1 が近道になります。気になったら、まずは今日の1回だけ打刻してみてください。続けられそうなら、そのまま“請求まで”つなげる。無理なら、静かに撤退。控えめに言って、この試し方がいちばん損しません。</p></div>
+              </div>
+
+              <!-- 1行強調（テンプレの.emを活かす） -->
+              <p class="em" id="emphasisLine" style="display:block;">
+                ログインだけで始めて、打刻から請求書作成までを同じ流れに乗せる。
+              </p>
+
+              <!-- 7：動画ボックス削除（videoWrapごと削除） -->
+
+              <!-- [No.4] appsite_article_links_block_v1 -->
+              <div class="links-block" id="linksBlock" style="display:block;">
+                <div id="linksHeading" style="font-weight:950;color:#0f172a;">関連リンク</div>
+
+                <div style="margin:10px 0;">
+                  <ins class="adsbygoogle ad-slot"
+                    data-ad-client="ca-pub-2305117750688740"
+                    data-ad-format="auto"
+                    data-ad-slot="6436801784"
+                    data-full-width-responsive="true"
+                    style="display:block"></ins>
+                  <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>
+
+                <div id="linksList">
+                  <a href="https://site.clock-clock.biz/post/1" rel="noopener noreferrer" target="_blank">公式サイトのガイド</a>
+                </div>
+              </div>
+
+              <!-- Pager -->
+              <div class="pager" id="pager" aria-label="pager" style="display:flex;">
+                <a class="pbtn" href="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b" id="pagerPrev">前へ</a>
+                <a class="pbtn" href="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b" id="pagerHome">このページ</a>
+                <a class="pbtn" href="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b" id="pagerNext">次へ</a>
+              </div>
+
+              <!-- Follow text -->
+              <div class="follow-main" id="followMain">
+                業務委託の稼働管理は、ツールより運用が面倒になりがち。ClockClockは“打刻→報告→請求”を一本につなげ、双方の確認コストを減らす方向で効いてきます。
+              </div>
+
+              <!-- [No.6] appsite_article_banner_grid_v1 -->
+              <div class="big-banner" id="bigBanner" aria-label="banner-grid" style="display:grid;">
+                <div class="tile" aria-label="ad-tile">
+                  <ins class="adsbygoogle ad-slot"
+                    data-ad-client="ca-pub-2305117750688740"
+                    data-ad-format="auto"
+                    data-ad-slot="3998340709"
+                    data-full-width-responsive="true"
+                    style="display:block"></ins>
+                  <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>
+
+                <div class="tile">
+                  <a href="https://github.com/izanami-dev/izanami-community/discussions" rel="noopener noreferrer" target="_blank">
+                    <img alt="ClockClock｜個人で誰でも、すぐ使える打刻勤怠管理アプリ"
+                      src="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b/opengraph-image-1umokf?5589478d64c13f8a"/>
+                  </a>
+                  <div style="font-weight:950;color:#0f172a;line-height:1.45;">ClockClockの関連ページを見る</div>
+                  <div class="money">完全無料</div>
+                </div>
+              </div>
+
+              <!-- [No.5] appsite_article_yellow_pick_v1 -->
+              <div class="yellow-pick" id="yellowPick" style="display:block;">
+                <ins class="adsbygoogle ad-slot"
+                  data-ad-client="ca-pub-2305117750688740"
+                  data-ad-format="auto"
+                  data-ad-slot="3311126758"
+                  data-full-width-responsive="true"
+                  style="display:block"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <p><strong>おすすめの試し方：</strong>「今日の1回だけ打刻」→数日続いたら「請求書自動作成まで」へ。合わなければ撤退でOK。</p>
+              </div>
+
+              <!-- 9の都合で右側から外した 336x280広告（数は維持：本文側へ移動） -->
+              <div class="ad-wrap ad-336" aria-label="ad-336x280" style="padding: 16px 0 8px;">
+                <ins class="adsbygoogle ad-slot"
+                  data-ad-client="ca-pub-2305117750688740"
+                  data-ad-format="auto"
+                  data-ad-slot="1937678796"
+                  data-full-width-responsive="true"
+                  style="display:block"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+              </div>
+
+            </div><!-- /.article -->
+          </div><!-- /.post -->
+        </article>
+
+        <!-- Campaign / Articles（ダミー） -->
+        <section class="list-shell" aria-label="campaign-list">
+          <div class="list-head">
+            <div style="font-weight:950;color:#0b0f1a;">Campaign / Articles（ダミー）</div>
+            <a href="#" onclick="return false;">More campaigns →</a>
+          </div>
+
+          <div class="campaign">
+            <div class="thumb">
+              <img alt="thumb1" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+            </div>
+            <div>
+              <div class="c-title">無料プラグインまとめ（ダミー）</div>
+              <div class="c-desc">説明文がここに入ります。説明文がここに入ります。</div>
+              <div class="tagline">#DTM #Plugin</div>
+            </div>
+          </div>
+
+          <div class="campaign">
+            <div class="thumb">
+              <img alt="thumb2" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+            </div>
+            <div>
+              <div class="c-title">シンセ音作りの基本（ダミー）</div>
+              <div class="c-desc">フィルター、エンベロープ、LFOなどの基礎をまとめる想定。</div>
+              <div class="tagline">#Synth #SoundDesign</div>
+            </div>
+          </div>
+
+          <div class="campaign">
+            <div class="thumb">
+              <img alt="thumb3" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+            </div>
+            <div>
+              <div class="c-title">ミックス時短テンプレ（ダミー）</div>
+              <div class="c-desc">短い説明文。短い説明文。短い説明文。</div>
+              <div class="tagline">#Mix #Workflow</div>
+            </div>
+          </div>
+        </section>
+
+      </section>
+
+      <!-- ===== Sidebar column ===== -->
+      <aside class="side">
+        <!-- 9：Xフォロー → 広告3つ → 人気記事 の順 -->
+        <div class="side-stack">
+
+          <!-- X follow -->
+          <div class="side-card follow-side">
+            <h3>Follow @FreeKontaktina</h3>
+            <a class="xbtn" href="#" onclick="return false;">
+              <span class="xicon"></span>
+              <span>Follow on X</span>
+            </a>
+            <div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+              サイドバーの説明文（ダミー）。SNS導線などを置く想定です。
+            </div>
+          </div>
+
+          <!-- Ads x3 (300x250) -->
+          <div class="side-card">
+            <div class="ad-stack" aria-label="ad-stack">
+              <div class="ad-300" aria-label="ad-1">
+                <ins class="adsbygoogle ad-slot"
+                  data-ad-client="ca-pub-2305117750688740"
+                  data-ad-format="auto"
+                  data-ad-slot="4536578517"
+                  data-full-width-responsive="true"
+                  style="display:block"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+              </div>
+
+              <div class="ad-300" aria-label="ad-2">
+                <ins class="adsbygoogle ad-slot"
+                  data-ad-client="ca-pub-2305117750688740"
+                  data-ad-format="auto"
+                  data-ad-slot="4624208422"
+                  data-full-width-responsive="true"
+                  style="display:block"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+              </div>
+
+              <div class="ad-300" aria-label="ad-3">
+                <ins class="adsbygoogle ad-slot"
+                  data-ad-client="ca-pub-2305117750688740"
+                  data-ad-format="auto"
+                  data-ad-slot="3250760467"
+                  data-full-width-responsive="true"
+                  style="display:block"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+              </div>
+            </div>
+          </div>
+
+          <!-- Popular -->
+          <div class="side-card popular">
+            <h3>Popular Post</h3>
+            <div class="popular-card">
+              <img alt="popular" src='data:image/svg+xml;utf8,
+                &lt;svg xmlns="http://www.w3.org/2000/svg" width="800" height="420"&gt;
+                  &lt;linearGradient id="p" x1="0" x2="1"&gt;
+                    &lt;stop offset="0" stop-color="%23f0f0f0"/&gt;
+                    &lt;stop offset="1" stop-color="%23d8d8d8"/&gt;
+                  &lt;/linearGradient&gt;
+                  &lt;rect width="100%25" height="100%25" fill="url(%23p)"/&gt;
+                  &lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle"
+                        font-family="Arial" font-size="24" fill="%23777"&gt;POPULAR IMAGE&lt;/text&gt;
+                &lt;/svg&gt;'/>
+              <div class="ptext">
+                ここに人気記事のタイトル（ダミー）<br/>
+                目立つオレンジ文字が乗る想定
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </main>
+</body>
+</html>
