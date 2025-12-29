@@ -1,0 +1,234 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/40bf0b83-6c2f-4150-91a6-5da44de0e20f
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Beta
+ふるさと納税ダッシュボード
+複数のふるさと納税サイトに散らばった寄付履歴を一元管理し、限度額シミュレーションとダッシュボードで「今年あといくら寄付できるか」を手軽に確認できる無料Webサービスです。簡単な操作で金額、地域、カテゴリなどの寄付情報を登録可能です。
+Supabase
+Next.js
+個人開発
+レビューする
+Visit Product
+Supabase
+Next.js
+個人開発
+プロダクトの感想・意見はこのエリアに表示されます
+トップページ
+ふるさと納税ダッシュボードとは
+ふるさと納税ダッシュボード
+は、「楽天」「さとふる」「ふるなび」など複数のふるさと納税サイトを使い分けている人向けの
+寄付管理用Webダッシュボード
+です。
+バラバラなサイトに散らばった寄付履歴や、医療費控除・住宅ローン控除込みの正確な限度額が分かりにくい問題を、ブラウザ上でのシミュレーション＋寄付履歴の
+一元管理
+で解決し、「今年いくら寄付したか」「あといくら寄付できるか」を一目で把握できる状態を目指しています。
+主な特徴
+[特徴1]
+:複数サイトの寄付履歴を一元管理
+楽天ふるさと納税・さとふる・ふるなびなど、どのポータルサイトで寄付しても、同じフォーマットで登録・一覧表示でき、
+トータルでいくら寄付したか
+をひと目で把握できます。
+[特徴2]
+: 限度額シミュレーターとの連携
+年収ベースの簡易版＋控除額まで入力できる詳細版シミュレーターを搭載。計算結果は
+そのままマイページ
+に保存され、ダッシュボードの上限額として自動反映されます。
+[特徴3]
+: 完全無料
+全ての機能が
+完全無料
+で使用できます。
+こんな方におすすめ
+楽天・さとふる・ふるなびなどでそれぞれ寄付しており、「結局トータルでいくら寄付したのか分かりづらい」と感じている方
+簡易版・詳細版シミュレーションで自分のおおよその控除額を調べたい方
+手入力が続かなかったり、スマホからの編集が面倒で、「もっと気軽に続けられる管理方法が欲しい」と思っている方
+主要機能
+進捗が一目でわかるビジュアルダッシュボード
+サービスのホーム画面です。「設定した限度額」「現在の寄付総額」、そして「あといくら寄付できるか（残り枠）」を円グラフやプログレスバーで直感的に可視化します。複数のサイトで寄付していても、ここを見れば現在のステータスが
+一目瞭然
+です。
+ダッシュボード画面
+連携可能な控除額シミュレーター
+ログイン不要
+で、すぐに利用できるシミュレーターです。 年収や家族構成などの基本情報を入力するだけで、おおよその控除上限額を簡単に試算できます。源泉徴収票をお持ちの場合は、社会保険料などを入力してより詳細な条件で計算することも可能です。また、会員登録をしていただければ、計算結果はワンクリックでマイページの設定に引き継げるため、スムーズに管理をスタートできます。
+シミュレーション画面
+寄付記録の登録・編集
+寄付した 日付・金額・自治体・返礼品名・利用したポータルサイトを1つのフォームで登録できます。「楽天ふるさと納税」「さとふる」「ふるなび」など主要サイトはプルダウンから選択するだけなので、入力の手間を最小限にしつつ、どこ経由で寄付したかも後からすぐに把握できます。
+誤って登録した場合も、記録の編集・削除が可能なため、年末まで自分の寄付履歴をきれいに保つことができます。
+寄付登録ページ
+寄付履歴一覧ページ
+Q: ふるさと納税ダッシュボードの利用開始にはどのくらい時間がかかりますか？
+A: シミュレーターを試すだけなら
+会員登録不要
+ですぐにお試しいただけます。その他の機能はメールアドレスによる簡単なアカウント登録が必要です。
+Q: 利用料金はかかりますか?
+A:
+全ての機能
+が無料でご利用いただけます。
+Q: お問い合わせ先はどこですか?
+A: メールの場合は
+furusato.dashboard.service@gmail.com
+宛にご連絡をお願いします。また、
+Xのアカウント
+でもご連絡をお待ちしています。
+Explore More
+関連記事はありません。
+Trends
+スクショメモ - スクリーンショットを、もう迷子にしない。
+Taka@個人開発
+2025年12月25日
+ハビッチ - 習慣化×育成アプリ
+ノン
+2025年12月26日
+育児記録・予防接種管理 - milu
+aphlo🐻‍❄️個人開発
+2025年12月27日
+大見川紘平
+ソフトウェアエンジニアです。Webアプリの個人開発をしています
+Software Engineer
+Python
+TypeScript
+AWS
+Follow
+{
+  "final_url": "https://izanami.dev/post/40bf0b83-6c2f-4150-91a6-5da44de0e20f",
+  "og_image": "https://izanami.dev/post/40bf0b83-6c2f-4150-91a6-5da44de0e20f/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F16c10a4b-3574-4fa7-a1c4-9dfb80cd9e0f%2F82c767c2-5504-4df6-a37d-316a4f3990e6.png&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "ふるさと納税ダッシュボードのアイコン"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/16c10a4b-3574-4fa7-a1c4-9dfb80cd9e0f/0ea03648-baa7-4fe1-ad15-05fdd67d2be4.png",
+      "alt": "トップページの画面"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/16c10a4b-3574-4fa7-a1c4-9dfb80cd9e0f/a238f5b9-d875-47e8-8452-afe136ed9f06.png",
+      "alt": "ダッシュボード画面"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/16c10a4b-3574-4fa7-a1c4-9dfb80cd9e0f/3ac3e608-bfc5-43c1-8b04-420b467344eb.png",
+      "alt": "シミュレーション画面"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/16c10a4b-3574-4fa7-a1c4-9dfb80cd9e0f/c34464b0-966c-4c4c-b5fc-84c9df90f16b.png",
+      "alt": "寄付登録ページ"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/16c10a4b-3574-4fa7-a1c4-9dfb80cd9e0f/6b90ea5e-a994-4ef0-893c-b25f9f3491f9.png",
+      "alt": "寄付履歴一覧ページ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocL89GSh20-sb0uY8k1wAGalFlWD0vwrAobF-ez5wyX1TwubnPif%3Ds96-c&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "ノン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Fb4a344c1-2fe5-489c-b2f8-7e8a5d26035f%2F83c7c623-2c58-4053-b240-f93009cee69c.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "aphlo🐻‍❄️個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F16c10a4b-3574-4fa7-a1c4-9dfb80cd9e0f%2Fea9c1ce2-341f-47ea-ac6e-8722a8cfabd6.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://www.furusato-hub.com/"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/40bf0b83-6c2f-4150-91a6-5da44de0e20f にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 体験のBefore/Afterを軸に、友達にすすめる口調で書く
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 利用シーン章では「定番→意外→さらに意外」の順
+- 少なくとも1回は<table>を使う
+- 最終章までに使用までの3ステップ例を記述すること
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+- 「抽出した本文」内にある以下の文章は無視してください。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい（1章につき最大1回）。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+  "app_links_official_href":"公式サイト/ガイドURL(関連リンク)",
+  "app_follow_text":"pager直下の追い一言(まとめ/推し)",
+  "app_related_link_href":"関連記事URL(参照URLの中身のURLを記入)",
+  "app_related_ogp_alt":"関連記事OGP画像alt",
+  "app_related_ogp_src":"関連記事OGP画像URL",
+  "app_related_appname":"紹介アプリ名のみ",
+  "app_try_summary":"おすすめの試し方(1文)"
+}

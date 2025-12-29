@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>ClockClock｜打刻から請求書まで、業務委託の「めんどい」を一本にする勤怠アプリ</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>育児記録・予防接種管理 - milu｜育児の「見ればわかる」を増やす</title>
 
-  <!-- ===== AdSense: Auto ads / 共通スクリプト（1ページ1回だけ） ===== -->
-  <script async crossorigin="anonymous"
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
-
-  <style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"
+     crossorigin="anonymous"></script>
+<!-- ===== AdSense: Auto ads / 共通スクリプト（1ページ1回だけ） ===== -->
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+<style>
     :root{
       --ink:#111;
       --muted:#6b7280;
@@ -630,339 +631,289 @@
     }
   </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="site-title">～個人開発の便利アプリ紹介～</div>
-        <p class="note">PR &amp; AD: Advertisements from Google etc.</p>
-      </div>
-
-      <div class="controls">
-        <!-- 6：検索ボックス削除（予定なし） -->
-        <select aria-label="Language" class="lang">
-          <option>日本語</option>
-          <option>English</option>
-          <option>Deutsch</option>
-          <option>Français</option>
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <main class="stage">
-    <div class="layout">
-
-      <!-- ===== Main column ===== -->
-      <section class="main-col">
-        <article class="card">
-          <div class="post">
-            <span class="pill">PR</span>
-
-            <!-- 1：YOU ARE HERE を消す -->
-            <div class="breadcrumb">
-              <!-- 2：Home押下で指定URLへ -->
-              <button class="home-link" type="button"
-                onclick="location.href='https://god-apps-introduction.netlify.app/'"
-                aria-label="Homeへ移動">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M3 10.5 12 3l9 7.5"></path>
-                  <path d="M5 10v10h14V10"></path>
-                </svg>
-                <span>Home</span>
-              </button>
-
-              <span class="crumb-sep">/</span>
-              <div class="crumb-current">ClockClock｜打刻から請求書まで、業務委託の「めんどい」を一本にする勤怠アプリ</div>
-            </div>
-
-            <!-- 5：記事タイトル重複を解消（このH1のみ） -->
-            <header class="post-header">
-              <h1 class="page-title">ClockClock｜打刻から請求書まで、業務委託の「めんどい」を一本にする勤怠アプリ</h1>
-
-              <div class="meta-row">
-                <div class="date">Published: 2025-12-26</div>
-
-                <!-- 4：公式サイトリンクを記事タイトル直後にも追加 -->
-                <a class="cta" href="https://site.clock-clock.biz/post/1" target="_blank" rel="noopener noreferrer">
-                  <span class="dot" aria-hidden="true"></span>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">～個人開発の便利アプリ紹介～</div>
+<p class="note">PR &amp; AD: Advertisements from Google etc.</p>
+</div>
+<div class="controls">
+<select aria-label="Language" class="lang">
+<option>日本語</option>
+<option>English</option>
+<option>Deutsch</option>
+<option>Français</option>
+</select>
+</div>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<span class="pill">PR</span>
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='https://god-apps-introduction.netlify.app/'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">家族で共有できる育児記録アプリ「milu」</div>
+</div>
+<!-- 5：記事タイトル重複を解消（このH1のみ） -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">育児記録・予防接種管理 - milu｜育児の「見ればわかる」を増やす</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2025-12-27</div>
+<!-- 4：公式サイトリンクを記事タイトル直後にも追加 -->
+<a class="cta" href="https://apps.apple.com/jp/app/%E8%82%B2%E5%85%90%E8%A8%98%E9%8C%B2-%E4%BA%88%E9%98%B2%E6%8E%A5%E7%A8%AE%E7%AE%A1%E7%90%86-milu/id6754955821?l=en-US" id="app_official_cta" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
                   公式サイトはこちら
                 </a>
-              </div>
-            </header>
-
-            <!-- [No.3] appsite_article_top_hero_v1 -->
-            <div class="ad-wrap ad-hero" aria-label="ad-hero">
-              <ins class="adsbygoogle ad-slot"
-                data-ad-client="ca-pub-2305117750688740"
-                data-ad-format="auto"
-                data-ad-slot="4600335308"
-                data-full-width-responsive="true"
-                style="display:block"></ins>
-              <script>
+</div>
+</header>
+<!-- [No.3] appsite_article_top_hero_v1 -->
+<div aria-label="ad-hero" class="ad-wrap ad-hero">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4600335308" data-full-width-responsive="true" style="display:block"></ins>
+<script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
               </script>
-            </div>
-
-            <div class="article">
-              <!-- JSON本文（章/tableなど全部ここに入る） -->
-              <div id="articleBody">
-                <!-- 5：重複していたh1を削除（コンテンツは本文以降そのまま） -->
-                <div class="lead"><p>稼働報告のたびに、記憶とチャット履歴を掘り返すのが地味につらい。</p><p>ClockClockは、フリーランスや業務委託向けの完全無料・即日導入可能な打刻勤怠管理アプリです。ログインのみで使えて、日々の打刻から請求書の自動作成までをワンストップで完結します。</p><p>「打刻しておけば、あとがラク」。この手触りを一度知ると戻れません。</p><img alt="ClockClock ロゴ" src="https://izanami.dev/_next/static/media/logo.69628d85.svg"/></div>
-                <h2>1. まずは“失われる時間”を取り戻す：稼働メモ地獄のBefore/After</h2>
-                <div class="section-body"><p>月末になると、なぜか記憶が薄くなるんだよね。</p><p>業務委託やフリーランスの稼働管理って、作業そのものより「説明するための整形」が面倒です。今日何時から何時まで動いたか、どの案件にどれだけ寄せたか、確認されて初めて慌てて埋める。しかも、埋めた後に待っているのが請求処理。やる気はあっても、雑務のせいで気持ちが削られるのがいちばんきつい。</p>
-                  <div class="soft-box"><strong>Before：</strong>打刻の代わりにカレンダーやメモを寄せ集め、稼働報告と請求の整合性を自分の頭で合わせ続ける。</div>
-                  <div class="soft-box"><strong>After：</strong>ClockClockで日々打刻しておき、稼働→報告→請求書の流れを同じ場所でつなげていく。</div>
-                  <p>ClockClockは「ログインのみで利用できる」と明記されていて、導入でつまずきやすい初期設定の壁を薄くしてくれます。思い立った日から始められるのは、こういう系のツールでは正義です。</p><p class="em">“月末に思い出す”から、“毎日少しだけ残す”へ。</p><p>そして大事なのは、自分だけじゃなく相手（発注側）にも効くこと。稼働報告が整うと、確認の往復が減って、結果的に心理的ストレスが小さくなる。ClockClockが狙っているのは、まさにこの「往復」だと思います。</p></div>
-                <hr/>
-                <h2>2. ワンストップが刺さる理由：打刻→請求書自動作成までの“つながり”</h2>
-                <div class="section-body"><p>勤怠ツールって、打刻だけだと結局つらい。</p><p>打刻はできる。でも請求書は別。稼働報告はまた別。ここが分断されていると、結局「転記」が発生して、ミスの芽が生まれます。ClockClockは、日々の打刻から請求書の自動作成までをワンストップで完結するとされていて、この“つながり”が強みです。</p><p>おすすめしたいのは、完璧主義をやめられる点。最初から立派な報告フォーマットを作るより、まずは打刻の習慣を置く。そうすると、請求のときに必要な材料が同じ場所に揃っていきます。稼働報告って、相手のためというより「後の自分のため」に整っているほうが強い。</p><p>しかもClockClockは、発注・受注双方の事務負担と心理的ストレスを解消すると説明されています。言い換えると、あなたが提出物に追われて焦る時間も、相手が確認に追われて疑心暗鬼になる時間も、まとめて薄くする設計です。</p><p class="em">“請求のための作業”ではなく、“稼働の記録”がそのまま請求につながる感覚。</p><p>もし今、打刻と請求が別々で、月末にだけエンジンをかけているなら、ClockClockの一体型は相性がいいはず。無料で始められるので、「合うかどうか」を短いスパンで試せるのも気がラクです。</p></div>
-                <hr/>
-                <h2>3. 利用シーンで想像すると速い（定番→意外→さらに意外）</h2>
-                <div class="section-body"><p>使いどころが見えると、導入は一瞬です。</p><p>ClockClockは「業務委託」「フリーランス」「打刻」という文脈にど真ん中で刺さります。ここでは、私が友達に説明するときの順番で、定番から少しずつ外していきます。どれも“打刻が起点になる”のがポイントです。</p>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>シーン</th>
-                        <th>ClockClockで起きる変化</th>
-                        <th>心理的なラクさ</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>定番：毎日の稼働を打刻して、月末にまとめて報告</td>
-                        <td>日々の打刻が残り、報告と請求書作成の材料が散らからない</td>
-                        <td>「思い出す」作業が減る</td>
-                      </tr>
-                      <tr>
-                        <td>意外：複数案件を並行していて、稼働報告の整合性が怖い</td>
-                        <td>打刻の積み上げを起点に、請求書自動作成まで一気通貫で揃えやすい</td>
-                        <td>「数字が合わないかも」の不安が薄まる</td>
-                      </tr>
-                      <tr>
-                        <td>さらに意外：発注側が“確認コスト”に疲れている</td>
-                        <td>受注側の記録と提出が整う前提ができ、往復確認が減りやすい</td>
-                        <td>疑い合いではなく、淡々と確認できる</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <p>「打刻アプリでしょ？」で終わらせるのはもったいなくて、ClockClockは“請求まで含めた事務の線”を引き直してくれます。受注側がラクになるだけじゃなく、発注側の確認作業が減るのは、関係性の温度を下げてくれる地味な効果です。</p><p class="em">定番の打刻を、意外なところ（相手のストレス）まで効かせるのがClockClock。</p></div>
-                <hr/>
-                <h2>4. 発注側・受注側の“すれ違い”を減らす：事務負担とストレスの整理</h2>
-                <div class="section-body"><p>揉める原因って、だいたい「手間の放置」なんだよね。</p><p>業務委託の現場だと、受注側は「稼働を証明する作業」に追われがちで、発注側は「支払う根拠を確認する作業」に追われがちです。両者の目的は同じ（正しく進めたい）なのに、やり方がバラバラだと、確認が増えて気持ちが荒れます。</p><p>ClockClockは、煩雑な稼働報告や請求業務を効率化し、発注・受注双方の事務負担と心理的ストレスを解消するとされています。ここで言う“効率化”は、単に作業時間が短くなるだけじゃなくて、「相手に説明するための再編集」が減ることだと思います。説明の再編集が減ると、余計な言い訳も減る。これはかなり大きい。</p>
-                  <div class="soft-box"><strong>Before：</strong>月末に報告が固まり、確認の往復が増えて、どちらも気が重くなる。</div>
-                  <div class="soft-box"><strong>After：</strong>日々の打刻が土台になり、報告と請求書作成が同じ流れに乗るので、確認が短く済みやすい。</div>
-                  <p>このタイプのツールは「機能が多い」より「線が途切れない」ほうが効きます。打刻→請求書自動作成までが一続きなら、途中のどこかで手作業が爆発しません。しかも完全無料なので、発注側に提案するときも変に気を遣わずに済みます。</p>
-                  <p>「次の契約更新までに、いったんこれで運用してみない？」って言いやすいのが、ClockClockの強いところ。</p></div>
-                <hr/>
-                <h2>5. 1分で始める3ステップ＋逃げ道つき：迷ったら“小さく試す”</h2>
-                <div class="section-body"><p>導入のコツは、でかく変えないこと。</p><p>ClockClockはログインのみで利用でき、即日導入可能とされています。だからこそ、最初から全部を置き換えようとせず、1案件・1週間だけでいいので“打刻だけ”から始めるのが相性いいです。手元の運用を壊さずに、良い部分だけ持っていけます。</p><p>Step1：まずログインして、今日の稼働から打刻する（過去分を埋めようとして止まらない）。</p><p>Step2：数日分たまったら、稼働報告と請求書作成まで同じ場所で流してみる（ワンストップの感触を確かめる）。</p><p>Step3：月末を待たずに一度だけ“ミニ締め”して、どこがラクになったか確認する（改善点が見える）。</p>
-                  <p class="em">無料で試せるなら、“正しく始める”より“続く形で始める”。</p>
-                  <p>逃げ道も用意しておきます。もし合わなければ、やめればいいだけです。完全無料なので「費用を回収しなきゃ」というプレッシャーがありません。あるいは、請求書までは使わず「打刻だけ残す」でもOK。ワンストップをフルで使うかどうかは、後で決めれば十分です。</p><p>もう少し具体的な使い方は、公式サイトのガイド https://site.clock-clock.biz/post/1 が近道になります。気になったら、まずは今日の1回だけ打刻してみてください。続けられそうなら、そのまま“請求まで”つなげる。無理なら、静かに撤退。控えめに言って、この試し方がいちばん損しません。</p></div>
-              </div>
-
-              <!-- 1行強調（テンプレの.emを活かす） -->
-              <p class="em" id="emphasisLine" style="display:block;">
-                ログインだけで始めて、打刻から請求書作成までを同じ流れに乗せる。
-              </p>
-
-              <!-- 7：動画ボックス削除（videoWrapごと削除） -->
-
-              <!-- [No.4] appsite_article_links_block_v1 -->
-              <div class="links-block" id="linksBlock" style="display:block;">
-                <div id="linksHeading" style="font-weight:950;color:#0f172a;">関連リンク</div>
-
-                <div style="margin:10px 0;">
-                  <ins class="adsbygoogle ad-slot"
-                    data-ad-client="ca-pub-2305117750688740"
-                    data-ad-format="auto"
-                    data-ad-slot="6436801784"
-                    data-full-width-responsive="true"
-                    style="display:block"></ins>
-                  <script>
+</div>
+<div class="article">
+<!-- JSON本文（章/tableなど全部ここに入る） -->
+<div id="articleBody">
+<!-- 5：重複していたh1を削除（コンテンツは本文以降そのまま） -->
+<div class="lead">
+<p id="app_lead_text">育児の記録って、残してるのに「結局いま何が必要？」が見えなくなる瞬間があるよね。miluは、授乳・成長・予防接種までを1つにまとめて、家族で共有できるスマホアプリです。</p>
+<img alt="育児記録・予防接種管理 - milu アイコン" id="app_lead_logo" src="https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fb4a344c1-2fe5-489c-b2f8-7e8a5d26035f%2F8fa7e5b6-ec14-4e0b-9334-259f2949920e.png&amp;w=128&amp;q=75&amp;dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k"/>
+</div>
+<h2 id="app_h2_1">メモが増えるほど不安が増える…その逆をやるアプリ</h2>
+<div class="section-body" id="app_body_1"><p>「記録してるのに、把握できてない」って矛盾、育児だと起きがち。</p>
+<figure>
+<img alt="milu 画面イメージ" src="https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fb4a344c1-2fe5-489c-b2f8-7e8a5d26035f%2F108225cc-6e2f-43b8-8c49-f54d0e6155b7.png&amp;w=1920&amp;q=75&amp;dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k"/>
+<p>画像：育児記録・予防接種管理 - milu</p>
+</figure>
+<p>授乳の時間、ミルクの量、身長体重、予防接種の予定。どれも大事なのに、別々に残すと「最後に授乳したのいつ？」「次の接種、予約したっけ？」が毎回リセットされるんだよね。miluはそこを、1つのアプリにまとめて家族で共有できる形にしてくれる。</p>
+<div class="soft-box"><strong>Before：</strong>授乳はメモ、成長は別アプリ、予防接種は紙やカレンダー。確認する場所が多くて、夜中ほど判断が遅れる。</div>
+<div class="soft-box"><strong>After：</strong>授乳表の見た目で「最後」を視覚的に確認しつつ、成長記録と予防接種管理も同じ場所に集約。家族にも同じ情報が渡る。</div>
+<p>特に刺さったのが、授乳表。現場で使われる授乳表のような見た目を再現しているから、記録を“読む”じゃなく“見る”に近い。ぼんやりした頭でも「最後に授乳したのはいつか」「ミルクを最後にあげたのはいつか」を確認しやすいUIになってる。</p>
+<p class="em">記録を増やすアプリじゃなく、迷いを減らすために並べ替えてくれる感じ。</p>
+<p>「1日で赤ちゃんにどんな育児をしたかわかりやすくしたい」「育児記録や予防接種管理を1つでまとめたい」「家族で共有したい」——この3つのうちどれかに心当たりがあるなら、まず触ってみてほしい。</p></div>
+<hr/>
+<h2 id="app_h2_2">授乳表×成長曲線で「説明しなくていい状態」を作る</h2>
+<div class="section-body" id="app_body_2"><p>話が通じるだけで、こんなに楽になるんだって思う。</p>
+<p>miluの授乳まわりは、列ごとに授乳記録を表示してくれるのがポイント。時間が流れてもログが散らからず、視界の中で整理されていくから、「前回から何時間空いた？」「今日はどれくらい？」を探さなくて済む。現場で使われる授乳表に寄せた見た目、という説明がしっくりくる。</p>
+<div class="soft-box"><strong>Before：</strong>履歴が時系列の一覧だけだと、夜中にスクロールして確認→間違って入力→また確認、のループに入りがち。</div>
+<div class="soft-box"><strong>After：</strong>授乳記録が“表”で並ぶので、最後の授乳・最後のミルクが視覚的に掴める。判断が早くなる。</div>
+<p>成長記録も同じアプリ内でつながるのが嬉しい。身長・体重を記録できて、成長曲線と一緒に振り返れるから「増えた・増えてない」を感覚じゃなく記録で確認できる。別々の場所に点在してた情報が一つの“育児の地図”になる感じ。</p>
+<p class="em">授乳と成長が同居すると、日々の行動が「点」じゃなく「流れ」で見える。</p>
+<p>友達にすすめるならこう言うと思う。「入力がラク」より、「確認が速い」を先に体感できるアプリだよって。育児って、判断が1分早いだけで心の余裕が全然違うから。</p>
+<p>しかもこの整理の仕方だと、共有したときの説明コストが下がる。自分の頭の中にしかない“前提”を、アプリが表と曲線で置き換えてくれるから、家族の会話が「確認」から「相談」になりやすい。</p></div>
+<hr/>
+<h2 id="app_h2_3">利用シーンはこう変わる（定番→意外→さらに意外）</h2>
+<div class="section-body" id="app_body_3"><p>使う場所を変えると、効き方も変わる。</p>
+<p>まず定番。夜間やバタバタしている時間帯の授乳確認で、miluの“授乳表”が効く。最後に授乳したのはいつか、ミルクを最後にあげたのはいつかが視覚的にわかりやすいから、迷いが短くなる。</p>
+<div class="soft-box"><strong>Before：</strong>眠い中でメモや履歴を探して「たぶん…」で動く。翌朝、記録の抜けや重複に気づいて自己嫌悪。</div>
+<div class="soft-box"><strong>After：</strong>表の見た目でパッと確認して、必要なケアだけやる。記録が残るので翌朝の振り返りもスムーズ。</div>
+<p>次に意外。予防接種の管理を、育児記録と同じアプリでやれるところ。別アプリに分けがちな領域だけど、miluなら1つで完結できる。表形式・リスト形式で見られて、予約した予防接種は自動でカレンダー画面にも反映される。</p>
+<p>さらに意外。ママの体調や日記も記録できるところ。赤ちゃんのログだけだと「自分がいつからしんどいか」が消えるけど、体調の変化と育児の負担を一緒に振り返れるから、生活リズムの見直しや家族への共有につながりやすい。</p>
+<p class="em">“赤ちゃんの管理”だけにしないのが、長く続く理由になる。</p>
+<table>
+<thead>
+<tr>
+<th>場面</th>
+<th>miluで起きる変化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定番：授乳の確認</td>
+<td>授乳表で「最後」が見えるので、判断が速くなる</td>
+</tr>
+<tr>
+<td>意外：予防接種の予定</td>
+<td>育児記録と同じ場所で管理でき、予約がカレンダーに自動反映</td>
+</tr>
+<tr>
+<td>さらに意外：ママの体調</td>
+<td>体調と育児負担を一緒に振り返れて、共有もしやすい</td>
+</tr>
+</tbody>
+</table>
+<p>「育児の主役は赤ちゃん」なのはそうなんだけど、運用の主役は“回る仕組み”なんだよね。miluは、その仕組みを家の中に置ける感じがする。</p></div>
+<hr/>
+<h2 id="app_h2_4">予防接種が“別管理”じゃなくなると、家族の会話が変わる</h2>
+<div class="section-body" id="app_body_4"><p>予定って、言い間違いより“言い忘れ”が怖い。</p>
+<p>多くの育児記録アプリでは、予防接種の管理は別アプリで管理することが多い。だから「記録は見てるのに、接種予定は見てない」みたいな分断が起きる。miluはそこを最初から潰していて、育児記録と予防接種の管理を1つのアプリで完結できる。</p>
+<div class="soft-box"><strong>Before：</strong>予防接種の予定は紙・口頭・別アプリで散らばり、家族間で「聞いてない」「伝えた」の摩擦が増える。</div>
+<div class="soft-box"><strong>After：</strong>同じアプリ内で表形式・リスト形式で確認でき、予約した予防接種はカレンダー画面にも自動反映。確認が“共同作業”になる。</div>
+<p>ここで効くのが「家族で育児記録を共有」できる点。共有って、単に同じデータを見るだけじゃなくて、相手が判断できる材料を渡すことだと思う。授乳の状況、成長の推移、予防接種の予定が一緒に並んでいると、会話が「何があった？」から「じゃあ次どうする？」に切り替わりやすい。</p>
+<p class="em">“言わなくても伝わる”が増えると、お願いが減って相談が増える。</p>
+<p>しかもmiluは、赤ちゃんの記録だけに寄らない。ママの体調も記録できるから、「今日は無理」もデータとして共有できる。育児のしんどさって、根性で隠すほど家庭内の意思決定が遅れるから、こういう設計は地味に大きい。</p>
+<p>役割分担も、気合いじゃなくて記録から組み立てられるようになる。記録が揃うと声かけが具体的になるし、すれ違いが減る。miluの狙いは、たぶんそこ。</p></div>
+<hr/>
+<h2 id="app_h2_5">3ステップで始めて、家の“育児OS”にする</h2>
+<div class="section-body" id="app_body_5"><p>アプリは、最初の3日で勝負が決まる。</p>
+<p>miluは、育児記録・予防接種・ママの体調までを家族で共有できるから、「見ればわかる」を増やしやすい。とはいえ、全部を完璧にやろうとすると続かない。最初は“判断が必要なところだけ”を押さえるのがおすすめ。</p>
+<div class="soft-box"><strong>Before：</strong>「ちゃんと運用しなきゃ」で入力が義務になり、続かなくて自己嫌悪。</div>
+<div class="soft-box"><strong>After：</strong>授乳の確認と予防接種の予定だけでも一元化して、迷いが減る。余裕が出たら成長や体調も足せる。</div>
+<p>Step 1：App Storeの「育児記録・予防接種管理 - milu」からインストールして、まずは今日の授乳だけ記録する。</p>
+<p>Step 2：家族に共有して、同じ画面で「最後にいつ授乳したか」を一緒に確認できる状態にする。</p>
+<p>Step 3：次の予防接種を登録して、予約したらカレンダー画面に自動反映される流れまで作る。</p>
+<p class="em">“入力を増やす”より先に、“確認が速くなる”導線から作ると続く。</p>
+<p>提供状況としては、現在はiOS版のみ。Android版は2026年1月中に正式リリース予定で、離乳食の管理機能も追加予定とされている。家の端末事情が合うなら、いまの段階でも十分価値が出る作りだと思う。</p>
+<p>育児は、ひとりで抱えるほど大変になってしまうもの。miluは、その負荷を「情報の共有」と「見える化」で薄くしてくれる選択肢になる。</p></div>
+</div>
+<!-- 1行強調（テンプレの.emを活かす） -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">miluは、授乳・成長・予防接種・ママの体調を同じ場所に集めて、家族の判断を速くするアプリです。</span>
+</p>
+<!-- [No.4] appsite_article_links_block_v1 -->
+<div class="links-block" id="linksBlock" style="display:block;">
+<div id="linksHeading" style="font-weight:950;color:#0f172a;">関連リンク</div>
+<div style="margin:10px 0;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="6436801784" data-full-width-responsive="true" style="display:block"></ins>
+<script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                   </script>
-                </div>
-
-                <div id="linksList">
-                  <a href="https://site.clock-clock.biz/post/1" rel="noopener noreferrer" target="_blank">公式サイトのガイド</a>
-                </div>
-              </div>
-
-              <!-- Pager -->
-              <div class="pager" id="pager" aria-label="pager" style="display:flex;">
-                <a class="pbtn" href="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b" id="pagerPrev">前へ</a>
-                <a class="pbtn" href="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b" id="pagerHome">このページ</a>
-                <a class="pbtn" href="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b" id="pagerNext">次へ</a>
-              </div>
-
-              <!-- Follow text -->
-              <div class="follow-main" id="followMain">
-                業務委託の稼働管理は、ツールより運用が面倒になりがち。ClockClockは“打刻→報告→請求”を一本につなげ、双方の確認コストを減らす方向で効いてきます。
-              </div>
-
-              <!-- [No.6] appsite_article_banner_grid_v1 -->
-              <div class="big-banner" id="bigBanner" aria-label="banner-grid" style="display:grid;">
-                <div class="tile" aria-label="ad-tile">
-                  <ins class="adsbygoogle ad-slot"
-                    data-ad-client="ca-pub-2305117750688740"
-                    data-ad-format="auto"
-                    data-ad-slot="3998340709"
-                    data-full-width-responsive="true"
-                    style="display:block"></ins>
-                  <script>
+</div>
+<div id="linksList">
+<a href="https://apps.apple.com/jp/app/%E8%82%B2%E5%85%90%E8%A8%98%E9%8C%B2-%E4%BA%88%E9%98%B2%E6%8E%A5%E7%A8%AE%E7%AE%A1%E7%90%86-milu/id6754955821?l=en-US" id="app_links_official" rel="noopener noreferrer" target="_blank">公式サイトのガイド</a>
+</div>
+</div>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b" id="pagerPrev">前へ</a>
+<a class="pbtn" href="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b" id="pagerHome">このページ</a>
+<a class="pbtn" href="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b" id="pagerNext">次へ</a>
+</div>
+<!-- Follow text -->
+<div class="follow-main" id="followMain">
+<span id="app_follow_text">「言わなくても伝わる」を増やしたい家庭ほど、最初に効くのは授乳表と予防接種の一元管理でした。</span>
+</div>
+<!-- [No.6] appsite_article_banner_grid_v1 -->
+<div aria-label="banner-grid" class="big-banner" id="bigBanner" style="display:grid;">
+<div aria-label="ad-tile" class="tile">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3998340709" data-full-width-responsive="true" style="display:block"></ins>
+<script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                   </script>
-                </div>
-
-                <div class="tile">
-                  <a href="https://github.com/izanami-dev/izanami-community/discussions" rel="noopener noreferrer" target="_blank">
-                    <img alt="ClockClock｜個人で誰でも、すぐ使える打刻勤怠管理アプリ"
-                      src="https://izanami.dev/post/dd5bd86d-b449-4359-b293-e9e6ea47236b/opengraph-image-1umokf?5589478d64c13f8a"/>
-                  </a>
-                  <div style="font-weight:950;color:#0f172a;line-height:1.45;">ClockClockの関連ページを見る</div>
-                  <div class="money">完全無料</div>
-                </div>
-              </div>
-
-              <!-- [No.5] appsite_article_yellow_pick_v1 -->
-              <div class="yellow-pick" id="yellowPick" style="display:block;">
-                <ins class="adsbygoogle ad-slot"
-                  data-ad-client="ca-pub-2305117750688740"
-                  data-ad-format="auto"
-                  data-ad-slot="3311126758"
-                  data-full-width-responsive="true"
-                  style="display:block"></ins>
-                <script>
+</div>
+<div class="tile">
+<a id="app_related_link" rel="noopener noreferrer" target="_blank">
+<img alt="" id="app_related_ogp"/>
+</a>
+<div style="font-weight:950;color:#0f172a;line-height:1.45;">
+<span id="app_related_appname">milu</span>の関連ページを見る
+                  </div>
+<div class="money">完全無料</div>
+</div>
+</div>
+<!-- [No.5] appsite_article_yellow_pick_v1 -->
+<div class="yellow-pick" id="yellowPick" style="display:block;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3311126758" data-full-width-responsive="true" style="display:block"></ins>
+<script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-                <p><strong>おすすめの試し方：</strong>「今日の1回だけ打刻」→数日続いたら「請求書自動作成まで」へ。合わなければ撤退でOK。</p>
-              </div>
-
-              <!-- 9の都合で右側から外した 336x280広告（数は維持：本文側へ移動） -->
-              <div class="ad-wrap ad-336" aria-label="ad-336x280" style="padding: 16px 0 8px;">
-                <ins class="adsbygoogle ad-slot"
-                  data-ad-client="ca-pub-2305117750688740"
-                  data-ad-format="auto"
-                  data-ad-slot="1937678796"
-                  data-full-width-responsive="true"
-                  style="display:block"></ins>
-                <script>
+<p><strong>おすすめの試し方：</strong><span id="app_try_summary">まずは授乳の“最後”が一目で分かる状態だけ作って、家族共有までつなげてみてください。</span></p>
+</div>
+<!-- 9の都合で右側から外した 336x280広告（数は維持：本文側へ移動） -->
+<div aria-label="ad-336x280" class="ad-wrap ad-336" style="padding: 16px 0 8px;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="1937678796" data-full-width-responsive="true" style="display:block"></ins>
+<script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-              </div>
-
-            </div><!-- /.article -->
-          </div><!-- /.post -->
-        </article>
-
-        <!-- Campaign / Articles（ダミー） -->
-        <section class="list-shell" aria-label="campaign-list">
-          <div class="list-head">
-            <div style="font-weight:950;color:#0b0f1a;">Campaign / Articles（ダミー）</div>
-            <a href="#" onclick="return false;">More campaigns →</a>
-          </div>
-
-          <div class="campaign">
-            <div class="thumb">
-              <img alt="thumb1" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
-            </div>
-            <div>
-              <div class="c-title">無料プラグインまとめ（ダミー）</div>
-              <div class="c-desc">説明文がここに入ります。説明文がここに入ります。</div>
-              <div class="tagline">#DTM #Plugin</div>
-            </div>
-          </div>
-
-          <div class="campaign">
-            <div class="thumb">
-              <img alt="thumb2" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
-            </div>
-            <div>
-              <div class="c-title">シンセ音作りの基本（ダミー）</div>
-              <div class="c-desc">フィルター、エンベロープ、LFOなどの基礎をまとめる想定。</div>
-              <div class="tagline">#Synth #SoundDesign</div>
-            </div>
-          </div>
-
-          <div class="campaign">
-            <div class="thumb">
-              <img alt="thumb3" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
-            </div>
-            <div>
-              <div class="c-title">ミックス時短テンプレ（ダミー）</div>
-              <div class="c-desc">短い説明文。短い説明文。短い説明文。</div>
-              <div class="tagline">#Mix #Workflow</div>
-            </div>
-          </div>
-        </section>
-
-      </section>
-
-      <!-- ===== Sidebar column ===== -->
-      <aside class="side">
-        <!-- 9：Xフォロー → 広告3つ → 人気記事 の順 -->
-        <div class="side-stack">
-
-          <!-- X follow -->
-          <div class="side-card follow-side">
-            <h3>Follow @FreeKontaktina</h3>
-            <a class="xbtn" href="#" onclick="return false;">
-              <span class="xicon"></span>
-              <span>Follow on X</span>
-            </a>
-            <div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- Campaign / Articles（ダミー） -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">Campaign / Articles（ダミー）</div>
+<a href="#" onclick="return false;">More campaigns →</a>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb1" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">無料プラグインまとめ（ダミー）</div>
+<div class="c-desc">説明文がここに入ります。説明文がここに入ります。</div>
+<div class="tagline">#DTM #Plugin</div>
+</div>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb2" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">シンセ音作りの基本（ダミー）</div>
+<div class="c-desc">フィルター、エンベロープ、LFOなどの基礎をまとめる想定。</div>
+<div class="tagline">#Synth #SoundDesign</div>
+</div>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb3" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">ミックス時短テンプレ（ダミー）</div>
+<div class="c-desc">短い説明文。短い説明文。短い説明文。</div>
+<div class="tagline">#Mix #Workflow</div>
+</div>
+</div>
+</section>
+</section>
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<!-- 9：Xフォロー → 広告3つ → 人気記事 の順 -->
+<div class="side-stack">
+<!-- X follow -->
+<div class="side-card follow-side">
+<h3>Follow @FreeKontaktina</h3>
+<a class="xbtn" href="#" onclick="return false;">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
               サイドバーの説明文（ダミー）。SNS導線などを置く想定です。
             </div>
-          </div>
-
-          <!-- Ads x3 (300x250) -->
-          <div class="side-card">
-            <div class="ad-stack" aria-label="ad-stack">
-              <div class="ad-300" aria-label="ad-1">
-                <ins class="adsbygoogle ad-slot"
-                  data-ad-client="ca-pub-2305117750688740"
-                  data-ad-format="auto"
-                  data-ad-slot="4536578517"
-                  data-full-width-responsive="true"
-                  style="display:block"></ins>
-                <script>
+</div>
+<!-- Ads x3 (300x250) -->
+<div class="side-card">
+<div aria-label="ad-stack" class="ad-stack">
+<div aria-label="ad-1" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4536578517" data-full-width-responsive="true" style="display:block"></ins>
+<script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-              </div>
-
-              <div class="ad-300" aria-label="ad-2">
-                <ins class="adsbygoogle ad-slot"
-                  data-ad-client="ca-pub-2305117750688740"
-                  data-ad-format="auto"
-                  data-ad-slot="4624208422"
-                  data-full-width-responsive="true"
-                  style="display:block"></ins>
-                <script>
+</div>
+<div aria-label="ad-2" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4624208422" data-full-width-responsive="true" style="display:block"></ins>
+<script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-              </div>
-
-              <div class="ad-300" aria-label="ad-3">
-                <ins class="adsbygoogle ad-slot"
-                  data-ad-client="ca-pub-2305117750688740"
-                  data-ad-format="auto"
-                  data-ad-slot="3250760467"
-                  data-full-width-responsive="true"
-                  style="display:block"></ins>
-                <script>
+</div>
+<div aria-label="ad-3" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3250760467" data-full-width-responsive="true" style="display:block"></ins>
+<script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-              </div>
-            </div>
-          </div>
-
-          <!-- Popular -->
-          <div class="side-card popular">
-            <h3>Popular Post</h3>
-            <div class="popular-card">
-              <img alt="popular" src='data:image/svg+xml;utf8,
+</div>
+</div>
+</div>
+<!-- Popular -->
+<div class="side-card popular">
+<h3>Popular Post</h3>
+<div class="popular-card">
+<img alt="popular" src='data:image/svg+xml;utf8,
                 &lt;svg xmlns="http://www.w3.org/2000/svg" width="800" height="420"&gt;
                   &lt;linearGradient id="p" x1="0" x2="1"&gt;
                     &lt;stop offset="0" stop-color="%23f0f0f0"/&gt;
@@ -972,17 +923,15 @@
                   &lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle"
                         font-family="Arial" font-size="24" fill="%23777"&gt;POPULAR IMAGE&lt;/text&gt;
                 &lt;/svg&gt;'/>
-              <div class="ptext">
+<div class="ptext">
                 ここに人気記事のタイトル（ダミー）<br/>
                 目立つオレンジ文字が乗る想定
               </div>
-            </div>
-          </div>
-
-        </div>
-      </aside>
-
-    </div>
-  </main>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
 </body>
 </html>

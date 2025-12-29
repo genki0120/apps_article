@@ -1,70 +1,27 @@
-window.__PAGE__ = {
-  site: {
-    title: "",                    // 例: "～個人開発の便利アプリ紹介～"
-    note: "",                     // 例: "PR & AD: Advertisements from Google etc."
-    homeUrl: ""                   // 例: "https://god-apps-introduction.netlify.app/"
-  },
-
-  article: {
-    breadcrumbTitle: "",          // パンくずに出すタイトル（未指定なら title）
-    title: "",                    // 記事タイトル（H1）
-    publishedText: "",            // 例: "Published: 2025-12-26"
-
-    officialUrl: "",              // 公式サイトURL
-    officialText: "",             // 例: "公式サイトはこちら"（未指定ならデフォルト）
-
-    // リードは HTML文字列（<p>や<img>を含めてOK）
-    leadHtml: "",
-
-    // セクション配列：見出し + 本文HTML
-    sections: [
-      {
-        heading: "",              // 例: "1. ○○○"
-        bodyHtml: "",             // 例: "<p>本文...</p><div class='soft-box'>...</div>"
-        divider: true             // trueなら最後に<hr/>を出す（任意）
-      }
-    ],
-
-    emphasisLine: "",             // 1行強調（.em）
-
-    // 記事末尾にも出す関連リンク（タイトル直後とは別枠）
-    relatedLinks: [
-      { label: "", url: "" }      // 例: { label:"公式サイトのガイド", url:"https://..." }
-    ],
-
-    pager: {
-      prevUrl: "",
-      selfUrl: "",
-      nextUrl: ""
-    },
-
-    followMain: "",               // 記事末尾の一言まとめ
-
-    banner: {
-      tile2: {
-        href: "",
-        img: "",
-        imgAlt: "",
-        title: "",
-        badge: ""                 // 例: "完全無料"
-      }
-    },
-
-    // 黄色枠：HTMLで渡す（<p><strong>…</strong>…</p> など）
-    yellowPickHtml: ""
-  },
-
-  sidebar: {
-    x: {
-      title: "",                  // 例: "Follow @FreeKontaktina"
-      url: "",                    // 例: "https://x.com/xxxxx"
-      desc: ""                    // サイドバー説明文
-    },
-    popular: {
-      title: "",                  // 例: "Popular Post"
-      img: "",                    // 画像URL or dataURI
-      imgAlt: "",
-      textHtml: ""                // 例: "人気記事タイトル<br/>サブ文"
-    }
-  }
-};
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+  "app_links_official_href":"公式サイト/ガイドURL(関連リンク)",
+  "app_follow_text":"pager直下の追い一言(まとめ/推し)",
+  "app_related_link_href":"関連記事URL(参照URLの中身のURLを記入)",
+  "app_related_ogp_alt":"関連記事OGP画像alt",
+  "app_related_ogp_src":"関連記事OGP画像URL",
+  "app_related_appname":"紹介アプリ名のみ",
+  "app_try_summary":"おすすめの試し方(1文)"
+}
