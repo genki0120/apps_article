@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Tra-bell（トラベル）— 予約後の値下げを24時間監視して通知するサービス</title>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .controls{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    select.lang{
+      font-size:14px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(229,231,235,.9);
+      background:#fff;
+      color:#111;
+      box-shadow: 0 6px 18px rgba(17,24,39,.06);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+    /* ===== Links block ===== */
+    .links-block{
+      margin: 18px 0 6px;
+      font-size: 16px;
+      max-inline-size: 72ch;
+    }
+    .links-block a{
+      display:inline-block;
+      margin: 10px 0;
+      color: var(--pink);
+      font-weight: 900;
+    }
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+    /* ===== Follow text & banners ===== */
+    .follow-main{
+      margin: 18px 0 8px;
+      font-weight: 950;
+      font-size: 18px;
+      color:#0b0f1a;
+      max-inline-size: 72ch;
+      line-height: 1.7;
+    }
+
+    .big-banner{
+      margin-top: 16px;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .tile{
+      background:#fff;
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px;
+      text-align:center;
+      font-size: 12px;
+    }
+    .tile:last-child{ border-right:none; }
+    .tile img{
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      border-radius: 12px;
+      display:block;
+      margin-bottom:10px;
+      border:1px solid rgba(229,231,235,.9);
+    }
+    .tile .money{
+      color:#16a34a;
+      font-weight: 950;
+      margin-top: 6px;
+    }
+
+    .yellow-pick{
+      margin-top: 14px;
+      background: rgba(255,244,163,.85);
+      border: 1px solid rgba(240,224,138,.95);
+      padding: 14px 14px;
+      border-radius: 16px;
+      font-weight: 900;
+      line-height: 1.7;
+      max-inline-size: 72ch;
+      box-shadow: 0 14px 36px rgba(17,24,39,.08);
+    }
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1100px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody,
+      .links-block,
+      .follow-main,
+      .yellow-pick{
+        max-inline-size: 100%;
+      }
+      .big-banner{ grid-template-columns: 1fr; }
+      .tile{ border-right:none; border-bottom: 1px solid rgba(229,231,235,.9); }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">～個人開発の便利アプリ紹介～</div>
+<p class="note">PR &amp; AD: Advertisements from Google etc.</p>
+</div>
+<div class="controls">
+<select aria-label="Language" class="lang">
+<option>日本語</option>
+<option>English</option>
+<option>Deutsch</option>
+<option>Français</option>
+</select>
+</div>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<span class="pill">PR</span>
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='http://apps-article.pages.dev/'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">Tra-bell 予約後値下げ監視</div>
+</div>
+<!-- 5：記事タイトル重複を解消（このH1のみ） -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">Tra-bell（トラベル）— 予約後の値下げを24時間監視して通知するサービス</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2025-12-30</div>
+<!-- 4：公式サイトリンクを記事タイトル直後にも追加 -->
+<a class="cta" href="https://www.tra-bell.com" id="app_official_cta" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                  アプリ公式サイトはこちら
+                </a>
+</div>
+</header>
+<!-- [No.3] appsite_article_top_hero_v1 -->
+<div aria-label="ad-hero" class="ad-wrap ad-hero">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4600335308" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+</div>
+<div class="article">
+<!-- JSON本文（章/tableなど全部ここに入る） -->
+<div id="articleBody">
+<!-- 5：重複していたh1を削除（コンテンツは本文以降そのまま） -->
+<div class="lead">
+<p id="app_lead_text">ホテルを早めに予約したのに、直前にもっと安いプランが出て悔しい…その後悔、Tra-bellが代わりに見張ってくれます。キャンセル料が発生する直前まで値下がりを監視して、差額が出た瞬間にLINEやメールで知らせる、事前登録受付中の個人開発サービスです。</p>
+<img alt="Tra-bell アイキャッチ" id="app_lead_logo" src="https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F75e7e221-d4ab-48ac-91f9-507bcf9d6949%2Fc1c65e8e-95e0-45cc-adfe-e9ab74e0a12b.png&amp;w=128&amp;q=75&amp;dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k"/>
+</div>
+<h2 id="app_h2_1">第1章：予約した瞬間から始まる「見えない損」を止める</h2>
+<div class="section-body" id="app_body_1"><p>一番モヤるの、予約した“あと”に安くなるやつ。</p>
+<img alt="Tra-bell：予約一覧画面" src="https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/75e7e221-d4ab-48ac-91f9-507bcf9d6949/215675eb-8f79-42da-b022-1180fc97cb35.png"/>
+<p>Tra-bellの予約一覧イメージ</p>
+<p>ホテル予約サイト（OTA）の価格って、固定じゃなくて空室状況で平気で動きます。だから「ホテルは早く予約した方が安い」と信じていても、宿泊日が近づいたタイミングで直前割みたいに下がることが、実はけっこうあります。</p>
+<p>で、厄介なのがここから。キャンセル料が発生する前なら取り直し自体は無料でも、毎日価格を見に行って、安くなってたら差分を確認して、条件を見比べて、予約を取り直して、旧予約をキャンセルして…って、手間が重い。たった数千円でも「知ってたらやってたのに」って気持ちだけが残ります。</p>
+<div class="soft-box"><strong>Before：</strong>予約後も不安で、毎日スマホで同じホテルを検索し直す。値下げに気づいても、面倒で結局そのまま。</div>
+<div class="soft-box"><strong>After：</strong>予約は早めに押さえたまま、値下げ監視はTra-bellに丸投げ。差額が出た瞬間だけ通知が来て、動くかどうかの判断に集中できる。</div>
+<p class="em">「予約したのに損するかも」を、通知待ちに変えるのがTra-bellです。</p>
+<p>Tra-bellは、予約済みホテルの価格を24時間365日監視して、安くなったらLINEやメールで教えるサービス。値下げに気づくための“監視コスト”を消して、節約できるタイミングだけ拾えるようにします。</p>
+<p>今はPre-launchで、ウェイトリスト（事前登録）を受付中。まずは「この悔しさ、分かる」人ほど刺さるはずです。</p></div>
+<hr/>
+<h2 id="app_h2_2">第2章：Gmail連携で放置OK、値下げだけ拾う仕組みがうまい</h2>
+<div class="section-body" id="app_body_2"><p>値下げ監視って、結局“登録が面倒”だと続かないんだよね。</p>
+<p>Tra-bellが気持ちいいのは、Gmailと連携するだけで、過去の予約確認メールをAIが解析して予約情報を自動取得するところ。自分でホテル名や日付を打ち込む作業から遠ざけて、「監視する前の準備」で脱落しにくい設計になっています。</p>
+<p>監視対象は「予約済みホテルの価格」。そして、キャンセル料が発生する直前まで見張って、差額（節約額）が出た瞬間に通知します。通知には再予約ページへのリンクが用意され、あとは自分で再予約して、古い予約をキャンセルするだけ。ここは誤った変更を防ぐため、最終判断は利用者が行う設計です（現時点では自動で予約を変更するわけではありません）。</p>
+<div class="soft-box"><strong>Before：</strong>予約情報をまとめるのにメール検索。価格チェックは思い出した時だけで、結局取り逃す。</div>
+<div class="soft-box"><strong>After：</strong>Gmail連携後は放置。値下がりという“イベント”だけがLINE/メールで届き、やることはリンクを開いて取り直すだけ。</div>
+<p class="em">「毎日チェック」じゃなく、「下がったら起こして」が成立します。</p>
+<p>対応サイトは現在「楽天トラベル」と「じゃらんnet」。その他（Booking.comやExpediaなど）も、ニーズを見ながら優先度をつけて対応予定とされています。まずは普段この2サイトを使う人ほど、導入のハードルが低いです。</p>
+<p>将来的には自動予約取消→再予約まで構想中とのことですが、現段階は“通知して取り直しやすくする”ところまでをきっちり自動化。やり過ぎないからこそ、旅行の予定を自分で握ったまま節約に寄せられます。</p></div>
+<hr/>
+<h2 id="app_h2_3">第3章：無料で試せて、Google連携の不安も潰してある</h2>
+<div class="section-body" id="app_body_3"><p>無料って聞くと、逆に身構えるタイプならここが大事。</p>
+<p>Tra-bellは「完全無料・無制限」で利用できると明言されています。現在はベータ版として提供しており、将来的な収益化はホテル側への送客手数料やプレミアム機能（オプション）などを検討中。ただし、基本の価格監視機能は無料で提供し続ける予定、というスタンスです。</p>
+<p>個人的に推せるのは、Googleアカウント連携の安全面をきちんと説明しているところ。Tra-bellはGoogleの厳格な審査を通過しており、アクセス権限は「ホテル予約に関連するメールの閲覧」のみに限定。しかも送信元を楽天トラベルやじゃらんなどに絞り、予約確認メールのみを抽出するようにしている、と具体的に書かれています。</p>
+<div class="soft-box"><strong>Before：</strong>「メール連携＝全部見られるのでは？」が気になって、便利そうでも登録できない。</div>
+<div class="soft-box"><strong>After：</strong>閲覧対象が予約関連メールに限定され、送信元も絞る設計だと分かった上で、納得して連携できる。</div>
+<p class="em">“便利そう”を“使っていい”に変えてくれる説明があるのは強いです。</p>
+<p>技術スタックも公開されています。Gmail APIでのメール解析と、定期実行による価格監視を組み合わせ、監視や操作はPlaywright、通知はLINE Messaging APIやResend、フロントはNext.js/Tailwind CSS、インフラはVercel。細部まで分からなくても、「個人開発だけど、仕組みが見える」安心感につながります。</p>
+<p>そして、今はウェイトリスト段階でニーズ検証中。だからこそ「この通知、ここが分かりづらい」みたいなフィードバックが届きやすいタイミングでもあります。</p></div>
+<hr/>
+<h2 id="app_h2_4">第4章：使いどころは“旅行”だけじゃない（定番→意外→さらに意外）</h2>
+<div class="section-body" id="app_body_4"><p>これ、旅行好きだけの道具にするのはもったいない。</p>
+<p>まず定番。家族旅行や連休のホテルって、早めに押さえるほど安心だけど、直前に価格が動くこともある。Tra-bellは「予約は確保しつつ、安くなったら拾う」を両立させます。</p>
+<p>次に意外。出張のホテル。会社の規定や領収書の都合で、安くできるなら安くしたいけど、毎日チェックする暇はない。通知が来た時だけ条件を見直せるのは、忙しい人ほど効きます。</p>
+<p>さらに意外。同行者がいる旅の“気まずさ”対策。あとから安いプランが出て「言わなきゃよかった」「今さら取り直すの面倒」となる前に、下がった瞬間だけ事実として通知が来る。判断材料が揃うと、相談もスムーズになります。</p>
+<table>
+<thead>
+<tr>
+<th>シーン（定番→意外→さらに意外）</th>
+<th>Tra-bellが効くポイント</th>
+<th>起きる変化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>連休・家族旅行の早期予約</td>
+<td>キャンセル料発生前まで値下げを監視</td>
+<td>安心はキープしたまま、安い瞬間だけ取り直せる</td>
+</tr>
+<tr>
+<td>出張で“見直す時間”がない</td>
+<td>安くなった時だけLINE/メール通知</td>
+<td>価格チェックの習慣が不要になり、取り逃しが減る</td>
+</tr>
+<tr>
+<td>同行者との調整・言いづらさ</td>
+<td>差額（節約額）が明確に出た時点で知らせる</td>
+<td>「今なら得する」が共有しやすく、判断が早い</td>
+</tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>「安くなってたら悔しい」気持ちが残り、旅の準備がじわじわストレスになる。</div>
+<div class="soft-box"><strong>After：</strong>旅の準備は旅の準備に集中。値下げの有無だけTra-bellが面倒を引き受ける。</div>
+<p class="em">値下げ監視は節約というより、メンタルの保険になります。</p>
+<p>対応サイトは現時点で楽天トラベルとじゃらんnet。だからこの章の例も、まずはその2つをよく使う人に向いています。対応拡大は予定として語られている段階なので、「自分の予約サイトが来たら使う」派も、ウェイトリストで意思表示しておくと後悔が減ります。</p></div>
+<hr/>
+<h2 id="app_h2_5">第5章：始め方は3ステップ、あとは“得する通知”を待つだけ</h2>
+<div class="section-body" id="app_body_5"><p>やる気がある日に、全部終わるのが正義。</p>
+<p>Tra-bellは、現時点ではウェイトリスト受付中の段階です。だから今できることは「登録して、使える状態になったらすぐ試す」準備。やりたいのは節約なのに、準備で疲れるのは本末転倒なので、始め方はシンプルに覚えておくといいです。</p>
+<p>Step1：公式サイトからウェイトリストに登録する。</p>
+<p>Step2：利用開始案内が来たらGmail連携を行い、予約確認メールを取り込む。</p>
+<p>Step3：通知（LINEまたはメール）を待ち、差額が出たらリンクから再予約し、旧予約をキャンセルする。</p>
+<div class="soft-box"><strong>Before：</strong>「いつか安くなるかも」と気になり続け、結局は手間が勝って放置してしまう。</div>
+<div class="soft-box"><strong>After：</strong>一度つないだら放置でOK。安くなった“その時だけ”動けばいい状態になる。</div>
+<p class="em">最小の手間で、値下げのチャンスだけ回収する発想がちょうどいいです。</p>
+<p>今後の展望として、対応サイト拡大や、より高度なAIによる代替宿泊プラン提案機能、さらにホテル自動再予約を目指しているとされています。ただ、現時点で断言できるのは「予約済みホテルの価格を監視し、安くなったら通知する」こと。まずはここだけでも、旅行前の“チェック地獄”から解放されます。</p>
+<p>「浮いた分を美味しいご飯に回したい」っていう動機に、Tra-bellはまっすぐ効きます。出張でも旅行でも、予約した瞬間から“得する可能性”を残したいなら、ウェイトリスト登録を先に済ませておくのが一番ラクです。</p></div>
+</div>
+<!-- 1行強調（テンプレの.emを活かす） -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">値下げは自分で探すより、通知で拾うほうが確実。</span>
+</p>
+<!-- [No.4] appsite_article_links_block_v1 -->
+<div class="links-block" id="linksBlock" style="display:block;">
+<div id="linksHeading" style="font-weight:950;color:#0f172a;">関連リンク</div>
+<div style="margin:10px 0;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="6436801784" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+</div>
+<div id="linksList">
+<a href="https://www.tra-bell.com" id="app_links_official" rel="noopener noreferrer" target="_blank">公式サイトのガイド</a>
+</div>
+</div>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://apps-article.pages.dev/publish/AppsArticle/20251230/" id="pagerPrev">前へ</a>
+<a class="pbtn" href="#" id="pagerHome" onclick="location.reload(); return false;">このページ</a>
+<a class="pbtn" href="https://apps-article.pages.dev/publish/AppsArticle/20260101/" id="pagerNext">次へ</a>
+</div>
+<!-- Follow text -->
+<div class="follow-main" id="followMain">
+<span id="app_follow_text">予約後の値下げチェックを手放して、浮いた分は旅先でちゃんと使おう。</span>
+</div>
+<!-- [No.6] appsite_article_banner_grid_v1 -->
+<div aria-label="banner-grid" class="big-banner" id="bigBanner" style="display:grid;">
+<div aria-label="ad-tile" class="tile">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3998340709" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+</div>
+<div class="tile">
+<a href="https://izanami.dev/post/e4e9e289-d989-4732-8b05-13be17ad8071" id="app_related_link" rel="noopener noreferrer" target="_blank">
+<img alt="Tra-bell紹介記事（予約後の値下げを自動監視）OGP" id="app_related_ogp" src="https://izanami.dev/post/e4e9e289-d989-4732-8b05-13be17ad8071/opengraph-image-1umokf?5589478d64c13f8a"/>
+</a>
+<div style="font-weight:950;color:#0f172a;line-height:1.45;">
+<span id="app_related_appname">Tra-bell</span>の関連ページを見る
+                  </div>
+<div class="money">完全無料</div>
+</div>
+</div>
+<!-- [No.5] appsite_article_yellow_pick_v1 -->
+<div class="yellow-pick" id="yellowPick" style="display:block;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3311126758" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+<p><strong>おすすめの試し方：</strong><span id="app_try_summary">ウェイトリスト登録→Gmail連携→通知が来たら取り直し、の流れだけ先に作っておく。</span></p>
+</div>
+<!-- 9の都合で右側から外した 336x280広告（数は維持：本文側へ移動） -->
+<div aria-label="ad-336x280" class="ad-wrap ad-336" style="padding: 16px 0 8px;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="1937678796" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- Campaign / Articles（ダミー） -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="#" onclick="return false;">More campaigns →</a>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb1" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">無料プラグインまとめ（ダミー）</div>
+<div class="c-desc">説明文がここに入ります。説明文がここに入ります。</div>
+<div class="tagline">#DTM #Plugin</div>
+</div>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb2" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">シンセ音作りの基本（ダミー）</div>
+<div class="c-desc">フィルター、エンベロープ、LFOなどの基礎をまとめる想定。</div>
+<div class="tagline">#Synth #SoundDesign</div>
+</div>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb3" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">ミックス時短テンプレ（ダミー）</div>
+<div class="c-desc">短い説明文。短い説明文。短い説明文。</div>
+<div class="tagline">#Mix #Workflow</div>
+</div>
+</div>
+</section>
+</section>
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<!-- 9：Xフォロー → 広告3つ → 人気記事 の順 -->
+<div class="side-stack">
+<!-- X follow -->
+<div class="side-card follow-side">
+<h3>Follow @アカウント名</h3>
+<a class="xbtn" href="アカウントURL" onclick="return false;">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+              アカウント説明テキスト
+            </div>
+</div>
+<!-- Ads x3 (300x250) -->
+<div class="side-card">
+<div aria-label="ad-stack" class="ad-stack">
+<div aria-label="ad-1" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4536578517" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+<div aria-label="ad-2" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4624208422" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+<div aria-label="ad-3" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3250760467" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+</div>
+</div>
+<!-- Popular -->
+<div class="side-card popular">
+<h3>人気の記事</h3>
+<div class="popular-card">
+<a aria-label="人気記事へ移動" href="https://apps-article.pages.dev/publish/AppsArticle/20251227/" rel="noopener noreferrer" target="_self">
+<img alt="ふるさと納税ダッシュボード｜今年あといくら寄付できる？を即答できる無料Webサービス" src="https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/16c10a4b-3574-4fa7-a1c4-9dfb80cd9e0f/0ea03648-baa7-4fe1-ad15-05fdd67d2be4.png"/>
+</a>
+<div class="ptext">
+    【ふるさと納税ダッシュボード】<br/>今年あといくら寄付できる？を即答できる無料Webサービス
+  </div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body>
+</html>
