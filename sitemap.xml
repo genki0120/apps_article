@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>url</loc>
-    <lastmod>yyyy-mm-dd</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://apps-article.pages.dev/</loc>
+    <lastmod>2025-12-31</lastmod>
+  </url>
+
+  <url>
+    <loc>https://apps-article.pages.dev/publish/AppsArticle/20251227/</loc>
+    <lastmod>2025-12-27</lastmod>
+  </url>
+  <url>
+    <loc>https://apps-article.pages.dev/publish/AppsArticle/20251228/</loc>
+    <lastmod>2025-12-28</lastmod>
+  </url>
+  <url>
+    <loc>https://apps-article.pages.dev/publish/AppsArticle/20251229/</loc>
+    <lastmod>2025-12-29</lastmod>
+  </url>
+  <url>
+    <loc>https://apps-article.pages.dev/publish/AppsArticle/20251230/</loc>
+    <lastmod>2025-12-30</lastmod>
+  </url>
+  <url>
+    <loc>https://apps-article.pages.dev/publish/AppsArticle/20251231/</loc>
+    <lastmod>2025-12-31</lastmod>
   </url>
 </urlset>

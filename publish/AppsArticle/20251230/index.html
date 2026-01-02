@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ReBrain - スマート暗記カード｜かわいく、苦手だけ賢く復習できるiOS暗記アプリ</title>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .controls{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    select.lang{
+      font-size:14px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(229,231,235,.9);
+      background:#fff;
+      color:#111;
+      box-shadow: 0 6px 18px rgba(17,24,39,.06);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+    /* ===== Links block ===== */
+    .links-block{
+      margin: 18px 0 6px;
+      font-size: 16px;
+      max-inline-size: 72ch;
+    }
+    .links-block a{
+      display:inline-block;
+      margin: 10px 0;
+      color: var(--pink);
+      font-weight: 900;
+    }
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+    /* ===== Follow text & banners ===== */
+    .follow-main{
+      margin: 18px 0 8px;
+      font-weight: 950;
+      font-size: 18px;
+      color:#0b0f1a;
+      max-inline-size: 72ch;
+      line-height: 1.7;
+    }
+
+    .big-banner{
+      margin-top: 16px;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .tile{
+      background:#fff;
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px;
+      text-align:center;
+      font-size: 12px;
+    }
+    .tile:last-child{ border-right:none; }
+    .tile img{
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      border-radius: 12px;
+      display:block;
+      margin-bottom:10px;
+      border:1px solid rgba(229,231,235,.9);
+    }
+    .tile .money{
+      color:#16a34a;
+      font-weight: 950;
+      margin-top: 6px;
+    }
+
+    .yellow-pick{
+      margin-top: 14px;
+      background: rgba(255,244,163,.85);
+      border: 1px solid rgba(240,224,138,.95);
+      padding: 14px 14px;
+      border-radius: 16px;
+      font-weight: 900;
+      line-height: 1.7;
+      max-inline-size: 72ch;
+      box-shadow: 0 14px 36px rgba(17,24,39,.08);
+    }
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1100px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody,
+      .links-block,
+      .follow-main,
+      .yellow-pick{
+        max-inline-size: 100%;
+      }
+      .big-banner{ grid-template-columns: 1fr; }
+      .tile{ border-right:none; border-bottom: 1px solid rgba(229,231,235,.9); }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">～個人開発の便利アプリ紹介～</div>
+<p class="note">PR &amp; AD: Advertisements from Google etc.</p>
+</div>
+<div class="controls">
+<select aria-label="Language" class="lang">
+<option>日本語</option>
+<option>English</option>
+<option>Deutsch</option>
+<option>Français</option>
+</select>
+</div>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<span class="pill">PR</span>
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='http://apps-article.pages.dev/'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">広告なしで続く暗記アプリ「ReBrain」</div>
+</div>
+<!-- 5：記事タイトル重複を解消（このH1のみ） -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">ReBrain - スマート暗記カード｜かわいく、苦手だけ賢く復習できるiOS暗記アプリ</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2025-12-30</div>
+<!-- 4：公式サイトリンクを記事タイトル直後にも追加 -->
+<a class="cta" href="https://apps.apple.com/jp/app/rebrain-%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E3%83%95%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%E3%82%AB%E3%83%BC%E3%83%89/id6742406188" id="app_official_cta" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                  アプリ公式サイトはこちら
+                </a>
+</div>
+</header>
+<!-- [No.3] appsite_article_top_hero_v1 -->
+<div aria-label="ad-hero" class="ad-wrap ad-hero">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4600335308" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+</div>
+<div class="article">
+<!-- JSON本文（章/tableなど全部ここに入る） -->
+<div id="articleBody">
+<!-- 5：重複していたh1を削除（コンテンツは本文以降そのまま） -->
+<div class="lead">
+<p id="app_lead_text">暗記アプリって、やる気が出た瞬間に広告で止められると一気に冷めない？
+ReBrainは「かわいいのに、学習はちゃんと賢い」タイプで、続けるハードルを下げてくれるiOS向け暗記・フラッシュカードアプリです。</p>
+<img alt="ReBrain ロゴ" id="app_lead_logo" src="https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F35b41eb6-2600-4b9d-bc15-26495e9b21df%2F40f90cbc-16a3-49fc-8742-de850ca9c7e1.png&amp;w=128&amp;q=75&amp;dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k"/>
+</div>
+<h2 id="app_h2_1">1章：暗記が続かない原因、だいたい「邪魔」がいる</h2>
+<div class="section-body" id="app_body_1"><p>勉強って、気合いより環境で決まる。</p>
+<figure>
+<img alt="ReBrain 画面イメージ" src="https://izanami.dev/post/3a347e62-1d2d-4d5e-ad50-9c11283f0bb8/opengraph-image-1umokf?5589478d64c13f8a"/>
+<figcaption>ReBrain - スマート暗記カード</figcaption>
+</figure>
+<p>ReBrainは、言語の単語や公式の暗記、資格勉強まで「覚える作業」を前に進めるためのiOS向けアプリ。自分で覚えたいカードを追加して、いくつかの学習方法で回せるのが軸なんだけど、推したいのはそこだけじゃない。</p>
+<div class="soft-box"><strong>Before：</strong>暗記アプリを開く→広告やごちゃついた画面で集中が切れる→結局やめる。</div>
+<div class="soft-box"><strong>After：</strong>開いた瞬間から学習に入れる→短時間でも積み上がる→「続いてる感」が出てくる。</div>
+<p>作者さんが作った理由が正直で、受験勉強で使っていたアプリが「広告が学習の妨げ」「使いにくくてモチベが続かない」だったから、学習を邪魔しない広告なし・かわいくて使いやすいデザインを目指した、という背景がある。ここ、使う側としてはかなり大事で、画面の気持ちよさって“やる気の燃費”に直結する。</p>
+<p class="em">学習を止めるのは、難しさより「ノイズ」だったりする。</p>
+<p>しかもReBrainの無料プランでも、アプリ全体に広告なし。まずこれだけで、暗記の入り口が変わる。勉強って「さあ始めよう」を何回もやる競技だから、毎回のストレスが小さいほど勝ちなんだよね。</p>
+<p>かわいさに寄せただけのアプリじゃなく、ちゃんと暗記を回し続けるための土台がある。だから友達にすすめるなら、「とりあえず入れて、1セットだけ作ってみて」と言いやすい。</p></div>
+<hr/>
+<h2 id="app_h2_2">2章：苦手を見抜いて、復習の回数を勝手に増やしてくる「スマート学習」</h2>
+<div class="section-body" id="app_body_2"><p>暗記の敵は、忘れることじゃなくて、復習のタイミングを外すこと。</p>
+<p>ReBrainの目玉は「スマート学習」。アプリが単語の学習状況を分析して、苦手な単語の復習頻度を高く自動で調整する機能です。自分の記憶の偏りって、意外と自分では見えない。できるやつだけ何回も見て“やった気”になるのがいちばん危ない。</p>
+<div class="soft-box"><strong>Before：</strong>復習は気分次第。苦手ほど後回しになって、覚えたつもりで崩れる。</div>
+<div class="soft-box"><strong>After：</strong>苦手が前に出てくる。最適な頻度で復習が回り、点につながる手応えが残る。</div>
+<p>学び方も一枚岩じゃないのが良い。フラッシュカードは左右にスワイプして記憶状況を確認・記録できるから、テンポが崩れにくい。タイピング学習は英単語などの綴りをキーボードで入力する方式で、「見たら分かる」を「書ける」に寄せられる。クイズ学習は4択で進められて、疲れてる日でも回せる。</p>
+<p>個人的に刺さったのが、シート（オーバーレイ）機能。赤シートみたいに画面半分の意味を隠して、スクロールしながら答え合わせできる。カードをめくるより“視線の流れ”が自然で、教科書的な暗記にも寄りやすい。</p>
+<p class="em">「やり方を変えられる」だけで、暗記の寿命が伸びる。</p>
+<p>さらに、分からない単語をワンタップで検索できるクイックサーチ、AIを使用して単語帳などを生成できるAI暗記帳生成もある。暗記って入力が面倒で止まりがちだけど、入口が増えるほど続く確率も上がる。続けたい人に必要なのは根性じゃなく、摩擦の少なさだと思う。</p></div>
+<hr/>
+<h2 id="app_h2_3">3章：利用シーンは「定番→意外→さらに意外」で広がる</h2>
+<div class="section-body" id="app_body_3"><p>暗記アプリって、机の上だけのものだと思ってた。</p>
+<p>定番の使い方はもちろん強い。資格勉強の用語、公式、語学の単語。フラッシュカード、クイズ、タイピング学習を気分で切り替えられるから、同じカードでも飽きにくいし、スマート学習で苦手が前に出るから「やったのに落ちた」が減る。</p>
+<p>次に意外に効くのが、スキマ時間の“短距離周回”。ストリーク画面があるので、毎日ちょっと触るだけでも連続の記録が残る。まとまった時間が取れない日でも、「今日はゼロじゃない」が作れるのは大きい。</p>
+<p>さらに意外なのが、人と一緒に始めやすいところ。単語の追加はアプリ内入力だけじゃなく、CSVやQuizletからのインポート、そして近距離共有で近くの人からセットを共有してもらうこともできる。講義の友達や同僚に「そのセットちょうだい」ができると、暗記の準備が一気に軽くなる。</p>
+<div class="soft-box"><strong>Before：</strong>学習は“やる気がある日にまとめて”。続く日と空く日の差が激しい。</div>
+<div class="soft-box"><strong>After：</strong>定番は腰を据えて、意外はスキマで、さらに意外は共有で。学習が生活に散らばる。</div>
+<p class="em">暗記は時間の長さじゃなく、回数で勝ちやすい。</p>
+<table>
+<thead>
+<tr>
+<th>シーン</th>
+<th>ReBrainでの動かし方</th>
+<th>起きる変化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定番：試験・資格の暗記</td>
+<td>スマート学習＋フラッシュカード/クイズで復習を回す</td>
+<td>苦手が可視化され、復習の抜けが減る</td>
+</tr>
+<tr>
+<td>意外：移動や待ち時間</td>
+<td>短時間でスワイプ学習、ストリークで継続を固定</td>
+<td>「今日は無理」が「1分だけ」に変わる</td>
+</tr>
+<tr>
+<td>さらに意外：友達と一緒に始める</td>
+<td>Quizlet/CSV取り込み＋近距離共有でセットを受け取る</td>
+<td>準備で詰まらず、同じ教材で走り出せる</td>
+</tr>
+</tbody>
+</table>
+<p>暗記って、孤独になった瞬間に失速するから、共有の導線があるのは地味に強い。すすめるなら「同じセットで一週間だけやろう」って誘えるタイプのアプリです。</p></div>
+<hr/>
+<h2 id="app_h2_4">4章：無料でほぼ走れる。だからこそProは“必要になったら”でいい</h2>
+<div class="section-body" id="app_body_4"><p>課金の話、先に整理しとくと楽。</p>
+<p>ReBrainは学習に関する機能は、ほぼ無料プランでも制限なく使用できます。無料プランで「アプリ全体に広告なし」「すべての学習方法」「スマート学習機能」が使える時点で、まず学習の勝負は始められる。ここをケチって機能が薄いと、結局続かないので、無料の設計が太いのは安心材料。</p>
+<div class="soft-box"><strong>Before：</strong>課金前提っぽいと、試す前から身構えて結局インストールしない。</div>
+<div class="soft-box"><strong>After：</strong>無料で手触りを確かめる→必要な時だけProに上げて伸ばす、ができる。</div>
+<p>一方でProプランは「作る・集める・自分好みにする」に効く。セットの作成が無制限になって、セットのiCloud同期もできる。さらにアプリテーマ・フォントの変更、背景画像、アプリアイコン変更など、学習の気分を変える要素が揃う。勉強が長期戦になるほど、こういう“飽き対策”って点数に直結する。</p>
+<p class="em">無料で続けられる設計は、アプリへの信頼に変わる。</p>
+<table>
+<thead>
+<tr>
+<th>できること</th>
+<th>無料プラン</th>
+<th>Proプラン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>広告</td>
+<td>アプリ全体に広告なし</td>
+<td>無料プランと同じ</td>
+</tr>
+<tr>
+<td>学習方法</td>
+<td>すべての学習方法</td>
+<td>無料プランと同じ</td>
+</tr>
+<tr>
+<td>スマート学習</td>
+<td>利用可能</td>
+<td>利用可能</td>
+</tr>
+<tr>
+<td>セット作成</td>
+<td>3アイテムまで</td>
+<td>無制限</td>
+</tr>
+<tr>
+<td>同期・カスタマイズ</td>
+<td>一部不可</td>
+<td>iCloud同期、テーマ/フォント、背景、アイコン変更</td>
+</tr>
+</tbody>
+</table>
+<p>迷ったら、無料で「スマート学習が自分に合うか」を先に確認してからで十分。Proは“本気で積み上がってきた人の加速装置”として置いとけばいい。</p></div>
+<hr/>
+<h2 id="app_h2_5">5章：始め方は3手。移行も相談も、ちゃんと逃げ道がある</h2>
+<div class="section-body" id="app_body_5"><p>新しい暗記アプリって、移すのが面倒で止まりがち。</p>
+<div class="soft-box"><strong>Before：</strong>単語帳の入力で燃え尽きる。せっかくのやる気が準備で消える。</div>
+<div class="soft-box"><strong>After：</strong>入力だけに頼らず、インポートや共有で一気にスタートできる。</div>
+<p>ReBrainは単語の追加がいくつか用意されていて、アプリ内から入力するのはもちろん、CSVやQuizletからのインポートもできます。さらに近距離共有で、近くの人からセットを共有してもらうことも可能。ここがあるだけで「今日から始める」が現実になる。</p>
+<p>使える端末はiOS18.2以上のiPhone、iPad。Android対応は今のところ予定はありません。だからこそ、iPhone/iPadで勉強してる友達には、相性が合う確率が高い。</p>
+<p class="em">“始めるまでの面倒”を潰してあるアプリは、最後まで残りやすい。</p>
+<p>実際に使い始める3ステップ例も置いとくね。</p>
+<p><strong>Step1：</strong>iOS18.2以上のiPhone/iPadにインストールして、まずは無料プランで触る（広告なしで学習のテンポを確認）。</p>
+<p><strong>Step2：</strong>カードを作る。手入力でもいいし、CSV/Quizletからインポート、近距離共有でセットを受け取ってもOK。</p>
+<p><strong>Step3：</strong>フラッシュカードのスワイプ、タイピング、4択クイズ、シート（オーバーレイ）を気分で回して、スマート学習に復習頻度を任せる。ストリーク画面で“連続”を切らさない。</p>
+<p>困った時の連絡も現実的。アプリ内設定からお問い合わせやフィードバックができて、Twitter(X)のDMでも受け付けているとのこと（個人開発なので返信に時間がかかる場合あり）。「こんな機能が欲しい！」にも積極的に応える姿勢で、今までのリクエストにはほぼ全て応えてきた、という記載もある。使いながら育っていくタイプのアプリが好きなら、かなり相性いい。</p></div>
+</div>
+<!-- 1行強調（テンプレの.emを活かす） -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">広告に邪魔されず、苦手だけを賢く回せる——それがReBrainをすすめたくなる理由です。</span>
+</p>
+<!-- [No.4] appsite_article_links_block_v1 -->
+<div class="links-block" id="linksBlock" style="display:block;">
+<div id="linksHeading" style="font-weight:950;color:#0f172a;">関連リンク</div>
+<div style="margin:10px 0;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="6436801784" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+</div>
+<div id="linksList">
+<a href="https://github.com/izanami-dev/izanami-community/discussions" id="app_links_official" rel="noopener noreferrer" target="_blank">公式サイトのガイド</a>
+</div>
+</div>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://apps-article.pages.dev/publish/AppsArticle/20251229/" id="pagerPrev">前へ</a>
+<a class="pbtn" href="#" id="pagerHome" onclick="location.reload(); return false;">このページ</a>
+<a class="pbtn" href="https://apps-article.pages.dev/publish/AppsArticle/20251231/" id="pagerNext">次へ</a>
+</div>
+<!-- Follow text -->
+<div class="follow-main" id="followMain">
+<span id="app_follow_text">まず無料で1セット。手応えが出たら、スマート学習と継続の気持ちよさが分かってくるよ。</span>
+</div>
+<!-- [No.6] appsite_article_banner_grid_v1 -->
+<div aria-label="banner-grid" class="big-banner" id="bigBanner" style="display:grid;">
+<div aria-label="ad-tile" class="tile">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3998340709" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+</div>
+<div class="tile">
+<a href="https://izanami.dev/post/3a347e62-1d2d-4d5e-ad50-9c11283f0bb8" id="app_related_link" rel="noopener noreferrer" target="_blank">
+<img alt="ReBrain 記事OGP" id="app_related_ogp" src="https://izanami.dev/post/3a347e62-1d2d-4d5e-ad50-9c11283f0bb8/opengraph-image-1umokf?5589478d64c13f8a"/>
+</a>
+<div style="font-weight:950;color:#0f172a;line-height:1.45;">
+<span id="app_related_appname">ReBrain</span>の関連ページを見る
+                  </div>
+<div class="money">完全無料</div>
+</div>
+</div>
+<!-- [No.5] appsite_article_yellow_pick_v1 -->
+<div class="yellow-pick" id="yellowPick" style="display:block;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3311126758" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+<p><strong>おすすめの試し方：</strong><span id="app_try_summary">インストール後は、Quizlet/CSV取り込みか近距離共有でセットを用意して、フラッシュカード→タイピング→クイズの順で一周だけ回してみてください。</span></p>
+</div>
+<!-- 9の都合で右側から外した 336x280広告（数は維持：本文側へ移動） -->
+<div aria-label="ad-336x280" class="ad-wrap ad-336" style="padding: 16px 0 8px;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="1937678796" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- Campaign / Articles（ダミー） -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="#" onclick="return false;">More campaigns →</a>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb1" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">無料プラグインまとめ（ダミー）</div>
+<div class="c-desc">説明文がここに入ります。説明文がここに入ります。</div>
+<div class="tagline">#DTM #Plugin</div>
+</div>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb2" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">シンセ音作りの基本（ダミー）</div>
+<div class="c-desc">フィルター、エンベロープ、LFOなどの基礎をまとめる想定。</div>
+<div class="tagline">#Synth #SoundDesign</div>
+</div>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb3" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">ミックス時短テンプレ（ダミー）</div>
+<div class="c-desc">短い説明文。短い説明文。短い説明文。</div>
+<div class="tagline">#Mix #Workflow</div>
+</div>
+</div>
+</section>
+</section>
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<!-- 9：Xフォロー → 広告3つ → 人気記事 の順 -->
+<div class="side-stack">
+<!-- X follow -->
+<div class="side-card follow-side">
+<h3>Follow @アカウント名</h3>
+<a class="xbtn" href="アカウントURL" onclick="return false;">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+              アカウント説明テキスト
+            </div>
+</div>
+<!-- Ads x3 (300x250) -->
+<div class="side-card">
+<div aria-label="ad-stack" class="ad-stack">
+<div aria-label="ad-1" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4536578517" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+<div aria-label="ad-2" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4624208422" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+<div aria-label="ad-3" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3250760467" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+</div>
+</div>
+<!-- Popular -->
+<div class="side-card popular">
+<h3>人気の記事</h3>
+<div class="popular-card">
+<a aria-label="人気記事へ移動" href="https://apps-article.pages.dev/publish/AppsArticle/20251227/" rel="noopener noreferrer" target="_self">
+<img alt="ふるさと納税ダッシュボード｜今年あといくら寄付できる？を即答できる無料Webサービス" src="https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/16c10a4b-3574-4fa7-a1c4-9dfb80cd9e0f/0ea03648-baa7-4fe1-ad15-05fdd67d2be4.png"/>
+</a>
+<div class="ptext">
+    【ふるさと納税ダッシュボード】<br/>今年あといくら寄付できる？を即答できる無料Webサービス
+  </div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body>
+</html>
