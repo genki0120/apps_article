@@ -1,18 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>神アプ！～個人開発の便利アプリ紹介～</title>
-  <meta name="description" content="個人開発アプリを中心に、使って良かったポイントを“使う人目線”で短く深くまとめます。最新記事・カテゴリ・アーカイブから探せます。" />
-  <link rel="canonical" href="/" />
-  <meta name="robots" content="index,follow" />
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"
-     crossorigin="anonymous"></script>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>神アプ！～個人開発の便利アプリ紹介～</title>
+<meta content="個人開発アプリを中心に、使って良かったポイントを“使う人目線”で短く深くまとめます。最新記事・カテゴリ・アーカイブから探せます。" name="description"/>
+<link href="/" rel="canonical"/>
+<meta content="index,follow" name="robots"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -20,8 +18,7 @@
 
   gtag('config', 'G-36H614G1X5');
 </script>
-
-  <style>
+<style>
     :root{
       --ink:#222;
       --muted:#777;
@@ -533,302 +530,273 @@
     }
   </style>
 </head>
-
 <body>
-  <!-- ===== Header ===== -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <h1>～個人開発の便利アプリ紹介～</h1>
-        <div class="note">PR / AD: 広告・アフィリエイトを含む場合があります（詳細は「広告・運営方針」へ）</div>
-
-        <div style="margin-top:10px;">
-          <select class="lang" aria-label="language">
-            <option>Languages</option>
-            <option>日本語</option>
-            <option>English</option>
-            <option>Deutsch</option>
-            <option>Français</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="controls">
-        <div class="search-ghost" title="検索（静的トップのため未実装）"></div>
-        <div style="font-size:12px;color:#777;">※ 現在は記事一覧から探せます</div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ===== Background stage ===== -->
-  <main class="stage">
-    <div class="layout">
-      <!-- ===== Left/Main column ===== -->
-      <section class="main-col">
-        <article class="post-shell">
-          <span class="pill">HOME</span>
-
-          <div class="crumbbox">
-            <div class="crumb-left">
-              <div style="opacity:.75;font-size:12px;font-weight:800;">YOU ARE HERE</div>
-              <div class="home">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path d="M3 10.5 12 3l9 7.5"></path>
-                  <path d="M5 10v10h14V10"></path>
-                </svg>
-                <span>Home</span>
-              </div>
-            </div>
-            <div class="crumb-right">
+<!-- ===== Header ===== -->
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<h1>～個人開発の便利アプリ紹介～</h1>
+<div class="note">PR / AD: 広告・アフィリエイトを含む場合があります（詳細は「広告・運営方針」へ）</div>
+<div style="margin-top:10px;">
+<select aria-label="language" class="lang">
+<option>Languages</option>
+<option>日本語</option>
+<option>English</option>
+<option>Deutsch</option>
+<option>Français</option>
+</select>
+</div>
+</div>
+<div class="controls">
+<div class="search-ghost" title="検索（静的トップのため未実装）"></div>
+<div style="font-size:12px;color:#777;">※ 現在は記事一覧から探せます</div>
+</div>
+</div>
+</header>
+<!-- ===== Background stage ===== -->
+<main class="stage">
+<div class="layout">
+<!-- ===== Left/Main column ===== -->
+<section class="main-col">
+<article class="post-shell">
+<span class="pill">HOME</span>
+<div class="crumbbox">
+<div class="crumb-left">
+<div style="opacity:.75;font-size:12px;font-weight:800;">YOU ARE HERE</div>
+<div class="home">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</div>
+</div>
+<div class="crumb-right">
               「個人開発アプリ」を、使う人目線でサクッと紹介する場所
             </div>
-          </div>
-
-          <h2 class="title">探すより、当たりを引く。</h2>
-          <div class="date">Updated: <span id="updatedAt"></span></div>
-
-          <div class="hero">
-            <div class="hero-card" role="region" aria-label="site-hero">
-              <div class="hero-left">
-                <div class="hero-kicker">APP PICKS / SHORT & REAL</div>
-                <div class="hero-h">「何が良いのか」を1ページで分かるように。</div>
-                <p class="hero-p">
-                  アプリの紹介って、だいたい良いことしか書いてない。<br>
-                  だからここでは、<b>刺さる人・刺さらない人</b>が分かれるポイントも含めて、短く深くまとめます。<br>
+</div>
+<h2 class="title">探すより、当たりを引く。</h2>
+<div class="date">Updated: <span id="updatedAt"></span></div>
+<div class="hero">
+<div aria-label="site-hero" class="hero-card" role="region">
+<div class="hero-left">
+<div class="hero-kicker">APP PICKS / SHORT &amp; REAL</div>
+<div class="hero-h">「何が良いのか」を1ページで分かるように。</div>
+<p class="hero-p">
+                  アプリの紹介って、だいたい良いことしか書いてない。<br/>
+                  だからここでは、<b>刺さる人・刺さらない人</b>が分かれるポイントも含めて、短く深くまとめます。<br/>
                   迷ったら、最新記事からどうぞ。
                 </p>
-                <div class="cta-row">
-                  <a class="btn primary" href="#latest"><span>最新記事を見る</span> <small>↓</small></a>
-                  <a class="btn" href="#policy"><span>広告・運営方針</span></a>
-                  <a class="btn" href="#archive"><span>アーカイブ</span></a>
-                </div>
-              </div>
-              <div class="hero-right">
-                <div class="kv">
-                  <b>更新頻度</b><span>不定期（いいアプリが見つかった時）</span>
-                  <b>対象</b><span>個人開発アプリ / 小さめツール / 作業効率系</span>
-                  <b>書き方</b><span>ベタ褒めではなく、<b>使いどころ</b>中心</span>
-                  <b>お願い</b><span>誤記があれば連絡ください（すぐ直します）</span>
-                </div>
-                <div class="chip-row" aria-label="quick-tags">
-                  <span class="chip">#個人開発 <small>個人</small></span>
-                  <span class="chip">#作業効率 <small>時短</small></span>
-                  <span class="chip">#モバイル <small>iOS/Android</small></span>
-                  <span class="chip">#買い切り <small>歓迎</small></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="article" id="policy">
-            <h1>このサイトについて</h1>
-            <div class="lead">
-              ここは「個人開発アプリの紹介」を中心に、使う前に知りたいこと（向き不向き・使いどころ・料金感）を、なるべく一枚で分かるようにまとめるページです。<br>
+<div class="cta-row">
+<a class="btn primary" href="#latest"><span>最新記事を見る</span> <small>↓</small></a>
+<a class="btn" href="#policy"><span>広告・運営方針</span></a>
+<a class="btn" href="#archive"><span>アーカイブ</span></a>
+</div>
+</div>
+<div class="hero-right">
+<div class="kv">
+<b>更新頻度</b><span>不定期（いいアプリが見つかった時）</span>
+<b>対象</b><span>個人開発アプリ / 小さめツール / 作業効率系</span>
+<b>書き方</b><span>ベタ褒めではなく、<b>使いどころ</b>中心</span>
+<b>お願い</b><span>誤記があれば連絡ください（すぐ直します）</span>
+</div>
+<div aria-label="quick-tags" class="chip-row">
+<span class="chip">#個人開発 <small>個人</small></span>
+<span class="chip">#作業効率 <small>時短</small></span>
+<span class="chip">#モバイル <small>iOS/Android</small></span>
+<span class="chip">#買い切り <small>歓迎</small></span>
+</div>
+</div>
+</div>
+</div>
+<div class="article" id="policy">
+<h1>このサイトについて</h1>
+<div class="lead">
+              ここは「個人開発アプリの紹介」を中心に、使う前に知りたいこと（向き不向き・使いどころ・料金感）を、なるべく一枚で分かるようにまとめるページです。<br/>
               公式情報に寄せつつ、使いどころは「生活の場面」で書きます。ふわっとした褒め言葉で水増ししません。
             </div>
-
-            <h2>運営方針</h2>
-            <div class="section-body">
-              <div class="soft-box">
-                <b>① 独自コンテンツ：</b> 公式の説明を写すのではなく、「どこで役に立つか」「どんな人に刺さるか」を自分の言葉で追加して、同じ紹介にならないようにしています。
+<h2>運営方針</h2>
+<div class="section-body">
+<div class="soft-box">
+<b>① 独自コンテンツ：</b> 公式の説明を写すのではなく、「どこで役に立つか」「どんな人に刺さるか」を自分の言葉で追加して、同じ紹介にならないようにしています。
               </div>
-              <div class="soft-box">
-                <b>② 広告・アフィリエイト：</b> 広告を表示する場合があります。リンク先で購入/登録が発生すると、運営に少額の収益が入る場合があります。<br>
+<div class="soft-box">
+<b>② 広告・アフィリエイト：</b> 広告を表示する場合があります。リンク先で購入/登録が発生すると、運営に少額の収益が入る場合があります。<br/>
                 ただし、紹介内容や評価が収益で変わることはありません（合わない人には合わないと書きます）。
               </div>
-              <div class="soft-box">
-                <b>③ プライバシー：</b> クッキーや広告の扱いはプライバシーポリシーにまとめています。必要に応じて更新します。
+<div class="soft-box">
+<b>③ プライバシー：</b> クッキーや広告の扱いはプライバシーポリシーにまとめています。必要に応じて更新します。
               </div>
-
-              <p class="em">“読んで損しない紹介”だけ残す。それがこのサイトの基準。</p>
-
-              <table aria-label="site-policy-table">
-                <thead>
-                  <tr>
-                    <th>見たいこと</th>
-                    <th>このサイトでの書き方</th>
-                    <th>読むメリット</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>誰向け？</td>
-                    <td>刺さる人 / 刺さらない人を分けて書く</td>
-                    <td>入れる前に“ズレ”が減る</td>
-                  </tr>
-                  <tr>
-                    <td>何ができる？</td>
-                    <td>機能の羅列より、使う場面で説明</td>
-                    <td>自分の生活に当てはめやすい</td>
-                  </tr>
-                  <tr>
-                    <td>料金は？</td>
-                    <td>公式に矛盾しない範囲で整理（不明は断定しない）</td>
-                    <td>課金で詰まるのを避けられる</td>
-                  </tr>
-                </tbody>
-              </table>
-
-            </div>
-
-            <hr>
-
-            <h2 id="latest">最新記事</h2>
-            <div class="section-body">
-              下の一覧は、トップページ用にカード表示しています。<br>
+<p class="em">“読んで損しない紹介”だけ残す。それがこのサイトの基準。</p>
+<table aria-label="site-policy-table">
+<thead>
+<tr>
+<th>見たいこと</th>
+<th>このサイトでの書き方</th>
+<th>読むメリット</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>誰向け？</td>
+<td>刺さる人 / 刺さらない人を分けて書く</td>
+<td>入れる前に“ズレ”が減る</td>
+</tr>
+<tr>
+<td>何ができる？</td>
+<td>機能の羅列より、使う場面で説明</td>
+<td>自分の生活に当てはめやすい</td>
+</tr>
+<tr>
+<td>料金は？</td>
+<td>公式に矛盾しない範囲で整理（不明は断定しない）</td>
+<td>課金で詰まるのを避けられる</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr/>
+<h2 id="latest">最新記事</h2>
+<div class="section-body">
+              下の一覧は、トップページ用にカード表示しています。<br/>
               まずは気になるタイトルを1本だけ開いてOK。深追いしないのが一番続く。
             </div>
-          </div>
-        </article>
-
-        <section class="list-shell" aria-label="article-list">
-          <div class="list-head">
-            <div style="font-weight:900;color:#111;">Latest Articles</div>
-            <a href="#archive">アーカイブへ →</a>
-          </div>
-
-          <!-- JSで描画 -->
-          <div id="articlesList"></div>
-
-          <!-- JSで描画 -->
+</div>
+</article>
+<section aria-label="article-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:900;color:#111;">Latest Articles</div>
+<a href="#archive">アーカイブへ →</a>
+</div>
+<!-- JSで描画 -->
 <div id="articlesList"></div>
-
-          <!--静的HTMLにURL一覧を乗せる（search console対策） -->
+<!-- JSで描画 -->
+<div id="articlesList"></div>
+<!--静的HTMLにURL一覧を乗せる（search console対策） -->
 <noscript>
-  <section aria-label="noscript-articles" style="margin-top:14px;">
-    <h3 style="margin:0 0 8px;">記事一覧（JavaScriptが無効な場合）</h3>
-    <ul style="margin:0;padding-left:18px;line-height:1.7;">
-      <li>
-        <a href="https://apps-article.pages.dev/publish/AppsArticle/20251227/">ふるさと納税ダッシュボード｜今年あといくら寄付できる？を即答できる無料Webサービス</a>
-        <small>(2025-12-27)</small>
-      </li>
-      <li>
-        <a href="https://apps-article.pages.dev/publish/AppsArticle/20251228/">育児記録・予防接種管理 - milu｜育児の「見ればわかる」を増やす</a>
-        <small>(2025-12-27)</small>
-      </li>
-      <li>
-        <a href="https://apps-article.pages.dev/publish/AppsArticle/20251229/">ミチミエール｜スマホ1台で通行量をAI計測できる無料アプリ</a>
-        <small>(2025-12-27)</small>
-      </li>
-      <li>
-        <a href="https://apps-article.pages.dev/publish/AppsArticle/20251230/">ReBrain - スマート暗記カード｜かわいく、苦手だけ賢く復習できるiOS暗記アプリ</a>
-        <small>(2025-12-27)</small>
-      </li>
-      <li>
-        <a href="https://apps-article.pages.dev/publish/AppsArticle/20251231/">Tra-bell（トラベル）— 予約後の値下げを24時間監視して通知するサービス</a>
-        <small>(2025-12-27)</small>
-      </li>
-      <li>
-        <a href="https://apps-article.pages.dev/publish/AppsArticle/20260102/">ClockClock｜ログインだけで使える、無料の打刻勤怠管理アプリ</a>
-        <small>(2025-12-27)</small>
-      </li>
-      
-
-
-    </ul>
-  </section>
+<section aria-label="noscript-articles" style="margin-top:14px;">
+<h3 style="margin:0 0 8px;">記事一覧（JavaScriptが無効な場合）</h3>
+<ul style="margin:0;padding-left:18px;line-height:1.7;"><li>
+<a href="https://apps-article.pages.dev/publish/AppsArticle/20260104/">FreezeCoach｜止めて、描いて、伝わる。スポーツ解説を最短化する動画分析アプリ</a>
+<small>(2026-01-04)</small>
+</li>
+<li>
+<a href="https://apps-article.pages.dev/publish/AppsArticle/20251227/">ふるさと納税ダッシュボード｜今年あといくら寄付できる？を即答できる無料Webサービス</a>
+<small>(2025-12-27)</small>
+</li>
+<li>
+<a href="https://apps-article.pages.dev/publish/AppsArticle/20251228/">育児記録・予防接種管理 - milu｜育児の「見ればわかる」を増やす</a>
+<small>(2025-12-27)</small>
+</li>
+<li>
+<a href="https://apps-article.pages.dev/publish/AppsArticle/20251229/">ミチミエール｜スマホ1台で通行量をAI計測できる無料アプリ</a>
+<small>(2025-12-27)</small>
+</li>
+<li>
+<a href="https://apps-article.pages.dev/publish/AppsArticle/20251230/">ReBrain - スマート暗記カード｜かわいく、苦手だけ賢く復習できるiOS暗記アプリ</a>
+<small>(2025-12-27)</small>
+</li>
+<li>
+<a href="https://apps-article.pages.dev/publish/AppsArticle/20251231/">Tra-bell（トラベル）— 予約後の値下げを24時間監視して通知するサービス</a>
+<small>(2025-12-27)</small>
+</li>
+<li>
+<a href="https://apps-article.pages.dev/publish/AppsArticle/20260102/">ClockClock｜ログインだけで使える、無料の打刻勤怠管理アプリ</a>
+<small>(2025-12-27)</small>
+</li>
+</ul>
+</section>
 </noscript>
-
-        </section>
-
-        <article class="post-shell" id="archive">
-          <span class="pill">ARCHIVE</span>
-          <h2 class="title" style="margin-top:10px;">アーカイブ（年月で探す）</h2>
-
-          <div class="article">
-            <div class="section-body">
-              <div class="soft-box">
-                <b>運用のコツ：</b> 記事を増やすほど、トップは「ハブ」に徹して軽くするほうが見やすい。<br>
+</section>
+<article class="post-shell" id="archive">
+<span class="pill">ARCHIVE</span>
+<h2 class="title" style="margin-top:10px;">アーカイブ（年月で探す）</h2>
+<div class="article">
+<div class="section-body">
+<div class="soft-box">
+<b>運用のコツ：</b> 記事を増やすほど、トップは「ハブ」に徹して軽くするほうが見やすい。<br/>
                 その代わり、記事ページに全力（あなたの方針、正解）。
               </div>
-
-              <table aria-label="archive-table">
-                <thead>
-                  <tr>
-                    <th>年</th>
-                    <th>月</th>
-                    <th>リンク例（フォルダ構造に合わせて変更）</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2025</td>
-                    <td>12</td>
-                    <td><a href="/2025/12/">/2025/12/</a></td>
-                  </tr>
-                  <tr>
-                    <td>2026</td>
-                    <td>01</td>
-                    <td><a href="/2026/01/">/2026/01/</a></td>
-                  </tr>
-                  <tr>
-                    <td>2026</td>
-                    <td>02</td>
-                    <td><a href="/2026/02/">/2026/02/</a></td>
-                  </tr>
-                </tbody>
-              </table>
-
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <!-- ===== Right/Sidebar column ===== -->
-      <aside class="side-col">
-        <div class="side-card" aria-label="sidebar-about">
-          <h3>まずはここから</h3>
-          <p>
-            トップは“入口”。記事が主役です。<br>
+<table aria-label="archive-table">
+<thead>
+<tr>
+<th>年</th>
+<th>月</th>
+<th>リンク例（フォルダ構造に合わせて変更）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025</td>
+<td>12</td>
+<td><a href="/2025/12/">/2025/12/</a></td>
+</tr>
+<tr>
+<td>2026</td>
+<td>01</td>
+<td><a href="/2026/01/">/2026/01/</a></td>
+</tr>
+<tr>
+<td>2026</td>
+<td>02</td>
+<td><a href="/2026/02/">/2026/02/</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+</section>
+<!-- ===== Right/Sidebar column ===== -->
+<aside class="side-col">
+<div aria-label="sidebar-about" class="side-card">
+<h3>まずはここから</h3>
+<p>
+            トップは“入口”。記事が主役です。<br/>
             迷ったら、最新記事を1本だけ開いてください。
           </p>
-          <div class="side-links">
-            <a href="#latest">→ 最新記事へ</a>
-            <a href="#policy">→ 広告・運営方針</a>
-            <a href="#archive">→ アーカイブ</a>
-          </div>
-        </div>
-
-        <div class="side-card" aria-label="sidebar-categories">
-          <h3>カテゴリ</h3>
-          <p>増えてきたら、タグで“探しやすさ”だけ足します。</p>
-          <div class="chip-row">
-            <span class="chip">作業効率 <small>#workflow</small></span>
-            <span class="chip">学習 <small>#study</small></span>
-            <span class="chip">動画/写真 <small>#media</small></span>
-            <span class="chip">メモ/記録 <small>#note</small></span>
-          </div>
-        </div>
-
-        <div class="side-card" aria-label="sidebar-links">
-          <h3>運営・連絡先</h3>
-          <p>
-            ポリシーと連絡導線は“薄いサイト”判定を避けるのに効きます。<br>
+<div class="side-links">
+<a href="#latest">→ 最新記事へ</a>
+<a href="#policy">→ 広告・運営方針</a>
+<a href="#archive">→ アーカイブ</a>
+</div>
+</div>
+<div aria-label="sidebar-categories" class="side-card">
+<h3>カテゴリ</h3>
+<p>増えてきたら、タグで“探しやすさ”だけ足します。</p>
+<div class="chip-row">
+<span class="chip">作業効率 <small>#workflow</small></span>
+<span class="chip">学習 <small>#study</small></span>
+<span class="chip">動画/写真 <small>#media</small></span>
+<span class="chip">メモ/記録 <small>#note</small></span>
+</div>
+</div>
+<div aria-label="sidebar-links" class="side-card">
+<h3>運営・連絡先</h3>
+<p>
+            ポリシーと連絡導線は“薄いサイト”判定を避けるのに効きます。<br/>
             ここだけは置いておくのがおすすめ。
           </p>
-          <div class="side-links">
-            <a href="/about.html">→ 運営者情報（About）</a>
-            <a href="/privacy.html">→ プライバシーポリシー</a>
-          </div>
-        </div>
-
-      </aside>
-    </div>
-
-    <footer>
-      <div style="font-weight:900;color:#111;">このサイトは個人運営です。</div>
-      <div class="foot-row">
-        <a href="/about.html">About</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="#policy">広告・運営方針</a>
-      </div>
-      <div style="margin-top:10px;">
+<div class="side-links">
+<a href="/about.html">→ 運営者情報（About）</a>
+<a href="/privacy.html">→ プライバシーポリシー</a>
+</div>
+</div>
+</aside>
+</div>
+<footer>
+<div style="font-weight:900;color:#111;">このサイトは個人運営です。</div>
+<div class="foot-row">
+<a href="/about.html">About</a>
+<a href="/privacy.html">Privacy</a>
+<a href="#policy">広告・運営方針</a>
+</div>
+<div style="margin-top:10px;">
         ※ 記事内容は可能な限り正確に作成しますが、最新情報は各公式ページをご確認ください。
       </div>
-    </footer>
-  </main>
-
-  <script>
+</footer>
+</main>
+<script>
     // === ここだけ差し替えればトップの一覧が更新されます ===
     // url は “生URL” で。サムネが無い場合は thumb を空にしてOK。
     const ARTICLES = [
