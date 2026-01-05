@@ -1,0 +1,201 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/321ec3d8-1ed0-447e-9f16-27a419bb4654
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+HR Matcher - IT企業特化型人材マッチング
+「知名度」より「相性」で選ぶ転職サービス。AIとビッグデータが100万件以上の企業情報を分析し、あなたに本当にマッチする隠れた優良企業を提案します。情報収集の手間を大幅に省き、入社後のミスマッチを防止。たった1分の価値観入力で、理想のキャリア探しを無料で始めよう。
+就活
+転職
+企業マッチング
+レビューする
+Visit Product
+就活
+転職
+企業マッチング
+プロダクトの感想・意見はこのエリアに表示されます
+HR Matcher：AI × ビッグデータによる人材マッチング
+🌟
+知名度より、「相性」で選ぶ。
+100 万件以上のデータと独自の AI アルゴリズムが、あなたと本当にマッチする「隠れた優良企業」を見つけ出します。
+🚨 転職における 3 つの課題を解決
+「なんとなく」で企業を選ぶ転職は、高い離職率（3 年以内 30%超）を生んでいます。HR Matcher は以下の課題を解決します。
+情報過多による混乱
+数万社の情報から自分に合う 1 社を見つけるのは困難。
+イメージ先行のバイアス
+知名度や CM の印象に引っ張られ、優良企業を見逃している。
+入社後のミスマッチ
+カルチャーや条件の不一致による早期離職。
+✨ HR Matcher が提供する価値
+価値
+詳細
+情報検索時間の削減
+Web 上のビッグデータを AI が分析し、あなたの代わりに企業を徹底比較。
+根拠ある比較
+複数企業を項目ごとに重みづけし、データに基づいて選択可能。
+ミスマッチの削減
+多角的な視点で企業とのマッチ度がわかり、「思っていたのと違った」を防止。
+🚀 データに基づく転職活動を科学
+HR Matcher は、感覚ではなく「データ」と「AI」であなたのキャリア形成をサポートします。
+ビッグデータ解析
+：100 万件以上の企業データ（財務状況、口コミなど）を収集・分析。
+AI エージェント
+：24 時間 365 日、専属エージェントとして希望に合う企業を探索。
+カルチャーマッチ
+：数値化しにくい企業文化や働き方もスコアリングし、入社後の「違和感」を防止。
+独自の重みづけ
+：「給与」「残業」「成長環境」など、重視する項目を自由にカスタマイズ可能。
+💡 利用開始はたったの 3 ステップ
+無料登録
+：メールアドレスだけでアカウント作成。
+価値観を入力
+：スキルや希望条件をチャット形式で入力。
+AI がマッチング
+：あなたに最適な企業をリストアップ。
+わずか 1 分で価値観マッチングが完了します。
+今すぐ相性がある企業を探す
+無料で始める / ログイン
+サービス詳細（トップページ）
+価値観診断ページ（参考）
+Explore More
+関連記事はありません。
+Trends
+Google が無料公開した Startup Technical Guide AI Agents が神
+コムテ
+2026年1月5日
+2026年、AI界隈はどこへ向かうのか？——18の予想から読み解く「汎用エージェント」の真価
+masao
+2026年1月4日
+2026 年に押さえておきたい AI トレンド 38 選
+コムテ
+2026年1月2日
+Lafter | お笑いネタ動画検索サイト
+よこなり
+2026年1月1日
+Neosophie
+Follow
+{
+  "final_url": "https://izanami.dev/post/321ec3d8-1ed0-447e-9f16-27a419bb4654",
+  "og_image": "https://izanami.dev/post/321ec3d8-1ed0-447e-9f16-27a419bb4654/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fedfbb896-3ec9-4965-a36b-627113ee433b%2Fc02626fa-4d97-48f1-ab7d-9312b7bc4be5.png&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "HR Matcher - IT企業特化型人材マッチングのアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fedfbb896-3ec9-4965-a36b-627113ee433b%2F1cb266a6-b844-4f51-84ca-b1715d5c1fde.png&w=1920&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F2173300b-23d4-4802-a2e9-9320073770e4%2Fb824f354-3564-4be5-be8f-9f47a5fffcd3.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "masao"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1aa0600b-38f1-42ed-886d-d58128d8d750%2Fa13c6f61-aae9-4823-8dd5-47c33f63d8de.jpg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "よこなり"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Fedfbb896-3ec9-4965-a36b-627113ee433b%2F7198d412-48e9-4044-ba54-faffaa2fe7d3.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://hrmatcher.neosophie.com/"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/321ec3d8-1ed0-447e-9f16-27a419bb4654 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 体験のBefore/Afterを軸に、友達にすすめる口調で書く
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 利用シーン章では「定番→意外→さらに意外」の順
+- 少なくとも1回は<table>を使う
+- 最終章までに使用までの3ステップ例を記述すること
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+- 「抽出した本文」内にある以下の文章は無視してください。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい（1章につき最大1回）。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+  "app_links_official_href":"公式サイト/ガイドURL(関連リンク)",
+  "app_follow_text":"pager直下の追い一言(まとめ/推し)",
+  "app_related_link_href":"関連記事URL(参照URLの中身のURLを記入)",
+  "app_related_ogp_alt":"関連記事OGP画像alt",
+  "app_related_ogp_src":"関連記事OGP画像URL",
+  "app_related_appname":"紹介アプリ名のみ",
+  "app_try_summary":"おすすめの試し方(1文)"
+}
