@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Apps Article Updates</title>
+  <id>https://apps-article.pages.dev/</id>
+  <link href="https://apps-article.pages.dev/"/>
+  <updated>2026-01-07T00:00:00Z</updated>
+  <entry>
+    <title>apps-article.pages.dev</title>
+    <id>https://apps-article.pages.dev/</id>
+    <link href="https://apps-article.pages.dev/"/>
+    <updated>2025-12-31T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>apps-article.pages.dev/publish/AppsArticle/20251227</title>
+    <id>https://apps-article.pages.dev/publish/AppsArticle/20251227/</id>
+    <link href="https://apps-article.pages.dev/publish/AppsArticle/20251227/"/>
+    <updated>2025-12-27T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>apps-article.pages.dev/publish/AppsArticle/20251228</title>
+    <id>https://apps-article.pages.dev/publish/AppsArticle/20251228/</id>
+    <link href="https://apps-article.pages.dev/publish/AppsArticle/20251228/"/>
+    <updated>2025-12-28T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>apps-article.pages.dev/publish/AppsArticle/20251229</title>
+    <id>https://apps-article.pages.dev/publish/AppsArticle/20251229/</id>
+    <link href="https://apps-article.pages.dev/publish/AppsArticle/20251229/"/>
+    <updated>2025-12-29T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>apps-article.pages.dev/publish/AppsArticle/20251230</title>
+    <id>https://apps-article.pages.dev/publish/AppsArticle/20251230/</id>
+    <link href="https://apps-article.pages.dev/publish/AppsArticle/20251230/"/>
+    <updated>2025-12-30T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>apps-article.pages.dev/publish/AppsArticle/20251231</title>
+    <id>https://apps-article.pages.dev/publish/AppsArticle/20251231/</id>
+    <link href="https://apps-article.pages.dev/publish/AppsArticle/20251231/"/>
+    <updated>2025-12-31T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>apps-article.pages.dev/sitemap.xml</title>
+    <id>https://apps-article.pages.dev/sitemap.xml/</id>
+    <link href="https://apps-article.pages.dev/sitemap.xml/"/>
+    <updated>2025-12-28T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>apps-article.pages.dev/publish/AppsArticle/20260104</title>
+    <id>https://apps-article.pages.dev/publish/AppsArticle/20260104/</id>
+    <link href="https://apps-article.pages.dev/publish/AppsArticle/20260104/"/>
+    <updated>2026-01-04T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>apps-article.pages.dev/publish/AppsArticle/20260105</title>
+    <id>https://apps-article.pages.dev/publish/AppsArticle/20260105/</id>
+    <link href="https://apps-article.pages.dev/publish/AppsArticle/20260105/"/>
+    <updated>2026-01-05T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>apps-article.pages.dev/publish/AppsArticle/20260106</title>
+    <id>https://apps-article.pages.dev/publish/AppsArticle/20260106/</id>
+    <link href="https://apps-article.pages.dev/publish/AppsArticle/20260106/"/>
+    <updated>2026-01-06T00:00:00Z</updated>
+  </entry>
+  <entry>
+    <title>apps-article.pages.dev/publish/AppsArticle/20260107</title>
+    <id>https://apps-article.pages.dev/publish/AppsArticle/20260107/</id>
+    <link href="https://apps-article.pages.dev/publish/AppsArticle/20260107/"/>
+    <updated>2026-01-07T00:00:00Z</updated>
+  </entry>
+</feed>
