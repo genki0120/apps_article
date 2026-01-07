@@ -1,0 +1,298 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/80cbdbd7-0c2c-49ff-a586-5d29e29c29a1
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+画面の横断を減らし、作業効率を高めるAIツール【Copipe】
+テキストをコピーしてショートカットキーを押すだけで、翻訳・要約・文章改善を実行するmacOS専用AIツール。画面の横断なしでその場で変換結果がペーストされます。定型文管理機能も搭載し、よく使うフレーズを瞬時に呼び出せます。
+Copipe
+AI
+作業効率化
+レビューする
+Visit Product
+Copipe
+AI
+作業効率化
+プロダクトの感想・意見はこのエリアに表示されます
+macOS向けAIテキスト処理ツール「Copipe」をリリースしました。画面の横断を減らし、作業効率を高めるアプリです
+Copipe
+は、日常的にメールを書いたり、論文や記事を読んだり書いたり、あるいはFigmaでのデザイン作業を行うなど、
+日常的に多くのテキストを扱うビジネスパーソンやエンジニア、デザイナー
+向けの
+macOS専用コピペAIツール
+です。
+文章の翻訳や手直しのためにブラウザや別アプリを開く「画面の切り替え」の手間をなくし、
+作業中のアプリケーションから離れることなくテキスト処理を完結させる
+ことで、集中力を維持したまま、思考を止めることなく本来の作業に没頭できます。
+主な特徴
+コピー＆ペーストをAIで拡張。ブラウザを開かず、その場で翻訳・推敲・定型文入力を完結します
+Copipeは、いつもの「コピー（⌘C）」と「ペースト（⌘V）」の間に、
+AIによる処理を挟み込むツール
+です。 テキストをコピーしてショートカットキーを押すだけで、その場で翻訳や要約を実行し、結果を貼り付けます。 翻訳のために翻訳サイトを開いたり、推敲のためにChatGPTへ移動するといった「外部サービスを経由する手間」が不要になります。思考を中断することなく、今書いているメールやドキュメントの執筆に集中し続けることができます。
+こんな方におすすめ
+メール対応やチャットの返信が多い方
+「この英文、合ってるかな？」「もう少し丁寧な言い回しにしたい」と思った時、わざわざ翻訳サイトを開いてコピペするのが面倒だと感じている方。
+ドキュメント作成を行うエンジニア/デザイナー
+仕様書や技術ドキュメントを書く際、長文の要約や箇条書きへの整形、技術用語の英訳などを、エディタから離れずにサクサク行いたい方。
+論文や記事の執筆をよくする方
+執筆した記事の推敲（誤字脱字チェックや表現の調整）や、海外文献を引用する際の翻訳などを、エディタから離れずにスムーズに行いたい方。
+主要機能
+Copipeでは、実行したい機能を「アクション」として登録し、それぞれに好きなショートカットキーを割り当てて使用します。
+（例：⌥⇧+T に英訳アクション、⌥⇧+1 にメール文章のテンプレートペーストアクションなど）
+利用できるアクションの種類は、主に以下の2つです。
+1. AIテキスト変換アクション
+コピーしたテキストをAIがバックグラウンドで処理し、結果を自動でペーストします。Gemini APIを利用しております。
+翻訳
+: 日・英・中・韓・仏・独・西の7言語に対応。
+リライト
+: 「ビジネス文書化」「文章改善」「より自然な表現に」など、目的に応じて文章を整えます。
+要約
+: 長いメールや記事の要点を短くまとめます。
+箇条書き化
+: 読みづらい長文を、構造化された箇条書きリストに変換します。
+2.定型文ペーストアクション
+AI処理だけでなく、頻繁に使用する固定のテキストもアクションとして登録できます。
+データはローカル環境に暗号化して保存
+されるため、セキュリティ面でも安心です。
+活用例: メール文の型、よく使う挨拶（「お世話になっております」など）、コードスニペット、定型レスポンス。
+クイック追加: コピーしたテキストをショートカット操作（⌥⇧+Return）だけで、その場で即座に定型文として登録する機能も備えています。
+使い方・使用フロー
+0.アクションを設定する
+: Copipeアプリ画面を開き、翻訳やリライト、定型文スニペットなどのアクションにショートカットキーを割り当てます。
+1.対象のテキストをコピーする (⌘C)
+: 変換したいテキストを選択してコピーします。
+2.ショートカットキーを押す
+(例: ⌥⇧+T) : あらかじめ設定したショートカットキーを押します。
+3.自動でペーストされる
+: AIが変換したテキスト（または定型文）が、カーソルの位置に自動的に貼り付けられます。
+0.アクションを設定する
+まず最初に、自分の作業に必要な機能を「アクション」として登録します。
+「翻訳（英訳）」や「文章改善」などの機能を選び、それぞれに自分が押しやすいショートカットキー（例: ⌥⇧+T）を割り当てて保存します。
+Copipeのアクション設定画面
+1.コピーする (⌘C)
+メール、Slack、Figma、Notion、Cursorなど、普段使っているアプリケーション上で、変換したいテキストを選択し、コピー（⌘+C）します。（定型文ペーストの実行の際は不要）
+Figma上でテキストをコピー
+2.ショートカットキーを押す
+テキストをコピーした状態で、Step 0で設定したショートカットキー（例: ⌥⇧+T）を押します。
+翻訳サイトを開いたり、別のウィンドウを呼び出す必要はありません。今の画面のまま待機します。
+ショートカットキーで翻訳アクションを実行
+3.自動でペーストされる
+AIによる処理が完了すると、変換されたテキストがカーソル位置に自動的にペーストされます。
+ブラウザを行き来することなく、思考を止めることなく、そのまま次の作業に取り掛かることができます。
+翻訳結果が自動でペースト
+料金プラン
+Copipeのプラン表
+Free プラン（無料）: AI処理は月30回まで。定型文ペーストは無制限。
+Plus プラン（月額 $7.80,）: AI処理は月300回まで。全ての機能が無制限。
+Q&A
+Q.コピーした内容や設定した定型文が勝手に監視/送信されることはありませんか？
+A.いいえ、ありません。
+Copipeは、ユーザーがショートカットキーを押して「AI変換アクション」を実行した瞬間のみ、対象のテキストをAI処理のためにサーバーへ送信します。それ以外のタイミングで、クリップボードの中身を監視したり送信したりすることはありません。学習データとして利用されることもありません。
+Q.登録した定型文（メール文の型など）の管理はどうなっていますか？
+A.すべてローカル環境に保存されます。
+登録された定型文や設定データは、お使いのMac内に暗号化された状態（AES-256）で保存されます。外部サーバーに定型文データが送信・保存されることはありません。
+Q.AI機能では具体的にどのような変換ができますか？
+A.ショートカットキーを設定し、押すだけで、これらの処理がその場で実行されます。
+翻訳
+（日・英・中・韓・仏・独・西）、
+文章改善
+、
+ビジネス文書化
+、
+要約
+、
+箇条書き化
+Q.Windows版やスマホ版はありますか？
+A.現在はmacOS版のみの提供です。
+WindowsやiOS/Android版の提供については未定ですが、今後の要望に応じて検討してまいります。
+ダウンロード
+Apple Silicon（M1以降）を搭載したMacに対応しています。
+Copipe 公式サイト :
+Explore More
+関連記事はありません。
+Trends
+朝活習慣アプリ Habin
+Taka@個人開発
+2026年1月5日
+超簡単パズル「SwapPOP」｜数字をつなぐ超シンプルパズルゲーム
+n日後にアプリリリースするエンジニア
+2026年1月6日
+コーヒーをもっと楽しく、もっと自由に。Beanvasの使い心地が新しくなりました！
+岩田岳志
+2026年1月4日
+Low Light Video Enhancer - 暗い動画をAI加工で明るく
+Ray
+2026年1月5日
+Plump - 癒されたり、イラッとしたり
+Ray
+2026年1月6日
+Google が無料公開した Startup Technical Guide AI Agents が神
+コムテ
+2026年1月5日
+馬券記録帳 - 使いやすさNo1な競馬の収支管理アプリ
+umacho
+2026年1月5日
+tatsuya aihara
+大学院で広義なデザインを学びつつ、UIやAIについての研究を行っています。
+また個人では、Webサイトやデスクトップアプリ、スマホアプリのデザインから実装まで行なっています。
+Student
+UI設計
+体験設計
+Follow
+{
+  "final_url": "https://izanami.dev/post/80cbdbd7-0c2c-49ff-a586-5d29e29c29a1",
+  "og_image": "https://izanami.dev/post/80cbdbd7-0c2c-49ff-a586-5d29e29c29a1/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F130b0570-956f-48cf-b813-327775d45146%2F767bc75e-d822-4de4-aadb-5642beadae7b.png&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "画面の横断を減らし、作業効率を高めるAIツール【Copipe】のアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F130b0570-956f-48cf-b813-327775d45146%2F2143ebda-6aa9-4d8d-a324-4588e95ef882.png&w=1920&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/130b0570-956f-48cf-b813-327775d45146/dc244c03-48f7-49fb-8121-8e43b76bf254.png",
+      "alt": "Copipeのアクション設定画面"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/130b0570-956f-48cf-b813-327775d45146/87dcea36-0e74-4649-aeda-5ad10155508e.png",
+      "alt": "Figma上でテキストをコピーしている様子"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/130b0570-956f-48cf-b813-327775d45146/1fe81c65-28f9-4e7c-bb91-f674ba0b5bca.png",
+      "alt": "Figma上で翻訳アクションを実行している様子"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/130b0570-956f-48cf-b813-327775d45146/fc3e0c2b-b64b-4d21-a8e6-97cd6f5b5b79.png",
+      "alt": "Figma上でテキストが翻訳された様子"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/130b0570-956f-48cf-b813-327775d45146/85a96c85-f2e3-4c77-a2b9-552bc45f591f.png",
+      "alt": "Copipeの料金表"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F4c2608ef-c25c-4f59-8754-3c7d29becec8%2F1baf0c82-465a-450f-8572-88a9b921b9d1.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "n日後にアプリリリースするエンジニア"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocIASWpvkVDJ3NvuQ6pMYwMJEzLTM1e15iE7B3x-uMlb5xMbYw%3Ds96-c&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "岩田岳志"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocLLkVFxWizs-YYDPvra-WWs1lgVbV_20Z0CKwnfqDGCfvnOrtg%3Ds96-c&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "Ray"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F2ba44063-434b-48fc-aaa4-7c269f54196a%2Fdacceda1-2db3-4e5c-b07d-d87f8d63f403.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "umacho"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F130b0570-956f-48cf-b813-327775d45146%2Fa34f5e25-ce4b-4821-a143-bb99dbc55a9e.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://copipe-lp.netlify.app/"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/80cbdbd7-0c2c-49ff-a586-5d29e29c29a1 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 体験のBefore/Afterを軸に、友達にすすめる口調で書く
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 利用シーン章では「定番→意外→さらに意外」の順
+- 少なくとも1回は<table>を使う
+- 最終章までに使用までの3ステップ例を記述すること
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+- 「抽出した本文」内にある以下の文章は無視してください。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい（1章につき最大1回）。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+  "app_links_official_href":"公式サイト/ガイドURL(関連リンク)",
+  "app_follow_text":"pager直下の追い一言(まとめ/推し)",
+  "app_related_link_href":"関連記事URL(参照URLの中身のURLを記入)",
+  "app_related_ogp_alt":"関連記事OGP画像alt",
+  "app_related_ogp_src":"関連記事OGP画像URL",
+  "app_related_appname":"紹介アプリ名のみ",
+  "app_try_summary":"おすすめの試し方(1文)"
+}
