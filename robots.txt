@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://apps-article.pages.dev/sitemap2.xml
+Sitemap: https://apps-article.pages.dev/sitemap.xml
