@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>NijiCAD - 軽快に“描く”へ集中できる2D CAD</title>
+<meta content="CADって、線を引く前に気持ちが削られる瞬間がある。NijiCADはその摩擦を減らして、作図の手を止めないための軽量2D CADです。" id="app_meta_description" name="description"/>
+<meta content="index,follow" name="robots">
+<script id="app_schema_article_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "NijiCAD - 軽快に“描く”へ集中できる2D CAD", "description": "CADって、線を引く前に気持ちが削られる瞬間がある。NijiCADはその摩擦を減らして、作図の手を止めないための軽量2D CADです。", "datePublished": "2025-12-18", "dateModified": "2025-12-18", "author": {"@type": "Organization", "name": "神アプ！編集部"}, "publisher": {"@type": "Organization", "name": "神アプ！"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://apps-article.pages.dev/publish/AppsArticle/20260109/"}, "url": "https://apps-article.pages.dev/publish/AppsArticle/20260109/", "image": ["https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F567ea01a-8f8d-45f3-ada7-958396907cd5%2F64b6cb45-04db-48fa-9559-1b7de932abc1.png&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k"]}</script>
+<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://apps-article.pages.dev/"}, {"@type": "ListItem", "position": 2, "name": "NijiCAD紹介", "item": "https://apps-article.pages.dev/publish/AppsArticle/20260109/"}]}</script>
+<meta content="article" id="app_og_type" property="og:type"/>
+<meta content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" property="og:site_name"/>
+<meta content="NijiCAD - 軽快に“描く”へ集中できる2D CAD" id="app_og_title" property="og:title"/>
+<meta content="CADって、線を引く前に気持ちが削られる瞬間がある。NijiCADはその摩擦を減らして、作図の手を止めないための軽量2D CADです。" id="app_og_description" property="og:description"/>
+<meta content="https://apps-article.pages.dev/publish/AppsArticle/20260109/" id="app_og_url" property="og:url"/>
+<meta content="https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F567ea01a-8f8d-45f3-ada7-958396907cd5%2F64b6cb45-04db-48fa-9559-1b7de932abc1.png&amp;w=128&amp;q=75&amp;dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k" id="app_og_image" property="og:image"/>
+<meta content="summary_large_image" id="app_tw_card" name="twitter:card"/>
+<meta content="NijiCAD - 軽快に“描く”へ集中できる2D CAD" id="app_tw_title" name="twitter:title"/>
+<meta content="CADって、線を引く前に気持ちが削られる瞬間がある。NijiCADはその摩擦を減らして、作図の手を止めないための軽量2D CADです。" id="app_tw_description" name="twitter:description"/>
+<meta content="https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F567ea01a-8f8d-45f3-ada7-958396907cd5%2F64b6cb45-04db-48fa-9559-1b7de932abc1.png&amp;w=128&amp;q=75&amp;dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k" id="app_tw_image" name="twitter:image"/>
+<!-- favicon -->
+<link href="/asset/favicon.ico" rel="icon" sizes="any"/>
+<link href="/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<!-- iOS -->
+<link href="/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- PWA (任意) -->
+<link href="/asset/site.webmanifest" rel="manifest"/>
+<meta content="#ffffff" name="theme-color"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36H614G1X5');
+</script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .controls{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    select.lang{
+      font-size:14px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(229,231,235,.9);
+      background:#fff;
+      color:#111;
+      box-shadow: 0 6px 18px rgba(17,24,39,.06);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+    /* ===== Links block ===== */
+    .links-block{
+      margin: 18px 0 6px;
+      font-size: 16px;
+      max-inline-size: 72ch;
+    }
+    .links-block a{
+      display:inline-block;
+      margin: 10px 0;
+      color: var(--pink);
+      font-weight: 900;
+    }
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+    /* ===== Follow text & banners ===== */
+    .follow-main{
+      margin: 18px 0 8px;
+      font-weight: 950;
+      font-size: 18px;
+      color:#0b0f1a;
+      max-inline-size: 72ch;
+      line-height: 1.7;
+    }
+
+    .big-banner{
+      margin-top: 16px;
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .tile{
+      background:#fff;
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px;
+      text-align:center;
+      font-size: 12px;
+    }
+    .tile:last-child{ border-right:none; }
+    .tile img{
+      width:100%;
+      height:120px;
+      object-fit:cover;
+      border-radius: 12px;
+      display:block;
+      margin-bottom:10px;
+      border:1px solid rgba(229,231,235,.9);
+    }
+    .tile .money{
+      color:#16a34a;
+      font-weight: 950;
+      margin-top: 6px;
+    }
+
+    .yellow-pick{
+      margin-top: 14px;
+      background: rgba(255,244,163,.85);
+      border: 1px solid rgba(240,224,138,.95);
+      padding: 14px 14px;
+      border-radius: 16px;
+      font-weight: 900;
+      line-height: 1.7;
+      max-inline-size: 72ch;
+      box-shadow: 0 14px 36px rgba(17,24,39,.08);
+    }
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1100px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody,
+      .links-block,
+      .follow-main,
+      .yellow-pick{
+        max-inline-size: 100%;
+      }
+      .big-banner{ grid-template-columns: 1fr; }
+      .tile{ border-right:none; border-bottom: 1px solid rgba(229,231,235,.9); }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</meta></head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">～個人開発の便利アプリ紹介～</div>
+<p class="note">PR &amp; AD: Advertisements from Google etc. Author:神アプ！編集部</p>
+</div>
+<div class="controls">
+<select aria-label="Language" class="lang">
+<option>日本語</option>
+<option>English</option>
+<option>Deutsch</option>
+<option>Français</option>
+</select>
+</div>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<span class="pill">PR</span>
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='http://apps-article.pages.dev'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">NijiCAD紹介</div>
+</div>
+<!-- 5：記事タイトル重複を解消（このH1のみ） -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">NijiCAD - 軽快に“描く”へ集中できる2D CAD</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2025-12-18</div>
+<!-- 4：公式サイトリンクを記事タイトル直後にも追加 -->
+<a class="cta" href="https://nijicad.com" id="app_official_cta" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                  アプリ公式サイトはこちら
+                </a>
+</div>
+</header>
+<!-- [No.3] appsite_article_top_hero_v1 -->
+<div aria-label="ad-hero" class="ad-wrap ad-hero">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4600335308" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+</div>
+<div class="article">
+<!-- JSON本文（章/tableなど全部ここに入る） -->
+<div id="articleBody">
+<!-- 5：重複していたh1を削除（コンテンツは本文以降そのまま） -->
+<div class="lead">
+<p id="app_lead_text">CADって、線を引く前に気持ちが削られる瞬間がある。NijiCADはその摩擦を減らして、作図の手を止めないための軽量2D CADです。</p>
+<img alt="NijiCAD ロゴ" id="app_lead_logo" src="https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F567ea01a-8f8d-45f3-ada7-958396907cd5%2F64b6cb45-04db-48fa-9559-1b7de932abc1.png&amp;w=128&amp;q=75&amp;dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k"/>
+</div>
+<h2 id="app_h2_1">第1章：まず“線が引ける”までが速い。だから続く</h2>
+<div class="section-body" id="app_body_1"><figure><img alt="NijiCAD" src="https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F567ea01a-8f8d-45f3-ada7-958396907cd5%2F946a57a2-e876-485a-ae0f-aa53d812049d.png&amp;w=1920&amp;q=75&amp;dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k"/><figcaption>「NijiCAD」</figcaption></figure>
+<p>“描く前”で疲れるの、地味に効くんだよね。</p>
+<p>NijiCADは、軽量でモダンな2D CAD。しかも無料で使えるのが大きい。コンセプトは「Focus on Drawing」で、特定業界に寄せすぎない作図環境として設計されています。建築でも、機械でも、資料用の図でも、まずは線と形を迷わず置いていける感覚がある。</p>
+<p class="em">作図のテンポを落とす原因を、最初に削ってくれるCADです。</p>
+<div class="soft-box"><strong>Before：</strong>起動してから「どこを触ればいい？」で手が止まり、結局いつもの環境に戻ってしまう。</div>
+<div class="soft-box"><strong>After：</strong>描くことに意識が残ったまま、すぐに線・寸法・レイヤー操作へ入れる。</div>
+<p>実務の図面はもちろん、技術スケッチや図解みたいな“少しだけCADが要る”場面でも役に立つ。いちいち重装備にならないから、作業の心理的なハードルが下がるんだ。</p>
+<p>ちなみにシリーズは2025年12月18日にv1.2.3へ更新されています。新しい版が継続して積み上がっているのも、試す理由になる。</p>
+<p>詳しい入口は公式サイトから。<a href="https://nijicad.com">https://nijicad.com</a></p></div>
+<hr/>
+<h2 id="app_h2_2">第2章：コマンド派も、UI派も。どっちの“手癖”も裏切らない</h2>
+<div class="section-body" id="app_body_2"><p>CADの好みって、ほぼ手癖だと思う。</p>
+<p>NijiCADのうまいところは、昔ながらのCADに慣れた人が安心するコマンドライン操作と、初めてでも迷いにくいグラフィカルなUIを同居させている点。どちらかを押し付けないから、「この操作だけ合わない…」で離脱しにくい。</p>
+<p>さらにユーザーインターフェースとコマンドラインが多言語対応。日本語・英語・フランス語・ドイツ語・スペイン語・中国語（簡体字/繁体字）・韓国語の8言語をサポートしています。チームに海外メンバーがいるとき、操作説明が“通じる言葉”で揃うのはかなり助かる。</p>
+<p class="em">人に合わせるんじゃなく、操作の流れに合わせてくれるのが気持ちいい。</p>
+<div class="soft-box"><strong>Before：</strong>ショートカットや操作体系の違いに引っかかって、図面より手順の確認に時間を取られる。</div>
+<div class="soft-box"><strong>After：</strong>コマンドでもUIでも、慣れた入り方で作図に合流できる。</div>
+<p>レイヤー管理、寸法、ハッチング、ポリラインなど、実務で「結局これが要る」が一通り揃っているのもポイント。派手さより、日常の図面が破綻しない構成。</p>
+<p>DXFの入出力とJWW入力にも対応しているので、既存の図面資産を活かしやすい。ゼロから環境を作り直すというより、“今あるものをつなぐ”感覚で導入できます。</p>
+<p>私なら友達にはこう言う。まずは手元のDXFを開いてみて、違和感が少ないかで判断しようって。</p></div>
+<hr/>
+<h2 id="app_h2_3">第3章：使いどころは「定番→意外→さらに意外」で増えていく</h2>
+<div class="section-body" id="app_body_3"><p>CADって、実は図面以外の消費量が多い。</p>
+<p>定番は、当然“図面制作”。レイヤー、寸法、ハッチング、ポリラインが揃っているから、必要な要素を置いて整える流れが作りやすい。</p>
+<p>次に意外と効くのが、“技術スケッチや手順図”。文章だけだと伝わらない形状や寸法感を、サッと線で共有できる。ここで多言語対応がじわっと効いてくる。</p>
+<p>さらに意外なのが、“ブラウザでの即席作図”。Web版はインストール不要で、アカウント登録やログインなしに開始できる。しかも図面データはサーバーへ送られず、処理はすべてブラウザ内で完結します。会社PCでソフト導入が難しいときでも、「一回だけ描きたい」を救ってくれる。</p>
+<p class="em">用途が増えるほど、軽さと手軽さがそのまま価値になる。</p>
+<div class="soft-box"><strong>Before：</strong>「図を描く」たびに環境を整え直し、結局スクショと手書きで妥協する。</div>
+<div class="soft-box"><strong>After：</strong>定番作業も、説明用の図も、必要な場所で同じ感覚で描ける。</div>
+<table>
+<thead>
+<tr><th>利用シーン（順番）</th><th>ありがちな詰まり</th><th>NijiCADでの変化</th></tr>
+</thead>
+<tbody>
+<tr><td>定番：図面制作</td><td>必要機能が足りず別ツールに逃げる</td><td>レイヤー/寸法/ハッチング/ポリラインで実務の筋が通る</td></tr>
+<tr><td>意外：技術スケッチ・図解</td><td>言語や操作説明で共有が止まる</td><td>UI・コマンドが8言語対応で“伝える”が速い</td></tr>
+<tr><td>さらに意外：ブラウザで即席</td><td>インストール・ログインが壁になる</td><td>Web版は開いてすぐ開始、データはサーバーに送られない</td></tr>
+</tbody>
+</table>
+<p>こういう“軽い用途の勝ち筋”があるから、メインCADの横に置いても邪魔にならない。むしろ出番が増える。</p></div>
+<hr/>
+<h2 id="app_h2_4">第4章：Windows版・Web版・Pro版。迷ったらこの選び方でいこう</h2>
+<div class="section-body" id="app_body_4"><p>同じNijiCADでも、入口が複数あるのがいい。</p>
+<p>Windows版は、実務で腰を据えて使うときの基準。DXF入出力やJWW入力など、既存資産を扱いながら描けるのが強いです。Web版は、ブラウザで即起動できるのが武器。ログイン不要で、描画データはサーバーに送られずブラウザ内処理なので、まず試すならこれがいちばん早い。</p>
+<p>そしてPro版は、上級の要望に応えるためのプレミアムエディション。標準版の全機能に加えて、Pro専用カラーを採用し、長時間作業でも没入感を高めて疲労を減らす設計。さらに今後追加される高度な作図機能や自動化ツールはProを優先して実装される予定で、ロードマップに沿って個別ニーズに応える機能も順次追加されていきます。</p>
+<p class="em">「いま必要な軽さ」で入って、「もっと快適」に伸ばせるのがうれしい。</p>
+<div class="soft-box"><strong>Before：</strong>試したいだけなのに導入が重く、結局“未検証のまま”時間が過ぎる。</div>
+<div class="soft-box"><strong>After：</strong>Webで即試す→Windowsで資産を扱う→必要ならProで快適さを上げる、が自然にできる。</div>
+<p>ここで3ステップ例を置いておくね。</p>
+<p>ステップ1：まずWeb版をブラウザで開いて、ログインなしで一枚描いてみる。</p>
+<p>ステップ2：操作感が合ったらWindows版へ移り、DXFの入出力やJWW入力で手元の図面を読み込んでみる。</p>
+<p>ステップ3：長時間作業が増えてきたら、Pro版のカラー設計や今後の先行機能を狙って環境をアップグレードする。</p>
+<p>注意点も正直に。Web版の日本語フォントは標準で「BIZ UDGothic」が適用されます。OSに入っている特定フォントを使いたいなら、Windows版を選ぶのが安全。</p></div>
+<hr/>
+<h2 id="app_h2_5">第5章：進化と安定の両立。“毎日使う道具”としての約束がある</h2>
+<div class="section-body" id="app_body_5"><p>道具は、昨日と同じように動くことがいちばん強い。</p>
+<p>NijiCADは、ユーザーのフィードバックを大切にしながら、より便利で強力なツールへ進化させていく方針を明言しています。同時に、日々の作業でストレスなく使い続けられるよう、アプリの安定性を開発の最優先事項にするとも書かれている。ここが軽くない。</p>
+<p>Pro版では、将来の高度な作図機能や自動化ツールを優先的に取り込み、個別ニーズに沿う機能もロードマップに基づいて順次追加される予定。つまり「いま快適」だけじゃなく、「これから増える困りごと」にも投資している感じがある。</p>
+<p class="em">“進化するのに壊れない”を約束してくれるCADは、長く付き合える。</p>
+<div class="soft-box"><strong>Before：</strong>アップデートが怖くて止めるか、止めた結果つらさを抱え続けるかの二択になる。</div>
+<div class="soft-box"><strong>After：</strong>安心して更新しつつ、必要なときに新機能の恩恵も受け取れる。</div>
+<p>開発者は図面制作、建築設計・施工、CADメーカーの経験を重ねてきたと記しています。現場を知っている人が“自分の手でCADを作りたい”と続けてきた夢を、今まさに形にしている。その背景を知ると、フィードバックを投げたくなるし、使い続ける理由にもなる。</p>
+<p>気になったら公式サイトから覗いてみて。<a href="https://nijicad.com">https://nijicad.com</a></p>
+<p>要望や会話の場が欲しいなら、コミュニティのディスカッションも入口になる。<a href="https://github.com/izanami-dev/izanami-community/discussions">https://github.com/izanami-dev/izanami-community/discussions</a></p></div>
+</div>
+<!-- 1行強調（テンプレの.emを活かす） -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">“描くこと”に集中したいなら、まずNijiCADで一枚だけ線を引いてみて。</span>
+</p>
+<!-- [No.4] appsite_article_links_block_v1 -->
+<div class="links-block" id="linksBlock" style="display:block;">
+<div id="linksHeading" style="font-weight:950;color:#0f172a;">関連リンク</div>
+<div style="margin:10px 0;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="6436801784" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+</div>
+<div id="linksList">
+<a href="https://nijicad.com" id="app_links_official" rel="noopener noreferrer" target="_blank">公式サイトのガイド</a>
+</div>
+</div>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://apps-article.pages.dev/publish/AppsArticle/20260108/" id="pagerPrev">前へ</a>
+<a class="pbtn" href="#" id="pagerHome" onclick="location.reload(); return false;">このページ</a>
+<a class="pbtn" href="https://apps-article.pages.dev/publish/AppsArticle/20260110/" id="pagerNext">次へ</a>
+</div>
+<!-- Follow text -->
+<div class="follow-main" id="followMain">
+<span id="app_follow_text">Webで即試せて、Windowsで資産も扱えて、必要ならProで快適さまで伸ばせる。これ、勧めやすい。</span>
+</div>
+<!-- [No.6] appsite_article_banner_grid_v1 -->
+<div aria-label="banner-grid" class="big-banner" id="bigBanner" style="display:grid;">
+<div aria-label="ad-tile" class="tile">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3998340709" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+</div>
+<div class="tile">
+<a href="https://github.com/izanami-dev/izanami-community/discussions" id="app_related_link" rel="noopener noreferrer" target="_blank">
+<img alt="NijiCAD - Cross-platform 2D CAD" id="app_related_ogp" src="https://izanami.dev/post/2ae37a79-5af9-47a0-b854-8deab09d3217/opengraph-image-1umokf?5589478d64c13f8a"/>
+</a>
+<div style="font-weight:950;color:#0f172a;line-height:1.45;">
+<span id="app_related_appname">NijiCAD</span>の関連ページを見る
+                  </div>
+<div class="money">完全無料</div>
+</div>
+</div>
+<!-- [No.5] appsite_article_yellow_pick_v1 -->
+<div class="yellow-pick" id="yellowPick" style="display:block;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3311126758" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+<p><strong>おすすめの試し方：</strong><span id="app_try_summary">まずはWeb版を開いて、ログインなしで5分だけ描いてみるのがおすすめです。</span></p>
+</div>
+<!-- 9の都合で右側から外した 336x280広告（数は維持：本文側へ移動） -->
+<div aria-label="ad-336x280" class="ad-wrap ad-336" style="padding: 16px 0 8px;">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="1937678796" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- Campaign / Articles（ダミー） -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="#" onclick="return false;">More campaigns →</a>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb1" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">無料プラグインまとめ（ダミー）</div>
+<div class="c-desc">説明文がここに入ります。説明文がここに入ります。</div>
+<div class="tagline">#DTM #Plugin</div>
+</div>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb2" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">シンセ音作りの基本（ダミー）</div>
+<div class="c-desc">フィルター、エンベロープ、LFOなどの基礎をまとめる想定。</div>
+<div class="tagline">#Synth #SoundDesign</div>
+</div>
+</div>
+<div class="campaign">
+<div class="thumb">
+<img alt="thumb3" src='data:image/svg+xml;utf8,&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="112"&gt;&lt;rect width="100%25" height="100%25" fill="%23dcdcdc"/&gt;&lt;text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" fill="%23777"&gt;IMG&lt;/text&gt;&lt;/svg&gt;'/>
+</div>
+<div>
+<div class="c-title">ミックス時短テンプレ（ダミー）</div>
+<div class="c-desc">短い説明文。短い説明文。短い説明文。</div>
+<div class="tagline">#Mix #Workflow</div>
+</div>
+</div>
+</section>
+</section>
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<!-- 9：Xフォロー → 広告3つ → 人気記事 の順 -->
+<div class="side-stack">
+<!-- X follow -->
+<div class="side-card follow-side">
+<h3>Follow @アカウント名</h3>
+<a class="xbtn" href="アカウントURL" onclick="return false;">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+              アカウント説明テキスト
+            </div>
+</div>
+<!-- Ads x3 (300x250) -->
+<div class="side-card">
+<div aria-label="ad-stack" class="ad-stack">
+<div aria-label="ad-1" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4536578517" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+<div aria-label="ad-2" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="4624208422" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+<div aria-label="ad-3" class="ad-300">
+<ins class="adsbygoogle ad-slot" data-ad-client="ca-pub-2305117750688740" data-ad-format="auto" data-ad-slot="3250760467" data-full-width-responsive="true" style="display:block"></ins>
+<script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+</div>
+</div>
+</div>
+<!-- Popular -->
+<div class="side-card popular">
+<h3>人気の記事</h3>
+<div class="popular-card">
+<a aria-label="人気記事へ移動" href="https://apps-article.pages.dev/publish/AppsArticle/20251227/" rel="noopener noreferrer" target="_self">
+<img alt="ふるさと納税ダッシュボード｜今年あといくら寄付できる？を即答できる無料Webサービス" src="https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/16c10a4b-3574-4fa7-a1c4-9dfb80cd9e0f/0ea03648-baa7-4fe1-ad15-05fdd67d2be4.png"/>
+</a>
+<div class="ptext">
+    【ふるさと納税ダッシュボード】<br/>今年あといくら寄付できる？を即答できる無料Webサービス
+  </div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body>
+</html>
