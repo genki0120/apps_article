@@ -2,7 +2,7 @@
 以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
 
 参照URL：
-https://izanami.dev/post/e0a51aae-9b70-4233-8988-c0c5acfbc4ee
+https://izanami.dev/post/e94f0f0c-b471-413d-a369-6227b1c1a05e
 
 以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
 Log in
@@ -14,99 +14,68 @@ Overview
 について
 Vision
 Launched
-Timekeeper-世界で最も強力なスマホ制限アプリ-
-Android専用のアプリを開発。他のアプリと何が違うのか。どういう機能を持っているのか。どうやって強力な制限を実現しているのかを解説。
-スマホ制限
-スマホ依存
+スクショメモ - スクリーンショットを、もう迷子にしない。
+iPhoneでスクリーンショットを管理するアプリです。
+個人開発
+iOS
 アプリ
 レビューする
 Visit Product
-スマホ制限
-スマホ依存
+個人開発
+iOS
 アプリ
 プロダクトの感想・意見はこのエリアに表示されます
-Timekeeper — 手放せスマホ、取り戻せ人生。
-「減らしたい」のに、気づけばまた X / YouTube / TikTok を開いてしまう。
-スクリーンタイム系は、自分で解除して終わる。
-Timekeeper は、意思ではなく
-仕組み（監視＋強制ロック）
-で、時間を溶かすアプリの利用を止めるための
-Androidアプリ
-です。
-できること（機能）
-監視対象アプリを選んで登録
-（X / YouTube / TikTok / ゲーム / ブラウザ など）
-アプリごとに
-現在の使用時間（初期値）
-目標使用時間（ゴール）
-を設定
-毎日0時に「今日使ってよい時間」を1分ずつ自動で短縮
-（目標に到達するまで）
-その日の上限を超えた瞬間、対象アプリを強制終了 → ホーム画面へ
-（実質ロック）
-ダッシュボードで
-「使用済み分数 / 今日の上限」
-を表示（例：40 / 100）
-ルール（仕様）
-「現在の使用時間（初期値）」は
-一度決めたら変更不可
-「目標時間」は
-短くする方向にしか変更不可
-監視対象アプリが前面にある間、使用時間を加算し、上限超過で即ロック
-デイパス（どうしてもの日だけ解除）
-上限を超えた後でも、
-デイパス（1日アンロック）
-を購入すると、その日だけ制限なしで使えます。
-ただし、デイパスは
-使うたびに価格が2倍で自動値上がり
-（初回 2ドル → 4ドル → 8ドル …）の設計です。
-配布形態・ライセンス
-Android専用
-Google Play ではなくストア外配布（野良配布）
-ライセンスは
-買い切り（約100ドル / ¥10,000）
-の設計
-逃げ道対策（監視の強制力）
-常駐サービス停止や権限OFFなど、監視が途切れた事実を記録
-監視を戻したタイミングで、制限時間や積み上げなどの状態を
-初期化（リセット）
-する設計
-プライバシー
-取得するのは
-「前面アプリが何か」と「何分続いたか」
-のみ。
-検索内容や閲覧内容など
-中身にはアクセスしない
-設計です。
-メールアドレス登録不要（端末内の匿名識別）、詳細データは端末内で完結。
-サーバー側に送るのはライセンスや課金に必要な最小限の情報で、決済は Stripe を利用します。
-公式ページ
+スクリーンショットが溜まる一方のあなたへ。「スクショメモ」でスマホの中をスッキリ整理しませんか？
+「あ、これ後で見よう」
+そう思って撮ったスクリーンショット。
+気づけばカメラロールがスクショだらけになっていて、肝心な時に「あの画像、どこだっけ……？」と探し回った経験はありませんか？
+レシピ、買い物リスト、行きたいカフェの地図、仕事の資料。
+便利なはずのスクショが、整理できずに埋もれてしまうのはもったいないですよね。
+そんな悩みを解決するために、**「スクショメモ」**というアプリを作りました。
+▶ アプリページはこちら
+スクショを「迷子」にさせない4つのポイント
+1. 撮ったらすぐに「共有」から保存
+写真アプリでスクショを開き、共有メニューから「スクショメモ」を選ぶだけ。アプリをいちいち開かなくても、その場ですぐに保存できます。もちろん、アプリ内のボタンからまとめて追加も可能です。
+2. 5つのタグで直感的に仕分け
+「レシピ」「買い物」「場所」「仕事」「その他」。
+あえてタグを5つに絞ることで、迷わず直感的に整理できるようにしました。複数のタグを付けることもできるので、自分なりのルールで管理できます。
+3. 「あとで読む」機能で、見逃しゼロへ
+とりあえず保存したけれど、そのまま忘れてしまう……。そんな時は「あとで読む」設定を。毎週日曜日にリマインド通知が届くので、週末にまとめて見返す習慣が作れます。
+4. 検索機能で、一瞬で見つかる
+タイトルやタグ、自分で書いたメモの内容から検索できます。「あの時のあの情報」が、数秒であなたの手元に。
+こんな方にぜひ使ってほしいです
+カメラロールがスクショで埋め尽くされている方
+料理のレシピをスクショで管理している方
+仕事のメモや資料をとりあえずスクショで撮る癖がある方
+「後で確認しよう」と思って、結局忘れてしまう方
+スマホの中が整うと、心も少し軽くなります。
+「スクショメモ」で、あなたのデジタルライフをもっと快適にしてみませんか？
+ダウンロード
+▶ アプリページはこちら
+最後まで読んでいただき、ありがとうございました。
 Explore More
 関連記事はありません。
 Trends
-朝活習慣アプリ Habin
-Taka@個人開発
-2026年1月5日
-Google が無料公開した Startup Technical Guide AI Agents が神
+AI コーディングエージェントでデザイン再現精度を上げる 7 つのテクニック
 コムテ
-2026年1月5日
-Low Light Video Enhancer - 暗い動画をAI加工で明るく
-Ray
-2026年1月5日
-馬券記録帳 - 使いやすさNo1な競馬の収支管理アプリ
-umacho
-2026年1月5日
-2026年、AI界隈はどこへ向かうのか？——18の予想から読み解く「汎用エージェント」の真価
-masao
-2026年1月4日
-ニート起業家
-大学を中退してニートになりました。その後成り行きで起業しています。
-LLM Unemployed
-無し
+2026年1月9日
+ミノウォーズ
+カノイ
+2026年1月8日
+医療費管理-Medica-
+papico
+2026年1月7日
+Taka@個人開発
+朝活でアプリを作っています。Xもやっているので繋がれたら嬉しいです😊
+ご意見ご要望はお気軽にお願いします。
+Individual Developer
+TypeScript
+React
+Next.js
 Follow
 {
-  "final_url": "https://izanami.dev/post/e0a51aae-9b70-4233-8988-c0c5acfbc4ee",
-  "og_image": "https://izanami.dev/post/e0a51aae-9b70-4233-8988-c0c5acfbc4ee/opengraph-image-1umokf?5589478d64c13f8a",
+  "final_url": "https://izanami.dev/post/e94f0f0c-b471-413d-a369-6227b1c1a05e",
+  "og_image": "https://izanami.dev/post/e94f0f0c-b471-413d-a369-6227b1c1a05e/opengraph-image-1umokf?5589478d64c13f8a",
   "favicon": "https://izanami.dev/favicon.ico",
   "images": [
     {
@@ -114,35 +83,27 @@ Follow
       "alt": "logo"
     },
     {
-      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F7932d585-49aa-4cf4-9ba1-abe180430725%2F3eab30ee-19f2-4e69-ab6e-53a9651e4073.png&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
-      "alt": "Timekeeper-世界で最も強力なスマホ制限アプリ-のアイコン"
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F1dabbe88-a58d-460f-a8d3-95dc46526ad2.jpg&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "スクショメモ - スクリーンショットを、もう迷子にしない。のアイコン"
     },
     {
-      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F7932d585-49aa-4cf4-9ba1-abe180430725%2F8482642b-bca0-47bc-8a06-64b1b1306cd0.png&w=1920&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F82d87569-651a-4394-abb8-9113416ef86b.jpg&w=1920&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
       "alt": "アイキャッチ画像"
-    },
-    {
-      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
-      "alt": "Taka@個人開発"
     },
     {
       "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
       "alt": "コムテ"
     },
     {
-      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocLLkVFxWizs-YYDPvra-WWs1lgVbV_20Z0CKwnfqDGCfvnOrtg%3Ds96-c&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
-      "alt": "Ray"
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocLbX0K2Hk8MmaYvCBpRxdUz-E6BilJjP_na6M7iA-unQrmytdGRAg%3Ds96-c&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "カノイ"
     },
     {
-      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F2ba44063-434b-48fc-aaa4-7c269f54196a%2Fdacceda1-2db3-4e5c-b07d-d87f8d63f403.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
-      "alt": "umacho"
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1f413015-951a-4f67-a54e-131efadf2d6d%2F384cd4d6-ba28-4386-95b7-d613cfb0721d.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "papico"
     },
     {
-      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F2173300b-23d4-4802-a2e9-9320073770e4%2Fb824f354-3564-4be5-be8f-9f47a5fffcd3.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
-      "alt": "masao"
-    },
-    {
-      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F7932d585-49aa-4cf4-9ba1-abe180430725%2F21568a00-1097-4bfc-9d0a-6946d9372953.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
       "alt": "アイコン"
     }
   ],
@@ -157,7 +118,7 @@ Follow
     },
     {
       "label": "Visit Product",
-      "url": "https://v0-timekeeper.vercel.app/"
+      "url": "https://apps.apple.com/jp/app/スクショメモ-スクリーンショット整理/id6756873371"
     }
   ]
 }
@@ -166,7 +127,7 @@ Follow
 【画像・リンクの反映ルール（重要）】
 - linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
 - bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
-- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/e0a51aae-9b70-4233-8988-c0c5acfbc4ee にする
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/e94f0f0c-b471-413d-a369-6227b1c1a05e にする
 - article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
 PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
 

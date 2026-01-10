@@ -59,21 +59,6 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://apps-article.pages.dev/2025/12/</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://apps-article.pages.dev/2026/01/</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://apps-article.pages.dev/2026/02/</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://apps-article.pages.dev/about</loc>
   <lastmod>2026-01-07T13:30:11+00:00</lastmod>
   <priority>0.80</priority>
@@ -89,60 +74,8 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://apps-article.pages.dev/publish/AppsArticle/20260107/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88URL</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://apps-article.pages.dev/publish/AppsArticle/20260106/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88URL</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://apps-article.pages.dev/publish/AppsArticle/20260105/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88URL</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://apps-article.pages.dev/publish/AppsArticle/20260103/</loc>
   <lastmod>2026-01-07T13:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
-<url>
-  <loc>https://apps-article.pages.dev/publish/AppsArticle/20260104/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88URL</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://apps-article.pages.dev/publish/AppsArticle/20251227/%E5%B7%AE%E3%81%97%E6%9B%BF%E3%81%88%EF%BC%9A%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88URL</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://apps-article.pages.dev/publish/AppsArticle/20251230/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88URL</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://apps-article.pages.dev/publish/AppsArticle/20251231/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88URL</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://apps-article.pages.dev/publish/AppsArticle/20260102/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88URL</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://apps-article.pages.dev/contact.html</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://apps-article.pages.dev/publish/AppsArticle/20260103/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88URL</loc>
-  <lastmod>2026-01-07T13:30:11+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-
-
-<url><loc>https://apps-article.pages.dev/publish/AppsArticle/20260109/</loc><lastmod>2026-01-09</lastmod></url></urlset>
+<url><loc>https://apps-article.pages.dev/publish/AppsArticle/20260109/</loc><lastmod>2026-01-09</lastmod></url><url><loc>https://apps-article.pages.dev/publish/AppsArticle/20260110/</loc><lastmod>2026-01-10</lastmod></url></urlset>
