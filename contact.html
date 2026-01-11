@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About｜神アプ！～個人開発の便利アプリ紹介～</title>
-  <meta name="description" content="神アプ！の運営者情報・運営方針・広告/アフィリエイト表記・免責事項・引用方針を掲載しています。" />
-  <link rel="canonical" href="https://apps-article.pages.dev/about/" />
+  <title>Contact｜神アプ！～個人開発の便利アプリ紹介～</title>
+  <meta name="description" content="神アプ！へのお問い合わせページです。誤記の連絡、削除依頼、掲載依頼（任意）、その他の連絡先をまとめています。" />
+  <link rel="canonical" href="https://apps-article.pages.dev/contact/" />
   <meta name="robots" content="index,follow" />
 
   <!-- AdSense（サイトで使う場合） -->
@@ -15,17 +15,17 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
 
-  <!-- OGP / Twitter（About用の最小） -->
+  <!-- OGP / Twitter（Contact用の最小） -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="神アプ！～個人開発の便利アプリ紹介～" />
-  <meta property="og:title" content="About｜神アプ！～個人開発の便利アプリ紹介～" />
-  <meta property="og:description" content="神アプ！の運営者情報・運営方針・広告/アフィリエイト表記・免責事項・引用方針を掲載しています。" />
-  <meta property="og:url" content="https://apps-article.pages.dev/about/" />
+  <meta property="og:title" content="Contact｜神アプ！～個人開発の便利アプリ紹介～" />
+  <meta property="og:description" content="神アプ！へのお問い合わせページです。誤記の連絡、削除依頼、掲載依頼（任意）、その他の連絡先をまとめています。" />
+  <meta property="og:url" content="https://apps-article.pages.dev/contact/" />
   <meta property="og:image" content="https://apps-article.pages.dev/asset/og_default.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About｜神アプ！～個人開発の便利アプリ紹介～" />
-  <meta name="twitter:description" content="神アプ！の運営者情報・運営方針・広告/アフィリエイト表記・免責事項・引用方針を掲載しています。" />
+  <meta name="twitter:title" content="Contact｜神アプ！～個人開発の便利アプリ紹介～" />
+  <meta name="twitter:description" content="神アプ！へのお問い合わせページです。誤記の連絡、削除依頼、掲載依頼（任意）、その他の連絡先をまとめています。" />
   <meta name="twitter:image" content="https://apps-article.pages.dev/asset/og_default.png" />
 
   <!-- favicon -->
@@ -273,11 +273,19 @@
       letter-spacing:.2px;
     }
     .article p{ margin: 12px 0; line-height: 2.0; color:#0f172a; }
+    .article ul{
+      margin: 10px 0 10px 18px;
+      padding:0;
+      color:#0f172a;
+      line-height: 2.0;
+    }
+    .article li{ margin: 6px 0; }
     .article hr{
       border: none;
       border-top: 1px solid rgba(229,231,235,.9);
       margin: 22px 0;
     }
+
     .soft-box{
       margin: 12px 0;
       padding: 12px 14px;
@@ -289,41 +297,100 @@
     }
     .soft-box b{ font-weight: 950; }
 
-    .article table{
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      font-size: 14px;
-      overflow:hidden;
-      border-radius: 14px;
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .contact-card{
+      background: rgba(255,255,255,.85);
       border: 1px solid rgba(229,231,235,.9);
-      background:#fff;
-      box-shadow: 0 12px 28px rgba(17,24,39,.06);
-      margin: 14px 0;
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
     }
-    .article th, .article td{
-      border-bottom: 1px solid rgba(229,231,235,.9);
-      border-right: 1px solid rgba(229,231,235,.9);
-      padding: 10px 10px;
-      vertical-align: top;
-    }
-    .article th:last-child, .article td:last-child{ border-right:none; }
-    .article tr:last-child td{ border-bottom:none; }
-    .article th{
-      background: rgba(248,250,252,.9);
+    .contact-card h3{
+      margin:0 0 6px;
+      font-size: 14px;
       font-weight: 950;
-      color:#0f172a;
-      text-align:left;
-      width: 170px;
+      color:#0b0f1a;
     }
-    .article .em{
-      font-style: italic;
-      color:#6b7280;
-      font-size: clamp(16px, 2.2vw, 22px);
-      line-height: 1.6;
-      letter-spacing: .2px;
-      text-align:center;
-      margin: 22px 0;
+    .contact-card p{
+      margin: 8px 0;
+      color:#0f172a;
+      line-height: 1.9;
+      font-size: 14px;
+    }
+    .contact-card a{
+      font-weight: 950;
+    }
+
+    .form{
+      margin-top: 14px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      padding: 14px 14px;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .form .row{
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap: 10px;
+      align-items:start;
+      padding: 10px 0;
+      border-top: 1px solid rgba(229,231,235,.8);
+    }
+    .form .row:first-child{ border-top: none; }
+    .form label{
+      font-weight: 950;
+      color:#0b0f1a;
+      font-size: 13px;
+    }
+    .form input,
+    .form textarea,
+    .form select{
+      width:100%;
+      border: 1px solid rgba(229,231,235,.95);
+      border-radius: 12px;
+      padding: 10px 10px;
+      font: inherit;
+      background:#fff;
+      color:#0f172a;
+      box-shadow: 0 6px 18px rgba(17,24,39,.04);
+    }
+    .form textarea{ min-height: 140px; resize: vertical; }
+    .form .help{
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 700;
+    }
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      justify-content:flex-start;
+      margin-top: 12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border: 1px solid rgba(229,231,235,.95);
+      background:#fff;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      color:#111;
+      cursor:pointer;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .btn.primary{
+      border-color: rgba(212,0,184,.25);
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
     }
 
     .side-stack{
@@ -379,6 +446,8 @@
     @media (max-width: 900px){
       .layout{ grid-template-columns: 1fr; }
       .topbar-inner{ align-items:flex-start; }
+      .contact-grid{ grid-template-columns: 1fr; }
+      .form .row{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -387,17 +456,17 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <div class="site-title">～個人開発の便利アプリ紹介～</div>
+        <div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
         <p class="note">
-          運営者情報 / 運営方針 / 免責 / 広告表記をまとめています。<br />
-          広告・アフィリエイトを含む場合があります（詳細は <a href="#ads">広告・アフィリエイト</a> へ）
+          誤記の連絡／削除依頼／掲載依頼（任意）／その他のお問い合わせはこちら。<br />
+          個人運営のため返信までお時間をいただく場合があります。
         </p>
       </div>
 
       <nav class="topnav" aria-label="Site navigation">
         <a class="topnav-link" href="https://apps-article.pages.dev/">Home</a>
-        <a class="topnav-link" href="https://apps-article.pages.dev/about/" aria-current="page">About</a>
-        <a class="topnav-link" href="https://apps-article.pages.dev/contact/">Contact</a>
+        <a class="topnav-link" href="https://apps-article.pages.dev/about/">About</a>
+        <a class="topnav-link" href="https://apps-article.pages.dev/contact/" aria-current="page">Contact</a>
         <a class="topnav-link" href="https://apps-article.pages.dev/privacy/">Privacy</a>
       </nav>
     </div>
@@ -408,6 +477,7 @@
       <section class="main-col">
         <article class="card">
           <div class="post">
+
             <div class="breadcrumb" aria-label="breadcrumb">
               <button class="home-link" type="button"
                 onclick="location.href='https://apps-article.pages.dev/'"
@@ -419,12 +489,12 @@
                 <span>Home</span>
               </button>
               <span class="crumb-sep">/</span>
-              <div class="crumb-current">About（運営者情報）</div>
+              <div class="crumb-current">Contact（お問い合わせ）</div>
             </div>
 
             <header class="post-header">
-              <span class="pill">ABOUT</span>
-              <h1 class="page-title">このサイトの「書き方」と「責任範囲」</h1>
+              <span class="pill">CONTACT</span>
+              <h1 class="page-title">お問い合わせ</h1>
               <div class="meta-row">
                 <div class="date">Updated: <span id="updatedAt"></span></div>
               </div>
@@ -432,72 +502,63 @@
 
             <div class="article">
               <div class="lead">
-                神アプ！は、個人開発アプリを中心に「ダウンロード前に知りたいこと」を短く深くまとめる紹介サイトです。<br />
-                公式情報＋実際の使用感＋私のエンジニアキャリアに基づく知識　から、機能の詳細からユースケースまでみっちり記事を書くのが方針です。
+                誤記・リンク切れ・掲載情報の更新連絡は歓迎です。<br />
+                権利侵害の懸念（画像・文面等）がある場合も、確認のうえ速やかに対応します。
               </div>
 
-              <h2>運営者情報</h2>
-              <table aria-label="operator-table">
-                <tbody>
-                  <tr><th>運営者</th><td>@莉子-個人開発チャレンジ中-</td></tr>
-                  <tr><th>連絡先</th><td><a href="https://x.com/JimPierce50">XのDM</a> へご連絡ください</td></tr>
-                  <tr><th>サイトのテーマ</th><td>個人開発アプリ / 小さめツール / 作業効率系ツール　の完全個人的意見による紹介</td></tr>
-                  <tr><th>記事の作り方</th><td>公式ページ・ストア表記などの一次情報を参照し、独自の整理・要約・使用感を加えます</td></tr>
-                </tbody>
-              </table>
-
-              <p class="em">無限にある個人開発アプリから、「あなた好みの」アプリを紹介する</p>
+              <h2>問い合わせの用途例</h2>
+              <div class="contact-grid" aria-label="contact-options">
+                <div class="contact-card">
+                  <h3>誤記・リンク切れの報告</h3>
+                  <p>「該当ページURL」と「どこが違うか」を書いてください。確認でき次第、追記・修正します。</p>
+                  <p><a href="#contact">→ 問い合わせ先へ</a></p>
+                </div>
+                <div class="contact-card">
+                  <h3>削除依頼・権利侵害のご相談</h3>
+                  <p>権利者ご本人（または代理）であることが分かる範囲で、状況を記載してください。</p>
+                  <p><a href="#contact">→ 問い合わせ先へ</a></p>
+                </div>
+                <div class="contact-card">
+                  <h3>アプリ掲載のご提案（任意）</h3>
+                  <p>個人開発・小規模ツール歓迎。すべて掲載を保証するものではありません。</p>
+                  <p><a href="#contact">→ 問い合わせ先へ</a></p>
+                </div>
+                <div class="contact-card">
+                  <h3>返信が必要な場合</h3>
+                  <p>返信先（メール等）を本文に記載してください。記載が無い場合は返信できません。</p>
+                  <p><a href="#privacy">→ 取り扱い</a></p>
+                </div>
+              </div>
 
               <hr />
 
-              <h2>運営方針</h2>
-              <div class="soft-box"><b>結論を先に：</b>「どんな人に刺さるか」を最初に書きます。</div>
-              <div class="soft-box"><b>メリットだけではない：</b> 合わない人 / 弱点も書きます。</div>
-              <div class="soft-box"><b>信頼できるソース：</b> 仕様や料金などの情報は、公式ソースを基に記載します。（不明の場合は不明と書きます）。</div>
-              <p>記事は「紹介」であり、特定サービスの利用を強制するものではありません。最終判断は利用者ご自身でお願いします。</p>
+              <h2 id="contact">お問い合わせ先</h2>
+
+                <div class="btn-row">
+                  <a class="btn" href="https://x.com/JimPierce50" target="_blank" rel="noopener noreferrer">XのDMで連絡</a>
+                </div>
 
               <hr />
 
-              <h2 id="ads">広告・アフィリエイトについて</h2>
+              <h2 id="privacy">個人情報の取り扱い</h2>
               <p>
-                当サイトでは、運営コスト（ドメイン・サーバー等）をまかなうため、広告（例：Google 等）を掲載する場合があります。<br />
-                また、リンク先で購入 / 登録等が行われた場合、運営者に紹介料が入ることがあります。
+                お問い合わせで受領した情報は、<b>対応・記録・再発防止</b>の目的でのみ利用します。<br />
+                第三者へ販売・貸与することはありません（法令に基づく場合を除く）。
               </p>
-              <div class="soft-box"><b>重要：</b> 収益の有無で、記事内容やツールに対するレビューが変わることはありません。合わないものは合わないと書きます。</div>
+              <div class="soft-box">
+                <b>補足：</b> 広告配信・アクセス解析等の扱いは <a href="https://apps-article.pages.dev/privacy/">Privacy</a> にまとめています。
+              </div>
 
               <hr />
 
-              <h2>免責事項</h2>
-              <p>
-                掲載内容は可能な限り正確に作成しますが、最新性・完全性を保証するものではありません。<br />
-                アプリの料金・機能・提供状況は変更されることがあります。必ず公式情報をご確認ください。
-              </p>
-              <p>当サイトの情報を利用したことにより生じた損害について、運営者は一切の責任を負いかねます。</p>
-
-              <hr />
-
-              <h2>著作権・引用について</h2>
-              <p>
-                文章は原則として運営者の編集・執筆によるものです。<br />
-                公式ページ等からの引用が必要な場合は、必要最小限の範囲で、出典が分かる形で行います。
-              </p>
-              <div class="soft-box"><b>削除依頼：</b> 権利侵害の懸念がある場合は <a href="https://apps-article.pages.dev/contact/">お問い合わせ</a> よりご連絡ください。確認のうえ速やかに対応します。</div>
-
-              <hr />
-
-              <h2>プライバシー</h2>
-              <p>
-                Cookie・アクセス解析・広告の扱いは、<a href="https://apps-article.pages.dev/privacy/">プライバシーポリシー</a> にまとめています。必要に応じて更新します。
-              </p>
-
-              <hr />
-
-              <h2>更新・修正ポリシー</h2>
-              <p>
-                誤記やリンク切れの報告は歓迎です。確認でき次第、追記・修正します。<br />
-                アプリ仕様の変更を把握した場合も、分かる範囲でアップデートします。
-              </p>
+              <h2>対応の目安</h2>
+              <ul>
+                <li><b>誤記・リンク切れ</b>：確認でき次第、追記・修正（数日）</li>
+                <li><b>削除依頼</b>：状況確認のうえ対応（緊急度が高い場合は優先します）</li>
+                <li><b>掲載提案</b>：すべて掲載を保証しませんが、参考にします</li>
+              </ul>
             </div>
+
           </div>
         </article>
       </section>
@@ -510,7 +571,7 @@
             </p>
             <div class="side-links">
               <a href="https://apps-article.pages.dev/">→ トップへ戻る</a>
-              <a href="https://apps-article.pages.dev/contact/">→ お問い合わせ</a>
+              <a href="https://apps-article.pages.dev/about/">→ このサイトについて</a>
               <a href="https://apps-article.pages.dev/privacy/">→ プライバシーポリシー</a>
             </div>
           </div>

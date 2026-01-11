@@ -1,0 +1,523 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/bdb7d12f-52d7-43c9-871d-b7ddcb03a028
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+交通量計測をAIで自動化するスマホアプリ
+自動車や人の通行量の計測を、スマホ(iPhone,Android)で出来る無料サービスをローンチしました。
+通行量
+計測
+AI
+レビューする
+Visit Product
+通行量
+計測
+AI
+プロダクトの感想・意見はこのエリアに表示されます
+はじめに
+スマートフォンのカメラで通行人や車両をリアルタイムにカウントするアプリ「
+ミチミエール
+」を個人開発しました。
+本記事ではアプリの利用方法および、高精度な物体検出とアルゴリズムによるトラッキングを実装し、
+30-60 FPS のリアルタイム処理
+を実現するまでの技術的な全貌を解説します。
+横断歩道の交通量を計測する様子
+アプリ情報：
+公式サイト:
+App Store:
+Google Play:
+なぜこのアプリを作ったのか
+道路の交通量調査やイベント会場の来場者数カウントは、従来は
+人手による目視カウント
+や
+高額な専用機器
+が必要でした。
+「スマートフォン1台で、誰でも簡単に通行量を計測できるアプリがあれば便利なのでは？」
+この素朴な疑問から、AI を活用した通行量カウントアプリの開発をスタートしました。
+主な用途：
+道路の交通量調査
+歩行者通行量の計測
+イベント会場の来場者数カウント
+商業施設の入退場管理
+都市計画のためのデータ収集
+アプリの利用方法
+アプリをストアからインストールして、アカウント作成後計測開始を押すとすぐに利用可能です。
+交通量計測中のスクリーンショット
+オレンジ色の線をまたぐとカウントアップ。オレンジ色の線はドラッグで360度回転できるので横方向だけでなく縦方向（手前から奥に人や車が移動する）でも計測可能。
+アプリの概要
+端末で処理が完結するため無料で利用できる
+複数端末での計測を一つの端末で管理できる
+記録したデータはクラウドに保存される
+他の人が計測したデータが閲覧できる
+端末で処理が完結するため無料で利用できる
+端末で30-60 FPS のリアルタイム処理を実現することでサーバーでの処理を０（ゼロ）にし無料で提供できるようになった。（かかった費用は私の人件費のみ）
+複数端末での計測を一つの端末で管理できる
+複数の場所で同時計測を想定し、計測中の端末をモニタリングする機能を実装。
+リアルタイムで計測中の端末のデータを閲覧することができる。
+他の人が計測したデータが閲覧できる
+せっかくなので他の人が計測したデータを閲覧できるようにした。
+今後有料オプションとして非公開にする機能などを実装できればよいなと思案中
+アプリについての Q&A
+Q:導入にどれくらい時間がかかりますか？
+A:アプリをインストールしてすぐ利用できます
+Q:プラットフォームはどこですか？
+A: iOSおよびAndroid に対応しています
+Q:どこからインストールできますか？
+A
+App Store および Google PlayStore からインストールできます。
+Q:計測できる対象は？
+A:人物、自動車、バイク、犬に対応しています。
+Q:どれくらいの通行量まで可能ですか？
+A:端末のスペックによりますが、iPhone 13 での計測で同時に50検体まで可能です。
+Q:計測した通行量データはエクスポートできますか？
+A:はい可能です。PDF,JSON,CSV でのエクスポートに対応しています。
+Q:計測時に個人情報を収集しますか？
+A:いいえ、通行量データのみ保存しますので、個人を特定する情報や画像などは保存されません。
+技術概要
+主な実装内容：
+YOLO11モデル（TensorFlow Lite）の Flutter 統合
+Kalman Filter + Hungarian Algorithm による高精度トラッキング
+ライン通過判定による重複なしカウント
+Firebase 連携によるデータ管理
+30-60 FPS のリアルタイム処理
+技術スタック：
+アーキテクチャ全体像
+YOLO11のモバイル実装
+1. モデル選定とサイズ比較
+YOLO11には複数のモデルサイズがあり、精度と速度のトレードオフを考慮して選択する必要があります。
+モデル
+サイズ
+推論速度 (iPhone 14 Pro)
+精度 (mAP)
+yolo11n
+5.8 MB
+~60 FPS
+普通
+yolo11s
+21 MB
+30-45 FPS
+良好
+yolo11m
+49 MB
+20-30 FPS
+高精度
+本アプリでは、**yolo11s（スモール）
+を標準モデルとして採用。ユーザーは設定から
+yolo11m（ミディアム）**に切り替えて高精度モードも利用可能です。
+2. TensorFlow Lite への変換
+YOLO モデルをモバイルで動かすには、TensorFlow Lite 形式への変換が必要です。
+モデル変換のコード例：
+エクスポートされるファイル：
+yolo11s.tflite
+(21 MB)
+labels.txt
+(クラスラベル)
+これらを
+assets/
+ディレクトリに配置し、pubspec.yaml で登録します。
+3. Flutter への統合
+ultralytics_yolo
+パッケージを使用して YOLO を統合します。
+Flutter での実装例：
+4. 検出結果の処理
+YOLO からの検出結果を受け取り、トラッカーに渡します。
+検出結果の処理コード：
+ポイント：
+低信頼度の検出でも、既存トラックと IoU が高ければ受け入れる（追跡の継続性）
+座標変換：カメラ座標系 → 画面座標系の変換が必要
+高精度トラッキングの実装
+物体検出だけでは、フレーム間で ID が変わってしまい、同一の人物を追跡できません。ここで
+トラッキング
+が必要になります。
+トラッキングの目的
+ID の安定化
+：同一物体に一意の ID を割り当て続ける
+オクルージョン対応
+：一時的に見えなくなっても追跡を継続
+重複排除
+：同じ物体を複数回カウントしない
+アルゴリズム選定：Kalman Filter + Hungarian Algorithm
+DeepSORT 風のアルゴリズムを採用しました（外観特徴なし）。
+構成要素：
+Kalman Filter
+：物体の運動モデルで次フレームの位置を予測
+Hungarian Algorithm
+：検出とトラックの最適割り当て
+トラックライフサイクル
+：Tentative → Confirmed → Deleted
+実装の全貌
+以下、トラッカーの核心部分の実装です。
+1. Kalman Filter による予測
+実装コード：
+2. マハラノビス距離によるゲーティング
+検出とトラックの関連付けの前に、
+マハラノビス距離
+でフィルタリングします。
+ゲーティングの実装：
+マハラノビス距離が閾値（デフォルト: 9.4877）を超える場合、その検出は候補から除外されます。
+3. コスト行列の構築
+コスト計算の実装：
+パラメータ：
+lambdaCost = 0.7
+：IoU を重視（0に近いと運動モデル重視）
+iouMin = 0.01
+：最小 IoU 閾値
+gateThreshold = 9.4877
+：カイ二乗分布の5%点（自由度4）
+4. Hungarian Algorithm（ムンクレス法）
+コスト行列から最適割り当てを求めます。
+Hungarian アルゴリズムの実装：
+Hungarian Algorithm により、
+グローバル最適な割り当て
+が得られます。
+5. トラックのライフサイクル管理
+パラメータ（15fps 環境に最適化）：
+minHits = 1
+：確定に必要な連続ヒット数
+maxAge = 90
+：見失い許容フレーム数（6秒）
+ライン通過判定アルゴリズム
+トラッキングだけでは「いつ、どの方向に通過したか」が分かりません。ここで
+ライン通過判定
+を実装します。
+基本原理
+画面上に仮想ラインを設定し、トラックの重心がラインを
+符号変化して通過
+したときにカウントします。
+実装のポイント
+1. 符号付き距離の計算
+ライン定義のコード：
+2. 重心の平滑化（EMA）
+フレーム間のノイズを除去するため、**指数移動平均（EMA）**で重心を平滑化します。
+EMA 平滑化の実装：
+smoothingAlpha = 0.7
+：現在値を70%、過去値を30%の重みで合成
+3. 通過判定の条件
+符号が変わっただけではカウントしません。以下の条件を
+すべて満たす
+場合にカウントします。
+通過判定のロジック：
+パラメータ（15fps 環境に最適化）：
+minDeltaNormalized = 0.003
+：微小移動フィルタ
+minCrossingDistanceNormalized = 0.008
+：最小通過距離
+cooldownFrames = 20
+：カウント後のクールダウン（約1.3秒）
+4. クールダウン機構
+同じトラックが短時間で複数回カウントされるのを防ぐため、カウント後に一定フレーム数の
+クールダウン
+を設けます。
+クールダウンの実装：
+パフォーマンス最適化
+達成した性能指標
+項目
+値
+FPS
+30-60（デバイス性能に依存）
+平均レイテンシ
+50-100ms
+メモリ使用量
+200-400MB
+モデルサイズ
+yolo11s: 21MB / yolo11m: 49MB
+最適化のポイント
+1. GPU 使用の有効化
+GPU を使用することで、推論速度が
+2-3倍
+向上します。
+2. フレームレートの制限
+60fps で処理してもバッテリーを消費するだけなので、30fps に制限。
+3. 座標変換の最適化
+カメラ座標系から画面座標系への変換は毎フレーム実行されるため、計算を最適化します。
+座標変換の実装：
+4. トラッキングパラメータのチューニング
+15fps 環境（低速デバイス）でも安定動作するようパラメータを調整しました。
+通常の DeepSORT（30fps 想定）の値から、フレーム数を倍に調整しています。
+5. ステート最小化
+不要な状態変更を減らし、Widget 再ビルドを最小限に抑えます。
+苦労した点と解決策
+1. カメラ座標系の不一致
+問題：
+YOLO の検出座標と Flutter の画面座標が一致せず、バウンディングボックスがズレる。
+原因：
+カメラのアスペクト比（4:3）と画面のアスペクト比（9:16）が異なる
+iOS と Android で座標系が異なる
+画面の向き（Portrait/Landscape）で変換が変わる
+解決策：
+normalizedBox（0.0〜1.0の正規化座標）から逆算してカメラ解像度を推定し、Aspect Cover でマッピング。
+カメラサイズ推定の実装：
+2. トラッキング ID の不安定性
+問題：
+人が重なったり、一時的に見えなくなると、ID が変わってしまう。
+解決策：
+maxAge = 90
+（6秒）に設定し、長時間の見失いに対応
+マハラノビス距離ゲーティングで、運動モデルに基づく予測を活用
+IoU 閾値を
+0.1
+まで下げ、大きくズレた検出でもマッチング可能に
+3. 重複カウント
+問題：
+同じ人が複数回カウントされてしまう。
+解決策：
+クールダウン機構
+：カウント後20フレーム（約1.3秒）は同じ ID をカウントしない
+通過距離の閾値
+：ライン法線方向に一定距離以上移動した場合のみカウント
+微小移動フィルタ
+：ノイズによる誤検出を除去
+4. モデル切り替え時のクラッシュ
+問題：
+yolo11s ↔ yolo11m を切り替えると、iOS でカメラがクラッシュする。
+解決策：
+古いコントローラーを完全に停止してから、1秒待ってから新しいコントローラーを起動。
+モデル切り替えの実装：
+5. バックグラウンド移行時のデータ保存
+問題：
+アプリをバックグラウンドに移行すると、計測データが失われる。
+解決策：
+WidgetsBindingObserver
+でライフサイクルを監視し、
+paused
+や
+detached
+状態になったら自動保存。
+ライフサイクル監視の実装：
+実装の成果
+定量的な成果
+FPS
+: 30-60（デバイス依存）
+トラッキング精度
+: IoU 0.7以上で安定追跡
+カウント精度
+: 目視カウントとの誤差 5%以内（テスト環境）
+バッテリー消費
+: 30分の連続使用で約15%消費（iPhone 14 Pro）
+定性的な成果
+スマホ1台で計測可能
+：専用機器不要
+リアルタイムフィードバック
+：計測中に結果を確認できる
+低コスト
+：アプリは無料、追加費用なし
+データ保存
+：Firebase 連携で自動保存・複数デバイス同期
+ユーザーの声
+「今まで手作業で数えていた通行量調査が、スマホを置くだけで自動化できるので便利」
+「イベント運営で来場者数をリアルタイムに把握できるのが便利」
+学んだこと
+技術面
+YOLO + トラッキングの深い理解
+：検出とトラッキングは別物
+Kalman Filter の実装
+：線形代数の実践的応用
+Hungarian Algorithm
+：組合せ最適化の重要性
+モバイル AI の制約
+：メモリ、バッテリー、速度のトレードオフ
+座標変換の難しさ
+：カメラ座標系の理解が必須
+開発面
+プロトタイプ → 最適化 → リファクタリング
+の反復
+パラメータチューニングの重要性
+：デフォルト値の影響は大きい
+デバッグログの活用
+：フレームごとの状態を可視化
+テストの自動化
+：単体テストでバグを早期発見
+ドキュメントの整備
+：未来の自分へのメモ
+個人開発
+小さく始めて改善する
+：完璧を目指さない
+ユーザーフィードバックの重要性
+：想定外の使い方を知る
+オープンソース活用
+：車輪の再発明をしない
+コミュニティの力
+：Flutter/Dart コミュニティに感謝
+参考資料
+論文・文献
+YOLO11 - Ultralytics
+Simple Online and Realtime Tracking (SORT)
+Deep SORT
+BoT-SORT: Robust Associations Multi-Pedestrian Tracking
+Kalman Filter Tutorial
+ライブラリ・ツール
+Flutter
+ultralytics_yolo
+Riverpod
+Firebase
+コミュニティ
+Flutter Community
+Ultralytics Community
+Stack Overflow
+おわりに
+「スマホで通行量をカウントする」というシンプルなアイデアから始まった開発でしたが、YOLO11の統合、Kalman Filter によるトラッキング、ライン通過判定など、多くの技術的挑戦がありました。
+個人開発ならではの自由さで、試行錯誤を繰り返しながら、
+30-60 FPS のリアルタイム処理
+を実現できたことは大きな達成感です。
+この記事が、Flutter で AI を活用したアプリを開発したい方や、物体検出・トラッキングに興味がある方の参考になれば幸いです。
+ミチミエール
+は現在、App Store / Google Play で無料公開中です。ぜひダウンロードして、実際に使ってみてください！
+アプリのダウンロード
+App Store
+:
+Google Play
+:
+公式サイト
+:
+お問い合わせ・フィードバック
+公式サイト（
+https://michimieru.com）のお問い合わせフォームからご連絡ください。
+ご意見・ご感想・バグ報告など、お気軽にお寄せください！
+#Flutter #YOLO #AI #機械学習 #物体検出 #個人開発 #アプリ開発 #Firebase #モバイルアプリ #技術記事 #iOS #Android #TensorFlow #画像認識 #ディープラーニング #Dart #リアルタイム処理 #Kalman Filter #トラッキング #コンピュータビジョン
+Explore More
+関連記事はありません。
+Trends
+スクショメモ - スクリーンショットを、もう迷子にしない。
+Taka@個人開発
+2025年12月25日
+ハビッチ - 習慣化×育成アプリ
+ノン
+2025年12月26日
+育児記録・予防接種管理 - milu
+aphlo🐻‍❄️個人開発
+2025年12月27日
+satoshi tagomori (たごまん)
+Follow
+{
+  "final_url": "https://izanami.dev/post/bdb7d12f-52d7-43c9-871d-b7ddcb03a028",
+  "og_image": "https://izanami.dev/post/bdb7d12f-52d7-43c9-871d-b7ddcb03a028/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fda2ddadc-825b-46b5-89ce-be772321ffbc%2F60074713-3e4a-4310-a87a-6a2008a99ade.png&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "交通量計測をAIで自動化するスマホアプリのアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fda2ddadc-825b-46b5-89ce-be772321ffbc%2F1ff9259c-aaf5-4e12-87e1-f1f37b874afb.png&w=1920&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/da2ddadc-825b-46b5-89ce-be772321ffbc/840a9b24-d1be-45d1-83dd-93f438a2aac0.jpeg",
+      "alt": "人物トラッキングの様子"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/da2ddadc-825b-46b5-89ce-be772321ffbc/769ed38c-03b0-48a7-8c97-ae013915838d.jpg",
+      "alt": "交通量計測中のスクリーンショット"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocL89GSh20-sb0uY8k1wAGalFlWD0vwrAobF-ez5wyX1TwubnPif%3Ds96-c&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "ノン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Fb4a344c1-2fe5-489c-b2f8-7e8a5d26035f%2F83c7c623-2c58-4053-b240-f93009cee69c.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "aphlo🐻‍❄️個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocItv0Q9DuA_qJpJHjjd_V_ekRht3uA6sK8UNtojVBonWUh9Ix--5A%3Ds96-c&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://michimieru.com/"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/bdb7d12f-52d7-43c9-871d-b7ddcb03a028 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 体験のBefore/Afterを軸に、友達にすすめる口調で書く
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 利用シーン章では「定番→意外→さらに意外」の順
+- 少なくとも1回は<table>を使う
+- 最終章までに使用までの3ステップ例を記述すること
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+- 「抽出した本文」内にある以下の文章は無視してください。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい（1章につき最大1回）。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+  "app_links_official_href":"公式サイト/ガイドURL(関連リンク)",
+  "app_follow_text":"pager直下の追い一言(まとめ/推し)",
+  "app_related_link_href":"関連記事URL(参照URLの中身のURLを記入)",
+  "app_related_ogp_alt":"関連記事OGP画像alt",
+  "app_related_ogp_src":"関連記事OGP画像URL",
+  "app_related_appname":"紹介アプリ名のみ",
+  "app_try_summary":"おすすめの試し方(1文)"
+}

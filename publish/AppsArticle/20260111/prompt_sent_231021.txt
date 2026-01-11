@@ -1,0 +1,194 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/d0126671-4c08-485c-af32-33bf22a9da75
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+Remine -しつこいリマインダー-
+【想定ペルソナ】
+- 既存のタスク管理、リマインダーアプリではリマインド通知機能に物足りない方
+- 日々のタスク量が膨大&忘れっぽい方
+リマインダー
+タスク管理
+iOS
+レビューする
+Visit Product
+リマインダー
+タスク管理
+iOS
+プロダクトの感想・意見はこのエリアに表示されます
+Remine（リマイン）は、「うっかり防止の確かなリマインダー」。
+期限前・当日・期限後の再リマインドを細かく設定できる、完全オフライン対応のタスク管理アプリです。
+すべてのデータは端末内に保存され、ネット接続がなくても快適に動作します。
+タスク一覧画面
+■特徴
+・うっかり防止設計
+期限前・当日・未完了時の再通知など、細かいリマインド設定が可能。
+・完全オフライン対応
+データは端末に安全に保存され、Wi-Fiや通信がない環境でもタスク管理やリマインド通知が可能。
+・直感的な操作性
+タスクを色付きタグで分類し、期限ごとに見やすく整理。
+・定期タスク対応
+日次・週次タスクの自動生成で、習慣管理にも最適。
+・多言語対応
+日本語・英語に対応し、海外ユーザーにも使いやすい。
+■機能
+タスクの作成・編集・削除・復元
+期限・タグ・並び順での整理表示
+定期タスク（Daily / Weekly）
+期限前・当日・期限後の通知スケジュール
+タスク完了時の自動通知キャンセル
+削除時のUndo対応（やり直し）
+日本語 / 英語の多言語対応
+■ユースケース
+ビジネス
+会議や締切前のタスクを確実にリマインド
+複数プロジェクトの進行管理をシンプルに整理
+通信環境が悪い出張先でもタスク確認や通知を受け取り可能
+学校（大学）
+レポートや提出期限を逃さないための細かい通知設定
+授業ごとのタスクを色分けして整理
+学内Wi-Fiが不安定な状況でもオフラインでリマインドが機能
+日常
+買い物や家事、ルーティンの管理を定期タスクで自動化
+運動や勉強の習慣を継続するためのリマインド設定
+外出先など電波が届かない場所でもタスク通知を受け取れる
+Explore More
+関連記事はありません。
+Trends
+QRコード読取&作成 - PrismQR
+Taka@個人開発
+2026年1月11日
+Sodalio – AIチャット記録アプリ
+YOKKO
+2026年1月11日
+AI コーディングエージェントでデザイン再現精度を上げる 7 つのテクニック
+コムテ
+2026年1月9日
+ふわふわ
+SE
+System Engineer
+Python
+SQL
+Data Science
+Follow
+{
+  "final_url": "https://izanami.dev/post/d0126671-4c08-485c-af32-33bf22a9da75",
+  "og_image": "https://izanami.dev/post/d0126671-4c08-485c-af32-33bf22a9da75/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F40e71fd5-90e1-4696-8153-5c544ce65860%2F0f4482bf-e7ca-40e6-8048-d280530977f8.jpeg&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "Remine -しつこいリマインダー-のアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F40e71fd5-90e1-4696-8153-5c544ce65860%2F79f1c4e5-ba5b-4f28-bbd1-21c7bc06a54f.jpeg&w=1920&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/40e71fd5-90e1-4696-8153-5c544ce65860/1b4788f2-a35d-4c03-979c-eb45f4125cc3.jpeg",
+      "alt": "タスク一覧画面"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F91f9bf99-815a-430e-b17c-101178091760%2Fbcefb920-7358-4e72-98ad-0d26d99199fb.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "YOKKO"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F40e71fd5-90e1-4696-8153-5c544ce65860%2Fd74c0980-d8c2-40e1-93df-85795f255039.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://apps.apple.com/jp/app/remine-うっかり防止の確かなリマインダー/id6754497544"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/d0126671-4c08-485c-af32-33bf22a9da75 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}
