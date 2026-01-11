@@ -1,0 +1,222 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/d321b0dd-d219-415d-8e48-bd907c85492f
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+育児記録・予防接種管理 - milu
+育児を行うご家庭向けの赤ちゃんの育児記録・予防接種管理を家族で共有できるスマホアプリです
+育児記録アプリ
+赤ちゃん
+レビューする
+Visit Product
+育児記録アプリ
+赤ちゃん
+プロダクトの感想・意見はこのエリアに表示されます
+milu とは
+milu
+は、育児を行うご家庭向けの赤ちゃんの育児記録・予防接種管理を家族で共有できるスマホアプリです。
+iOS:
+https://apps.apple.com/jp/app/育児記録-予防接種管理-milu/id6754955821
+Android:
+主な特徴
+表形式でわかりやすい授乳表
+授乳記録や成長記録、予防接種をまとめて管理
+家族で育児記録を共有
+こんな方におすすめ
+1日で赤ちゃんにどんな育児をしたかわかりやすくしたい
+育児記録や予防接種管理を1つのアプリでまとめて管理したい
+家族で育児記録を共有したい
+主要機能
+わかりやすい育児記録
+列ごとに授乳記録を表示
+成長曲線とともに身長・体重を記録
+現場で使われる授乳表のような見た目を再現して、授乳を最後にしたのはいつか、ミルクを最後にあげたのはいつか視覚的にわかりやすい UI にしました
+他のアプリと同様に成長曲線とともに赤ちゃんの身長と体重を記録できます
+予防接種の管理
+表形式
+リスト形式
+他の育児記録アプリでは予防接種の管理は別アプリで管理することが多いですが、milu では育児記録と予防接種の管理を1つのアプリで完結させることができます
+予約した予防接種は自動でカレンダー画面にも反映されます
+ママの体調も管理
+ママの体調や日記も記録
+育児では赤ちゃんの記録がもちろん大事ですが、母体にも大きく負担はかかります。体調の変化と育児の負担を一緒に振り返れるので、生活リズムの見直しや、家族への共有もしやすくなります
+Q: 家族で共有するにはどうすればいいですか？
+A: メニュー画面の世帯の共有画面から世帯IDをコピーして招待したい人に共有できます。招待された人は同じくメニュー画面の世帯の共有画面から世帯IDを入力して世帯に参加することができます。
+※招待された人は参加先の世帯の子供の記録を見れるようになりますが、元々の自分の世帯のデータは参照できなくなります。参加した世帯を抜ければ元の自分の世帯のデータを参照できるようになります。
+Q: 予防接種の管理は何ができますか？
+A: 予防接種を表形式/リスト形式で確認でき、予約した接種はカレンダー画面にも反映されるため、予定の見落としを減らせます。
+Q: ママの記録はどんな時に役立ちますか？
+A: ママが受診をするようなことがあったときに、自分の症状を時系列で伝えられるようにサポートします。子どものお世話に目が行きがちな産後にママの体にも気を使って欲しいという願いも込められています。
+Q: 複数の子ども（きょうだい・双子など）にも対応できますか？
+A: 対応しています。何人でも子どもを追加できる上、メニュー画面から記録を追加する子供を変更することができます。
+今後の予定
+現在はiOS版のみ提供しています
+Android版：2026年1月中に正式リリース予定
+→Android版リリースされました！！(2026年1月8日)
+離乳食の管理機能も追加予定
+最後に
+育児は、ひとりで抱えるほど大変になってしまうもの。
+milu は育児記録・予防接種・ママの体調までを家族で共有できるので、「言わなくても伝わる」「見ればわかる」を増やせます。
+記録が揃うと、声かけや役割分担もしやすくなります。
+ご家庭のペースに合わせて、ぜひ milu を使ってみてください！
+Explore More
+関連記事はありません。
+Trends
+AI コーディングエージェントでデザイン再現精度を上げる 7 つのテクニック
+コムテ
+2026年1月9日
+ミノウォーズ
+カノイ
+2026年1月8日
+aphlo🐻‍❄️個人開発
+主にFlutterでモバイルアプリを個人開発しています
+Individual Developer
+Flutter
+React
+Go
+Follow
+{
+  "final_url": "https://izanami.dev/post/d321b0dd-d219-415d-8e48-bd907c85492f",
+  "og_image": "https://izanami.dev/post/d321b0dd-d219-415d-8e48-bd907c85492f/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fb4a344c1-2fe5-489c-b2f8-7e8a5d26035f%2F8fa7e5b6-ec14-4e0b-9334-259f2949920e.png&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "育児記録・予防接種管理 - miluのアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fb4a344c1-2fe5-489c-b2f8-7e8a5d26035f%2F108225cc-6e2f-43b8-8c49-f54d0e6155b7.png&w=1920&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/b4a344c1-2fe5-489c-b2f8-7e8a5d26035f/31f4f32c-e3dd-4f14-9930-869a694eb576.png",
+      "alt": "授乳表"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/b4a344c1-2fe5-489c-b2f8-7e8a5d26035f/c0e91e12-f7b1-4949-93e1-08fa8c2f8dd4.png",
+      "alt": "成長曲線"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/b4a344c1-2fe5-489c-b2f8-7e8a5d26035f/97db1a12-095d-4b48-8a9c-2a867cd8c3ff.png",
+      "alt": "表形式"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/b4a344c1-2fe5-489c-b2f8-7e8a5d26035f/47d17c52-a3b8-4324-9ad2-8b709691dbeb.png",
+      "alt": "リスト形式"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/b4a344c1-2fe5-489c-b2f8-7e8a5d26035f/507a32b7-a7ff-47b5-aa1f-42a11d90184c.png",
+      "alt": "カレンダー画面"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/b4a344c1-2fe5-489c-b2f8-7e8a5d26035f/26342969-5353-434c-aeb0-9849011e1e7c.png",
+      "alt": "ママの記録"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocLbX0K2Hk8MmaYvCBpRxdUz-E6BilJjP_na6M7iA-unQrmytdGRAg%3Ds96-c&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "カノイ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Fb4a344c1-2fe5-489c-b2f8-7e8a5d26035f%2F83c7c623-2c58-4053-b240-f93009cee69c.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://apps.apple.com/jp/app/育児記録-予防接種管理-milu/id6754955821?l=en-US"
+    },
+    {
+      "label": "https://apps.apple.com/jp/app/育児記録-予防接種管理-milu/id6754955821",
+      "url": "https://apps.apple.com/jp/app/%E8%82%B2%E5%85%90%E8%A8%98%E9%8C%B2-%E4%BA%88%E9%98%B2%E6%8E%A5%E7%A8%AE%E7%AE%A1%E7%90%86-milu/id6754955821"
+    },
+    {
+      "label": "",
+      "url": "https://github.com/aphlo"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/d321b0dd-d219-415d-8e48-bd907c85492f にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}

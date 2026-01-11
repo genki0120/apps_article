@@ -17,11 +17,5 @@
   "app_h2_5": "始め方は1分：無料登録→価値観入力→AIマッチング（やってみた体で）",
   "app_body_5_html": "<p>手間が重いサービスは、結局続かないんだよね。</p>\n<p>HR Matcherはスタートが軽いのがいい。公式の案内は3ステップで、わずか1分で価値観マッチングが完了するとされています。ここ、気合いが要らないのが大きい。</p>\n<p>ステップ1：メールアドレスだけで無料登録してアカウント作成。</p>\n<p>ステップ2：スキルや希望条件をチャット形式で入力。</p>\n<p>ステップ3：AIがマッチングして、あなたに最適な企業をリストアップ。</p>\n<div class=\"soft-box\"><strong>Before：</strong>登録フォームが長そうで、始める前に疲れてしまう。</div>\n<div class=\"soft-box\"><strong>After：</strong>まず1分で叩き台の企業リストができて、そこから考え始められる。</div>\n<p>しかもAIエージェントが24時間365日、希望に合う企業を探索してくれる設計。平日は仕事、夜は疲れて検索どころじゃない人ほど、相性の探索を“自動化”する価値が出ます。転職って、頑張った量より「良い判断ができたか」が結果を左右するから。</p>\n<p class=\"em\">迷いが濃いほど、まずは“相性の一次案”をAIに出させると前に進める。</p>\n<p>無料で始められるので、深く悩む前に一度試して、出てきた企業を眺めながら自分の軸を固めるのがいちばん早いと思う。</p>",
   "app_emphasis_line": "知名度で選ぶ前に、相性で並べ替える——それだけで転職の精度が上がる。",
-  "app_links_official_href": "https://hrmatcher.neosophie.com/",
-  "app_follow_text": "「なんとなく転職」になりそうな友達がいたら、まずHR Matcherを渡してみて。",
-  "app_related_link_href": "https://izanami.dev/post/321ec3d8-1ed0-447e-9f16-27a419bb4654",
-  "app_related_ogp_alt": "HR Matcher - IT企業特化型人材マッチング",
-  "app_related_ogp_src": "https://izanami.dev/post/321ec3d8-1ed0-447e-9f16-27a419bb4654/opengraph-image-1umokf?5589478d64c13f8a",
-  "app_related_appname": "HR Matcher",
-  "app_try_summary": "メールアドレスで無料登録して、1分の価値観入力から相性の企業リストを作ってみてください。"
+  "app_links_official_href": "https://hrmatcher.neosophie.com/"
 }

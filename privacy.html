@@ -3,348 +3,397 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy｜個人開発アプリ紹介</title>
-  <meta name="description" content="当サイトのプライバシーポリシー（個人情報の取り扱い、アクセス解析、広告配信、Cookie等）を掲載しています。" />
-  <link rel="canonical" href="/privacy.html" />
+  <title>Privacy｜神アプ！～個人開発の便利アプリ紹介～</title>
+  <meta name="description" content="神アプ！のプライバシーポリシーです。個人情報の取り扱い、Cookie、アクセス解析、広告配信、外部送信の範囲、問い合わせ方法について掲載しています。" />
+  <link rel="canonical" href="https://apps-article.pages.dev/privacy/" />
   <meta name="robots" content="index,follow" />
+
+  <!-- AdSense（サイトで使う場合） -->
+  <script async crossorigin="anonymous"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+
+  <!-- OGP / Twitter（Privacy用の最小） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="神アプ！～個人開発の便利アプリ紹介～" />
+  <meta property="og:title" content="Privacy｜神アプ！～個人開発の便利アプリ紹介～" />
+  <meta property="og:description" content="神アプ！のプライバシーポリシーです。個人情報の取り扱い、Cookie、アクセス解析、広告配信、外部送信の範囲、問い合わせ方法について掲載しています。" />
+  <meta property="og:url" content="https://apps-article.pages.dev/privacy/" />
+  <meta property="og:image" content="https://apps-article.pages.dev/asset/og_default.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy｜神アプ！～個人開発の便利アプリ紹介～" />
+  <meta name="twitter:description" content="神アプ！のプライバシーポリシーです。個人情報の取り扱い、Cookie、アクセス解析、広告配信、外部送信の範囲、問い合わせ方法について掲載しています。" />
+  <meta name="twitter:image" content="https://apps-article.pages.dev/asset/og_default.png" />
+
+  <!-- favicon -->
+  <link rel="icon" href="/asset/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/asset/favicon-16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/asset/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/asset/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/asset/favicon-96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/asset/apple-touch-icon.png" />
+  <link rel="manifest" href="/asset/site.webmanifest" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-36H614G1X5');
+  </script>
 
   <style>
     :root{
-      --ink:#222;
-      --muted:#777;
-      --line:#e7e7e7;
-      --pink:#d400b8;
-      --purple:#b300ff;
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
       --card:#ffffff;
-      --soft:#f7f7f7;
-      --shadow: 0 14px 40px rgba(0,0,0,.10);
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
     }
+
     *{ box-sizing:border-box; }
+    html,body{ height:100%; }
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
       color:var(--ink);
-      background:#fff;
+      background: var(--soft);
+      overflow-x:hidden;
     }
+
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
     a{ color:var(--pink); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
-    /* ===== Header ===== */
     .topbar{
-      background:#fff;
-      border-bottom:1px solid var(--line);
-      height: 120px;
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
     }
     .topbar-inner{
-      max-width: 1500px;
-      margin:0 auto;
-      padding: 18px 28px;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
       display:flex;
-      justify-content:space-between;
       align-items:flex-start;
-      gap: 20px;
+      justify-content:space-between;
+      gap: 14px;
     }
-    .brand h1{
-      margin:0;
-      font-weight:700;
-      letter-spacing:.2px;
-      font-size: 28px;
-      color:#333;
-    }
-    .brand .note{
-      margin-top:8px;
-      font-size:14px;
-      color:#666;
-      line-height:1.6;
-    }
-    .controls{
+    .brand{
       display:flex;
       flex-direction:column;
-      align-items:flex-end;
-      gap:12px;
-      padding-top: 8px;
-      min-width: 320px;
+      gap: 4px;
+      min-width: 220px;
     }
-    .controls .search-ghost{
-      width: 240px;
-      height: 34px;
-      background:#f0f0f0;
-      border-radius: 3px;
-      opacity:.75;
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
     }
-    select.lang{
-      font-size:16px;
-      padding: 2px 8px;
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .topnav{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .topnav-link{
+      display:inline-flex;
+      align-items:center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.9);
+      color:#111;
+      font-weight: 900;
+      font-size: 12px;
+      text-decoration:none;
+      box-shadow: 0 6px 18px rgba(17,24,39,.06);
+    }
+    .topnav-link:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .topnav-link[aria-current="page"]{
+      border-color: rgba(212,0,184,.35);
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
     }
 
-    /* ===== Page background ===== */
     .stage{
-      position:relative;
-      overflow:hidden;
-      min-height: 120vh;
-    }
-    .stage::before{
-      content:"";
-      position:absolute;
-      left:0; top:0; bottom:0;
-      width: 35%;
-      background:
-        radial-gradient(1200px 900px at 40% 40%, rgba(0,255,170,.22), rgba(255,255,255,0)),
-        linear-gradient(180deg, rgba(120,255,200,.35), rgba(200,255,220,.25));
-      z-index:0;
-    }
-    .stage::after{
-      content:"";
-      position:absolute;
-      right:0; top:0; bottom:0;
-      width: 48%;
-      background:
-        radial-gradient(900px 700px at 20% 10%, rgba(255,255,255,.65), rgba(255,255,255,0)),
-        radial-gradient(900px 700px at 70% 35%, rgba(120,210,255,.55), rgba(255,255,255,0)),
-        radial-gradient(1200px 900px at 80% 70%, rgba(130,140,255,.35), rgba(255,255,255,0)),
-        linear-gradient(180deg, rgba(170,230,255,.45), rgba(150,170,255,.15));
-      z-index:0;
-    }
-
-    /* ===== Layout ===== */
-    .layout{
-      position:relative;
-      z-index:1;
-      max-width: 1500px;
+      max-width: var(--container);
       margin: 0 auto;
-      padding: 34px 28px;
+      padding: 18px 18px 44px;
+    }
+    .layout{
       display:grid;
-      grid-template-columns: minmax(640px, 1fr) 520px;
-      gap: 30px;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
       align-items:start;
     }
-    .post-shell{
-      position:relative;
-      background: var(--card);
-      border-radius: 44px;
+
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
-      padding: 28px 34px 26px;
-      margin: 10px 0 22px;
+      overflow:hidden;
     }
-    .post-shell::before{
-      content:"";
-      position:absolute;
-      left:-26px; right:-26px;
-      top:-28px; height: 220px;
-      border-radius: 40px;
-      background:
-        radial-gradient(900px 260px at 50% 30%, rgba(0,0,0,.20), rgba(0,0,0,0)),
-        linear-gradient(90deg, rgba(0,0,0,.10), rgba(0,0,0,0));
-      filter: blur(18px);
-      opacity:.25;
-      z-index:-1;
+    .post{ padding: 18px 18px 10px; }
+
+    .breadcrumb{
+      margin-top: 6px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{ background: rgba(17,24,39,.06); }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{ color:#9ca3af; font-weight:900; }
+    .crumb-current{ color:#111; font-weight:800; line-height:1.35; }
+
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(26px, 3vw, 40px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
     }
     .pill{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding: 3px 10px;
+      padding: 4px 10px;
       border-radius: 999px;
       font-size: 12px;
-      font-weight: 700;
-      color:#fff;
-      background:#111;
-    }
-    .crumbbox{
-      margin-top: 10px;
-      background:#fff;
-      border:1px solid #f0f0f0;
-      border-radius: 10px;
-      padding: 14px 16px;
-      display:flex;
-      gap: 16px;
-      align-items:center;
-    }
-    .crumb-left{
-      width: 140px;
-      display:flex;
-      flex-direction:column;
-      gap: 6px;
-      color:#444;
-      font-weight:700;
-      font-size: 16px;
-      line-height: 1.2;
-    }
-    .crumb-left .home{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:600;
-      color:#111;
-      margin-top: 6px;
-    }
-    .home svg{ width:18px; height:18px; opacity:.85; }
-    .crumb-right{
-      flex:1;
-      font-size: 18px;
-      font-weight:700;
-      line-height:1.55;
-      color:#111;
-    }
-
-    h2.title{
-      margin: 16px 0 8px;
-      font-size: 34px;
-      line-height:1.3;
-      color:#6a6a6a;
       font-weight: 800;
-      letter-spacing: .2px;
-    }
-    .date{
-      font-size: 12px;
-      color:#8a8a8a;
-      margin-bottom: 14px;
+      color:#fff;
+      background:#111827;
     }
 
-    /* ===== article ===== */
-    .article h1{
-      margin: 10px 0 10px;
-      font-size: 28px;
-      line-height: 1.35;
-      color:#333;
-      font-weight: 900;
-    }
+    .article{ padding: 8px 0 4px; }
     .article .lead{
-      margin: 10px 0 18px;
-      padding: 12px 14px;
-      background: #fafafa;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      color:#444;
+      margin: 12px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
       line-height: 1.9;
+      box-shadow: var(--shadow2);
     }
     .article h2{
       margin: 22px 0 10px;
-      font-size: 20px;
-      line-height: 1.4;
-      color:#222;
-      font-weight: 900;
+      font-size: 18px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
     }
-    .article .section-body{
-      color:#333;
-      line-height: 2.0;
-    }
-    .article hr{
-      border: none;
-      border-top: 1px solid #eee;
-      margin: 22px 0;
-    }
-    .article p{ margin: 14px 0; }
-    .article .soft-box{
-      background: #f7f7f7;
-      border: 1px solid #ededed;
-      border-left: 4px solid #dcdcdc;
-      border-radius: 10px;
-      padding: 12px 14px;
-      margin: 12px 0;
-      color:#333;
-      line-height: 1.9;
-    }
+    .article p{ margin: 12px 0; line-height: 2.0; color:#0f172a; }
     .article ul{
       margin: 10px 0 10px 18px;
       padding:0;
-      color:#333;
+      color:#0f172a;
       line-height: 2.0;
     }
     .article li{ margin: 6px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .soft-box{
+      margin: 12px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box b{ font-weight: 950; }
+
     .article table{
       width: 100%;
-      border-collapse: collapse;
+      border-collapse: separate;
+      border-spacing: 0;
       font-size: 14px;
-      margin-top: 10px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
     }
     .article th, .article td{
-      border: 1px solid #eee;
-      padding: 10px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
       vertical-align: top;
     }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
     .article th{
-      background: #fafafa;
-      font-weight: 900;
-      width: 200px;
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+      text-align:left;
     }
     .article .em{
       font-style: italic;
-      color:#8a8a8a;
-      font-size: 22px;
+      color:#6b7280;
+      font-size: clamp(16px, 2.2vw, 22px);
       line-height: 1.6;
       letter-spacing: .2px;
       text-align:center;
-      margin: 26px 0;
+      margin: 22px 0;
     }
 
-    /* ===== sidebar ===== */
-    .side-col{ position:relative; padding: 0 10px; }
+    code{
+      background: rgba(248,250,252,.95);
+      border:1px solid rgba(229,231,235,.95);
+      padding: 0 6px;
+      border-radius: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+    }
+
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
     .side-card{
-      margin: 10px 0 18px 120px;
-      width: 330px;
-      background: rgba(255,255,255,.65);
-      border: 1px solid rgba(255,255,255,.75);
-      border-radius: 12px;
-      padding: 14px 14px 12px;
-      box-shadow: 0 10px 26px rgba(0,0,0,.05);
-      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
     }
     .side-card h3{
-      margin:0 0 10px;
-      font-size: 18px;
-      font-weight: 900;
-      color:#111;
+      margin: 0 0 10px;
+      font-size: 16px;
+      font-weight: 950;
+      color:#0b0f1a;
     }
     .side-card p{
       margin: 10px 0;
-      color:#444;
-      line-height:1.85;
+      color:#6b7280;
       font-size: 13px;
+      line-height: 1.8;
+      font-weight: 800;
     }
     .side-links{
       display:flex;
       flex-direction:column;
       gap: 10px;
       margin-top: 8px;
+      font-weight: 950;
     }
-    .side-links a{ font-weight: 900; color: var(--pink); }
 
     footer{
+      max-width: var(--container);
       margin: 18px auto 0;
-      padding: 24px 28px 40px;
-      max-width: 1500px;
-      color:#666;
+      padding: 18px 18px 40px;
+      color:#6b7280;
       line-height: 1.9;
       font-size: 13px;
-      position:relative;
-      z-index:1;
     }
     footer .foot-row{
       display:flex;
       flex-wrap:wrap;
-      gap: 12px 18px;
+      gap: 10px 14px;
       align-items:center;
       margin-top: 10px;
-    }
-    footer a{ font-weight:900; }
-
-    code{
-      background:#f3f3f3;
-      border:1px solid #e9e9e9;
-      padding: 0 6px;
-      border-radius: 6px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: 12px;
+      font-weight: 950;
     }
 
-    @media (max-width: 1200px){
+    @media (max-width: 900px){
       .layout{ grid-template-columns: 1fr; }
-      .side-col{ padding: 0; }
-      .side-card{
-        margin-left: 0 !important;
-        width: auto !important;
-      }
+      .topbar-inner{ align-items:flex-start; }
     }
   </style>
 </head>
@@ -353,145 +402,120 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <h1>～個人開発の便利アプリ紹介～</h1>
-        <div class="note">
-          個人情報の取り扱い／Cookie／広告配信／アクセス解析についてまとめています。<br>
-          迷ったときはこのページを見ればOK、の位置づけです。
-        </div>
-
-        <div style="margin-top:10px;">
-          <select class="lang" aria-label="language">
-            <option>Languages</option>
-            <option>日本語</option>
-            <option>English</option>
-            <option>Deutsch</option>
-            <option>Français</option>
-          </select>
-        </div>
+        <div class="site-title">～個人開発の便利アプリ紹介～</div>
+        <p class="note">
+          個人情報の取り扱い／Cookie／広告配信／アクセス解析についてまとめています。<br />
+          広告・アフィリエイトを含む場合があります（詳細は <a href="#ads">広告配信について</a> へ）
+        </p>
       </div>
 
-      <div class="controls">
-        <div class="search-ghost" title="検索（未実装）"></div>
-        <div style="font-size:12px;color:#777;">※ 静的ページのため検索は未実装</div>
-      </div>
+      <nav class="topnav" aria-label="Site navigation">
+        <a class="topnav-link" href="https://apps-article.pages.dev/">Home</a>
+        <a class="topnav-link" href="https://apps-article.pages.dev/about/">About</a>
+        <a class="topnav-link" href="https://apps-article.pages.dev/contact/">Contact</a>
+        <a class="topnav-link" href="https://apps-article.pages.dev/privacy/" aria-current="page">Privacy</a>
+      </nav>
     </div>
   </header>
 
   <main class="stage">
     <div class="layout">
       <section class="main-col">
-        <article class="post-shell">
-          <span class="pill">PRIVACY</span>
+        <article class="card">
+          <div class="post">
 
-          <div class="crumbbox">
-            <div class="crumb-left">
-              <div style="opacity:.75;font-size:12px;font-weight:800;">YOU ARE HERE</div>
-              <div class="home">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <div class="breadcrumb" aria-label="breadcrumb">
+              <button class="home-link" type="button"
+                onclick="location.href='https://apps-article.pages.dev/'"
+                aria-label="Homeへ移動">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M3 10.5 12 3l9 7.5"></path>
                   <path d="M5 10v10h14V10"></path>
                 </svg>
-                <span><a href="/" style="color:#111;">Home</a></span>
+                <span>Home</span>
+              </button>
+              <span class="crumb-sep">/</span>
+              <div class="crumb-current">Privacy（プライバシーポリシー）</div>
+            </div>
+
+            <header class="post-header">
+              <span class="pill">PRIVACY</span>
+              <h1 class="page-title">プライバシーポリシー</h1>
+              <div class="meta-row">
+                <div class="date">Updated: <span id="updatedAt"></span></div>
               </div>
-            </div>
-            <div class="crumb-right">
-              プライバシーポリシー（Privacy Policy）
-            </div>
-          </div>
+            </header>
 
-          <h2 class="title">プライバシーポリシー</h2>
-          <div class="date">Updated: <span id="updatedAt"></span></div>
+            <div class="article">
+              <div class="lead">
+                当サイト（神アプ！／以下「当サイト」）では、サイト運営・品質改善・広告配信のために、Cookie等を利用して情報を取得・送信する場合があります。<br />
+                このページでは、<b>「何を集めて、何のために使うか」</b>を分かりやすくまとめます。
+              </div>
 
-          <div class="article">
-            <h1>はじめに</h1>
-            <div class="lead">
-              当サイト（以下「当サイト」）は、個人開発アプリ等の紹介コンテンツを提供します。<br>
-              当サイトでは、サービス提供のためにCookie等を用いたアクセス解析・広告配信が行われる場合があります。<br>
-              本ページでは、当サイトにおける情報の取り扱い方針を説明します。
-            </div>
+              <p class="em">不安を減らすために、範囲を明文化します。</p>
 
-            <div class="section-body">
-              <p class="em">「何を集めて、何を集めないか」をハッキリさせる。</p>
-            </div>
+              <hr />
 
-            <hr>
-
-            <h2>取得する情報</h2>
-            <div class="section-body">
+              <h2>1. 取得する情報</h2>
+              <p>当サイトで取得される可能性がある情報は、主に次のとおりです。</p>
               <div class="soft-box">
-                <b>アクセス時に自動で生成される情報（例）</b><br>
+                <b>アクセス時に自動で生成される情報（例）</b><br />
                 IPアドレス、ブラウザ種類、OS、参照元、閲覧日時、閲覧ページ、端末識別子の一部、Cookie識別子等。
               </div>
               <div class="soft-box">
-                <b>お問い合わせ時に入力された情報（例）</b><br>
+                <b>お問い合わせ時に入力された情報（例）</b><br />
                 お名前（任意）、メールアドレス、問い合わせ内容。
               </div>
-              <p>
-                ※お問い合わせフォームを設置していない場合は、この項目は適用されません。
-              </p>
-            </div>
+              <p>※お問い合わせフォームを設置していない場合は、当該項目は適用されません。</p>
 
-            <hr>
+              <hr />
 
-            <h2>利用目的</h2>
-            <div class="section-body">
+              <h2>2. 利用目的</h2>
               <ul>
                 <li>コンテンツ提供・品質改善（閲覧傾向の把握、人気記事の改善など）</li>
                 <li>不正行為の防止、セキュリティ維持</li>
                 <li>お問い合わせ対応（返信・確認・記録）</li>
                 <li>広告配信および効果測定（広告の表示回数・クリック等の計測）</li>
               </ul>
-            </div>
 
-            <hr>
+              <hr />
 
-            <h2>Cookie等の利用について</h2>
-            <div class="section-body">
+              <h2 id="cookies">3. Cookie等の利用について</h2>
               <p>
-                当サイトは、利便性向上・アクセス解析・広告配信のためにCookie等を利用する場合があります。<br>
+                当サイトは、利便性向上・アクセス解析・広告配信のためにCookie等を利用する場合があります。<br />
                 Cookieは、利用者のブラウザに保存される小さなデータで、個人を直接特定する情報（氏名・住所など）を含みません。
               </p>
               <div class="soft-box">
-                <b>無効化：</b> Cookieの利用は、ブラウザ設定で拒否できます。<br>
+                <b>無効化：</b> Cookieの利用は、ブラウザ設定で拒否できます。<br />
                 ただし、拒否した場合、一部機能（広告の最適化等）が正常に動作しない可能性があります。
               </div>
-            </div>
 
-            <hr>
+              <hr />
 
-            <h2>アクセス解析ツールについて</h2>
-            <div class="section-body">
+              <h2 id="analytics">4. アクセス解析ツールについて</h2>
               <p>
-                当サイトでは、アクセス状況の分析のためにアクセス解析ツールを利用する場合があります。<br>
+                当サイトでは、アクセス状況の分析のためにアクセス解析ツールを利用する場合があります。<br />
                 解析ツールはCookie等によりトラフィックデータを収集しますが、個人を直接特定する情報は含まれません。
               </p>
-              <p>
-                ※利用する解析ツールは変更される場合があります。
-              </p>
-            </div>
+              <p>※利用する解析ツールは変更される場合があります。</p>
 
-            <hr>
+              <hr />
 
-            <h2>広告配信について</h2>
-            <div class="section-body">
+              <h2 id="ads">5. 広告配信について</h2>
               <p>
-                当サイトでは、第三者配信の広告サービス（例：Google など）を利用し、広告を掲載する場合があります。<br>
+                当サイトでは、第三者配信の広告サービス（例：Google など）を利用し、広告を掲載する場合があります。<br />
                 これらの広告配信事業者は、ユーザーの興味に応じた広告を表示するため、Cookie等を使用することがあります。
               </p>
               <div class="soft-box">
-                <b>広告に関する補足：</b><br>
-                広告の内容やリンク先の取引・サービスについては、当サイトが保証するものではありません。<br>
+                <b>広告に関する補足：</b><br />
+                広告の内容やリンク先の取引・サービスについて、当サイトが保証するものではありません。<br />
                 ご利用は各事業者の責任にてお願いします。
               </div>
-            </div>
 
-            <hr>
+              <hr />
 
-            <h2>第三者提供・外部送信について</h2>
-            <div class="section-body">
-              <p>
-                当サイトは、以下の目的の範囲で、アクセス情報等が解析事業者・広告配信事業者に送信される場合があります。
-              </p>
+              <h2>6. 外部送信・第三者提供</h2>
+              <p>当サイトは、以下の目的の範囲で、アクセス情報等が解析事業者・広告配信事業者に送信される場合があります。</p>
 
               <table aria-label="external-transmission">
                 <thead>
@@ -515,80 +539,90 @@
                 </tbody>
               </table>
 
-              <p>
-                ※当サイトから、氏名・住所等の個人情報を第三者へ販売・貸与することはありません。
-              </p>
-            </div>
+              <p>※当サイトから、氏名・住所等の個人情報を第三者へ販売・貸与することはありません。</p>
 
-            <hr>
+              <hr />
 
-            <h2>個人情報の管理</h2>
-            <div class="section-body">
+              <h2>7. 個人情報の管理</h2>
               <p>
-                当サイトは、取得した情報の漏えい・改ざん・不正アクセス等を防止するため、合理的な安全対策に努めます。<br>
+                当サイトは、取得した情報の漏えい・改ざん・不正アクセス等を防止するため、合理的な安全対策に努めます。<br />
                 ただし、インターネット上の完全な安全性を保証するものではありません。
               </p>
-            </div>
 
-            <hr>
+              <hr />
 
-            <h2>お問い合わせ・開示/削除の請求</h2>
-            <div class="section-body">
+              <h2>8. 開示・削除等の請求</h2>
               <p>
-                ご自身の情報に関するお問い合わせ（確認・削除等の相談）は、<a href="/contact.html">お問い合わせページ</a>よりご連絡ください。<br>
+                ご自身の情報に関するお問い合わせ（確認・削除等の相談）は、<a href="https://apps-article.pages.dev/contact/">お問い合わせページ</a> よりご連絡ください。<br />
                 ご本人確認が必要な場合があります。
               </p>
-            </div>
 
-            <hr>
+              <hr />
 
-            <h2>改定</h2>
-            <div class="section-body">
+              <h2>9. 改定</h2>
               <p>
-                本ポリシーは、法令や運用の変更に応じて、予告なく改定する場合があります。<br>
+                本ポリシーは、法令や運用の変更に応じて、予告なく改定する場合があります。<br />
                 重要な変更がある場合は、当サイト上で分かる形で告知します。
               </p>
+
+              <hr />
+
+              <h2>10. 免責</h2>
+              <p>
+                当サイトの記載は、情報提供を目的とします。掲載内容の最新性・完全性を保証するものではありません。<br />
+                最終的な判断は利用者ご自身でお願いします。
+              </p>
+
+              <div class="soft-box">
+                <b>問い合わせ先：</b> <a href="https://apps-article.pages.dev/contact/">Contact</a>
+                ／運営方針は <a href="https://apps-article.pages.dev/about/">About</a> をご確認ください。
+              </div>
             </div>
           </div>
         </article>
       </section>
 
-      <aside class="side-col">
-        <div class="side-card" aria-label="sidebar-nav">
-          <h3>基本ページ</h3>
-          <p>審査で見られやすい導線は、ここに固めておくのが楽です。</p>
-          <div class="side-links">
-            <a href="/">→ トップへ戻る</a>
-            <a href="/about.html">→ About</a>
+      <aside class="side">
+        <div class="side-stack">
+          <div class="side-card" aria-label="sidebar-nav">
+            <h3>基本ページ</h3>
+            <p>審査で見られやすい導線は、ここに固めておくのが楽です。</p>
+            <div class="side-links">
+              <a href="https://apps-article.pages.dev/">→ トップへ戻る</a>
+              <a href="https://apps-article.pages.dev/about/">→ About</a>
+              <a href="https://apps-article.pages.dev/contact/">→ Contact</a>
+            </div>
           </div>
-        </div>
 
-        <div class="side-card" aria-label="sidebar-note">
-          <h3>運用メモ</h3>
-          <p>
-            ここは「完璧な法律文」より、<br>
-            “ユーザーが不安にならない説明”が大事です。
-          </p>
+          <div class="side-card" aria-label="sidebar-note">
+            <h3>補足</h3>
+            <p>
+              記事ページでは、App Store掲載情報などの一次情報＋編集部の実機確認をベースに作成します。<br />
+              ただの「中継ページ」にならないよう、独自の整理・検証メモを入れる方針です。
+            </p>
+          </div>
         </div>
       </aside>
     </div>
 
     <footer>
-      <div style="font-weight:900;color:#111;">個人情報の取り扱いに関するお問い合わせは Contact へ。</div>
+      <div style="font-weight:950;color:#0b0f1a;">このサイトは個人運営です。</div>
       <div class="foot-row">
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/privacy.html">Privacy</a>
+        <a href="https://apps-article.pages.dev/">Home</a>
+        <a href="https://apps-article.pages.dev/about/">About</a>
+        <a href="https://apps-article.pages.dev/contact/">Contact</a>
+        <a href="https://apps-article.pages.dev/privacy/">Privacy</a>
       </div>
       <div style="margin-top:10px;">
-        ※ 最終的な取り扱いは、本ページの記載を優先します。
+        ※ 最終的な仕様・料金等は各公式ページをご確認ください。
       </div>
     </footer>
   </main>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("updatedAt").textContent = new Date().toISOString().slice(0,10);
+      const el = document.getElementById("updatedAt");
+      if (el) el.textContent = new Date().toISOString().slice(0,10);
     });
   </script>
 </body>
