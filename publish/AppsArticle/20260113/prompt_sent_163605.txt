@@ -1,0 +1,361 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/cd460f93-9bc5-43ef-8a22-c4646d757729
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+FOX（for one tax）
+税務AIの限界を知っているからこそ、税理士への直接相談機能を組み込んだ。e-Gov連携で法令根拠付きの回答を提供し、不安が残ればワンクリックで税理士に相談可能。AIと税理士、両方の強みを活かした新しい税務サービス。
+確定申告
+AI
+税金
+レビューする
+Visit Product
+確定申告
+AI
+税金
+プロダクトの感想・意見はこのエリアに表示されます
+FOXとは
+FOX
+は、確定申告が必要になった会社員・個人事業主向けの税務AIサービスです。
+「税理士に頼むほどでもないけど、AIだけじゃ不安」
+そんな悩みを、
+税務特化のAI
+と
+税理士へのワンクリック相談
+で解決します。
+FOXの流れ
+サービスURL
+:
+開発の背景
+確定申告の時期が、近づいてきました。
+「確定申告、よくわからない」
+「税理士に頼むほどの金額じゃない」
+「ChatGPTに聞いて、やってみようかな」
+こういう声をよく聞きます。
+ChatGPTに聞けば、すぐに答えが返ってくる。便利ですよね。
+ただ、その回答は正しいのでしょうか。
+一方で、税理士に頼めば安心だけど、数万円かかる。
+ちょっとした疑問を聞くには、敷居が高い。
+だったら、税務特化のAIで大部分を解決して、最終判断だけ税理士に委ねられる仕組みがあればいい。
+それが、FOXを作った理由です。
+では、なぜChatGPTで税務相談すると危険なのでしょうか。
+情報ソースが不明確
+ChatGPTはWeb検索もできますが、最適な情報ソースを絞っていません。
+その時たまたまヒットした「どこかの誰かが書いた情報」をコンテキストに入れて回答しています。
+それが正しいかどうか、誰も保証していません。
+税務の法令は莫大
+所得税法、法人税法、消費税法、相続税法...
+税務に関連する法令は膨大です。
+一般的なAIは、その全てに最適化されているわけではありません。
+だから、引っ張ってくる条文が間違っている。
+あるいは、正しい条文を引っ張ってこれない。
+普通のAIで税務相談するのは、難易度が高いです。
+FOXの4つの機能
+この問題を解決するには、
+税務特化のAIエージェント
+にする必要がありました。
+1. 法令根拠付きで回答（e-Gov法令APIとの連携）
+政府公式の法令データベース「e-Gov」と直接接続しています。
+質問を入力すると、AIが該当する法令を検索し、最新の条文をリアルタイムで取得します。
+「所得税法第121条第1項によると〜」と条文を引用して回答するため、なぜその結論になるのかが明確にわかります。
+「どこかの誰かが書いた情報」ではなく、政府公式のデータを参照する。法令改正にも自動で対応できます。
+2. 税理士が参照するデータを組み込み
+国税庁の通達、タックスアンサー——
+税理士が実務で参照しているデータをコンテキストに入れられるよう調整しました。
+出典リンクも表示されるため、自分で確認することもできます。
+3. ワンクリックで税理士に相談
+AIの回答を見て不安が残ったら、「税理士に相談」ボタンをクリック。
+チャット履歴がそのまま税理士に共有されるため、追加の説明なしですぐに相談を開始できます。
+「あと一押し」の確認ができる相談先として、用意しました。
+4. 補助金もAIが検索
+jGrantsと連携し、あなたに最適な補助金をAIが検索します。
+「使える補助金はある？」と聞くだけで、業種や規模に応じた補助金を提案します。
+※複数名の税理士による監修
+FOXのAIは、複数名の税理士が回答精度を監修しています。
+「この回答は実務で使えるか」「誤解を招く表現はないか」といった視点でチェックを行い、継続的に精度を向上させています。
+それでも、最後は人間が必要
+ただし、どれだけAIの精度を上げても、根本的な限界があります。
+AIの回答は、あくまでAIの回答です。
+いくらAIが進化しても、それは変わりません。
+最終判断の責任は、税理士資格を持つ人間が担保する必要がある。
+これは、今後も変わらないと考えています。
+だから、FOXはこう設計した
+AIで9割を解決し、残り1割は税理士に聞ける。
+FOX AIの回答精度を上げることはできます。
+でも、最後に残るのは「この回答が正しいかどうかをチェックする人間」の存在です。
+だったら、
+AIが大部分を回答し、不安が残る部分だけ税理士に聞ける仕組み
+を作ればいい。
+ワンクリックで、チャット履歴をそのまま税理士に共有。
+追加の説明なしで、すぐに相談を開始できる。
+この設計思想が、FOXの根幹にあります。
+FOX・AI・税理士の比較
+FOX
+ChatGPT等のAI
+税理士
+情報ソース
+e-Gov（政府公式）
+Web上の情報（不明確）
+専門知識
+法令の正確性
+○ 最新条文を取得
+△ 間違うことがある
+○ 正確
+根拠の提示
+○ 条文を引用
+△ 曖昧
+○ 説明可能
+24時間対応
+○
+○
+✕
+コスト
+¥0〜
+¥0〜
+数万円〜
+気軽さ
+○
+○
+△ 敷居が高い
+最終判断
+△ 税理士相談で補完
+✕
+○ 責任を持てる
+こんな人に
+AIで調べて、不安な部分だけ税理士に確認したい人
+とりあえず調べたい人
+全て任せたい人
+使い方（3ステップ）
+チャットで質問
+AIが回答
+不安があれば「税理士に相談」ボタンをクリック
+FOX 税理士相談の流れ
+料金プラン
+「まず試してから決めたい」という方のために、基本機能は無料です。
+プラン
+月額（税込）
+AIチャット
+税理士相談
+Free
+¥0
+月10回
+-
+Basic
+¥3,300
+月100回
+月1回
+Plus
+¥7,480
+月200回
+月3回
+Pro
+¥19,800
+無制限
+月8回 + 優先対応
+顧問税理士をお持ちの方へ
+：FOXに登録すると、税理士相談が
+回数無制限
+になります。
+Q: FOXの回答は信頼できますか？
+e-Gov法令APIから最新の条文を取得し、根拠付きで回答します。複数名の税理士が回答精度を監修していますが、最終的な判断は税理士への相談をおすすめします。だからこそ、ワンクリックで税理士に相談できる機能を用意しています。
+Q: ChatGPTとの違いは？
+最大の違いは「情報ソースの質」です。ChatGPTはWeb上のあらゆる情報を参照しますが、FOXはe-Gov法令API（政府公式）と税理士が参照するデータに絞って回答を生成します。
+Q: 無料でどこまで使えますか？
+月10回のAIチャットが無料です。税理士相談はBasic以上のプランで利用可能です。
+Q: 顧問税理士がいる場合は？
+FOXに顧問税理士のメールアドレスを登録すると、税理士相談の回数を消費せず無制限で相談できます。
+最後に
+生成AIの時代、「ノンエンジニアでもアプリが作れる」と言われます。
+それ自体は素晴らしいことです。
+でも、僕はこう思っています。
+業務で使用するアプリを作るのは、まだまだ全然難しい。
+非エンジニアのままではだめなんだと思っています。
+勉強しないといけないことが山ほどあります。
+技術的なこと、税務的なこと、デザイン、マーケティング、ビジネス的なこと。
+でも、だからこそ、一つずつ潰しながらサービスをアップデートし続けるしかないと思っています。
+目指しているのは、
+税理士×フルスタックエンジニア
+。
+FOXはまだ完成形ではありません。
+でも、使ってくれる人の声を聞きながら、少しずつ良くしていきます。
+開発者について
+税理士法人での勤務経験を経て、現在は税理士試験3科目合格、大学院在学中。
+税理士×フルスタックエンジニア
+を目指して勉強中です。
+フィードバックや機能リクエストがあれば、ぜひ教えてください。
+X (Twitter)
+:
+@donutsman_ai
+お問い合わせ
+:
+info@forone-ai.com
+Appendix: 技術スタック（エンジニア向け）
+アーキテクチャ
+フロントエンド
+: Next.js / TypeScript
+バックエンド
+: Supabase（PostgreSQL、Auth）
+AI
+: OpenRouter
+決済
+: Stripe
+外部API
+: e-Gov法令API / jGrants API
+AI駆動開発で学んだこと
+1. まず枠組みを作る、枠組みを理解する
+プロジェクト開始時に、コマンドで大枠を作ってしまう。
+そして、その枠組みの構造を理解する。これが第一歩でした。
+2. ドキュメントをしっかり読む
+基本的に、実装できることはドキュメントに書いてあります。
+大事なのは、要望をドキュメントのどれで満たすかを理解することだと思います。
+3. ドキュメントをAIに渡す
+ドキュメントの内容をしっかり理解した上で、AIにコンテキストとして渡してあげる。
+知らない単語は聞く。知らない概念は把握する。
+4. まずは作る、公開する
+私もまだ道半ばですが、まずは作ってみる。簡単な方法で公開してみる。
+これが大事だと思っています。
+Explore More
+関連記事はありません。
+Trends
+QRコード読取&作成 - PrismQR
+Taka@個人開発
+2026年1月11日
+オンラインビンゴ
+よーこーさん
+2026年1月11日
+Sodalio – AIチャット記録アプリ
+YOKKO
+2026年1月11日
+Xでフォロワーを増やすアルゴリズムの理解
+コムテ
+2026年1月12日
+Claude Delegatorとはなにか？Claude CodeからCodexへタスクを任せる方法
+masao
+2026年1月12日
+donutsman
+Follow
+{
+  "final_url": "https://izanami.dev/post/cd460f93-9bc5-43ef-8a22-c4646d757729",
+  "og_image": "https://izanami.dev/post/cd460f93-9bc5-43ef-8a22-c4646d757729/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Ffc34e586-2ad8-4013-83f5-4b3238cd4894%2Fa25ca1e5-e898-4550-8d38-2479e3e0278d.png&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "FOX（for one tax）のアイコン"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/fc34e586-2ad8-4013-83f5-4b3238cd4894/57f8adb1-aaeb-4239-9ab5-467cdd6aa849.png",
+      "alt": "FOXの流れ"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/fc34e586-2ad8-4013-83f5-4b3238cd4894/448e85c1-52d7-49e1-b5d5-b06f2ef62ac2.png",
+      "alt": "税理士相談の流れ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F91f9bf99-815a-430e-b17c-101178091760%2Fbcefb920-7358-4e72-98ad-0d26d99199fb.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "YOKKO"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F2173300b-23d4-4802-a2e9-9320073770e4%2Fb824f354-3564-4be5-be8f-9f47a5fffcd3.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "masao"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Ffc34e586-2ad8-4013-83f5-4b3238cd4894%2F3f0dc961-5188-4834-b424-d842008256cb.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://fox.forone-ai.com/"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/cd460f93-9bc5-43ef-8a22-c4646d757729 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}

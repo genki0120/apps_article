@@ -1,0 +1,267 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/ce0af68b-c30a-45aa-9ff0-3ae4fe8c4203
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+dapl.ai - アイデアを5分でLPに
+「dapl.ai」はサービスやアプリのアイデアを入力するだけでウェイトリスト機能搭載のLPが自動生成できるサービスです。URLをシェアしてアイデアの検証を即開始できます。個人開発者やスタートアップのアイデア検証やリード獲得に
+個人開発
+AI
+LP
+レビューする
+Visit Product
+個人開発
+AI
+LP
+プロダクトの感想・意見はこのエリアに表示されます
+dapl.aiとは
+dapl.ai
+は、個人開発者・アーリースタートアップ向けの事前登録フォーム機能搭載ランディングページ生成サービスです。ウェイトリスト/事前登録フォームLPの作成にかかる時間をAIの力で圧倒的に短縮、
+アイデア入力から５分でアイデア検証を開始できます
+。
+主な特徴
+ウェイトリスト機能標準搭載
+:
+dapl.ai
+で生成されたLPは、ウェイトリスト/事前登録フォーム機能を標準搭載！すべての機能が標準搭載されているので技術的なことを考える必要はありません。
+美しいデザイン
+: 最新モデルとチューニングされたプロンプトで美しいデザインのLPが生成可能。
+技術の知識は不要です
+: プログラミングの知識が全く無くても簡単にLPを作成・公開可能。
+こんな方におすすめ
+個人開発者: アイデア検証を開始するまでの時間を大幅に短縮できます。LPの機能やデプロイ先にもう悩むことはありません！
+マーケティング担当者: 高品質なLPで素早くリード獲得可能です！
+スモールチームのスタートアップ: 仮説検証のためのLPを素早く量産できます！
+主要機能
+プロフェッショナルなデザイン
+dapl.ai
+で生成されるLPはモダンでプロフェッショナルなデザインが初期装備。もうデザインに時間をかける必要はありません。
+自然言語で編集
+dapl.ai
+独自の知識は必要ありません。自然言語で簡単にデザインや文言の修正が可能です。
+ウェイトリスト機能標準搭載
+フォーム・メールリスト管理・登録時のフォローアップメール・アナリティクスなどウェイトリスト機能が標準搭載されています。機能の実装は不要ですぐにアイデア検証が開始できます。
+dapl.aiの料金プラン
+プラン比較表
+機能
+Freeプラン
+Starterプラン
+Proプラン
+月額料金
+¥0
+¥1,980
+¥3,980
+AIアクション
+3回/通算
+25回/月
+50回/月
+dapl.aiブランドバナー(LP上部)
+表示
+非表示
+非表示
+カスタムサブドメイン
+✕
+○
+○
+フォローアップメール送信数
+✕
+100回/月
+1000回/月
+CSVエクスポート
+✕
+✕
+○
+カスタムメールテンプレート
+✕
+✕
+○
+各プランの詳細
+Freeプラン
+こんな方におすすめ
+: 基本機能を試してみたい方
+含まれる機能
+:
+AIアクション: 3回のAIアクションが可能です。LPの生成や編集1回につき1アクションが消費されます。
+LP公開: 作成したランディングページの公開が可能です
+ウェイトリスト登録: 無制限にメールアドレスの収集が可能です
+制限事項
+:
+dapl.aiブランドバナー表示: LP上部に
+dapl.ai
+のブランドバナーが表示されます
+Starterプラン（¥1,980/月）
+こんな方におすすめ
+: 爆速でアイデア検証が開始したい方
+無料プランからの追加機能
+:
+AIアクション数の追加: 毎月25回のAIアクションが実行可能です
+フォローアップメール: 毎月100通ウェイトリスト登録時のフォローアップメールが自動送信されます。
+カスタムサブドメイン: 任意のサブドメインが使用可能になります。
+ブランドバナー非表示: LP上部の
+dapl.ai
+のブランドバナーが表示されなくなります。
+プロプラン（¥3,980/月）
+こんな方におすすめ
+: 複数のアイデアを同時に検証したい方、すべての機能を使用したいプロユーザー
+基本プランからの追加機能
+:
+AIアクション数の追加: 毎月50回のAIアクションが実行可能です
+フォローアップメール数の追加: フォローアップメール送信可能数が毎月1000通までアップします
+CSVエクスポート: ウェイトリストに登録されたメールリストをCSVでエクスポートできます
+カスタムメールテンプレート: フォローアップメールの文言をカスタマイズできます
+Q: プログラミングの知識は必要ですか？
+A: 必要ありません。LPの生成から公開までプログラミングやデザインの知識は一切不要です。
+Q: プラン変更はいつでもできますか？
+A: プランの変更はいつでも可能です。
+Q: 支払い方法は何がありますか？
+A: クレジットカードでの決済のみ対応しています
+Q: 独自ドメインの使用は可能ですか？
+A: 現在のところ独自ドメインは非対応となっています。
+Explore More
+関連記事はありません。
+Trends
+AI コーディングエージェントでデザイン再現精度を上げる 7 つのテクニック
+コムテ
+2026年1月9日
+Sodalio – AIチャット記録アプリ
+YOKKO
+2026年1月11日
+QRコード読取&作成 - PrismQR
+Taka@個人開発
+2026年1月11日
+オンラインビンゴ
+よーこーさん
+2026年1月11日
+mito
+Indie Hacker 👻 Software Engineer 🐼 | http://dapl.ai というLP作成ツールを作っています 🔨 | アイドルオタク&ゲーマー👾
+Individual Developer
+Follow
+{
+  "final_url": "https://izanami.dev/post/ce0af68b-c30a-45aa-9ff0-3ae4fe8c4203",
+  "og_image": "https://izanami.dev/post/ce0af68b-c30a-45aa-9ff0-3ae4fe8c4203/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fdd0bd5cd-b8a7-4d9c-a3e9-c477407ae9ea%2F9479101f-a441-4558-877f-0760ac0f544d.png&w=128&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "dapl.ai - アイデアを5分でLPにのアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fdd0bd5cd-b8a7-4d9c-a3e9-c477407ae9ea%2Fd40abce2-3d66-4f4f-8526-5e5350058081.png&w=1920&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/dd0bd5cd-b8a7-4d9c-a3e9-c477407ae9ea/5a7a1f68-f5d1-4f05-9c76-abd1d9ca6ef2.png",
+      "alt": "完成したLPの例"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/dd0bd5cd-b8a7-4d9c-a3e9-c477407ae9ea/8c169cfd-b50d-4eda-81b7-925bfce8c40e.png",
+      "alt": "LP編集画面の画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/dd0bd5cd-b8a7-4d9c-a3e9-c477407ae9ea/1595d724-7910-4b4b-902c-c72622f69557.png",
+      "alt": "ダッシュボード画面"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F91f9bf99-815a-430e-b17c-101178091760%2Fbcefb920-7358-4e72-98ad-0d26d99199fb.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "YOKKO"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocLnqgwpWbh1U8L78KcqEGRcWnrLPD7pC7crPMufp7vAUbM4avnr%3Ds96-c&w=96&q=75&dpl=dpl_8jUkoEuW7nmtdrfewkDcXYidY61k",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://dapl.ai/ja"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/ce0af68b-c30a-45aa-9ff0-3ae4fe8c4203 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}
