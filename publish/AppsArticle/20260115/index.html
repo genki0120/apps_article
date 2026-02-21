@@ -1,39 +1,47 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Tables｜班ごとの共同編集を“配るだけ”で立ち上げる</title>
-<meta content="参加型イベントの成否は、当日の対話量で決まります。Tablesは、班ごとの編集環境づくりと進行の見える化、投影用の表示までを1つにまとめて、司会者の手数を減らす共同編集アプリです。" id="app_meta_description" name="description"/>
-<meta content="index,follow" name="robots"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ClockClock｜打刻から請求書まで、業務委託の「めんどい」を一本にする勤怠アプリ</title>
+<meta id="app_meta_description" name="description" content="" />
+<meta name="robots" content="index,follow" />
 <!-- canonical -->
-<script id="app_schema_article_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Tables｜班ごとの共同編集を“配るだけ”で立ち上げる", "description": "参加型イベントの成否は、当日の対話量で決まります。Tablesは、班ごとの編集環境づくりと進行の見える化、投影用の表示までを1つにまとめて、司会者の手数を減らす共同編集アプリです。", "datePublished": "2026-01-15", "dateModified": "2026-01-15", "author": {"@type": "Organization", "name": "神アプ！編集部"}, "publisher": {"@type": "Organization", "name": "神アプ！"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://apps-article.pages.dev/publish/AppsArticle/20260115/"}, "url": "https://apps-article.pages.dev/publish/AppsArticle/20260115/", "image": ["https://izanami.dev/post/a58261b8-1b5c-400c-a7a9-1f5987330d73/opengraph-image-1umokf?5589478d64c13f8a"]}</script>
-<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://apps-article.pages.dev/"}, {"@type": "ListItem", "position": 2, "name": "Tablesで班運営を最短化する", "item": "https://apps-article.pages.dev/publish/AppsArticle/20260115/"}]}</script>
-<meta content="article" id="app_og_type" property="og:type"/>
-<meta content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" property="og:site_name"/>
-<meta content="Tables｜班ごとの共同編集を“配るだけ”で立ち上げる" id="app_og_title" property="og:title"/>
-<meta content="参加型イベントの成否は、当日の対話量で決まります。Tablesは、班ごとの編集環境づくりと進行の見える化、投影用の表示までを1つにまとめて、司会者の手数を減らす共同編集アプリです。" id="app_og_description" property="og:description"/>
-<meta content="https://apps-article.pages.dev/publish/AppsArticle/20260115/" id="app_og_url" property="og:url"/>
-<meta content="https://izanami.dev/post/a58261b8-1b5c-400c-a7a9-1f5987330d73/opengraph-image-1umokf?5589478d64c13f8a" id="app_og_image" property="og:image"/>
-<meta content="summary_large_image" id="app_tw_card" name="twitter:card"/>
-<meta content="Tables｜班ごとの共同編集を“配るだけ”で立ち上げる" id="app_tw_title" name="twitter:title"/>
-<meta content="参加型イベントの成否は、当日の対話量で決まります。Tablesは、班ごとの編集環境づくりと進行の見える化、投影用の表示までを1つにまとめて、司会者の手数を減らす共同編集アプリです。" id="app_tw_description" name="twitter:description"/>
-<meta content="https://izanami.dev/post/a58261b8-1b5c-400c-a7a9-1f5987330d73/opengraph-image-1umokf?5589478d64c13f8a" id="app_tw_image" name="twitter:image"/>
+
+
+<script id="app_schema_article_jsonld" type="application/ld+json">{}</script>
+<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{}</script>
+
+<meta property="og:type" content="article" id="app_og_type" />
+<meta property="og:site_name" content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" />
+<meta property="og:title" content="..." id="app_og_title" />
+<meta property="og:description" content="..." id="app_og_description" />
+<meta property="og:url" content="..." id="app_og_url" />
+<meta property="og:image" content="..." id="app_og_image" />
+
+<meta name="twitter:card" content="summary_large_image" id="app_tw_card" />
+<meta name="twitter:title" content="..." id="app_tw_title" />
+<meta name="twitter:description" content="..." id="app_tw_description" />
+<meta name="twitter:image" content="..." id="app_tw_image" />
 <!-- favicon -->
-<link href="https://apps-article.page.dev/asset/favicon.ico" rel="icon" sizes="any"/>
-<link href="https://apps-article.page.dev/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="https://apps-article.page.dev/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="https://apps-article.page.dev/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
-<link href="https://apps-article.page.dev/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
-<link href="https://apps-article.pages.dev/publish/AppsArticle/20260104/" rel="canonical"/>
+<link rel="icon" href="https://god-apps-article.com/asset/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="https://god-apps-article.com/asset/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://god-apps-article.com/asset/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="https://god-apps-article.com/asset/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://god-apps-article.com/asset/favicon-96.png">
+<link rel="canonical" href="https://god-apps-article.com/publish/AppsArticle/20260104/">
+
 <!-- iOS -->
-<link href="https://apps-article.page.dev/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link rel="apple-touch-icon" sizes="180x180" href="https://god-apps-article.com/asset/apple-touch-icon.png">
+
 <!-- PWA (任意) -->
-<link href="https://apps-article.page.dev/asset/site.webmanifest" rel="manifest"/>
-<meta content="#ffffff" name="theme-color"/>
+<link rel="manifest" href="https://god-apps-article.com/asset/site.webmanifest">
+<meta name="theme-color" content="#ffffff">
+
+
+
 <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -41,7 +49,8 @@
 
   gtag('config', 'G-36H614G1X5');
 </script>
-<style>
+
+  <style>
     :root{
       --ink:#111;
       --muted:#6b7280;
@@ -604,215 +613,187 @@
     }
   </style>
 </head>
+
 <body>
 <header class="topbar">
-<div class="topbar-inner">
-<div class="brand">
-<div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
-<p class="note">※第三者が開発したアプリを紹介する記事です。また、本記事は、App Store掲載情報と編集部の実機確認をもとに作成しています。</p>
-</div>
-<nav aria-label="Site navigation" class="topnav">
-<a class="topnav-link" href="https://apps-article.pages.dev/">Home</a>
-<a class="topnav-link" href="https://apps-article.pages.dev/about/">About</a>
-<a class="topnav-link" href="https://apps-article.pages.dev/contact/">Contact</a>
-<a class="topnav-link" href="https://apps-article.pages.dev/privacy/">Privacy</a>
-</nav>
-</div>
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
+      <p class="note">※第三者が開発したアプリを紹介する記事です。また、本記事は、App Store掲載情報と編集部の実機確認をもとに作成しています。</p>
+    </div>
+
+    <nav class="topnav" aria-label="Site navigation">
+      <a class="topnav-link" href="https://god-apps-article.com">Home</a>
+      <a class="topnav-link" href="https://god-apps-article.com/about/">About</a>
+      <a class="topnav-link" href="https://god-apps-article.com/contact/">Contact</a>
+      <a class="topnav-link" href="https://god-apps-article.com/privacy/">Privacy</a>
+    </nav>
+  </div>
 </header>
+
 <main class="stage">
-<div class="layout">
-<!-- ===== Main column ===== -->
-<section class="main-col">
-<article class="card">
-<div class="post">
-<div class="breadcrumb">
-<button aria-label="Homeへ移動" class="home-link" onclick="location.href='https://apps-article.pages.dev'" type="button">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M3 10.5 12 3l9 7.5"></path>
-<path d="M5 10v10h14V10"></path>
-</svg>
-<span>Home</span>
-</button>
-<span class="crumb-sep">/</span>
-<div class="crumb-current" id="app_crumb_current">Tablesで班運営を最短化する</div>
-</div>
-<!-- 記事ヘッダー -->
-<header class="post-header">
-<h1 class="page-title" id="app_page_title">Tables｜班ごとの共同編集を“配るだけ”で立ち上げる</h1>
-<div class="meta-row">
-<div class="date" id="app_published_date">Published: 2026-01-15</div>
-<a class="cta" href="https://workshop-tables.com/" id="app_official_cta" rel="nofollow noopener noreferrer" target="_blank">
-<span aria-hidden="true" class="dot"></span>
+  <div class="layout">
+
+    <!-- ===== Main column ===== -->
+    <section class="main-col">
+      <article class="card">
+        <div class="post">
+
+          <div class="breadcrumb">
+            <button class="home-link" type="button"
+              onclick="location.href='https://god-apps-article.com'"
+              aria-label="Homeへ移動">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10.5 12 3l9 7.5"></path>
+                <path d="M5 10v10h14V10"></path>
+              </svg>
+              <span>Home</span>
+            </button>
+
+            <span class="crumb-sep">/</span>
+            <div class="crumb-current" id="app_crumb_current">"差し替え：homeボタン横のタイトルコール"</div>
+          </div>
+
+          <!-- 記事ヘッダー -->
+          <header class="post-header">
+            <h1 class="page-title" id="app_page_title">"差し替え：記事タイトル"</h1>
+
+            <div class="meta-row">
+              <div class="date" id="app_published_date">"差し替え：Published: yyyy-mm-dd"</div>
+
+              <a class="cta" id="app_official_cta" href="差し替え：公式サイトURL" target="_blank" rel="nofollow noopener noreferrer">
+                <span class="dot" aria-hidden="true"></span>
                 アプリ公式サイトはこちら
               </a>
-</div>
-</header>
-<!-- 本文 -->
-<div class="article">
-<div id="articleBody">
-<div class="lead">
-<p class="note" style="margin:10px 0 0;color:#6b7280;font-weight:800;">
+            </div>
+          </header>
+
+          <!-- 本文 -->
+          <div class="article">
+            <div id="articleBody">
+              <div class="lead">
+                <p class="note" style="margin:10px 0 0;color:#6b7280;font-weight:800;">
   ※本記事には広告を含む場合があります。最終判断は公式情報をご確認ください。
 </p>
-<p id="app_lead_text">参加型イベントの成否は、当日の対話量で決まります。Tablesは、班ごとの編集環境づくりと進行の見える化、投影用の表示までを1つにまとめて、司会者の手数を減らす共同編集アプリです。</p>
-<img alt="Tables アイキャッチ" decoding="async" id="app_lead_logo" loading="lazy" src="https://izanami.dev/post/a58261b8-1b5c-400c-a7a9-1f5987330d73/opengraph-image-1umokf?5589478d64c13f8a"/>
-</div>
-<h2 id="app_h2_1">結論：Tablesは「班の文章作成・進行把握・投影」を1本化する</h2>
-<div class="section-body" id="app_body_1"><p>準備で疲れた瞬間、場はもう鈍ります。</p>
-<p>Tablesは、参加者を班（テーブル）に分けて取り組む形式のセッション向けに、編集画面を班数ぶん自動で用意し、司会者が全体状況を俯瞰でき、さらに発表で見せる表示にも切り替えられるアプリです。</p>
-<p class="em">「当日の空気をつくる人」が、URLの配布だけで進行に戻れるのが最大の価値です。</p>
-<img alt="Tables" src="https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fd3d4a9c5-e290-4bd2-a879-ee354200a494%2Fa9979fee-1080-40ef-ac50-bd15f4bfaa90.png&amp;w=128&amp;q=75&amp;dpl=dpl_8eJ7e67ie4xVrFhZJ51beewmsz7c"/>
-<p>画像：Tables（アイコン）</p>
-<p>おすすめの場面は、班ごとに「今やっていること」と「次にやること」を同時に走らせるタイプです。</p>
-<p>例えば、アイデア出し→絞り込み→実装計画→発表までを短時間で回す開発イベント。</p>
-<p>あるいは、授業内のグループ演習で、教師が机間巡視に追われずに詰まりポイントだけ拾いたいとき。</p>
-<p>Tablesの設計は、参加者側の説明コストを削り、司会者側は「遅れている班」「動いている班」を画面上で判断できる方向に寄っています。</p>
-<div class="soft-box"><strong>Before：</strong>班数ぶんのドキュメントを複製し、権限を整え、リンクを並べ、当日は行ったり来たり。</div>
-<div class="soft-box"><strong>After：</strong>班数を指定してURLを配り、司会者は一覧で状況を確認し、見せる画面もそのまま切り替える。</div>
-<p>“運営の雑務”が減るほど、参加者への問いかけと深掘りに時間を回せます。</p></div>
-<hr/>
-<h2 id="app_h2_2">実際に触ってみた：作成→配布→俯瞰→投影→書き出しまでが一直線</h2>
-<div class="section-body" id="app_body_2"><p>使い始めで迷子にならないのは、地味に効きます。</p>
-<p>まず公式サイトにアクセスし、班の数を入れてセッションを作成します。</p>
-<p>その時点で、各班が編集するためのURLと、司会者が全体を見渡すためのURLが用意されます。</p>
-<p class="em">登録作業が前提になっていないので、開始前の説明が短くなります。</p>
-<p>参加者は配られたURLを開くだけで入力でき、複数人が同時に書いても反映が遅れにくい印象でした（仕様として短い遅延で同期します）。</p>
-<p>司会者側の画面では、各班の参加者数の目安、タスクの達成状況、更新の新しさ、接続の不調などが並び、いま声をかけるべき班が見つけやすい作りです。</p>
-<p>発表になったら、投影向けの表示へ切り替えられます。誤って書き換える心配を減らす読み取り中心の見せ方で、フォントも大きく、会場の後方でも拾いやすい方向性でした。</p>
-<p>さらに良かったのは、イベント後の整理です。班ごとの内容をテキスト形式で保存でき、まとめてZIPでも取得できます。進捗のデータはCSVでも落とせるので、振り返り資料の作成が速くなります。</p>
-<div class="soft-box"><strong>Before：</strong>当日のメモが散り、終了後に回収依頼やコピー作業が発生する。</div>
-<div class="soft-box"><strong>After：</strong>セッションの内容をそのまま書き出し、報告書やフィードバックに流し込める。</div>
-<p>“当日だけ回る道具”ではなく、“翌日に残せる道具”として設計されているのが伝わりました。</p></div>
-<hr/>
-<h2 id="app_h2_3">おすすめユースケース：班運営の「見えない時間」を削る使い方</h2>
-<div class="section-body" id="app_body_3"><p>班が増えた瞬間に、進行は別競技になります。</p>
-<p>Tablesは、班が多いほど効果が見えます。理由は単純で、司会者の移動・呼び出し・確認の回数が増えるほど、取りこぼしが増えるからです。</p>
-<p class="em">“班の現在地”を机上で把握できると、介入が必要な瞬間だけ動けます。</p>
-<p>使いどころを整理すると、次のように「場面×効き方」がはっきりします。</p>
-<table>
-<thead>
-<tr>
-<th>場面</th>
-<th>Tablesで起きる変化</th>
-<th>手元に残るもの</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>開発イベント（短時間で企画〜発表）</td>
-<td>各班の進み具合が一覧で追え、詰まり班に先回りして声をかけやすい</td>
-<td>班ごとの記録（テキスト）、進捗データ（CSV）</td>
-</tr>
-<tr>
-<td>社内研修（複数グループの討議）</td>
-<td>議論のアウトプットが同じ型で揃い、発表時の切り替えが速い</td>
-<td>研修レポートに転記しやすい書き出し</td>
-</tr>
-<tr>
-<td>教育現場（グループ演習）</td>
-<td>教員が巡回せずとも停滞を検知しやすく、支援が偏りにくい</td>
-<td>提出物に近い形の成果物</td>
-</tr>
-</tbody>
-</table>
-<div class="soft-box"><strong>Before：</strong>班が多いほど、司会者の視界が分断されて“遅れの発見”が遅れる。</div>
-<div class="soft-box"><strong>After：</strong>更新の新しさや達成状況から、介入優先度を決めて動ける。</div>
-<p>「全員が同じ画面を見る瞬間」と「班が自走する瞬間」を往復するイベントほど、Tablesの恩恵が大きくなります。</p></div>
-<hr/>
-<h2 id="app_h2_4">代替アプリと比べてどうか：汎用ツールの“運営コスト”に刺さる</h2>
-<div class="section-body" id="app_body_4"><p>道具の差は、当日より“前日”に出ます。</p>
-<p>一般的なオンライン文書、ナレッジツール、オンラインホワイトボード、スライドツールでも、班作業と発表は成立します。ただし多班構成になるほど、作成物の複製、共有設定、リンク管理、表示の切り替えが増え、司会者の負担が積み上がります。</p>
-<p class="em">Tablesは「班を増やすほど増える面倒」を、最初から引き受ける設計です。</p>
-<p>例えばGoogleドキュメントのような汎用文書は、自由度が高い反面、班数ぶんの準備と当日のタブ迷子が起きやすい。</p>
-<p>Notionのようなワークスペース型は、情報を育てる運用に強い一方、参加者全員に同じ操作理解を求めやすい。</p>
-<p>ホワイトボード系は発散に強いものの、投影時の読みやすさや誤操作防止、後日の書き出し形式が運営フローと噛み合わないことがあります。</p>
-<p>Tablesは、編集はシンプルな文章中心に寄せ、司会者は一覧で状況を見て、発表は投影向け表示で通す、という“イベント進行の流れ”に寄り添っています。</p>
-<div class="soft-box"><strong>Before：</strong>ツールを組み合わせて成立させるが、接続・共有・切り替えの説明が増える。</div>
-<div class="soft-box"><strong>After：</strong>編集と進行管理と投影が繋がり、説明はURL配布に収束する。</div>
-<p>既存ツールを否定するのではなく、当日の運営負荷を最小化したい人に、選ぶ理由が残るプロダクトです。</p></div>
-<hr/>
-<h2 id="app_h2_5">注意点と弱点：ネット前提、URL共有前提、そして“万能”ではない</h2>
-<div class="section-body" id="app_body_5"><p>軽さには、前提条件があります。</p>
-<p>Tablesはオンラインで動くため、安定したインターネット接続が前提になります。切断しても復帰できる仕組みはありますが、会場回線が不安定な場合は、事前に通信環境の確認をしておくのが現実的です。</p>
-<p class="em">URLを知っている人が入れる仕組みなので、機密情報の共有には向きません。</p>
-<p>アクセスは暗号化された通信で守られ、推測されにくいセッション識別子が使われます。それでも、URLが転送されれば入れてしまう性質上、個人情報や秘匿性の高い内容は載せない運用が安全です。</p>
-<p>また、内容は文章中心で、凝ったレイアウトや図解を作り込む用途では、別のツールのほうが合う場面があります。Tablesは“場を回すための器”に振り切っているので、装飾や複雑な表現を求めると物足りなさが出る可能性があります。</p>
-<p>一方で、イベント後に班ごとの記録をテキストで落としたり、まとめてZIPで取得したり、進捗をCSVで取り出せる点は、運用の型がある組織ほど効きます。</p>
-<div class="soft-box"><strong>Before：</strong>セキュリティ要件が厳しい内容まで載せてしまい、後から扱いに困る。</div>
-<div class="soft-box"><strong>After：</strong>載せる情報を割り切り、成果物は書き出して社内の保管ルールに沿って管理する。</div>
-<p>無料で使える範囲が示されている今のうちに、まずは小さめのイベントで感触を掴むのが良い入り方です。アクセスは https://workshop-tables.com/ から可能です。</p></div>
-</div><!-- /#articleBody -->
-<!-- 1行強調 -->
-<p class="em" id="emphasisLine" style="display:block;">
-<span id="app_emphasis_line">準備と切り替えに奪われる時間を、参加者との対話に戻すための1本です。</span>
-</p>
-<!-- Pager -->
-<div aria-label="pager" class="pager" id="pager" style="display:flex;">
-<a class="pbtn" href="https://apps-article.pages.dev/publish/AppsArticle/20260114/" id="pagerPrev">前へ</a>
-<button class="pbtn" id="pagerHome" onclick="location.reload();" type="button">  このページ</button>
-<a class="pbtn" href="https://apps-article.pages.dev/publish/AppsArticle/20260116/" id="pagerNext">次へ</a>
-</div>
-</div><!-- /.article -->
-</div><!-- /.post -->
-</article>
-<!-- 他の記事 -->
-<section aria-label="campaign-list" class="list-shell">
-<div class="list-head">
-<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
-<a href="https://apps-article.pages.dev">More articles →</a>
-</div>
-<a aria-label="ふるさと納税ダッシュボード" class="campaign" href="https://apps-article.pages.dev/publish/AppsArticle/20251227/">
-<div class="thumb">
-<img alt="ふるさと納税ダッシュボード" loading="lazy" src="https://apps-article.pages.dev/asset/20251227/furusato.png"/>
-</div>
-<div>
-<div class="c-title">ふるさと納税ダッシュボード</div>
-<div class="c-desc">今年あといくら寄付できる？を即答できる無料Webサービス</div>
-<div class="tagline">#ふるさと納税 #個人開発</div>
-</div>
-</a>
-<a aria-label="育児記録・予防接種管理 - milu" class="campaign" href="https://apps-article.pages.dev/publish/AppsArticle/20251228/">
-<div class="thumb">
-<img alt="育児記録・予防接種管理 - milu" loading="lazy" src="https://apps-article.pages.dev/asset/20251228/milu.png"/>
-</div>
-<div>
-<div class="c-title">育児記録・予防接種管理 - milu</div>
-<div class="c-desc">育児の「見ればわかる」を増やす</div>
-<div class="tagline">#育児 #新生児 #ママ</div>
-</div>
-</a>
-<a aria-label="ミチミエール" class="campaign" href="https://apps-article.pages.dev/publish/AppsArticle/20251229/">
-<div class="thumb">
-<img alt="ミチミエール" loading="lazy" src="https://apps-article.pages.dev/asset/20251229/miti.png"/>
-</div>
-<div>
-<div class="c-title">ミチミエール</div>
-<div class="c-desc">スマホ1台で通行量をAI計測できる無料アプリ</div>
-<div class="tagline">#自動計測 #AI #警備員 #個人開発</div>
-</div>
-</a>
-</section>
-</section><!-- /.main-col -->
-<!-- ===== Sidebar column ===== -->
-<aside class="side">
-<div class="side-stack">
-<div class="side-card follow-side">
-<div class="follow-head">
-<img alt="Xアイコン" class="x-avatar" height="44" loading="lazy" src="https://apps-article.pages.dev/asset/riko.jpg" width="44"/>
-<h3>Follow @莉子-個人開発チャレンジ中-</h3>
-</div>
-<a class="xbtn" href="https://x.com/JimPierce50" rel="noopener noreferrer" target="_blank">
-<span class="xicon"></span>
-<span>Follow on X</span>
-</a>
-<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+
+                <p id="app_lead_text">"差し替え：本文導入前パラグラフ"</p>
+                <img id="app_lead_logo" alt="差し替え：紹介アプリ名ロゴ" src="差し替え：アイキャッチロゴ画像URL" loading="lazy" decoding="async" />
+              </div>
+
+              <h2 id="app_h2_1">"差し替え：1章目タイトル"</h2>
+              <div class="section-body" id="app_body_1"><p>"差し替え：1章本文"</p></div>
+              <hr/>
+
+              <h2 id="app_h2_2">"差し替え：2章目タイトル"</h2>
+              <div class="section-body" id="app_body_2"><p>"差し替え：2章本文"</p></div>
+              <hr/>
+
+              <h2 id="app_h2_3">"差し替え：3章目タイトル"</h2>
+              <div class="section-body" id="app_body_3"><p>"差し替え：3章本文"</p></div>
+              <hr/>
+
+              <h2 id="app_h2_4">"差し替え：4章目タイトル"</h2>
+              <div class="section-body" id="app_body_4"><p>"差し替え：4章本文"</p></div>
+              <hr/>
+
+              <h2 id="app_h2_5">"差し替え：5章目タイトル"</h2>
+              <div class="section-body" id="app_body_5"><p>"差し替え：5章本文"</p></div>
+            </div><!-- /#articleBody -->
+
+            <!-- 1行強調 -->
+            <p class="em" id="emphasisLine" style="display:block;">
+              <span id="app_emphasis_line">"差し替え：5章終了後のまとめ強調文"</span>
+            </p>
+
+
+            <!-- Pager -->
+            <div class="pager" id="pager" aria-label="pager" style="display:flex;">
+              <a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20251227/" id="pagerPrev">前へ</a>
+              <button class="pbtn" type="button" id="pagerHome"  onclick="location.reload();">  このページ</button>
+              <a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20251229/" id="pagerNext">次へ</a>
+            </div>
+
+
+
+          </div><!-- /.article -->
+        </div><!-- /.post -->
+      </article>
+
+      <!-- 他の記事 -->
+      <section class="list-shell" aria-label="campaign-list">
+        <div class="list-head">
+          <div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+          <a href="https://god-apps-article.com">More articles →</a>
+        </div>
+
+        <a class="campaign"
+           href="https://god-apps-article.com/publish/AppsArticle/20251227/"
+           aria-label="ふるさと納税ダッシュボード">
+          <div class="thumb">
+            <img src="https://god-apps-article.com/asset/20251227/home.png" alt="ふるさと納税ダッシュボード" loading="lazy" />
+          </div>
+          <div>
+            <div class="c-title">ふるさと納税ダッシュボード</div>
+            <div class="c-desc">今年あといくら寄付できる？を即答できる無料Webサービス</div>
+            <div class="tagline">#ふるさと納税 #個人開発</div>
+          </div>
+        </a>
+
+        <a class="campaign"
+           href="https://god-apps-article.com/publish/AppsArticle/20251228/"
+           aria-label="育児記録・予防接種管理 - milu">
+          <div class="thumb">
+            <img src="https://god-apps-article.com/asset/20251228/logo.png" alt="育児記録・予防接種管理 - milu" loading="lazy" />
+          </div>
+          <div>
+            <div class="c-title">育児記録・予防接種管理 - milu</div>
+            <div class="c-desc">育児の「見ればわかる」を増やす</div>
+            <div class="tagline">#育児 #新生児 #ママ</div>
+          </div>
+        </a>
+
+        <a class="campaign"
+           href="https://god-apps-article.com/publish/AppsArticle/20251229/"
+           aria-label="ミチミエール">
+          <div class="thumb">
+            <img src="https://god-apps-article.com/asset/20251229/logo.png" alt="ミチミエール" loading="lazy" />
+          </div>
+          <div>
+            <div class="c-title">ミチミエール</div>
+            <div class="c-desc">スマホ1台で通行量をAI計測できる無料アプリ</div>
+            <div class="tagline">#自動計測 #AI #警備員 #個人開発</div>
+          </div>
+        </a>
+
+      </section>
+    </section><!-- /.main-col -->
+
+    <!-- ===== Sidebar column ===== -->
+    <aside class="side">
+      <div class="side-stack">
+
+        <div class="side-card follow-side">
+          <div class="follow-head">
+            <img class="x-avatar" src="https://god-apps-article.com/asset/riko.jpg" alt="Xアイコン" width="44" height="44" loading="lazy" />
+            <h3>Follow @莉子-個人開発チャレンジ中-</h3>
+          </div>
+
+          <a class="xbtn" href="https://x.com/JimPierce50" target="_blank" rel="noopener noreferrer">
+            <span class="xicon"></span>
+            <span>Follow on X</span>
+          </a>
+
+          <div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
             個人開発の神アプリを趣味で紹介するエンジニア10年目
           </div>
-</div>
-<!-- ここに他の side-card を追加していく -->
-</div>
-</aside>
-</div><!-- /.layout -->
+        </div>
+
+        <!-- ここに他の side-card を追加していく -->
+
+      </div>
+    </aside>
+
+  </div><!-- /.layout -->
 </main>
 </body>
 </html>

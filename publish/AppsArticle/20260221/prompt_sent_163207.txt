@@ -1,0 +1,222 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/4a87378b-65e3-405d-8d77-8f5098bf61ad
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+英単語OCR — カメラで撮って、聞いて、覚える英語学習アプリ
+英単語OCR は、※印刷された英文をスマホのカメラで撮影→自動でテキスト化(OCR)し、そのままネイティブ発音で読み上げながら“読む・聞く・話す”を一つのアプリで完結できる。
+さらに、音声認識で自分の発音を記録したり、虫食いモードで単語をランダムに隠して問題形式で覚えた
+アプリ
+個人開発
+英語
+レビューする
+Visit Product
+アプリ
+個人開発
+英語
+プロダクトの感想・意見はこのエリアに表示されます
+📱 英単語OCRは、その旅をいつも隣で見守ってくれる、小さな相棒です。
+(※手書き文字は非対応です)
+単語やフレーズ、例文をぎゅうぎゅうに書きこんでも、
+テスト前になると「え…どこに書いたっけ？」と迷子になっちゃう。
+ある日、街をふらっと歩いていると、
+カフェのメニューの英語がふわっと目に飛び込んでくる。
+でも、書き写すのはちょっと面倒。
+しかも発音なんてわからない。
+「あ〜〜これ全部パッとスマホで学べたらいいのに…」
+その“ひとこと”から、小さな奇跡が生まれた。
+“英単語OCR” という、あなた専用のかわいい英語ノート。
+紙の文章も、街の看板の英語も、手書きメモも、
+スマホをかざすだけで ふわっ と教材に早変わり。
+単語をタップすると、小さな声が「こんにちは」みたいに響く。
+自分の発音を録音してみると、
+その声がそのまま“学習の材料”に変わるからちょっと不思議で、ちょっと楽しい。
+虫食いモードで遊んでいるうちに、
+ふと気づけば毎日、自然と英語に触れている自分がいる。
+これは、あなたの日常の英語ぜんぶを
+“学びの宝箱” にしていく物語のはじまり。
+▶ アプリページはこちら
+英単語OCR — カメラで撮って、聞いて、覚える英語学習アプリ
+「教科書、雑誌、道端の英文、街で見かけた英文も、スマホをかざすだけで英語学習教材に――」そんな未来を叶える英語学習アプリ、それが
+英単語OCR
+です！
+🌟 概要
+英単語OCR は、※紙の教材をスマホのカメラで撮影→自動でテキスト化(OCR)し、そのままネイティブ発音で読み上げながら“読む・聞く・話す”を一つのアプリで完結できる。
+さらに、音声認識で自分の発音を記録したり、虫食いモードで単語をランダムに隠して問題形式で覚えたりと、学習効率とモチベーションを両立させる機能が満載。
+✅ 主な機能
+OCR機能
+教科書・雑誌・手書きの英文をスマホで撮るだけで、即デジタル化。もういちいち手で打ち込む必要なし。
+ネイティブ発音の読み上げ
+単語をタップすれば発音チェック。再生速度は 0.5×〜2.0× まで調整可能で、じっくり聞いたりスピードに慣れたり好きにできる。
+音声認識によるスピーキング練習
+自分の発音をリアルタイムでテキスト化。発音のクセや弱点を “見える化” できるから、スピーキング力アップに直結。
+虫食いモードで暗記強化
+単語をランダムに隠して、タップで答えを表示。ゲーム感覚で単語を覚えられて、学習が習慣になりやすい。
+品詞ごとのカラー表示 & 見やすいデザイン
+名詞、動詞など単語の品詞ごとに淡い色で色分け。視覚的に理解しやすく、目にも優しい設計。
+豊富なサンプル教材入り
+日本の昔話（桃太郎、かぐや姫など）の英語版、ビジネス英語フレーズ、日常会話など — アプリを開いた瞬間から学習を始められる。
+🧑‍🎓 こんな人におすすめ
+教科書や雑誌の英文を効率よく暗記したい学生
+通勤時間・スキマ時間にリスニング／スピーキング力を上げたい社会人
+街中で見かけた英文を即教材にして学びたい人
+単語の意味・発音を同時にチェックしたい人
+英語学習を「習慣化」したい人
+📲 使い方（3ステップで簡単）
+英文を取り込む
+カメラでOCR（紙の教材を撮影）
+音声入力（自分の発音をテキスト化）
+手動入力（自分で英文を入力）
+好みや状況に応じて選べる。
+学習する
+ネイティブ発音を聞きながら、意味・発音を確認。虫食いモードでゲーム感覚の暗記。
+復習する
+保存した教材はいつでも見返せる。
+▶ アプリページはこちら
+Explore More
+関連記事はありません。
+Trends
+Claude Code to Figma を実際に試してみた
+コムテ
+2026年2月18日
+Anthropic 社内のマーケティングチームが Claude Code をガチ運用してた話
+コムテ
+2026年2月21日
+StandOS
+Kota Hisafuru
+2026年2月18日
+FlipSchedule - 日付も「時間」もすぐ決まる、新しい日程調整ツール
+Atoll Ray
+2026年2月19日
+レンアイシステムリリース！
+ヤマカズ(ハーモニコム)
+2026年2月17日
+Taka@個人開発
+朝活でアプリを作っています。Xもやっているので繋がれたら嬉しいです😊
+ご意見ご要望はお気軽にお願いします。
+Individual Developer
+TypeScript
+React
+Next.js
+Follow
+{
+  "final_url": "https://izanami.dev/post/4a87378b-65e3-405d-8d77-8f5098bf61ad",
+  "og_image": "https://izanami.dev/post/4a87378b-65e3-405d-8d77-8f5098bf61ad/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2Ff3efb42b-0091-4b63-a26f-1085c5b7e1ef.jpg&w=128&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "英単語OCR — カメラで撮って、聞いて、覚える英語学習アプリのアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2Faa857ef3-91c8-48f3-b6c4-590e84e2518a.jpg&w=1920&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocI5Pg_kHU1ETxPO8J0XAjGqSNXpoyzycd7EZCsn7QSEtswwpW2x%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Kota Hisafuru"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Fe469b536-bc53-4164-a1e1-3e7694a9484c%2Fbce7373f-0a2e-4317-8096-ba425c31d6b6.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Atoll Ray"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Fcaf1cb0f-e2e1-4c3b-8077-b051b52ca706%2F82bc7fd7-cd90-45e7-8192-d6cb8552c115.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "ヤマカズ(ハーモニコム)"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://apps.apple.com/jp/app/英単語ocr-カメラで撮って学ぶ英語/id6754179564"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/4a87378b-65e3-405d-8d77-8f5098bf61ad にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}
