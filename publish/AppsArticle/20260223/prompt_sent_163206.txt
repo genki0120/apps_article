@@ -1,0 +1,289 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/40f4c476-01bf-4a3a-9256-b14bd8aaf08b
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+おもてなしQRメーカー
+おもてなしQRメーカーは、インバウンド観光客向けの多言語動画を5分で自動生成するAIツールです。飲食店のメニュー説明、ホテルの館内案内、観光施設の展示解説など、15言語対応の動画をQRコードで手軽に提供でき、低コストで効率的な多言語対応を実現します。
+AI
+多言語
+インバウンド
+レビューする
+Visit Product
+AI
+多言語
+インバウンド
+プロダクトの感想・意見はこのエリアに表示されます
+おもてなしQRメーカーとは
+おもてなしQRメーカー
+は、インバウンド観光事業者向けの多言語動画自動生成AIツールです。外国人観光客への案内に課題を抱える事業者が、テキストを入力するだけで15言語対応の説明動画を5分で作成でき、翻訳費用や制作時間を大幅に削減できます。
+主な特徴
+5分で多言語動画を自動生成
+: テキストから動画・音声・字幕を一括作成し、制作工数を95%削減
+15言語対応
+: 日本語、英語、中国語、韓国語、タイ語など主要なインバウンド言語に対応
+QRコードで簡単配布
+: 自動生成されたQRコードを印刷・設置するだけで、スマホから即座にアクセス可能
+こんな方におすすめ
+飲食店経営者
+: メニュー説明やアレルギー情報を多言語で提供したいが、翻訳コストが高い
+ホテル・旅館運営者
+: 館内案内や温泉マナーを外国人ゲストに伝えたいが、スタッフの語学力に不安がある
+観光施設管理者
+: 展示解説や施設案内を多言語化したいが、制作時間とコストが課題
+主要機能
+多言語動画自動生成
+日本語テキストを入力するだけで、AIが15言語の翻訳・ナレーション・字幕を自動生成。30種類のナレーターから自然なネイティブ音声を選択可能。
+QRコード即時発行
+生成された動画は短縮URLとQRコードで即座に配布可能。印刷して店頭やテーブルに設置するだけで利用開始。
+リアルタイム更新
+同じQRコードのまま、動画内容だけを差し替え可能。季節メニューの変更や最新情報の反映が簡単。
+導入効果
+制作時間の短縮
+: 従来の動画制作（数週間）から5分へ、時間を99%削減
+コスト削減
+: 翻訳費用や制作費を従来の10分の1以下に圧縮
+顧客満足度向上
+: 母国語での案内提供により、外国人観光客の理解度と満足度が向上
+他の多言語対応方法との比較
+対応方法
+特徴
+メリット
+デメリット
+翻訳会社への外注
+プロによる高品質な翻訳
+正確性が高く、ニュアンスも適切
+費用が高額（1言語数万円）、納期に数週間、修正に追加費用
+多言語パンフレット印刷
+紙媒体での情報提供
+手渡しで配布可能
+印刷コストが高い、在庫管理が必要、更新のたびに再印刷
+語学スタッフの雇用
+対面での人的対応
+柔軟な対応が可能、質問にも答えられる
+人件費が高い、24時間対応は困難、対応言語に限界
+機械翻訳アプリ
+リアルタイム翻訳
+即座に翻訳できる
+精度にばらつき、音声なし、観光客自身が操作する必要
+おもてなしQRメーカー
+AI自動生成＋QRコード配布
+5分で15言語対応、低コスト、リアルタイム更新可能、音声＋字幕で分かりやすい
+動画形式のため、紙媒体での詳細情報提供には不向き
+ユーザーの声・利用者の証言
+外国人観光客への対応が劇的に改善しました
+「メニュー説明に困っていた外国人のお客様が、QRコードを読み取るだけで母国語で料理の説明を聞けるようになり、注文がスムーズになりました。スタッフの負担も減り、お客様の満足度も目に見えて向上しています。」
+— 東京都内 飲食店経営者
+翻訳費用が10分の1になりました
+「従来は翻訳会社に依頼して、1言語あたり数万円かかっていました。おもてなしQRメーカーなら、15言語すべてを5分で作成でき、コストも大幅に削減できました。季節ごとのメニュー変更にも即座に対応できるのが助かっています。」
+— 京都府 旅館経営者
+スタッフの語学力不足が解消されました
+「英語が話せるスタッフが少なく、外国人ゲストへの案内に不安がありました。QRコードで温泉マナーや館内ルールを多言語で説明できるようになり、トラブルが大幅に減少しました。ゲストからも「わかりやすい」と好評です。」
+— 石川県 温泉旅館支配人
+展示解説の多言語化が簡単に実現
+「博物館の展示解説を多言語化したかったのですが、制作費と時間が課題でした。おもてなしQRメーカーを使ったところ、日本語の原稿を用意するだけで、すぐに15言語対応の動画が完成。来館者からも「母国語で詳しく学べて良かった」という声をいただいています。」
+— 大阪府 博物館学芸員
+リアルタイム更新機能が便利
+「季節限定メニューや営業時間の変更など、情報が頻繁に変わる中、同じQRコードのまま内容だけを更新できるのが本当に便利です。印刷物を作り直す手間とコストが省け、常に最新情報を提供できています。」
+— 神奈川県 カフェオーナー
+観光施設の案内が充実しました
+「観光案内所で多言語パンフレットを用意していましたが、印刷コストと在庫管理が大変でした。QRコードなら1枚のポスターで済み、内容も随時更新できます。訪日観光客からも「スマホで見られて便利」と評判です。」
+— 沖縄県 観光協会職員
+動画制作の知識がなくても使えました
+「動画編集の経験は全くありませんでしたが、テキストを入力するだけでプロ並みの多言語動画が完成しました。ナレーターの声も自然で、お客様から「わかりやすい」と好評です。こんなに簡単だとは思いませんでした。」
+— 福岡県 お土産店店長
+インバウンド対応が評価され売上が向上
+「多言語対応を充実させたことで、外国人観光客からの評価が上がり、SNSでの口コミも増えました。結果的に外国人客の来店数が30%増加し、売上も大きく伸びています。おもてなしQRメーカーへの投資は十分に回収できました。」
+— 奈良県 レストランオーナー
+Q: おもてなしQRメーカーの導入にはどのくらい時間がかかりますか？
+A: おもてなしQRメーカーは、テキストを入力してから約5分で多言語動画とQRコードが生成されます。特別なソフトウェアのインストールや専門知識は不要で、Webブラウザからアクセスするだけですぐに利用を開始できます。生成されたQRコードを印刷して設置すれば、即座に外国人観光客への案内が可能になります。
+Q: 対応している言語は何ですか？
+A: 日本語、英語、中国語（簡体字・繁体字）、韓国語、タイ語、スペイン語、イタリア語、フランス語、ドイツ語、ロシア語、マレー語、インドネシア語、ベトナム語、フィリピノ語の15言語に対応しています。主要なインバウンド観光客の母国語をカバーしており、訪日外国人の約95%に対応可能です。
+Q: 動画の内容は後から変更できますか？
+A: はい、可能です。おもてなしQRメーカーの大きな特徴として、同じQRコードのまま動画内容だけをリアルタイムで更新できます。季節限定メニューの追加、営業時間の変更、最新の施設情報への更新など、印刷済みのQRコードを作り直すことなく、常に最新の情報を提供できます。
+Q: セキュリティ面での対策はどうなっていますか？
+A: おもてなしQRメーカーでは、通信の暗号化（SSL/TLS）を実装しており、お客様の情報セキュリティを確保しています。また、生成された動画とQRコードは安全なクラウド環境で管理され、不正アクセスや情報漏洩のリスクを最小限に抑えています。安心してご利用いただけるよう、業界標準のセキュリティ対策に準拠しています。
+Q: 動画の長さや形式に制限はありますか？
+A: 動画の長さは特に制限はありませんが、観光客の視聴体験を考慮すると1〜3分程度が推奨です。動画形式は縦型（スマートフォン向け1080×1920）と横型（1920×1080）の両方に対応しており、用途に応じて選択可能です。BGMの追加や字幕表示のカスタマイズもできます。
+Q: 他社の翻訳サービスから移行できますか？
+A: おもてなしQRメーカーは、既存の翻訳文章をそのまま活用できます。すでに翻訳済みのテキストがある場合は、それを入力することで、音声と字幕付きの動画として生成可能です。また、新規のコンテンツから始める場合でも、日本語テキストを入力するだけで自動的に多言語化されるため、スムーズに移行いただけます。
+Q: スマートフォン以外のデバイスでも視聴できますか？
+A: はい、PC・スマートフォン・タブレットなど、あらゆるデバイスのWebブラウザから快適にご視聴いただけます。QRコードをスマートフォンで読み取るのが最も一般的ですが、短縮URLを直接入力することでPCやタブレットからもアクセス可能です。アプリのインストールは一切不要です。
+Q: 動画制作の経験がなくても使えますか？
+A: はい、動画制作の経験は一切不要です。おもてなしQRメーカーは、テキストを入力するだけでAIが自動的に翻訳・ナレーション・字幕・動画を生成します。専門的な編集技術や機材は必要なく、パソコンやスマートフォンの基本操作ができれば、どなたでも簡単に多言語動画を作成できます。
+Q: QRコードの印刷やデザインについてサポートはありますか？
+A: QRコードは高解像度のPNG形式で生成されるため、印刷物やポスター、メニューなどに直接使用できます。また、QRコードと一緒に表示する説明文のテンプレートや、効果的な設置場所のアドバイスも提供しています。デザインに関するご相談も承っておりますので、お気軽にお問い合わせください。
+Explore More
+関連記事はありません。
+Trends
+StandOS
+Kota Hisafuru
+2026年2月18日
+Anthropic 社内のマーケティングチームが Claude Code をガチ運用してた話
+コムテ
+2026年2月21日
+Image Inverter
+indiehacker
+2026年2月22日
+薬機法チェックツールを独自開発した背景と技術的な話
+江良公宏
+2026年2月21日
+Claude Code で、広告バナー200本を15分で作るえぐい手順（やってみた）
+コムテ
+2026年2月22日
+NomadCalc: 位置取得型の電卓アプリ
+akifumi⚡️
+2026年2月20日
+Jarvish (jarvis-shell)
+tominaga-h
+2026年2月21日
+Gold Price & Rate - XAU Chart
+まさお
+2026年2月18日
+FlipSchedule - 日付も「時間」もすぐ決まる、新しい日程調整ツール
+Atoll Ray
+2026年2月19日
+かわさき楽AIサポート
+川崎市高津区溝の口発。AIツールで業務や暮らしを効率化し、自由な時間を創出！小規模事業者・個人・ご家庭に。生成AIやプログラミング初心者向けマンツーマン研修など。AIを活用した無料教育ツールを多数提供。中の人は中3息子と小5娘のパパ。
+Engineer
+AI
+MCP
+Claude Code
+Follow
+{
+  "final_url": "https://izanami.dev/post/40f4c476-01bf-4a3a-9256-b14bd8aaf08b",
+  "og_image": "https://izanami.dev/post/40f4c476-01bf-4a3a-9256-b14bd8aaf08b/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Ff8874810-8a9e-45fb-bf33-3f824e40febd%2Fac87ebff-9298-455c-8871-c98cc8504b0b.png&w=128&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "おもてなしQRメーカーのアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Ff8874810-8a9e-45fb-bf33-3f824e40febd%2F83bd38e1-07d4-454c-97f0-71ed81e28fdf.jpg&w=1920&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocI5Pg_kHU1ETxPO8J0XAjGqSNXpoyzycd7EZCsn7QSEtswwpW2x%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Kota Hisafuru"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocK3C9KFZUbWPRrIW81cE7RyQZKtFR9e4SZV6ZYRYPeqRVjJBw%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "indiehacker"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocJjmCMd3-ASQbrAlD3uYbqc7NeWZUNNNSeJT169VkmJAx-djlbL%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "江良公宏"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F4306cc92-a4e4-4602-bf2b-674dfa960163%2F4f868f0b-0609-4995-b98a-d2a6ae61fe00.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "akifumi⚡️"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F2ed0e3be-d91d-42d9-9508-71d7c401a042%2Fbfe015f9-4a72-447c-8051-22a072be3a4e.avif&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "tominaga-h"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F4e55e2c5-95e2-4343-984b-e754a104ed1b%2F6a3b2566-bc2e-401c-a416-bb3e092dc338.jpeg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "まさお"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Fe469b536-bc53-4164-a1e1-3e7694a9484c%2Fbce7373f-0a2e-4317-8096-ba425c31d6b6.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Atoll Ray"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Ff8874810-8a9e-45fb-bf33-3f824e40febd%2F9c6598a8-9920-4924-b939-e36c24f4b7e8.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://omotenashiqr.com/"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/40f4c476-01bf-4a3a-9256-b14bd8aaf08b にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}

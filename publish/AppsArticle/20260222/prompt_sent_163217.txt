@@ -1,0 +1,255 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/4a028b59-8e34-4132-a281-6eebb3c5d530
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Beta
+‎tsumu - 積読管理と読書記録の本棚
+「いつか読もう」と買った本が、画面の中で「ふわっ」と降り積もる。Tsumu（ツム）は、物理演算を用いて積読を可視化するアプリです。リスト形式の圧迫感を排除し、本が増えること自体を「心地よい景色」に変えます。バーコードスキャン対応。積読への罪悪感を愛着へ。
+読書
+iOS
+個人開発
+レビューする
+Visit Product
+読書
+iOS
+個人開発
+プロダクトの感想・意見はこのエリアに表示されます
+Tsumu (ツム) とは
+Tsumu (ツム) は、本をつい買いすぎてしまう読書家のための
+物理演算ベースの読書管理アプリ
+です。「積読（つんどく）が増えると罪悪感を感じる」「ToDoリスト形式の管理だと急かされている気がする」という課題を
+本がふわっと降り積もる心地よい物理挙動**で解決し、
+積読を「タスク」から「愛でるコレクション」へと変える新しい読書体験
+を実現できます。
+主な特徴
+物理演算による「積む」体験
+: AppleのSpriteKitを使用し、本が重なり、崩れ、溜まっていく様子をリアルかつ心地よく再現。リスト表示の圧迫感を排除しました。
+直感的なビジュアル管理
+: 文字情報の羅列ではなく、本の「表紙（書影）」そのものを積み上げることで、自分の興味関心の層を視覚的に楽しめます。
+エモーショナルな共有
+: 読了後は書影の色味を抽出した美しいカード画像を生成。感想を添えてSNSへシェアしたくなるデザインです。
+既存アプリとの違い（比較表）
+従来の「リスト型」読書管理アプリと、Tsumuの「物理演算型」体験の違いです。
+特徴
+従来の読書管理アプリ
+Tsumu (ツム)
+表示形式
+無機質なテキストリスト
+物理演算で積まれる本の山
+積読の捉え方
+「消化すべき未完了タスク」
+「愛でるべきコレクション」
+操作感
+タップのみの事務作業
+崩す・弾く・眺める (触感)
+読了後の体験
+チェックマークをつけるだけ
+美しいカード画像を生成・シェア
+感情
+焦燥感・プレッシャー
+愛着・充足感
+こんな方におすすめ
+つい本を買ってしまう方
+: 未読本が部屋に積み上がっていて、少しプレッシャーや罪悪感を感じている方。
+無機質なリスト管理が苦手な方
+: ToDoリストのような「消化すべきタスク」として読書を管理したくない方。
+本の装丁（デザイン）が好きな方
+: 本の内容だけでなく、表紙のデザインも含めてコレクションしたい方。
+主要機能
+物理ビュー（メイン画面）
+登録した本が画面上部から「ふわっ」と落下し、画面下の受け皿に降り積もります。スマホを傾けると本も崩れるなど、触って楽しいインタラクションを提供し、積読を愛おしい景色に変えます。
+積読ビュー機能のスクリーンショット
+バーコード・スキャン登録
+本の裏表紙にあるバーコードをカメラで読み取るだけで、書誌情報と書影を瞬時に取得（OpenBD / Google Books API連携）。面倒な入力なしで、サクサクと本を積み上げられます。
+バーコードスキャン機能のスクリーンショット
+読了アーカイブ＆シェア画像生成
+読み終わった本は物理空間から「本棚」へ移動。その際、表紙画像に合わせたカラーリングで、評価と感想を含んだ美しいシェア画像を自動生成します。
+シェア機能のスクリーンショット
+導入効果
+積読への罪悪感の解消
+: 「読んでいない本」が「溜まっているタスク」ではなく、「美しいコレクション」に見えるようになり、精神的なプレッシャーが減ります。
+所有欲の充足
+: 自分がどんな本を持っているかが一目でわかり、デジタル上でありながら「書斎」を持っているような満足感を得られます。
+読書記録の習慣化
+: 「積むこと」と「シェアすること」自体が楽しいため、無理なく読書管理を続けられます。
+Explore More
+関連記事はありません。
+Trends
+Image Inverter
+indiehacker
+2026年2月22日
+Anthropic 社内のマーケティングチームが Claude Code をガチ運用してた話
+コムテ
+2026年2月21日
+Claude Code で、広告バナー200本を15分で作るえぐい手順（やってみた）
+コムテ
+2026年2月22日
+NomadCalc: 位置取得型の電卓アプリ
+akifumi⚡️
+2026年2月20日
+Gold Price & Rate - XAU Chart
+まさお
+2026年2月18日
+Jarvish (jarvis-shell)
+tominaga-h
+2026年2月21日
+StandOS
+Kota Hisafuru
+2026年2月18日
+薬機法チェックツールを独自開発した背景と技術的な話
+江良公宏
+2026年2月21日
+FlipSchedule - 日付も「時間」もすぐ決まる、新しい日程調整ツール
+Atoll Ray
+2026年2月19日
+Kinari Kuramoto
+Follow
+{
+  "final_url": "https://izanami.dev/post/4a028b59-8e34-4132-a281-6eebb3c5d530",
+  "og_image": "https://izanami.dev/post/4a028b59-8e34-4132-a281-6eebb3c5d530/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fd983ad93-0528-45a8-a5c4-f1877f4e3634%2Fdd22edf3-09d7-442f-8bcf-d57beec3b2b5.png&w=128&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "‎tsumu - 積読管理と読書記録の本棚のアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fd983ad93-0528-45a8-a5c4-f1877f4e3634%2F0cd99956-c27f-485b-81b4-4179131b10df.png&w=1920&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/d983ad93-0528-45a8-a5c4-f1877f4e3634/f8a0b82d-b5ec-4f37-a5dc-41fe3fccd3df.png",
+      "alt": "積読ビュー機能のスクリーンショット"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/d983ad93-0528-45a8-a5c4-f1877f4e3634/b78ebf0a-e74a-42c2-8090-26e5cd6cfde4.png",
+      "alt": "バーコードスキャン機能のスクリーンショット"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/d983ad93-0528-45a8-a5c4-f1877f4e3634/fbfa9473-32fa-4ea0-b77d-302078300a67.png",
+      "alt": "シェア機能のスクリーンショット"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocK3C9KFZUbWPRrIW81cE7RyQZKtFR9e4SZV6ZYRYPeqRVjJBw%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "indiehacker"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F4306cc92-a4e4-4602-bf2b-674dfa960163%2F4f868f0b-0609-4995-b98a-d2a6ae61fe00.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "akifumi⚡️"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F4e55e2c5-95e2-4343-984b-e754a104ed1b%2F6a3b2566-bc2e-401c-a416-bb3e092dc338.jpeg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "まさお"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F2ed0e3be-d91d-42d9-9508-71d7c401a042%2Fbfe015f9-4a72-447c-8051-22a072be3a4e.avif&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "tominaga-h"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocI5Pg_kHU1ETxPO8J0XAjGqSNXpoyzycd7EZCsn7QSEtswwpW2x%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Kota Hisafuru"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocJjmCMd3-ASQbrAlD3uYbqc7NeWZUNNNSeJT169VkmJAx-djlbL%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "江良公宏"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Fe469b536-bc53-4164-a1e1-3e7694a9484c%2Fbce7373f-0a2e-4317-8096-ba425c31d6b6.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Atoll Ray"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocLQhyPodPlAxH2Xh2SvJAfKWWoUKxWEqnk7pAomFKug8OrCQbWI%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://apps.apple.com/ca/app/tsumu-積読管理と読書記録の本棚/id6756554358"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/4a028b59-8e34-4132-a281-6eebb3c5d530 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}

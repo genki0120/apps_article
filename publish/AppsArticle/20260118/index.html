@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>REPL-AI｜試合映像から“次の一手”を拾うAIコーチ</title>
+<meta content="負けた理由はぼんやりとわかっているが、次の試合が終わったら忘れてる。
+REPL-AIは、対戦シューター（FPS,TPS）の試合映像を材料に、改善のヒントを返してくれるAIコーチサービスです。" id="app_meta_description" name="description"/>
+<meta content="index,follow" name="robots"/>
+<!-- canonical -->
+<script id="app_schema_article_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "REPL-AI｜試合映像から“次の一手”を拾うAIコーチ", "description": "負けた理由はぼんやりとわかっているが、次の試合が終わったら忘れてる。 REPL-AIは、対戦シューター（FPS,TPS）の試合映像を材料に、改善のヒントを返してくれるAIコーチサービスです。", "datePublished": "2026-01-18", "dateModified": "2026-01-18", "author": {"@type": "Organization", "name": "神アプ！編集部"}, "publisher": {"@type": "Organization", "name": "神アプ！"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://god-apps-article.com/publish/AppsArticle/20260118/"}, "url": "https://god-apps-article.com/publish/AppsArticle/20260118/", "image": ["https://god-apps-article.com/asset/20260118/logo.png"]}</script>
+<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://god-apps-article.com"}, {"@type": "ListItem", "position": 2, "name": "REPL-AIで負け筋を言語化", "item": "https://god-apps-article.com/publish/AppsArticle/20260118/"}]}</script>
+<meta content="article" id="app_og_type" property="og:type"/>
+<meta content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" property="og:site_name"/>
+<meta content="REPL-AI｜試合映像から“次の一手”を拾うAIコーチ" id="app_og_title" property="og:title"/>
+<meta content="負けた理由はぼんやりとわかっているが、次の試合が終わったら忘れてる。 REPL-AIは、対戦シューター（FPS,TPS）の試合映像を材料に、改善のヒントを返してくれるAIコーチサービスです。" id="app_og_description" property="og:description"/>
+<meta content="https://god-apps-article.com/publish/AppsArticle/20260118/" id="app_og_url" property="og:url"/>
+<meta content="https://god-apps-article.com/asset/20260118/logo.png" id="app_og_image" property="og:image"/>
+<meta content="summary_large_image" id="app_tw_card" name="twitter:card"/>
+<meta content="REPL-AI｜試合映像から“次の一手”を拾うAIコーチ" id="app_tw_title" name="twitter:title"/>
+<meta content="負けた理由はぼんやりとわかっているが、次の試合が終わったら忘れてる。 REPL-AIは、対戦シューター（FPS,TPS）の試合映像を材料に、改善のヒントを返してくれるAIコーチサービスです。" id="app_tw_description" name="twitter:description"/>
+<meta content="https://god-apps-article.com/asset/20260118/logo.png" id="app_tw_image" name="twitter:image"/>
+<!-- favicon -->
+<link href="https://god-apps-article.com/asset/favicon.ico" rel="icon" sizes="any"/>
+<link href="https://god-apps-article.com/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="https://god-apps-article.com/publish/AppsArticle/20260104/" rel="canonical"/>
+<!-- iOS -->
+<link href="https://god-apps-article.com/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- PWA (任意) -->
+<link href="https://god-apps-article.com/asset/site.webmanifest" rel="manifest"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36H614G1X5');
+</script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .topnav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+    }
+    .topnav-link{
+  display:inline-flex;
+  align-items:center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(229,231,235,.9);
+  background: rgba(255,255,255,.9);
+  color:#111;
+  font-weight: 900;
+  font-size: 12px;
+  text-decoration:none;
+  box-shadow: 0 6px 18px rgba(17,24,39,.06);
+}
+.topnav-link:hover{
+  border-color: rgba(212,0,184,.28);
+  text-decoration:none;
+}
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody{
+        max-inline-size: 100%;
+      }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
+<p class="note">※第三者が開発したアプリを紹介する記事です。また、本記事は、App Store掲載情報と編集部の実機確認をもとに作成しています。</p>
+</div>
+<nav aria-label="Site navigation" class="topnav">
+<a class="topnav-link" href="https://god-apps-article.com">Home</a>
+<a class="topnav-link" href="https://god-apps-article.com/about/">About</a>
+<a class="topnav-link" href="https://god-apps-article.com/contact/">Contact</a>
+<a class="topnav-link" href="https://god-apps-article.com/privacy/">Privacy</a>
+</nav>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='https://god-apps-article.com'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">REPL-AIで負け筋を言語化</div>
+</div>
+<!-- 記事ヘッダー -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">REPL-AI｜試合映像から“次の一手”を拾うAIコーチ</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2026-01-18</div>
+<a class="cta" href="https://repl-ai.raimuproject.com/" id="app_official_cta" rel="nofollow noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                アプリ公式サイトはこちら
+              </a>
+</div>
+</header>
+<!-- 本文 -->
+<div class="article">
+<div id="articleBody">
+<div class="lead">
+<p class="note" style="margin:10px 0 0;color:#6b7280;font-weight:800;">
+  ※本記事には広告を含む場合があります。最終判断は公式情報をご確認ください。
+</p>
+<p id="app_lead_text">負けた理由はぼんやりとわかっているが、次の試合が終わったら忘れてる。
+REPL-AIは、対戦シューター（FPS,TPS）の試合映像を材料に、改善のヒントを返してくれるAIコーチサービスです。</p>
+<img alt="REPL-AI ロゴ" decoding="async" id="app_lead_logo" loading="lazy" src="https://god-apps-article.com/asset/20260118/logo.png"/>
+</div>
+<h2 id="app_h2_1">結論：勝てない理由を“映像から言葉にしたい”人に向く</h2>
+<div class="section-body" id="app_body_1"><p>上手い人の助言があると上達は早い。</p>
+<p>REPL-AIは、FPS/TPSの試合動画（ファイル）やYouTube/Twitchのリンクを材料に、AIがプレイを読み取り、直すべき点を具体化して返すサービスです。自分の感覚だけで「たぶんここが悪い」と当てずっぽうで練習するより、映像の事実を起点に改善の順番を決められるのが強みです。</p>
+<img alt="REPL-AI イメージ" src="https://god-apps-article.com/asset/20260118/home.png"/>
+<p>画像：REPL-AI</p>
+<p>見る観点は5つに整理され、射撃の当て方、立ち位置の選び方、アビリティや装備の使い方、移動や寄りの判断、終盤の詰め方といった“勝敗に直結するクセ”が点数として並びます。さらに、動画の再生時間に沿って良い点・悪い点が提示されるので、「どの場面が分岐点だったか」を探す時間が減ります。</p>
+<p class="em">おすすめの使いどきは、連敗が続き、勝たないと眠れない夜です。</p>
+<p>指導の口調を選べるのもユニークで、淡々と結論だけ欲しい日、背中を押してほしい日、容赦なく課題を炙り出したい日でコーチングの方法を変えられます。</p>
+<div class="soft-box"><strong>Before：</strong>デスシーンだけ見返して「エイムが悪い」で片付ける。</div>
+<div class="soft-box"><strong>After：</strong>再生位置ごとの指摘を起点に、立ち回り・判断・撃ち方を切り分けて直せる。</div>
+<p>まずは1本、いつもの試合を入れてみるだけで、「やるだけ」から脱出できます。</p></div>
+<hr/>
+<h2 id="app_h2_2">触って分かった：入力→採点→質問、までが一続き</h2>
+<div class="section-body" id="app_body_2"><p>伸びない原因は見返さないから</p>
+<p>REPL-AIの流れはシンプルで、動画ファイルか動画配信サービスのリンクを用意し、解析を走らせ、結果を読み、疑問点をそのまま会話で掘り下げる、という一本線でつながります。動画を止めたり巻き戻したりしながら一人で反省会をするより、“指摘の入口”が先に提示されるのが体感として大きいところでした。</p>
+<p>結果は、5つの観点に分けた点数で全体像をつかみやすく、そのうえで「どの時間帯で何が起きたか」を追える形でコメントが並びます。ここでいいと思ったのが、良かった場面も一緒に出る点です。悪いところだけを潰すより、「再現すべき良い判断」を拾えると、練習の密度がより上がります。</p>
+<p class="em">読むだけで終わらせず、その場で“次の一手”を質問できるのが要です。</p>
+<p>会話パートでは、「さっきの場面スキルどこに入れるべきだった？」「ピークの仕方はこれが最善だった？」のように、気になった箇所を具体の状況に戻して聞けます。指摘が抽象的な精神論で終わらないので、次の試合で試す内容に落ちやすいのが魅力です。</p>
+<div class="soft-box"><strong>Before：</strong>動画を見返しても、反省が「もっと慎重に」みたいな曖昧語で終わる。</div>
+<div class="soft-box"><strong>After：</strong>特定の再生位置を基点に、代替案を会話で詰めて“実行できる形”にできる。</div>
+<p>もちろん最終的に動かすのは自分ですが、だからこそ見返せると練習の濃度が違います</p></div>
+<hr/>
+<h2 id="app_h2_3">おすすめユースケース：一人でも“反省会が成立する”場面を増やす</h2>
+<div class="section-body" id="app_body_3"><p>練習量より、振り返りの質で差がつきます。</p>
+<p>REPL-AIが効くのは、「誰かに見てもらえれば早いのに」を自力で回収したいときです。人に頼むのが気が引ける、時間が合わない、そもそも何を聞けばいいか分からない。そんな詰まりを、映像ベースの指摘でほどいてくれます。</p>
+<p>特に、負けパターンが複数混ざっている人ほど恩恵が出ます。撃ち負け、位置取り、スキル管理、寄りの遅れ、終盤の詰め。原因を一気に1つへ決め打ちせず、観点ごとに切り分けて“今週はこれ”を作れます。</p>
+<p class="em">ユースケースの本命は、野良で回している人の“孤独な復習”です。</p>
+<table>
+<thead>
+<tr>
+<th>困りごと</th>
+<th>REPL-AIに渡す素材</th>
+<th>起きやすい変化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>連敗しているのに原因が特定できない</td>
+<td>負け試合の動画（またはリンク）</td>
+<td>改善の優先順位が見えて、練習が散らばりにくい</td>
+</tr>
+<tr>
+<td>自分の良い判断が何か分からない</td>
+<td>勝ち試合の動画（またはリンク）</td>
+<td>再現すべき動きが言語化され、勝ちパターンが固まる</td>
+</tr>
+<tr>
+<td>見返しが続かず、雰囲気で次の試合に行ってしまう</td>
+<td>短めのハイライトや1マッチ分</td>
+<td>再生位置ごとの指摘で“読むだけ復習”が成立しやすい</td>
+</tr>
+<tr>
+<td>直し方が分からず、同じミスを繰り返す</td>
+<td>気になった場面を含む試合</td>
+<td>会話で代替案を詰められ、次の試合で試せる形になる</td>
+</tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>反省が“気合い”や“集中”に寄り、次の試合で再発する。</div>
+<div class="soft-box"><strong>After：</strong>観点と再生位置が紐づくので、試す内容が具体の動作まで詳細化される。</div>
+<p>チーム練習の補助にも使えますが、まずは「自分ひとりでも進められる」状態を作る用途で、導入の価値が一番出ます。</p></div>
+<hr/>
+<h2 id="app_h2_4">代替手段と比較：人間コーチ／自己レビュー／汎用AI相談との違い</h2>
+<div class="section-body" id="app_body_4"><p>同じ“上達”でも、手段は別物です。</p>
+<p>選択肢としては、人に直接見てもらう、仲間同士で見返す、自分でリプレイを精査する、文章で汎用のAIに相談する、といったやり方があります。REPL-AIの立ち位置は、その中で「映像を読めて、しかも会話で詰められる」側にあります。人に頼らずに回せる一方で、文章だけの相談より「その試合で起こったこと」がベースなのがポイントです。</p>
+<p class="em">比較の軸は、指摘の根拠が“映像のどこ”に置かれるかです。</p>
+<table>
+<thead>
+<tr>
+<th>手段</th>
+<th>強いところ</th>
+<th>詰まりやすいところ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人間のコーチに依頼</td>
+<td>文脈を踏まえた判断、癖の矯正が速い</td>
+<td>お願いする手間があり、継続のハードルが上がることがある</td>
+</tr>
+<tr>
+<td>自分で見返す</td>
+<td>コントロールでき、深掘りも自由</td>
+<td>視点が固定され、見落としが起きやすい</td>
+</tr>
+<tr>
+<td>汎用AIに文章で相談</td>
+<td>疑問をすぐ投げられる</td>
+<td>映像の事実が入らず、前提がズレやすい</td>
+</tr>
+<tr>
+<td>REPL-AI</td>
+<td>動画（またはリンク）を起点に、再生位置に紐づく指摘と会話がセット</td>
+<td>素材の質や映り方に結果が左右される</td>
+</tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>「結局どれが正解？」と手段選びで止まり、練習が始まらない。</div>
+<div class="soft-box"><strong>After：</strong>映像を入れて叩き台を作り、必要なら人に聞く、という順番にできる。</div>
+<p>万能の一手ではないですが、最初の“叩き台”を作る速度は武器になります。迷いを減らして試行回数を増やしたい人ほど、取り入れる価値があります。</p></div>
+<hr/>
+<h2 id="app_h2_5">注意点と弱点：AIの指摘を強みに変えるための前提</h2>
+<div class="section-body" id="app_body_5"><p>便利な道具ほど、使い方で差が出ます。</p>
+<p>REPL-AIは映像が前提なので、画質や視点、HUDの見え方、音声の有無など、素材側の条件で読み取りやすさが変わります。特に暗いシーンや情報量が少ない映像だと、意図した判断材料が伝わらず、指摘が遠回りになる可能性があります。まずは“よくある負け試合”を、見やすい形で用意するのが近道です。</p>
+<p>また、AIの返答は強い示唆になり得ますが、常に正解とは限りません。敵味方の情報が欠けている場面や、チームの事前取り決めがある状況では、外から見た最適と中の作戦がズレることがあります。指摘は採用・保留・却下を自分で決める前提で使うと振り回されにくくなります。完全に頼り切りではなく、原因を見つける一歩目として使いましょう。</p>
+<p class="em">“当たっているか”より、“次に試せる仮説か”で評価するとハズレにくいです。</p>
+<p>リンクを使う場合は、公開範囲にも注意が必要です。プレイヤー名、ボイス、チャット、通知など、映り込みが気になる人は素材の扱いを一度見直してから投げると安心です。</p>
+<div class="soft-box"><strong>Before：</strong>指摘を鵜呑みにして、動きが不自然になり、余計に負ける。</div>
+<div class="soft-box"><strong>After：</strong>指摘を“検証用の仮説”として扱い、次の1試合で確かめて自分の型にする。</div>
+<p>今後、より高度な再現や作品ごとの深掘り機能が検討されている旨も示されていますが、追加時期や内容は変わり得ます。だからこそ、いま使える範囲で「振り返りの習慣」を作るのが、いちばん堅い投資になります。</p></div>
+</div><!-- /#articleBody -->
+<!-- 1行強調 -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">弱点を見える化することで差が生まれる</span>
+</p>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260117/" id="pagerPrev">前へ</a>
+<button class="pbtn" id="pagerHome" onclick="location.reload();" type="button">  このページ</button>
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260119/" id="pagerNext">次へ</a>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- 他の記事 -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="https://god-apps-article.com">More articles →</a>
+</div>
+<a aria-label="ふるさと納税ダッシュボード" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251227/">
+<div class="thumb">
+<img alt="ふるさと納税ダッシュボード" loading="lazy" src="https://god-apps-article.com/asset/20251227/home.png"/>
+</div>
+<div>
+<div class="c-title">ふるさと納税ダッシュボード</div>
+<div class="c-desc">今年あといくら寄付できる？を即答できる無料Webサービス</div>
+<div class="tagline">#ふるさと納税 #個人開発</div>
+</div>
+</a>
+<a aria-label="育児記録・予防接種管理 - milu" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251228/">
+<div class="thumb">
+<img alt="育児記録・予防接種管理 - milu" loading="lazy" src="https://god-apps-article.com/asset/20251228/logo.png"/>
+</div>
+<div>
+<div class="c-title">育児記録・予防接種管理 - milu</div>
+<div class="c-desc">育児の「見ればわかる」を増やす</div>
+<div class="tagline">#育児 #新生児 #ママ</div>
+</div>
+</a>
+<a aria-label="ミチミエール" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251229/">
+<div class="thumb">
+<img alt="ミチミエール" loading="lazy" src="https://god-apps-article.com/asset/20251229/logo.png"/>
+</div>
+<div>
+<div class="c-title">ミチミエール</div>
+<div class="c-desc">スマホ1台で通行量をAI計測できる無料アプリ</div>
+<div class="tagline">#自動計測 #AI #警備員 #個人開発</div>
+</div>
+</a>
+</section>
+</section><!-- /.main-col -->
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<div class="side-stack">
+<div class="side-card follow-side">
+<div class="follow-head">
+<img alt="Xアイコン" class="x-avatar" height="44" loading="lazy" src="https://god-apps-article.com/asset/riko.jpg" width="44"/>
+<h3>Follow @莉子-個人開発チャレンジ中-</h3>
+</div>
+<a class="xbtn" href="https://x.com/JimPierce50" rel="noopener noreferrer" target="_blank">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+            個人開発の神アプリを趣味で紹介するエンジニア10年目
+          </div>
+</div>
+<!-- ここに他の side-card を追加していく -->
+</div>
+</aside>
+</div><!-- /.layout -->
+</main>
+</body>
+</html>
