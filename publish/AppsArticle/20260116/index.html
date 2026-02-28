@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>シンプルOCR手帳｜紙のメモが“その日”の記録に変わる</title>
+<meta content="シンプルOCR手帳は、撮ったメモを文字にして、日付の記録として整えていくiOS向けアプリです。" id="app_meta_description" name="description"/>
+<meta content="index,follow" name="robots"/>
+<!-- canonical -->
+<script id="app_schema_article_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "シンプルOCR手帳｜紙のメモが“その日”の記録に変わる", "description": "シンプルOCR手帳は、撮ったメモを文字にして、日付の記録として整えていくiOS向けアプリです。", "datePublished": "2026-01-16", "dateModified": "2026-01-16", "author": {"@type": "Organization", "name": "神アプ！編集部"}, "publisher": {"@type": "Organization", "name": "神アプ！"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://god-apps-article.com/publish/AppsArticle/20260116/"}, "url": "https://god-apps-article.com/publish/AppsArticle/20260116/", "image": ["https://god-apps-article.com/asset/20260116/logo.png"]}</script>
+<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://god-apps-article.com"}, {"@type": "ListItem", "position": 2, "name": "紙メモを日付で残すOCR手帳", "item": "https://god-apps-article.com/publish/AppsArticle/20260116/"}]}</script>
+<meta content="article" id="app_og_type" property="og:type"/>
+<meta content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" property="og:site_name"/>
+<meta content="シンプルOCR手帳｜紙のメモが“その日”の記録に変わる" id="app_og_title" property="og:title"/>
+<meta content="シンプルOCR手帳は、撮ったメモを文字にして、日付の記録として整えていくiOS向けアプリです。" id="app_og_description" property="og:description"/>
+<meta content="https://god-apps-article.com/publish/AppsArticle/20260116/" id="app_og_url" property="og:url"/>
+<meta content="https://god-apps-article.com/asset/20260116/logo.png" id="app_og_image" property="og:image"/>
+<meta content="summary_large_image" id="app_tw_card" name="twitter:card"/>
+<meta content="シンプルOCR手帳｜紙のメモが“その日”の記録に変わる" id="app_tw_title" name="twitter:title"/>
+<meta content="シンプルOCR手帳は、撮ったメモを文字にして、日付の記録として整えていくiOS向けアプリです。" id="app_tw_description" name="twitter:description"/>
+<meta content="https://god-apps-article.com/asset/20260116/logo.png" id="app_tw_image" name="twitter:image"/>
+<!-- favicon -->
+<link href="https://god-apps-article.com/asset/favicon.ico" rel="icon" sizes="any"/>
+<link href="https://god-apps-article.com/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="https://god-apps-article.com/publish/AppsArticle/20260104/" rel="canonical"/>
+<!-- iOS -->
+<link href="https://god-apps-article.com/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- PWA (任意) -->
+<link href="https://god-apps-article.com/asset/site.webmanifest" rel="manifest"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36H614G1X5');
+</script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .topnav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+    }
+    .topnav-link{
+  display:inline-flex;
+  align-items:center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(229,231,235,.9);
+  background: rgba(255,255,255,.9);
+  color:#111;
+  font-weight: 900;
+  font-size: 12px;
+  text-decoration:none;
+  box-shadow: 0 6px 18px rgba(17,24,39,.06);
+}
+.topnav-link:hover{
+  border-color: rgba(212,0,184,.28);
+  text-decoration:none;
+}
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody{
+        max-inline-size: 100%;
+      }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
+<p class="note">※第三者が開発したアプリを紹介する記事です。また、本記事は、App Store掲載情報と編集部の実機確認をもとに作成しています。</p>
+</div>
+<nav aria-label="Site navigation" class="topnav">
+<a class="topnav-link" href="https://god-apps-article.com">Home</a>
+<a class="topnav-link" href="https://god-apps-article.com/about/">About</a>
+<a class="topnav-link" href="https://god-apps-article.com/contact/">Contact</a>
+<a class="topnav-link" href="https://god-apps-article.com/privacy/">Privacy</a>
+</nav>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='https://god-apps-article.com'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">紙メモを日付で残すOCR手帳</div>
+</div>
+<!-- 記事ヘッダー -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">シンプルOCR手帳｜紙のメモが“その日”の記録に変わる</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2026-01-16</div>
+<a class="cta" href="https://apps.apple.com/jp/app/シンプル-ocr手帳-紙のメモをデジタル化-ponocr/id6754294773" id="app_official_cta" rel="nofollow noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                アプリ公式サイトはこちら
+              </a>
+</div>
+</header>
+<!-- 本文 -->
+<div class="article">
+<div id="articleBody">
+<div class="lead">
+<p class="note" style="margin:10px 0 0;color:#6b7280;font-weight:800;">
+  ※本記事には広告を含む場合があります。最終判断は公式情報をご確認ください。
+</p>
+<p id="app_lead_text">シンプルOCR手帳は、撮ったメモを文字にして、日付の記録として整えていくiOS向けアプリです。</p>
+<img alt="シンプルOCR手帳 アイコン" decoding="async" id="app_lead_logo" loading="lazy" src="https://god-apps-article.com/asset/20260116/logo.png"/>
+</div>
+<h2 id="app_h2_1">結論：撮る→文字起こし→日付で並ぶ。おすすめは「散らかる人」</h2>
+<div class="section-body" id="app_body_1"><p>紙に書いた瞬間は完璧なのに、翌日には行方不明になる。</p>
+<figure>
+<img alt="アプリの説明" src="https://god-apps-article.com/asset/20260116/home.png"/>
+<figcaption>シンプルOCR手帳の説明</figcaption>
+</figure>
+<p>シンプルOCR手帳は、紙のノートや手帳を撮影して、画像と一緒に“読める文字”として残せるメモアプリです。</p>
+<p>アプリ内でカメラ撮影して取り込み、さらに端末にある写真からの取り込みにも対応しています。</p>
+<p>文字の読み取りはクラウド側のOCR API（Cloudflare）を呼び出す方式で、判読できるテキストへ変換します。</p>
+<p>抽出した文章から日付らしき情報を拾ってくれるので、メモが「いつの話か」を後から揃えやすいのが特徴です。</p>
+<p>保存したメモはカレンダーで日付から追えるほか、当日のメモを一覧で眺めたり、最近の画像がサムネイルとして見える形でも確認できます。</p>
+<p>タグや日付を手がかりに検索でき、編集や削除も後追いで可能です。</p>
+<p>さらに音声で話した内容をその場でテキスト化し、既存のメモへ追記する使い方にも向きます（日本語・英語に対応）。</p>
+<p class="em">「見つける」より先に「整って残る」ことを重視する人におすすめです。</p>
+<div class="soft-box"><strong>Before：</strong>メモが紙・写真・アプリに散らばり、日付も曖昧で検索に負ける。</div>
+<div class="soft-box"><strong>After：</strong>撮ったメモが文字になり、日付軸で並ぶので“あの日の内容”に戻れる。</div>
+<p>おすすめの場面は、会議の走り書き、学習メモ、日々のログ、思いつきのアイデアなど「書く頻度は高いが整理が続かない領域」です。</p>
+<p>UIは色テーマや背景色を変えられ、表示言語も切り替えられるため、道具としてのストレスを減らす方向に寄せられています。</p></div>
+<hr/>
+<h2 id="app_h2_2">ダウンロードして触るとこう動く：3分で“使い方が決まる”導線</h2>
+<div class="section-body" id="app_body_2"><p>最初の数分で、このアプリの狙いが見えてきます。</p>
+<p>起動してまずやることは、紙を撮るか、すでに撮ってある写真を選ぶかの二択です。</p>
+<p>撮影した画像（または選んだ画像）に対して文字起こしをかけ、結果のテキストがメモとして残ります。</p>
+<p>このとき画像も一緒に保存されるので、「文字は読めるけど原本の書き味も見たい」という使い方ができます。</p>
+<p>読み取り結果には日付の手がかりが含まれる場合があり、うまく拾われると後の整理が一気に楽になります。</p>
+<p>メモの確認は二つの気分で切り替えられます。</p>
+<p>日付から辿りたい日は月のカレンダーを見てタップし、今日の分をざっと見たいときは一覧に寄せる。</p>
+<p>一覧には最新画像の小さなプレビューが出るため、タイトルを付けなくても“見た目”で思い出せるのが地味に助かります。</p>
+<p>追記はキーボードだけでなく、音声入力で話しながら増やせます。</p>
+<p>話した内容がすぐ文字になる設計なので、手が塞がっているときの補助線として機能します。</p>
+<p class="em">「撮る→残る→後で探せる」までが途切れないのが、使っていて一番の安心材料です。</p>
+<div class="soft-box"><strong>Before：</strong>写真に撮っただけで放置し、後日アルバムで埋もれる。</div>
+<div class="soft-box"><strong>After：</strong>写真が“検索できるメモ”になり、日付から引き当てられる。</div>
+<p>無料の読み取り回数には日ごとの上限があり、まずはその範囲で試せます。</p>
+<p>もっと回したい日は、動画広告の視聴で回数制限を外す選択肢も用意されています。</p>
+<p>編集や削除ができるので、取り込み後に整える前提でも使い続けやすい設計です。
+<figure>
+<img alt="アプリの機能" src="https://god-apps-article.com/asset/20260116/function.png"/>
+<figcaption>OCR手帳の機能</figcaption>
+</figure></p></div>
+<hr/>
+<h2 id="app_h2_3">おすすめユースケース：日付×メモが効く人の“勝ちパターン”</h2>
+<div class="section-body" id="app_body_3"><p>メモの価値は、思い出せる形になって初めて立ち上がります。</p>
+<p>このアプリが向いているのは、テキスト化だけでなく「いつのメモか」を後から辿る必要がある人です。</p>
+<p>日付でまとまる構造と、検索（タグや日付）を併用できる点が効きます。</p>
+<p>さらに、音声で追記できるので“紙→撮影→追記”の往復が自然に回ります。</p>
+<p class="em">日付をキーにした整理が必要な人ほど、導入コスト以上の回収が早いです。</p>
+<table>
+<thead>
+<tr>
+<th>シーン</th>
+<th>使い方</th>
+<th>起きる変化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>会議・打ち合わせの走り書き</td>
+<td>紙に書いた直後に撮影して文字化し、要点だけ音声で追記</td>
+<td>議事録が「日付の場所」に着地し、探す時間が減る</td>
+</tr>
+<tr>
+<td>学習ノート（講義・読書）</td>
+<td>ページ単位で撮影し、後からタグや日付で検索</td>
+<td>復習が“その日の学び”単位で戻れる</td>
+</tr>
+<tr>
+<td>日々のアイデア・思考メモ</td>
+<td>紙に殴り書き→取り込み→気づきを追記して更新</td>
+<td>アイデアが写真フォルダに埋もれず、連続した思考になる</td>
+</tr>
+<tr>
+<td>英語/日本語が混じるメモ</td>
+<td>音声入力や表示言語の切り替えを活用して運用</td>
+<td>入力ストレスが下がり、メモの継続率が上がる</td>
+</tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>メモは増えるのに、振り返りが“気合”に依存して続かない。</div>
+<div class="soft-box"><strong>After：</strong>日付と検索で入口が増え、振り返りが習慣に寄る。</div>
+<p>UIのテーマ色や背景色を変えられるので、夜に使う／日中に使うなど生活のリズムに寄せた調整もしやすいです。</p>
+<p>「今日の分だけ見たい」「月全体を見渡したい」を行き来できるのは、紙の手帳っぽさとデジタルの強さが噛み合うポイントです。</p></div>
+<hr/>
+<h2 id="app_h2_4">代替手段と比べてどう？“多機能OCR”より刺さる瞬間</h2>
+<div class="section-body" id="app_body_4"><p>全部入りのアプリがいつも正解とは限りません。</p>
+<p>世の中には、読み取り結果の加工、共有、ワークフロー連携などを前提にした重装備のOCR系ツールが多くあります。</p>
+<p>それに対してシンプルOCR手帳は、日付で整える・見返す・追記するところに体験の重心があります。</p>
+<p>取り込み経路が「撮る」「既存写真から選ぶ」と明快で、保存したメモはカレンダーと一覧の両方から触れます。</p>
+<p>一覧で最新画像が見える設計は、タイトル管理が苦手な人にとって、検索以前の“発見性”として効きます。</p>
+<p>また、読み取りはCloudflareのOCR APIを使う記載があり、クラウドの力で判読を支える設計です。</p>
+<p class="em">強みは、読み取った後の“置き場所”が最初から日付で決まることです。</p>
+<table>
+<thead>
+<tr>
+<th>比較軸</th>
+<th>シンプルOCR手帳</th>
+<th>一般的な多機能OCR/スキャナー系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目的</td>
+<td>日付に紐づくメモとして蓄積し、振り返る</td>
+<td>書類管理や共有、形式変換まで広く対応</td>
+</tr>
+<tr>
+<td>入力</td>
+<td>カメラ撮影・端末内写真から取り込み</td>
+<td>撮影・連続スキャン・自動補正など機能が多い傾向</td>
+</tr>
+<tr>
+<td>見返し</td>
+<td>月カレンダー／当日の一覧、画像プレビューも活用</td>
+<td>フォルダやプロジェクト単位で整理することが多い</td>
+</tr>
+<tr>
+<td>追記</td>
+<td>音声で話してテキスト追加（日本語/英語）</td>
+<td>追記はテキスト編集中心のことが多い</td>
+</tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>多機能ツールを入れたのに、整理ルールが決まらず結局続かない。</div>
+<div class="soft-box"><strong>After：</strong>日付起点の整理に寄せることで、運用が自動的に決まる。</div>
+<p>もちろん、書類スキャンの細かな補正や共有フローが最優先なら別系統のアプリが合うこともあります。</p>
+<p>逆に「手帳の代わりに、紙メモをそのまま取り込んで積む」目的なら、このアプローチが一直線です。</p></div>
+<hr/>
+<h2 id="app_h2_5">注意点と弱点：無料枠・広告・読み取りのクセは割り切る</h2>
+<div class="section-body" id="app_body_5"><p>便利さは、制約の形を知るとさらに伸びます。</p>
+<p>まず、読み取りには無料で使える回数の上限が日ごとに設定されています。</p>
+<p>試用としては十分ですが、毎日大量に取り込む運用だと物足りない日が出ます。</p>
+<p>一方で、動画広告を視聴することで上限を外せる仕組みがあるため、「今日は集中して取り込む日」と割り切れるなら大きな障害にはなりません。</p>
+<p>次に、文字起こしはクラウド側のOCR APIを使う設計です。</p>
+<p>そのため、オフラインだけで完結する運用を求める場合は、自分の使い方に合うか事前に確認したくなります。</p>
+<p>また、手書きは文字の癖や撮影条件の影響を受けやすく、変換結果の手直しが必要になる場面もあり得ます。</p>
+<p>このアプリには編集機能があるので、完璧に読ませるより“直しやすい形で残す”方が現実的です。</p>
+<p class="em">制約は「使わない理由」ではなく、「使い分けのスイッチ」にすると強いです。</p>
+<div class="soft-box"><strong>Before：</strong>読み取り精度や回数制限に振り回され、結局どのメモも中途半端に残る。</div>
+<div class="soft-box"><strong>After：</strong>重要メモは丁寧に撮る／大量取り込みは広告で解放、など運用で吸収できる。</div>
+<p>最後に、対応プラットフォームはiOSとして案内されています。</p>
+<p>端末をまたいで同じ体験を揃えたい人は、その点も含めて選ぶのが安全です。</p>
+<p>それでも「紙で書く習慣は捨てたくない、でも検索できないのは困る」という人には、刺さる落としどころがあります。</p></div>
+</div><!-- /#articleBody -->
+<!-- 1行強調 -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">紙のメモを“日付で探せる資産”に変えたいなら、シンプルOCR手帳が近道です。 </span>
+</p>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260115/" id="pagerPrev">前へ</a>
+<button class="pbtn" id="pagerHome" onclick="location.reload();" type="button">  このページ</button>
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260117/" id="pagerNext">次へ</a>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- 他の記事 -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="https://god-apps-article.com">More articles →</a>
+</div>
+<a aria-label="ふるさと納税ダッシュボード" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251227/">
+<div class="thumb">
+<img alt="ふるさと納税ダッシュボード" loading="lazy" src="https://god-apps-article.com/asset/20251227/home.png"/>
+</div>
+<div>
+<div class="c-title">ふるさと納税ダッシュボード</div>
+<div class="c-desc">今年あといくら寄付できる？を即答できる無料Webサービス</div>
+<div class="tagline">#ふるさと納税 #個人開発</div>
+</div>
+</a>
+<a aria-label="育児記録・予防接種管理 - milu" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251228/">
+<div class="thumb">
+<img alt="育児記録・予防接種管理 - milu" loading="lazy" src="https://god-apps-article.com/asset/20251228/logo.png"/>
+</div>
+<div>
+<div class="c-title">育児記録・予防接種管理 - milu</div>
+<div class="c-desc">育児の「見ればわかる」を増やす</div>
+<div class="tagline">#育児 #新生児 #ママ</div>
+</div>
+</a>
+<a aria-label="ミチミエール" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251229/">
+<div class="thumb">
+<img alt="ミチミエール" loading="lazy" src="https://god-apps-article.com/asset/20251229/logo.png"/>
+</div>
+<div>
+<div class="c-title">ミチミエール</div>
+<div class="c-desc">スマホ1台で通行量をAI計測できる無料アプリ</div>
+<div class="tagline">#自動計測 #AI #警備員 #個人開発</div>
+</div>
+</a>
+</section>
+</section><!-- /.main-col -->
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<div class="side-stack">
+<div class="side-card follow-side">
+<div class="follow-head">
+<img alt="Xアイコン" class="x-avatar" height="44" loading="lazy" src="https://god-apps-article.com/asset/riko.jpg" width="44"/>
+<h3>Follow @莉子-個人開発チャレンジ中-</h3>
+</div>
+<a class="xbtn" href="https://x.com/JimPierce50" rel="noopener noreferrer" target="_blank">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+            個人開発の神アプリを趣味で紹介するエンジニア10年目
+          </div>
+</div>
+<!-- ここに他の side-card を追加していく -->
+</div>
+</aside>
+</div><!-- /.layout -->
+</main>
+</body>
+</html>

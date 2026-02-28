@@ -1,0 +1,213 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/7b4c7b6f-147c-4f8d-91ea-064dd5caa68b
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+ココきて！｜来て欲しい場所をサクッと伝えよう
+「ココきて！」は現在地をサクッとURLに変換します。あとは相手に送るだけ！位置情報はサーバーに一切記録されない「使い捨て」仕様なので、プライバシーも安心です。アプリも登録も不要な、一番シンプルな場所案内をどうぞ。
+イマドコ
+位置情報共有
+ココきて！
+レビューする
+Visit Product
+イマドコ
+位置情報共有
+ココきて！
+プロダクトの感想・意見はこのエリアに表示されます
+ココきて！はこんなサービス
+ばーばと孫がドライブ中に…
+URLによる位置共有：あなたの現在地を、コピー＆ペースト可能なURLに変換します
+URLだから…
+LINE、メール、SNSのDM、Slackなど、どんな連絡手段でも送れます。
+相手は送られてきたURLをタップするだけで、マップアプリが開きます。
+グループチャットに貼るだけで、全員に居場所を一斉通知できます。
+瞬間位置セット（ブラウザGPS連動）
+1秒で完了：「
+ココきて！
+」を開いて許可するだけで、瞬時に共有用リンクを生成します。
+最短ステップ；アプリの起動待ちや、地図上のピン刺し操作が不要です。
+リアルタイム反映：その場の正確な座標を、誤差を最小限に抑えて取得します。
+説明いらず：住所がわからない場所でも、正確な地点をシェアできます。
+出先で急に「今どこ？」と聞かれ、即座に返信したい時に使おう！
+ログレス・プライバシー設計
+「ココきて！」は、位置情報をサーバーに保存せず、その場限りのやり取りを実現する安心設計です。
+履歴ゼロ：どこで使ったかの足跡がサーバーに残らないため、安心して利用できます。
+データ収集なし：サービス側がユーザーの行動を追跡・分析することはありません。
+「使い捨て」の気軽さ：用が済んだらブラウザを閉じるだけ。後腐れのない共有が可能です。
+シンプルUI設計
+ボタンひとつでコピー：生成されたURLを迷わずコピーできる専用ボタンを配置。
+地図プレビュー：自分が送る場所がどこなのか、送信前にひと目で確認可能。
+超軽量動作：余計な装飾を排除し、低速回線でもサクサク動きます。
+ブラウザ完結
+インストール一切不要：スマホの容量を圧迫せず、いつでもどこでも使えます。
+ログイン不要：面倒なアカウント作成やパスワード設定は一切ありません。
+最新マップ連動：相手が使い慣れた地図アプリ（Googleマップ等）で開ける仕組みです。
+使用例
+パターン 1：初対面の仕事相手との合流
+URL共有 + ログイン不要 = 連絡先交換なしでの合流
+「ココきて！」を開いてURLをコピーし、相手との連絡手段（DMやメール）に貼り付けるだけで完了。
+パターン 2：広い屋外イベントでの集合
+瞬間位置セット + 複数人共有 = はぐれた時の即時集合
+自分がいる場所でURLを発行し、グループチャットに投稿。全員が同じピンを目指して集まれます。
+他ツールとの違い
+機能
+ココきて！
+LINE位置共有
+地図アプリ
+手軽さ
+◎ URLを送るだけ
+△ アプリ内限定
+△ 共有がわかりづらい
+汎用性
+◎ 全てのSNS/メール対応
+✕ LINE内のみ
+△ 共有操作が複雑
+安全性
+◯ サーバーに記録なし
+△ 運営に履歴残る
+△ 履歴が蓄積される
+事前準備
+◎ 不要（ブラウザのみ）
+✕ アプリ・友達登録
+◯ 不要
+マルチデバイス対応
+iPhone、Android、PCを問わず、ブラウザが動くすべての端末で同じように動作します。
+※PCの場合は位置情報が正しくない、もしくは取得できないことがあります
+Explore More
+関連記事はありません。
+Trends
+BarOtomo - AIがあなたにぴったりのカクテルを提案
+BarOtomo
+2026年1月16日
+Claude Code スキル自作勢へ！Agent Skills Marketplace に6万超スキル集結
+コムテ
+2026年1月16日
+資産管理アプリ Shisan (シサン)
+Taka@個人開発
+2026年1月15日
+txt365.org
+企画マン。非エンジニア。主にバイブコーディングで開発をしています。
+Individual Developer
+HTML
+Follow
+{
+  "final_url": "https://izanami.dev/post/7b4c7b6f-147c-4f8d-91ea-064dd5caa68b",
+  "og_image": "https://izanami.dev/post/7b4c7b6f-147c-4f8d-91ea-064dd5caa68b/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fd9f71227-8b14-4e78-bd86-6ff9f411e9a1%2Fd65d7d1e-7fa3-433c-b393-e7a574205fa3.png&w=128&q=75&dpl=dpl_8eJ7e67ie4xVrFhZJ51beewmsz7c",
+      "alt": "ココきて！｜来て欲しい場所をサクッと伝えようのアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fd9f71227-8b14-4e78-bd86-6ff9f411e9a1%2F7c24653c-8f0b-41c1-9c6b-ecec56c53f85.png&w=1920&q=75&dpl=dpl_8eJ7e67ie4xVrFhZJ51beewmsz7c",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/d9f71227-8b14-4e78-bd86-6ff9f411e9a1/c51007e7-cd86-4b4e-8ed5-b99cb9b08a3c.jpeg",
+      "alt": "ばーばが孫をドライブ中に車がパンク。どこにいるかを 聞いても要領を得ない。そんなときに「ココきて！」"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F3c88f7ef-09ee-4d06-9262-5506309f5a50%2F4c991be7-4c10-4e90-9164-a5a43384e83c.png&w=96&q=75&dpl=dpl_8eJ7e67ie4xVrFhZJ51beewmsz7c",
+      "alt": "BarOtomo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_8eJ7e67ie4xVrFhZJ51beewmsz7c",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_8eJ7e67ie4xVrFhZJ51beewmsz7c",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocI6-j-s3sFC72eIIZpn4OBqfzD6dGhiGOkcb5KagUoGI6lCZ7k%3Ds96-c&w=96&q=75&dpl=dpl_8eJ7e67ie4xVrFhZJ51beewmsz7c",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://coco.txt365.org/"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/7b4c7b6f-147c-4f8d-91ea-064dd5caa68b にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}
