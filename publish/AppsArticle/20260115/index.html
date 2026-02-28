@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Tables｜班ごとの共同編集を“配るだけ”で立ち上げる</title>
+<meta content="参加型イベントの成否は、当日の対話量で決まります。Tablesは、班ごとの編集環境づくりと進行の見える化、投影用の表示までを1つにまとめて、司会者の手数を減らす共同編集アプリです。" id="app_meta_description" name="description"/>
+<meta content="index,follow" name="robots"/>
+<!-- canonical -->
+<script id="app_schema_article_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Tables｜班ごとの共同編集を“配るだけ”で立ち上げる", "description": "参加型イベントの成否は、当日の対話量で決まります。Tablesは、班ごとの編集環境づくりと進行の見える化、投影用の表示までを1つにまとめて、司会者の手数を減らす共同編集アプリです。", "datePublished": "2026-01-15", "dateModified": "2026-01-15", "author": {"@type": "Organization", "name": "神アプ！編集部"}, "publisher": {"@type": "Organization", "name": "神アプ！"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://god-apps-article.com/publish/AppsArticle/20260115/"}, "url": "https://god-apps-article.com/publish/AppsArticle/20260115/", "image": ["https://god-apps-article.com/asset/20260115/start.png"]}</script>
+<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://god-apps-article.com"}, {"@type": "ListItem", "position": 2, "name": "Tablesで班運営を最短化する", "item": "https://god-apps-article.com/publish/AppsArticle/20260115/"}]}</script>
+<meta content="article" id="app_og_type" property="og:type"/>
+<meta content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" property="og:site_name"/>
+<meta content="Tables｜班ごとの共同編集を“配るだけ”で立ち上げる" id="app_og_title" property="og:title"/>
+<meta content="参加型イベントの成否は、当日の対話量で決まります。Tablesは、班ごとの編集環境づくりと進行の見える化、投影用の表示までを1つにまとめて、司会者の手数を減らす共同編集アプリです。" id="app_og_description" property="og:description"/>
+<meta content="https://god-apps-article.com/publish/AppsArticle/20260115/" id="app_og_url" property="og:url"/>
+<meta content="https://god-apps-article.com/asset/20260115/start.png" id="app_og_image" property="og:image"/>
+<meta content="summary_large_image" id="app_tw_card" name="twitter:card"/>
+<meta content="Tables｜班ごとの共同編集を“配るだけ”で立ち上げる" id="app_tw_title" name="twitter:title"/>
+<meta content="参加型イベントの成否は、当日の対話量で決まります。Tablesは、班ごとの編集環境づくりと進行の見える化、投影用の表示までを1つにまとめて、司会者の手数を減らす共同編集アプリです。" id="app_tw_description" name="twitter:description"/>
+<meta content="https://god-apps-article.com/asset/20260115/start.png" id="app_tw_image" name="twitter:image"/>
+<!-- favicon -->
+<link href="https://god-apps-article.com/asset/favicon.ico" rel="icon" sizes="any"/>
+<link href="https://god-apps-article.com/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="https://god-apps-article.com/publish/AppsArticle/20260104/" rel="canonical"/>
+<!-- iOS -->
+<link href="https://god-apps-article.com/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- PWA (任意) -->
+<link href="https://god-apps-article.com/asset/site.webmanifest" rel="manifest"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36H614G1X5');
+</script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .topnav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+    }
+    .topnav-link{
+  display:inline-flex;
+  align-items:center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(229,231,235,.9);
+  background: rgba(255,255,255,.9);
+  color:#111;
+  font-weight: 900;
+  font-size: 12px;
+  text-decoration:none;
+  box-shadow: 0 6px 18px rgba(17,24,39,.06);
+}
+.topnav-link:hover{
+  border-color: rgba(212,0,184,.28);
+  text-decoration:none;
+}
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody{
+        max-inline-size: 100%;
+      }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
+<p class="note">※第三者が開発したアプリを紹介する記事です。また、本記事は、App Store掲載情報と編集部の実機確認をもとに作成しています。</p>
+</div>
+<nav aria-label="Site navigation" class="topnav">
+<a class="topnav-link" href="https://god-apps-article.com">Home</a>
+<a class="topnav-link" href="https://god-apps-article.com/about/">About</a>
+<a class="topnav-link" href="https://god-apps-article.com/contact/">Contact</a>
+<a class="topnav-link" href="https://god-apps-article.com/privacy/">Privacy</a>
+</nav>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='https://god-apps-article.com'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">Tablesで班運営を最短化する</div>
+</div>
+<!-- 記事ヘッダー -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">Tables｜班ごとの共同編集を“配るだけ”で立ち上げる</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2026-01-15</div>
+<a class="cta" href="https://workshop-tables.com/" id="app_official_cta" rel="nofollow noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                アプリ公式サイトはこちら
+              </a>
+</div>
+</header>
+<!-- 本文 -->
+<div class="article">
+<div id="articleBody">
+<div class="lead">
+<p class="note" style="margin:10px 0 0;color:#6b7280;font-weight:800;">
+  ※本記事には広告を含む場合があります。最終判断は公式情報をご確認ください。
+</p>
+<p id="app_lead_text">参加型イベントの成否は、当日の対話量で決まります。Tablesは、班ごとの編集環境づくりと進行の見える化、投影用の表示までを1つにまとめて、司会者の手数を減らす共同編集アプリです。</p>
+<img alt="Tables アイキャッチ" decoding="async" id="app_lead_logo" loading="lazy" src="https://god-apps-article.com/asset/20260115/start.png"/>
+</div>
+<h2 id="app_h2_1">結論：Tablesは「班の文章作成・進行把握・投影」を1本化する</h2>
+<div class="section-body" id="app_body_1"><p>Tablesは、参加者を班（テーブル）に分けて取り組む形式のセッション向けに、ホワイトボードのような編集可能な画面を班数の数だけ自動で用意してくれるツールです。さらに、司会者が各班の全体状況を俯瞰でき、さらに発表用の表示にも切り替えられるツールです。</p>
+<p class="em">URLの配布だけで進行グループワークを始められるのが最大の価値です。</p>
+<img alt="Tables" src="https://god-apps-article.com/asset/20260115/table.png"/>
+<p>画像：Tables（班員の画面）</p>
+<p>班ごとに「今やっていること」と「次にやること」を同時に走らせることができるのも魅力です。</p>
+<p>例えば、アイデア出し→絞り込み→実装計画→発表までを短時間で回すアジャイル開発イベント。</p>
+<p>あるいは、授業内のグループ演習で、教師が机間巡視に追われずに詰まりポイントだけ拾いたいとき。</p>
+<p>Tablesの設計は、参加者側の説明コストを削り、司会者側は「遅れている班」「動いている班」を画面上で判断できます。</p>
+<div class="soft-box"><strong>Before：</strong>班数ぶんのドキュメントを複製し、権限を整え、リンクを並べ、当日は行ったり来たり。</div>
+<div class="soft-box"><strong>After：</strong>班数を指定してURLを配り、司会者は一覧で状況を確認し、見せる画面もそのまま切り替える。</div>
+<p>「運営の雑務」が減らして、参加者への価値提供に深みをだす。</p></div>
+<hr/>
+<h2 id="app_h2_2">実際に触ってみた：作成→配布→俯瞰→投影→書き出しまでが一直線</h2>
+<div class="section-body" id="app_body_2"><p>まず公式サイトにアクセスし、班の数を入れてセッションを作成します。</p>
+<p>その時点で、各班が編集するためのURLと、司会者が全体を見渡すためのURLが用意されます。</p>
+<p class="em">登録作業は不要なので、開始前の説明が短くなります。</p>
+<p>参加者は配られたURLを開くだけで入力でき、複数人が同時に書いても反映が遅れにくい印象でした。</p>
+<p>司会者側の画面では、各班の参加者数の目安、タスクの達成状況、更新の新しさ、接続の不調などが並び、いま声をかけるべき班が見つけやすい作りです。</p>
+<img alt="Tables" src="https://god-apps-article.com/asset/20260115/host.png"/>
+<p>画像：Tables（ホスト側の画面）</p>
+<p>発表になったら、投影向けの表示へ切り替えられます。誤って書き換える心配を減らす読み取り中心の見せ方で、フォントも大きく、会場の後方でも拾いやすそうでした。（セミナーを開いたわけではないので正確にはわかりませんが）</p>
+<p>さらに良かったのは、イベント後の整理です。班ごとの内容をテキスト形式で保存でき、まとめてZIPでも取得できます。進捗のデータはCSVでも落とせるので、振り返り資料の作成が速くなります。これはかなり良いですね。グループワーク系は議事録がとりづらいのが弱みなのでそこがカバーできているのは素直に神です。</p>
+<div class="soft-box"><strong>Before：</strong>当日のメモが散り、終了後に回収依頼やコピー作業が発生する。</div>
+<div class="soft-box"><strong>After：</strong>セッションの内容をそのまま書き出し、報告書やフィードバックに流し込める。</div>
+<p>“当日だけ回る道具”ではなく、“翌日に残せる道具”として設計されているのが伝わりました。</p></div>
+<hr/>
+<h2 id="app_h2_3">おすすめユースケース：班運営の「見えない時間」を削る使い方</h2>
+<div class="section-body" id="app_body_3"><p>Tablesは、班が多いほど効果が見えます。理由は単純で、司会者の移動・呼び出し・確認の回数が増えるほど、運営側の取りこぼしが増えるからです。</p>
+<p class="em">各班が何をしているか個別に把握できるので介入が必要な瞬間だけ動けます。</p>
+<p>使いどころを整理するとこんな感じ。</p>
+<table>
+<thead>
+<tr>
+<th>場面</th>
+<th>Tablesで起きる変化</th>
+<th>手元に残るもの</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>開発イベント（短時間で企画〜発表）</td>
+<td>各班の進み具合が一覧で追え、詰まり班に先回りして声をかけやすい</td>
+<td>班ごとの記録（テキスト）、進捗データ（CSV）</td>
+</tr>
+<tr>
+<td>社内研修（複数グループの討議）</td>
+<td>議論のアウトプットが同じ型で揃い、発表時の切り替えが速い</td>
+<td>研修レポートに転記しやすい書き出し</td>
+</tr>
+<tr>
+<td>教育現場（グループ演習）</td>
+<td>教員が巡回せずとも停滞を検知しやすく、支援が偏りにくい</td>
+<td>提出物に近い形の成果物</td>
+</tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>班が多いほど、司会者の視界が分断されて“遅れの発見”が遅れる。</div>
+<div class="soft-box"><strong>After：</strong>更新の新しさや達成状況から、介入優先度を決めて動ける。</div>
+<p>「全員が同じ画面を見る瞬間」と「班が自走する瞬間」を高速で実現しまくれるのがTablesの恩恵です。</p></div>
+<hr/>
+<h2 id="app_h2_4">代替アプリと比べてどうか：汎用ツールの“運営コスト”に刺さる</h2>
+<div class="section-body" id="app_body_4"><p>道具の差は、当日より準備に出ます。</p>
+<p>一般的なオンライン文書、ナレッジツール、オンラインホワイトボード、スライドツールでも、班作業と発表は成立します。ただし多班構成になるほど、作成物の複製、共有設定、リンク管理、表示の切り替えが増え、運営側の負担が増殖します。</p>
+<p class="em">それに引き換え、Tablesは「班を増やすほど増える面倒」を、最初から引き受ける設計です。</p>
+<p>例えばGoogleドキュメントのような汎用文書は、自由度が高い反面、班数ぶんの準備と当日のタブ迷子が起きやすい。</p>
+<p>Notionのようなワークスペース型は、情報を育てる運用に強い一方、参加者全員に同じ操作理解を求めやすい。</p>
+<p>ホワイトボード系は発散に強いものの、投影時の読みやすさや誤操作防止、後日の書き出し形式が運営フローと噛み合わないことがあります。</p>
+<p>Tablesは、編集はシンプルな文章中心で運営側は一覧で状況を見て、発表は投影向け表示で行う、という“イベント進行の流れ”に寄り添っています。</p>
+<div class="soft-box"><strong>Before：</strong>ツールを組み合わせて成立させるが、接続・共有・切り替えの説明が増える。</div>
+<div class="soft-box"><strong>After：</strong>編集と進行管理と投影が繋がり、説明はURL配布に収束する。</div>
+<p>既存ツールを否定するのではなく、当日の運営負荷を最小化したい人に、選ぶ理由が残るプロダクトです。</p></div>
+<hr/>
+<h2 id="app_h2_5">注意点と弱点：ネット前提、URL共有前提</h2>
+<div class="section-body" id="app_body_5"><p>Tablesはオンラインで動くwebツールのため、安定したインターネット接続が前提になります。切断しても復帰できる仕組みはありますが、会場回線が不安定な場合は、事前に通信環境の確認をしておくのが現実的です。</p>
+<p class="em">URLを知っている人が入れる仕組みなので、機密情報の共有には向きません。</p>
+<p>アクセスは暗号化された通信で守られ、推測されにくいセッション識別子が使われます。それでも、URLが転送されれば入れてしまう性質上、個人情報や秘匿性の高い内容は載せないことをお勧めします。</p>
+<p>また、内容は文章中心で、凝ったレイアウトや図解を作り込む用途では、別のツールのほうが合う場面があります。Tablesは“場を回すための器”に振り切っているので、パワポみたいな図形を用いた表現など複雑な表現を求めると物足りなさが出る可能性があります。</p>
+<p>一方で、イベント後に班ごとの記録をテキストで落としたり、まとめてZIPで取得したり、進捗をCSVで取り出せる点は、あとでかなり楽になるポイントだと思もいます。</p>
+<div class="soft-box"><strong>Before：</strong>セキュリティ要件が厳しい内容まで載せてしまい、後から扱いに困る。</div>
+<div class="soft-box"><strong>After：</strong>載せる情報を割り切り、成果物は書き出して社内の保管ルールに沿って管理する。</div>
+<p>無料で使える範囲が示されている今のうちに、まずは小さめのイベントで感触を掴むのが良い入り方です。</p></div>
+</div><!-- /#articleBody -->
+<!-- 1行強調 -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">準備と切り替えに奪われる時間を、参加者との対話に戻すための1本です。</span>
+</p>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260114/" id="pagerPrev">前へ</a>
+<button class="pbtn" id="pagerHome" onclick="location.reload();" type="button">  このページ</button>
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260116/" id="pagerNext">次へ</a>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- 他の記事 -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="https://god-apps-article.com">More articles →</a>
+</div>
+<a aria-label="ふるさと納税ダッシュボード" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251227/">
+<div class="thumb">
+<img alt="ふるさと納税ダッシュボード" loading="lazy" src="https://god-apps-article.com/asset/20251227/home.png"/>
+</div>
+<div>
+<div class="c-title">ふるさと納税ダッシュボード</div>
+<div class="c-desc">今年あといくら寄付できる？を即答できる無料Webサービス</div>
+<div class="tagline">#ふるさと納税 #個人開発</div>
+</div>
+</a>
+<a aria-label="育児記録・予防接種管理 - milu" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251228/">
+<div class="thumb">
+<img alt="育児記録・予防接種管理 - milu" loading="lazy" src="https://god-apps-article.com/asset/20251228/logo.png"/>
+</div>
+<div>
+<div class="c-title">育児記録・予防接種管理 - milu</div>
+<div class="c-desc">育児の「見ればわかる」を増やす</div>
+<div class="tagline">#育児 #新生児 #ママ</div>
+</div>
+</a>
+<a aria-label="ミチミエール" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251229/">
+<div class="thumb">
+<img alt="ミチミエール" loading="lazy" src="https://god-apps-article.com/asset/20251229/logo.png"/>
+</div>
+<div>
+<div class="c-title">ミチミエール</div>
+<div class="c-desc">スマホ1台で通行量をAI計測できる無料アプリ</div>
+<div class="tagline">#自動計測 #AI #警備員 #個人開発</div>
+</div>
+</a>
+</section>
+</section><!-- /.main-col -->
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<div class="side-stack">
+<div class="side-card follow-side">
+<div class="follow-head">
+<img alt="Xアイコン" class="x-avatar" height="44" loading="lazy" src="https://god-apps-article.com/asset/riko.jpg" width="44"/>
+<h3>Follow @莉子-個人開発チャレンジ中-</h3>
+</div>
+<a class="xbtn" href="https://x.com/JimPierce50" rel="noopener noreferrer" target="_blank">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+            個人開発の神アプリを趣味で紹介するエンジニア10年目
+          </div>
+</div>
+<!-- ここに他の side-card を追加していく -->
+</div>
+</aside>
+</div><!-- /.layout -->
+</main>
+</body>
+</html>

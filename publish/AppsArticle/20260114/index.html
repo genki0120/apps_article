@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Tripost（トリポスト）：旅の思い出をまとめて、次の行き先のヒントを集めるWebサービス</title>
+<meta content="旅のメモは、次なる旅の足掛かり。Tripostは「旅の体験を投稿して共有する」ことに振り切ったWebサービスです。webサービスなのでスマホでもPCでも触れます。" id="app_meta_description" name="description"/>
+<meta content="index,follow" name="robots"/>
+<!-- canonical -->
+<script id="app_schema_article_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Tripost（トリポスト）：旅の思い出をまとめて、次の行き先のヒントを集めるWebサービス", "description": "旅のメモは、次なる旅の足掛かり。Tripostは「旅の体験を投稿して共有する」ことに振り切ったWebサービスです。webサービスなのでスマホでもPCでも触れます。", "datePublished": "2026-01-14", "dateModified": "2026-01-14", "author": {"@type": "Organization", "name": "神アプ！編集部"}, "publisher": {"@type": "Organization", "name": "神アプ！"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://god-apps-article.com/publish/AppsArticle/20260114/"}, "url": "https://god-apps-article.com/publish/AppsArticle/20260114/", "image": ["https://god-apps-article.com/asset/20260114/home.png"]}</script>
+<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://god-apps-article.com"}, {"@type": "ListItem", "position": 2, "name": "Tripostで旅ログ共有", "item": "https://god-apps-article.com/publish/AppsArticle/20260114/"}]}</script>
+<meta content="article" id="app_og_type" property="og:type"/>
+<meta content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" property="og:site_name"/>
+<meta content="Tripost（トリポスト）：旅の思い出をまとめて、次の行き先のヒントを集めるWebサービス" id="app_og_title" property="og:title"/>
+<meta content="旅のメモは、次なる旅の足掛かり。Tripostは「旅の体験を投稿して共有する」ことに振り切ったWebサービスです。webサービスなのでスマホでもPCでも触れます。" id="app_og_description" property="og:description"/>
+<meta content="https://god-apps-article.com/publish/AppsArticle/20260114/" id="app_og_url" property="og:url"/>
+<meta content="https://god-apps-article.com/asset/20260114/home.png" id="app_og_image" property="og:image"/>
+<meta content="summary_large_image" id="app_tw_card" name="twitter:card"/>
+<meta content="Tripost（トリポスト）：旅の思い出をまとめて、次の行き先のヒントを集めるWebサービス" id="app_tw_title" name="twitter:title"/>
+<meta content="旅のメモは、次なる旅の足掛かり。Tripostは「旅の体験を投稿して共有する」ことに振り切ったWebサービスです。webサービスなのでスマホでもPCでも触れます。" id="app_tw_description" name="twitter:description"/>
+<meta content="https://god-apps-article.com/asset/20260114/home.png" id="app_tw_image" name="twitter:image"/>
+<!-- favicon -->
+<link href="https://god-apps-article.com/asset/favicon.ico" rel="icon" sizes="any"/>
+<link href="https://god-apps-article.com/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="https://god-apps-article.com/publish/AppsArticle/20260104/" rel="canonical"/>
+<!-- iOS -->
+<link href="https://god-apps-article.com/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- PWA (任意) -->
+<link href="https://god-apps-article.com/asset/site.webmanifest" rel="manifest"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36H614G1X5');
+</script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .topnav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+    }
+    .topnav-link{
+  display:inline-flex;
+  align-items:center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(229,231,235,.9);
+  background: rgba(255,255,255,.9);
+  color:#111;
+  font-weight: 900;
+  font-size: 12px;
+  text-decoration:none;
+  box-shadow: 0 6px 18px rgba(17,24,39,.06);
+}
+.topnav-link:hover{
+  border-color: rgba(212,0,184,.28);
+  text-decoration:none;
+}
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody{
+        max-inline-size: 100%;
+      }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
+<p class="note">※第三者が開発したアプリを紹介する記事です。また、本記事は、App Store掲載情報と編集部の実機確認をもとに作成しています。</p>
+</div>
+<nav aria-label="Site navigation" class="topnav">
+<a class="topnav-link" href="https://god-apps-article.com">Home</a>
+<a class="topnav-link" href="https://god-apps-article.com/about/">About</a>
+<a class="topnav-link" href="https://god-apps-article.com/contact/">Contact</a>
+<a class="topnav-link" href="https://god-apps-article.com/privacy/">Privacy</a>
+</nav>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='https://god-apps-article.com'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">Tripostで旅ログ共有</div>
+</div>
+<!-- 記事ヘッダー -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">Tripost（トリポスト）：旅の思い出をまとめて、次の行き先のヒントを集めるWebサービス</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2026-01-14</div>
+<a class="cta" href="https://mytripost.com" id="app_official_cta" rel="nofollow noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                アプリ公式サイトはこちら
+              </a>
+</div>
+</header>
+<!-- 本文 -->
+<div class="article">
+<div id="articleBody">
+<div class="lead">
+<p class="note" style="margin:10px 0 0;color:#6b7280;font-weight:800;">
+  ※本記事には広告を含む場合があります。最終判断は公式情報をご確認ください。
+</p>
+<p id="app_lead_text">旅のメモは、次なる旅の足掛かり。Tripostは「旅の体験を投稿して共有する」ことに振り切ったWebサービスです。webサービスなのでスマホでもPCでも触れます。</p>
+<img alt="Tripost アイキャッチ" decoding="async" id="app_lead_logo" loading="lazy" src="https://god-apps-article.com/asset/20260114/home.png"/>
+</div>
+<h2 id="app_h2_1">結論：Tripostは「旅のログ」を資産に変える。おすすめは“次の旅の行き先が決まらない人”</h2>
+<div class="section-body" id="app_body_1"><p>旅は終わった瞬間から忘れていく。</p>
+<figure>
+<img alt="Tripostのトップページ" src="https://god-apps-article.com/asset/20260114/top.png"/>
+<figcaption>Tripost（トップページ）</figcaption>
+</figure>
+<p>Tripostは、旅の体験を投稿して公開できるWebサービスです。ポイントは「残すこと」と「見つけること」が同時にできる点。自分の旅の流れをまとめておくと、あとで見返したときに“次に行きたい場所”が自然に浮かびますし、ほかの人の投稿からも行き先の候補を増やせます。</p>
+<p>おすすめのシーンは、旅の直後に余韻が残っているタイミング。撮った写真やメモがスマホにあるうちに、思い出が揮発する前にまとめましょう。もうひとつは、誰かに旅の自慢をしたいとき。口頭やチャットで断片的に伝えるより、まとまった投稿を共有したほうが一発で伝わります。</p>
+<p class="em">「旅の振り返り」を「次の旅の材料」に変えたい人に向きます。</p>
+<p>スマホとPCのどちらからでも利用できるので、移動中はスマホで眺めて、落ち着いたらPCで書く、といった使い分けも可能です。さらにスマホでは、端末の機能でホーム画面に追加しておくと、アイコンからすぐ開けて“アプリ的な導線”になります。</p>
+<div class="soft-box"><strong>Before：</strong>旅の思い出の写真・メモ・予定がそれぞれ別アプリでバラバラ。結局どれも見返さない。</div>
+<div class="soft-box"><strong>After：</strong>旅ごとに情報がまとまり、見返すたびに次の候補が増える。人にも共有しやすい。</div>
+<p>なお、アカウントなし（ゲストアカウント）でも触れますが、機能はフルではありません。まずは雰囲気を確かめてみましょう。</p></div>
+<hr/>
+<h2 id="app_h2_2">実際に“ダウンロード感覚”で使ってみた：ホーム画面追加で動線が完成する</h2>
+<div class="section-body" id="app_body_2"><p>「アプリ入れるほどでも…」の壁は、ここで崩せます。</p>
+<p>TripostはWebサービスなので、まずは公式サイトにアクセスして使い始められます。最初にやると体験が変わるのが、スマホの“ホーム画面に追加”です。これをしておくと、ブラウザのタブに埋もれず、ワンタップで起動できるようになります。体感としては「インストールしたアプリ」にかなり近いです。</p>
+<p>ざっと眺めてみると、旅の投稿を見て回れるので、下調べの代わりにもなります。気になった投稿を追っていくと「こういう回り方があるのか」「この順番だと無理がない」といった、予定表には載らない現実的な気づきが拾えます。</p>
+<figure>
+<img alt="Tripostの投稿例" src="https://god-apps-article.com/asset/20260114/schedule.png"/>
+<figcaption>Tripost（投稿例）</figcaption>
+</figure>
+<p></p>
+<p class="em">最初の1分で“ショートカットを作る”と、継続の難易度が下がります。</p>
+<p>投稿側は、旅の流れを文章としてまとめて公開する、というスタイルが中心になります。旅の当日中に細かく書くより、帰宅後に時系列で整えるほうが続けやすい印象でした。もちろん、閲覧だけでも価値があるので、読む専として使い始めても問題ありません。</p>
+<div class="soft-box"><strong>Before：</strong>帰宅後は疲れて思い出を放置。だんだん忘れていく、、、。</div>
+<div class="soft-box"><strong>After：</strong>ホーム画面のアイコンからすぐ開き、見て・まとめて・共有する流れが定着する。</div>
+<p>もし操作で詰まったら、サービス内に問い合わせ窓口が用意されています。個人サービスでここが整っているのは普通にすごいです（ほんとにつながるんですかね？）。</p></div>
+<hr/>
+<h2 id="app_h2_3">おすすめユースケース：旅前・旅中・旅後で使い方が変わる</h2>
+<div class="section-body" id="app_body_3"><p>旅はフェーズごとに悩みが変わります。</p>
+<p>Tripostは「旅の投稿が集まる場所」なので、読む側・書く側のどちらでも使い道が作れます。旅前は情報収集、旅中はリアルタイムな感情の共有、旅後は共有と整理。ひとつのサービスで循環させると、次の行き先選びが楽になります。</p>
+<p>特におすすめな人は、“予定が固まりきらないまま出発日が近づく”タイプの人です。観光地の箇条書きより、実際の旅程に沿った情報のほうが、現実の時間配分に落ちやすいからです。</p>
+<p class="em">「読む→行く→まとめる→また読む」で旅を一時の娯楽に終わらせない。</p>
+<table>
+<thead>
+<tr>
+<th>タイミング</th>
+<th>Tripostでやること</th>
+<th>起きる変化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>旅前</td>
+<td>みんなの投稿を眺め、行程の組み方を掴む</td>
+<td>移動時間や詰め込み過ぎのミスが減る</td>
+</tr>
+<tr>
+<td>旅中</td>
+<td>あとでまとめる前提で、気づきをメモしておく</td>
+<td>帰宅後に思い出せず困る場面が減る</td>
+</tr>
+<tr>
+<td>旅後</td>
+<td>体験を一本の投稿に整えて共有する</td>
+<td>友人に伝える手間が減り、次の候補も残る</td>
+</tr>
+<tr>
+<td>次の旅の検討</td>
+<td>過去の自分の投稿を見返して方向性を決める</td>
+<td>「どこ行こう」を素早く悩む</td>
+</tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>旅が終わるたびに情報が消え、毎回ゼロから探し直す。</div>
+<div class="soft-box"><strong>After：</strong>投稿が積み上がり、次の旅は“過去の自分＋みんなの体験”から始められる。</div>
+<p>仕事の出張や短い週末旅でも、ログが貯まるほど選択が早くなります。大げさな旅行記ではなくてもいいんです。</p></div>
+<hr/>
+<h2 id="app_h2_4">代替アプリと比べてどう？SNS・メモ・ブログとの違いを整理する</h2>
+<div class="section-body" id="app_body_4"><p>旅の情報は見返せる場所に置くべき。</p>
+<p>代替になりやすいのは、一般的なSNS、メモアプリ、ブログサービス、地図アプリの保存機能あたりです。それぞれ強みはありますが、「旅の体験をまとめて公開し、他者の体験も同じ棚で探す」という目的で見ると、微妙に噛み合わないことが多いです。</p>
+<p class="em">旅行専用のアプリなので思い出を振り返れる形で残せる。</p>
+<table>
+<thead>
+<tr>
+<th>手段</th>
+<th>強いポイント</th>
+<th>つまずきやすいポイント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一般的なSNS</td>
+<td>拡散しやすい、反応が速い</td>
+<td>流れて消えやすく、旅程として追いにくい</td>
+</tr>
+<tr>
+<td>メモアプリ</td>
+<td>書くのが速い、自分用に最適</td>
+<td>他人の体験から学べない</td>
+</tr>
+<tr>
+<td>ブログサービス</td>
+<td>長文で残せる、資産化しやすい</td>
+<td>更新の心理的ハードルが上がりがち</td>
+</tr>
+<tr>
+<td>Tripost</td>
+<td>旅の投稿を読む／書くが同じ場所で完結しやすい</td>
+<td>一部の機能は登録が必要</td>
+</tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>「書く場所」と「探す場所」が分かれていて、どちらも続かない。</div>
+<div class="soft-box"><strong>After：</strong>読む体験がそのまま投稿の動機になり、投稿が次の旅行先候補になる。</div>
+<p>コミュニティ面の動きが気になる人は、関連リンクとしてGitHubのディスカッションも公開されています。開発を応援したい場合はスポンサーリンクで応援できます。</p></div>
+<hr/>
+<h2 id="app_h2_5">注意点と弱点：期待値を合わせると満足度が上がる</h2>
+<div class="section-body" id="app_body_5"><p>便利なサービスだけど、勘違い注意！</p>
+<p>まず前提としてTripostはWebサービスです。アプリストアから入れるタイプではないので、ストアで探しても一生見つかりません（１敗）。</p>
+<p>次に、アカウントを作らなくても触れる一方で、できることは全部ではありません。閲覧中心で試してから、投稿や細かな機能まで使いたくなった段階で登録に進むのがストレスが少ないです。</p>
+<p class="em">“まず試せる”のは強みですが、“全部は試せない”点は最初に知っておくべきです。まあ大した手間もないのでさっさと登録しろということです。</p>
+<p>サポートは問い合わせフォームが用意されています。困ったときに聞ける窓口があるのは安心ですが、対応速度や範囲はケース次第になり得ます。個人だからしょうがないね。業務での利用など、確実性が必要な場面では、その点も踏まえて運用したほうが安全です。</p>
+<div class="soft-box"><strong>Before：</strong>「アプリの機能が当然あるはず」</div>
+<div class="soft-box"><strong>After：</strong>Webの軽さと“ホーム画面追加”を前提に使い、期待通りの体験で継続できる。</div></div>
+</div><!-- /#articleBody -->
+<!-- 1行強調 -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">Tripostは、旅の体験を「残して共有する」習慣を最短で作れるWebサービスです。</span>
+</p>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260113/" id="pagerPrev">前へ</a>
+<button class="pbtn" id="pagerHome" onclick="location.reload();" type="button">  このページ</button>
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260115/" id="pagerNext">次へ</a>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- 他の記事 -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="https://god-apps-article.com">More articles →</a>
+</div>
+<a aria-label="ふるさと納税ダッシュボード" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251227/">
+<div class="thumb">
+<img alt="ふるさと納税ダッシュボード" loading="lazy" src="https://god-apps-article.com/asset/20251227/home.png"/>
+</div>
+<div>
+<div class="c-title">ふるさと納税ダッシュボード</div>
+<div class="c-desc">今年あといくら寄付できる？を即答できる無料Webサービス</div>
+<div class="tagline">#ふるさと納税 #個人開発</div>
+</div>
+</a>
+<a aria-label="育児記録・予防接種管理 - milu" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251228/">
+<div class="thumb">
+<img alt="育児記録・予防接種管理 - milu" loading="lazy" src="https://god-apps-article.com/asset/20251228/logo.png"/>
+</div>
+<div>
+<div class="c-title">育児記録・予防接種管理 - milu</div>
+<div class="c-desc">育児の「見ればわかる」を増やす</div>
+<div class="tagline">#育児 #新生児 #ママ</div>
+</div>
+</a>
+<a aria-label="ミチミエール" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251229/">
+<div class="thumb">
+<img alt="ミチミエール" loading="lazy" src="https://god-apps-article.com/asset/20251229/logo.png"/>
+</div>
+<div>
+<div class="c-title">ミチミエール</div>
+<div class="c-desc">スマホ1台で通行量をAI計測できる無料アプリ</div>
+<div class="tagline">#自動計測 #AI #警備員 #個人開発</div>
+</div>
+</a>
+</section>
+</section><!-- /.main-col -->
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<div class="side-stack">
+<div class="side-card follow-side">
+<div class="follow-head">
+<img alt="Xアイコン" class="x-avatar" height="44" loading="lazy" src="https://god-apps-article.com/asset/riko.jpg" width="44"/>
+<h3>Follow @莉子-個人開発チャレンジ中-</h3>
+</div>
+<a class="xbtn" href="https://x.com/JimPierce50" rel="noopener noreferrer" target="_blank">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+            個人開発の神アプリを趣味で紹介するエンジニア10年目
+          </div>
+</div>
+<!-- ここに他の side-card を追加していく -->
+</div>
+</aside>
+</div><!-- /.layout -->
+</main>
+</body>
+</html>
