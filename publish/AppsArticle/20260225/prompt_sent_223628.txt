@@ -1,0 +1,317 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/33e9d978-ff48-418e-9b9e-37fe23e66309
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+VidPair - 2画面で動画比較ができるアプリ
+VidPairは、2つの動画を並べて同時に比較・メモできる分析アプリです。スロー再生や左右反転、回転、秒スキップ、メモ記録などの便利な機能で細かな動きまで正確に確認できます。ダンスやスポーツのフォーム研究、自己練習の記録、レッスンの振り返りに幅広く活用できます。
+ダンス
+フォームチェック
+動画比較
+レビューする
+Visit Product
+ダンス
+フォームチェック
+動画比較
+プロダクトの感想・意見はこのエリアに表示されます
+VidPairとは
+VidPair
+は、ダンサーやスポーツに取り組む人・指導者向けの
+メモがとれる動画比較アプリ
+です。
+練習の動きが「うまく改善できない」という課題を、
+2動画の同時再生と指定した動画タイミングで記録できるメモ機能、細部チェック機能
+で解決し、
+フォーム分析の効率化・上達スピードの向上
+を実現できます。
+VidPairをApp Storeで見る
+主な特徴
+実際のアプリ画面
+2動画の同時比較
+: 並べて再生することで、動きの違いをひと目で把握できる
+メモ・タイムスタンプ
+: 気づいた点をその場で記録し、いつでも振り返りが可能
+細部チェックツール
+: スロー、左右反転、回転、秒スキップで細かな差を正確に確認
+動画保存
+: 比較・分析した状態をそのまま1本の動画として書き出し可能
+こんな方におすすめ
+ダンサー
+: 自分の動きと見本動画の違いが分からず伸び悩んでいる
+スポーツに取り組む人
+: フォームの細かな癖を改善したい
+指導者・コーチ
+: 生徒に分かりやすく“比較しながら”指導したい
+主要機能
+2画面同時再生
+左右または上下に動画を並べて同時再生。動きのズレや違いを直感的に比較でき、フォーム改善のスピードが上がります。
+メモ・タイムスタンプ保存
+動画の特定シーンに、フォーム確認のメモを残せる
+スロー再生・左右反転・回転
+細部分析に特化したツールを搭載。スローで動きを追い、反転で鏡合わせにし、どちら側からの動きも確認できます。
+比較結果を動画として保存
+実際に保存される動画のレイアウト※両動画が横向き撮影の場合
+比較したフォームをそのまま保存
+指導用・振り返り用の動画として共有
+SNSに投稿可能
+「ここがポイント」という状態を
+動画で残せる
+ため、言葉だけでは伝えづらい動きの違いも明確になります。
+導入効果
+フォーム改善の効率化
+: 動きの差が可視化され、改善点を短時間で把握
+練習の質が向上
+: 意図した動きに近づくための“気づき”が増える
+指導がスムーズに
+: 指導者と生徒で比較しながら同じポイントを確認できる
+ユーザーの声（Reviews）
+⭐️⭐️⭐️⭐️⭐️
+必要な機能だけで使いやすい
+画面がスッキリしていて、初めてでもそれなりに使えました。
+シンプルがちょうどいいです。個人的にはグリッド線を出せるのがトレーニング時の身体のライン確認に便利でいいです。
+⭐️⭐️⭐️⭐️⭐️
+単純で使いやすい
+動画プレイヤーを２つ出せるのがいい。ゴルフのフォーム練習に使ってます。
+無料版とVidPair Premiumの違い
+項目
+無料版
+VidPair Premium
+2動画比較
+○
+○
+再生速度変更
+○
+○
+左右反転・回転
+○
+○
+音声切り替え（ミュート）
+○
+○
+メモ追加
+最大2件
+無制限
+お気に入り保存
+最大2件
+無制限
+動画保存
+○
+○
+料金
+無料
+買い切り
+よくある質問（Q&A）
+Q. 一般的な動画プレイヤーと何が違いますか？
+A. VidPairは、2つの動画を並べて同時に再生・比較できるだけでなく、
+「気づいた瞬間をそのままメモとして残せる」 点が大きな違いです。
+再生中・一時停止中など、好きなタイミングでメモを記録でき、
+そのメモは動画の再生時間（タイムスタンプ）と自動で紐づきます。
+Q. 保存される動画には何が反映されますか？
+A. 2画面表示のレイアウト、再生位置、反転・回転などの設定が反映されます。
+分析した状態をそのまま動画として残せます。
+Q. メモやタイムスタンプ機能はどのように使いますか？
+A. 気づいたポイントを、再生中のタイミングに合わせてメモとして保存できます。あとからそのタイミングにジャンプできるので、「どこが良くて、どこを直したいか」を整理しやすくなります。
+Q. 片方だけしか動画を入れてなくても、メモは取れますか？
+A. はい、取れます。以前は「左右どちらにも動画が入っていないとメモが取れない」仕様でしたが、バージョン1.6のアップデートにより片方だけでもメモ追加が可能になりました。
+Q. どのデバイスで利用できますか？
+A. VidPairはiOS向けアプリです。iPhone、iPadで利用可能です。
+Q. 対応言語は何ですか？
+A. 日本語🇯🇵、英語🇺🇸🇨🇦🇬🇧、中国語🇨🇳、韓国語🇰🇷、フランス語🇫🇷、イタリア語🇮🇹、ドイツ語🇩🇪に対応しています。
+Q. プライバシーや動画の取り扱いはどうなっていますか？
+A. 使用する動画はユーザーの端末内で再生されます。外部にアップロードされることはないため、安心して練習動画を分析できます。
+Q. VidPairは無料で使えますか？
+A. はい、基本的な機能は無料でご利用いただけます。
+2つの動画比較、スロー再生、反転、回転、秒スキップ、メモ追加などの主要機能は無料のまま使えます。
+Q. 無料版にはどんな制限がありますか？
+A. 無料版では「お気に入りは最大2件」「メモは1つの動画ペアにつき最大3件まで」という上限があります。動画比較や再生機能自体には制限はありません。
+Q. VidPair Premiumでは何ができるようになりますか？
+A. お気に入りとメモの保存数が無制限になります。練習の記録をたくさん残したい方や、分析を深めたい方に最適です。
+Q. VidPair Premiumの料金体系はどうなっていますか？
+A. VidPair Premiumは買い切り型（1回購入）です。月額課金はありません。
+価格は
+400円
+です。
+Q. VidPair Premiumはどこから購入できますか？
+A. アプリ内右上の
+設定⚙️
+から購入できます。
+設定⚙️から表示されるVidPair Premiumの購入画面
+ダウンロードはこちらから
+VidPairをApp Storeで見る
+Explore More
+関連記事はありません。
+Trends
+Claude Code で、広告バナー200本を15分で作るえぐい手順（やってみた）
+コムテ
+2026年2月22日
+自分で作る鳥類図鑑 Bird Collection
+Taka@個人開発
+2026年2月23日
+NomadCalc: 位置取得型の電卓アプリ
+akifumi⚡️
+2026年2月20日
+Jarvish (jarvis-shell)
+tominaga-h
+2026年2月21日
+Anthropic 社内のマーケティングチームが Claude Code をガチ運用してた話
+コムテ
+2026年2月21日
+薬機法チェックツールを独自開発した背景と技術的な話
+江良公宏
+2026年2月21日
+Image Inverter
+indiehacker
+2026年2月22日
+Ray
+趣味として個人でアプリ開発をしています。作ること・改善することが好きで、
+現在はiOSアプリ開発に取り組んでいます。お仕事を探してます！！
+Individual Developer
+Python
+SQL
+SwiftUI
+Follow
+{
+  "final_url": "https://izanami.dev/post/33e9d978-ff48-418e-9b9e-37fe23e66309",
+  "og_image": "https://izanami.dev/post/33e9d978-ff48-418e-9b9e-37fe23e66309/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F74c68faa-e50e-4354-b6bc-9806e06805a4%2F2b3f0e27-8f98-4c0b-9c4e-06f4ce8fb4b7.png&w=128&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "VidPair - 2画面で動画比較ができるアプリのアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F74c68faa-e50e-4354-b6bc-9806e06805a4%2F27c8ac38-424c-4c69-a171-b0533eea2eb2.jpg&w=1920&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/74c68faa-e50e-4354-b6bc-9806e06805a4/72e19291-e262-4a61-bcb1-cb97073f8f07.jpg",
+      "alt": "VidPairの2画面動画比較とメモ機能の画面"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/74c68faa-e50e-4354-b6bc-9806e06805a4/78e17cd1-0ab1-4090-94cb-99f49474b9b4.jpg",
+      "alt": "腕立て伏せのフォームを2つの動画で比較し、\n姿勢や動きに合わせてチェックポイントのメモを表示しているVidPairアプリの画面"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/74c68faa-e50e-4354-b6bc-9806e06805a4/530baf3d-5095-45c3-8459-de404498dbd3.jpg",
+      "alt": "VidPairで2つのトレーニング動画を比較し、SNS投稿に適した形で保存された動画の例"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/74c68faa-e50e-4354-b6bc-9806e06805a4/86beef69-cdde-4c97-ab02-c6a319d7c396.jpg",
+      "alt": "VidPairアプリの設定画面に表示されるPremium購入画面。お気に入りとメモを無制限に保存できる買い切りプラン（400円）が表示されている"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F4306cc92-a4e4-4602-bf2b-674dfa960163%2F4f868f0b-0609-4995-b98a-d2a6ae61fe00.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "akifumi⚡️"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F2ed0e3be-d91d-42d9-9508-71d7c401a042%2Fbfe015f9-4a72-447c-8051-22a072be3a4e.avif&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "tominaga-h"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocJjmCMd3-ASQbrAlD3uYbqc7NeWZUNNNSeJT169VkmJAx-djlbL%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "江良公宏"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocK3C9KFZUbWPRrIW81cE7RyQZKtFR9e4SZV6ZYRYPeqRVjJBw%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "indiehacker"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocLLkVFxWizs-YYDPvra-WWs1lgVbV_20Z0CKwnfqDGCfvnOrtg%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://apps.apple.com/app/vidpair/id6755102791"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/33e9d978-ff48-418e-9b9e-37fe23e66309 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}
