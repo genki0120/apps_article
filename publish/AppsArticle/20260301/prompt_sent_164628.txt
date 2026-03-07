@@ -1,0 +1,264 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/f5ac94d7-df83-4b97-81c3-81c91e0c7873
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+VoiceTagEditor
+VoiceTagEditorはASMR音声に作品名・作者・曲順・タグ・ジャケットなどのメタデータを付与して整理を支援。にゃんボイスに完全対応し、購入者もサークルも管理が楽になります。
+音声
+Tauri
+デスクトップ
+レビューする
+Visit Product
+音声
+Tauri
+デスクトップ
+プロダクトの感想・意見はこのエリアに表示されます
+VoiceTagEditor: ASMR音声に作品情報を付与し、「にゃんボイス」で管理しやすくする
+VoiceTagEditorのメイン画面
+ASMR音声作品は、購入直後はフォルダ名やファイル名だけでも整理できます。しかし作品数が増えるほど、「作品名が分からない」「同じ声優の作品をまとめて聴きたい」「シリーズを順番に再生したい」といった場面が増えます。ファイル名で頑張って整理し続けるほど、管理の負担も大きくなります。
+この問題に対して有効なのが、音声ファイルの中に作品情報を埋め込む方法です。音声ファイル自体にタイトルや作者名などを保持させることで、フォルダ構造に依存しにくい管理ができます。この「ファイルに埋め込む作品情報」を
+メタデータ（metadata）
+と呼びます。本稿では、そのメタデータとタグ付けを支援するデスクトップアプリ
+VoiceTagEditor
+を作成したため紹介します。
+VoiceTagEditorで付与した作品情報は、私が別途開発している音声管理アプリ
+「にゃんボイス」
+（
+記事
+）に完全対応しています。そのため、購入者が自分で整備して取り込む用途にも、制作者が配布前に整備して購入者の手間を減らす用途にも向きます。
+VoiceTagEditorとは
+ドラッグ&ドロップ対応
+VoiceTagEditorは、音声ファイルのメタデータとタグを、アルバム単位とトラック単位で編集しやすくするデスクトップアプリです。主な機能は、次の通りです。
+アルバム情報の編集（タイトル、アーティスト、リリース日）
+トラック情報の管理（ディスク番号、トラック番号、タイトル、アーティスト）
+タグ管理（アルバムやアーティストへタグを追加・削除）
+アルバムアートワーク（画像ファイルをドラッグ&ドロップで設定）
+既存メタデータの自動読み込み、処理の進捗表示、自動ソート、完全日本語対応
+これらの機能は「一括処理で大量に流す」よりも、「作品単位で正確に整える」ことを優先した設計です。とくにASMR作品のように、アルバムというまとまりで聴くことが多いコンテンツに対して相性が良い構成にしています。
+解決したい課題
+音声作品の管理で起きやすい問題は、次の2つに分けられます。
+1つ目は、
+情報がファイル名に偏ってしまう
+ことです。ファイル名は表示に強くぱっと見では情報がわかりやすい一方で、作者名・発売日・シリーズ名・章立てなど、複数の軸を同時に表現しにくいです。結果として、検索や並べ替えがしづらくなります。
+2つ目は、
+整理のルールが環境に依存する
+ことです。フォルダ構成や命名規則は、端末を変えたりバックアップを取ったりした際に崩れやすく、再構築のコストが発生します。
+VoiceTagEditorは、ファイル自体に作品情報を保持させることで、これらの問題を緩和します。
+強み
+VoiceTagEditorの強みは、「作業の短縮」だけではなく、「後から迷わない形に寄せる」点にあります。
+1) アルバム単位で情報を揃えられる
+ASMR作品は、作品全体としてのタイトルや作者名が重要です。VoiceTagEditorはアルバム情報を中心に据え、必要な箇所だけトラック情報を整える流れを取りやすくしています。
+2) 曲順の事故を減らせる
+トラック番号やディスク番号が不十分な作品では、再生順が崩れやすいです。VoiceTagEditorは、ディスク番号・トラック番号に基づく自動整列に対応しており、並び替えのミスを減らします。
+「にゃんボイス」との関係
+VoiceTagEditorで整備した作品情報は、にゃんボイス側でそのまま読み取りやすい形式になっています。もちろん、MusicBeeといった他のオーディオ管理・再生ソフトにもそのまま対応しています。
+購入者側の価値は明確です。作品情報が整った音声は、にゃんボイスに取り込んだ後に「作者名で探す」「発売日で並べる」「タグで絞る」といった操作が行いやすくなります。結果として、再生前の準備が減り、聴く体験に集中できます。
+制作者側にとっても、メタデータ整備は購入者の体験を底上げします。配布前に作品情報を埋め込んでおけば、購入者は追加の編集をせずに管理へ簡単に移れます。
+ユースケース
+ここでは、実際に導入したときの「困りごと」と「改善点」を、具体的に整理します。
+ユースケース1: 購入作品が増え、探す時間が増えた
+購入直後のファイル名が
+track01
+のような形だと、聴きたいトラックへ辿り着くまでに時間がかかります。VoiceTagEditorでタイトルや順序を整えてから取り込むと、作品が増えても「探す」操作が安定します。とくに、作者名やタグで絞り込みたい人には効果が出やすいです。
+ユースケース2: シリーズ作品を順番に再生したい
+シリーズ作品は、ディスク番号やトラック番号が揃っていないと再生順が崩れます。VoiceTagEditorで番号を整備し、自動整列で確認したうえで書き込めば、再生順の事故を避けやすくなります。
+ユースケース3: 制作者が配布前に整備し、購入者の手間を減らしたい
+購入者が行う作業を減らすには、配布物の時点で作品情報が入っていることが重要です。VoiceTagEditorは、アルバム単位での整備とカバー画像の設定を一通り行えるため、配布前の整備フローに組み込みやすいです。
+使い方（基本手順）
+VoiceTagEditorの基本的な流れは、次の通りです。
+まず、音声ファイル一式をアプリへドラッグ&ドロップします。次に、既に入っている作品情報があれば自動で読み込まれるため、内容を確認します。そのうえでアルバム情報（タイトル、作者名、リリース日）と、必要に応じてトラック番号やタイトルを整えます。最後に、タグとカバー画像を設定し、処理を実行します。
+ここで生成されるのは、作品情報が埋め込まれた音声ファイルです。
+導入時の注意点
+FFmpegのインストールが必要
+VoiceTagEditorは、音声の変換や埋め込み処理でFFmpegを使用します。導入時は、まずFFmpegを用意してください。
+macOS（Homebrew）:
+brew install ffmpeg
+Windows: winget / Chocolatey などでインストール
+技術面の補足（開発者向け）
+VoiceTagEditorは、画面側にWebの技術を用いた構成です。
+Preact + TypeScript + Vite
+を使用しています。裏側の処理は、軽量なデスクトップアプリの枠組みを利用しており、
+Rust（Tauri v2）
+を使用しています。依存関係の管理には
+pnpm
+を使います。
+対応OSはWindowsとmacOSで、Linuxは現状ソースからビルドして利用する形です。ライセンスはMITです。
+ダウンロードと関連リンク
+リポジトリ:
+Releases:
+Tags（更新履歴の確認）:
+まとめ
+VoiceTagEditorは、音声ファイルに作品情報を埋め込み、管理の前提を整えるためのデスクトップアプリです。ドラッグ&ドロップを中心に、アルバム単位で情報を揃え、トラック順を整え、タグとカバー画像まで含めて編集できます。
+とくに、にゃんボイスでの管理を想定する場合、VoiceTagEditorでの整備は「取り込んだ後に迷いにくい状態」を作るための重要な工程になります。購入者側の整理にも、制作者側の配布前整備にも、どちらにも使える点が本ツールの特徴です。
+Explore More
+関連記事はありません。
+Trends
+Anthropic 社内のマーケティングチームが Claude Code をガチ運用してた話
+コムテ
+2026年2月21日
+Tickemo
+Kou
+2026年2月28日
+Image Inverter
+indiehacker
+2026年2月22日
+薬機法チェックツールを独自開発した背景と技術的な話
+江良公宏
+2026年2月21日
+自分で作る鳥類図鑑 Bird Collection
+Taka@個人開発
+2026年2月23日
+Claude Code で、広告バナー200本を15分で作るえぐい手順（やってみた）
+コムテ
+2026年2月22日
+Jarvish (jarvis-shell)
+tominaga-h
+2026年2月21日
+野久知 優希
+趣味で個人開発をしています。
+皆さんの生活がちょっとだけ豊かになるように。
+Hobby Programmer
+Python
+Follow
+{
+  "final_url": "https://izanami.dev/post/f5ac94d7-df83-4b97-81c3-81c91e0c7873",
+  "og_image": "https://izanami.dev/post/f5ac94d7-df83-4b97-81c3-81c91e0c7873/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F1fcb2c49-7c4d-4b0f-8e5f-13febd5f5ebf%2Ff14b3659-aba0-4539-ba78-0e910434d75a.png&w=128&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "VoiceTagEditorのアイコン"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/1fcb2c49-7c4d-4b0f-8e5f-13febd5f5ebf/1549cc5c-59fb-41eb-86d9-0bc79caeb3f2.png",
+      "alt": "VoiceTagEditorのメイン画面"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/1fcb2c49-7c4d-4b0f-8e5f-13febd5f5ebf/4ae262ce-929f-455c-b29c-de8d788a1770.jpeg",
+      "alt": "ドラッグ&ドロップ対応"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F8b3a8a48-0d08-4339-87cf-7d058e22d280%2Fb2d97871-4b8c-4c25-90d1-f19e0492b19c.JPG&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Kou"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocK3C9KFZUbWPRrIW81cE7RyQZKtFR9e4SZV6ZYRYPeqRVjJBw%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "indiehacker"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocJjmCMd3-ASQbrAlD3uYbqc7NeWZUNNNSeJT169VkmJAx-djlbL%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "江良公宏"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F2ed0e3be-d91d-42d9-9508-71d7c401a042%2Fbfe015f9-4a72-447c-8051-22a072be3a4e.avif&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "tominaga-h"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1fcb2c49-7c4d-4b0f-8e5f-13febd5f5ebf%2F8de9eb91-01ae-4072-aa85-2a144d7e336b.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://github.com/coder-yuuki/VoiceTagEditor/releases"
+    },
+    {
+      "label": "「にゃんボイス」",
+      "url": "https://apps.apple.com/jp/app/%E3%81%AB%E3%82%83%E3%82%93%E3%83%9C%E3%82%A4%E3%82%B9-nearvoice/id6748361244"
+    },
+    {
+      "label": "",
+      "url": "https://github.com/coder-yuuki"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/f5ac94d7-df83-4b97-81c3-81c91e0c7873 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}
