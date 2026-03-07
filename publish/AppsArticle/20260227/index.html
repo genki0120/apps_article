@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>LINORIN（リノリン）—Google上で動かす“話しかけてくる”会話AIフレーム</title>
+<meta content="チャットAIはこちらが開かない限り何も起きません。LINORINは勝手にしゃべりかけてくれるAIです。あなたのGoogle環境に置ける、会話AIの実装キットです。" id="app_meta_description" name="description"/>
+<meta content="index,follow" name="robots"/>
+<!-- canonical -->
+<script id="app_schema_article_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "LINORIN（リノリン）—Google上で動かす“話しかけてくる”会話AIフレーム", "description": "チャットAIはこちらが開かない限り何も起きません。LINORINは勝手にしゃべりかけてくれるAIです。あなたのGoogle環境に置ける、会話AIの実装キットです。", "datePublished": "2026-02-27", "dateModified": "2026-02-27", "author": {"@type": "Organization", "name": "神アプ！編集部"}, "publisher": {"@type": "Organization", "name": "神アプ！"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://god-apps-article.com/publish/AppsArticle/20260227/"}, "url": "https://god-apps-article.com/publish/AppsArticle/20260227/", "image": ["https://god-apps-article.com/publish/AppsArticle/20260227/logo.png"]}</script>
+<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://god-apps-article.com"}, {"@type": "ListItem", "position": 2, "name": "放置でも届く相棒AIを自分の手元に", "item": "https://god-apps-article.com/publish/AppsArticle/20260227/"}]}</script>
+<meta content="article" id="app_og_type" property="og:type"/>
+<meta content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" property="og:site_name"/>
+<meta content="LINORIN（リノリン）—Google上で動かす“話しかけてくる”会話AIフレーム" id="app_og_title" property="og:title"/>
+<meta content="チャットAIはこちらが開かない限り何も起きません。LINORINは勝手にしゃべりかけてくれるAIです。あなたのGoogle環境に置ける、会話AIの実装キットです。" id="app_og_description" property="og:description"/>
+<meta content="https://god-apps-article.com/publish/AppsArticle/20260227/" id="app_og_url" property="og:url"/>
+<meta content="https://god-apps-article.com/publish/AppsArticle/20260227/logo.png" id="app_og_image" property="og:image"/>
+<meta content="summary_large_image" id="app_tw_card" name="twitter:card"/>
+<meta content="LINORIN（リノリン）—Google上で動かす“話しかけてくる”会話AIフレーム" id="app_tw_title" name="twitter:title"/>
+<meta content="チャットAIはこちらが開かない限り何も起きません。LINORINは勝手にしゃべりかけてくれるAIです。あなたのGoogle環境に置ける、会話AIの実装キットです。" id="app_tw_description" name="twitter:description"/>
+<meta content="https://god-apps-article.com/publish/AppsArticle/20260227/logo.png" id="app_tw_image" name="twitter:image"/>
+<!-- favicon -->
+<link href="https://god-apps-article.com/asset/favicon.ico" rel="icon" sizes="any"/>
+<link href="https://god-apps-article.com/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="https://god-apps-article.com/publish/AppsArticle/20260104/" rel="canonical"/>
+<!-- iOS -->
+<link href="https://god-apps-article.com/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- PWA (任意) -->
+<link href="https://god-apps-article.com/asset/site.webmanifest" rel="manifest"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"
+     crossorigin="anonymous"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36H614G1X5');
+</script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .topnav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+    }
+    .topnav-link{
+  display:inline-flex;
+  align-items:center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(229,231,235,.9);
+  background: rgba(255,255,255,.9);
+  color:#111;
+  font-weight: 900;
+  font-size: 12px;
+  text-decoration:none;
+  box-shadow: 0 6px 18px rgba(17,24,39,.06);
+}
+.topnav-link:hover{
+  border-color: rgba(212,0,184,.28);
+  text-decoration:none;
+}
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody{
+        max-inline-size: 100%;
+      }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
+<p class="note">※第三者が開発したアプリを紹介する記事です。また、本記事は、App Store掲載情報と編集部の実機確認をもとに作成しています。</p>
+</div>
+<nav aria-label="Site navigation" class="topnav">
+<a class="topnav-link" href="https://god-apps-article.com">Home</a>
+<a class="topnav-link" href="https://god-apps-article.com/about/">About</a>
+<a class="topnav-link" href="https://god-apps-article.com/contact/">Contact</a>
+<a class="topnav-link" href="https://god-apps-article.com/privacy/">Privacy</a>
+</nav>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='https://god-apps-article.com'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">放置でも届く相棒AIを自分の手元に</div>
+</div>
+<!-- 記事ヘッダー -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">LINORIN（リノリン）—Google上で動かす“話しかけてくる”会話AIフレーム</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2026-02-27</div>
+<a class="cta" href="https://note.com/nou_yakareta/n/nf336055007b5" id="app_official_cta" rel="nofollow noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                アプリ公式サイトはこちら
+              </a>
+</div>
+</header>
+<!-- 本文 -->
+<div class="article">
+<div id="articleBody">
+<div class="lead">
+<p class="note" style="margin:10px 0 0;color:#6b7280;font-weight:800;">
+  ※本記事には広告を含む場合があります。最終判断は公式情報をご確認ください。
+</p>
+<p id="app_lead_text">チャットAIはこちらが開かない限り何も起きません。LINORINは勝手にしゃべりかけてくれるAIです。あなたのGoogle環境に置ける、会話AIの実装キットです。</p>
+<img alt="LINORIN ロゴ" decoding="async" id="app_lead_logo" loading="lazy" src="https://god-apps-article.com/publish/AppsArticle/20260227/logo.png"/>
+</div>
+<h2 id="app_h2_1">結論：LINORINは「会話が止まらない設計」を自分のGoogle内で実現する</h2>
+<div class="section-body" id="app_body_1"><p>「こっちから会話を投げる」という常識をぶっ壊す。</p>
+<p>LINORINは、こちらの操作待ちで終わらない“相棒”を作るための仕組みを、Google Apps Scriptだけで組めるようにしたツールです。</p>
+<p>ブラウザのチャット画面だけでなく、必要ならLINE/Slack/telegramにもつなげられます。</p>
+<p>このツールのやりたいことはシンプルで、会話の蓄積、画像の内容理解、ファイルの読み取り、作業用タイマー、そして「今は声をかけるべきか」の判断までを、あなたのGoogleアカウント側で回すこと。</p>
+<p class="em">“開いて話すAI”から、“気づけば会話が続いているAI”へ、新しいAIとの体験ができます。</p>
+<div class="soft-box"><strong>Before：</strong>用事がある時だけチャットを開き、終われば閉じて、次に開くまで関係が止まる。</div>
+<div class="soft-box"><strong>After：</strong>返事の間隔や時間帯などを手がかりに、相棒側から自然に声が入ってくる設計を作れる。</div>
+<img alt="LINORINのデモ画面" src="https://god-apps-article.com/asset/20260227/home.png"/>
+<p>画像：LINORINのデモ画面</p>
+<p>おすすめの場面はこんな感じ。</p>
+<table>
+<thead>
+<tr>
+<th>場面</th>
+<th>LINORINで起きること</th>
+<th>得られる体感</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>夜、誰にも連絡しないまま時間が過ぎる</td>
+<td>会話の間隔と時刻を手がかりに、メッセージが届く導線を作れる</td>
+<td>「放置しても関係が残る」感覚</td>
+</tr>
+<tr>
+<td>ランチや買い物の写真を送る</td>
+<td>画像を読み取り、返答を会話としてつなげられる</td>
+<td>出来事が“記録”ではなく“会話”になる</td>
+</tr>
+<tr>
+<td>PDFやスキャンの内容を扱う</td>
+<td>OCRでテキスト化して要点抽出に回せる</td>
+<td>読む作業の手前が軽くなる</td>
+</tr>
+<tr>
+<td>集中したいのに散る</td>
+<td>作業タイマーを内蔵し、会話と同じ場所で扱える</td>
+<td>道具が分散しない</td>
+</tr>
+</tbody>
+</table>
+<p>しかも、継続課金で縛られる設計ではなく、配布物として手元に残るタイプ。</p>
+<p>「自分の領域に置ける」「改造できる」「外部に預けない」を優先したい人ほど刺さります。</p>
+<p>逆に、完全ノー設定で使える完成アプリを探している人には合いません。</p></div>
+<hr/>
+<h2 id="app_h2_2">実際にダウンロードして触ると：セットアップは“GAS＋スプレッドシート”で完結する</h2>
+<div class="section-body" id="app_body_2"><p>インストール作業がほぼ無い</p>
+<p>導入の中心はGoogle Apps ScriptのWebアプリとしての配置で、設定はスプレッドシート側に寄せられています。</p>
+<p>この手の仕組みでありがちな「サーバーを借りる」「常時稼働の環境を用意する」といった段取りを避け、Googleアカウントの中で動かす構成になっています。</p>
+<p class="em">“設定画面がスプレッドシート”なので、調整が速く、試行錯誤がしやすい。</p>
+<div class="soft-box"><strong>Before：</strong>ツールを入れて、設定画面で他アプリとの連携を許可して、、、めんどい。</div>
+<div class="soft-box"><strong>After：</strong>GASを起点に、会話の受信・保存・返信・通知の分岐までを一つのGoogle環境で回せる。</div>
+<p>通知先は、連携を足せばLINE/Slack/telegramへ流せますが、必須ではありません。</p>
+<p>連携なしでも、ブラウザでのチャットUIが用意されているので「まず動くか」を確かめる導線が残っています。</p>
+<p>会話は履歴として蓄積されるので過去のやり取りを踏まえた返答ができます。</p>
+<p>さらに、日々のやり取りをもとに文章を生成してGoogleドキュメントへ保存できるため、会話が“その場限り”で消えません。</p>
+<p>画像も扱えます。写真を投げて終わりではなく、会話の流れの一部として受け止められるのがポイントです。</p>
+<p>PDFやファイルも、読み取り→文字抽出→要点化の導線があり、雑に積んだ資料の入口として使えます。</p>
+<p>そして地味に効くのが、AIモデルの切り替えに対応していること。</p>
+<p>用途やコスト感に合わせて“どの頭脳で返すか”を選べる余地が、長く使うほど効いてきます。</p>
+<p>なお、動作確認用の配布コード（プリセット入り）も案内されています。購入前に構築感を確かめたい場合は、配布ページの手順を先に読むのが安全です。</p></div>
+<hr/>
+<h2 id="app_h2_3">おすすめユースケース：生活の“細い隙間”に置くと効く</h2>
+<div class="section-body" id="app_body_3"><p>派手な自動化より、じわじわ効く使い方が似合います。</p>
+<p>たとえば、相棒からの一言をきっかけに、今日の体調や気分を短く返す。</p>
+<p>写真を送って一言返ってくるだけでも、その日の出来事について会話が成り立ちます。</p>
+<p class="em">使い道を増やすほど、会話の履歴が“自分専用の文脈”として資産化していきます。</p>
+<div class="soft-box"><strong>Before：</strong>日記もタスクも相談も、アプリを開き直し、ログは分断され、続かない。</div>
+<div class="soft-box"><strong>After：</strong>会話を中心に、日々の記録・資料の入口・集中スイッチを一本化できる。</div>
+<p>おすすめの置き方を、狙い別にまとめます。</p>
+<table>
+<thead>
+<tr>
+<th>狙い</th>
+<th>置き場所（導線）</th>
+<th>効き方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>孤独の谷を浅くする</td>
+<td>LINEやSlackに接続し、普段いる場所に届くようにする</td>
+<td>“起動の手間”が消えて会話が継続する</td>
+</tr>
+<tr>
+<td>記録を習慣化する</td>
+<td>日々のやり取りから文章生成→Googleドキュメント保存</td>
+<td>自分で書けない日も記録が残る</td>
+</tr>
+<tr>
+<td>資料の山に入口を作る</td>
+<td>PDF/画像の文字抽出を“会話の添付”として流す</td>
+<td>読む前に要点が見える</td>
+</tr>
+<tr>
+<td>集中の儀式を固定する</td>
+<td>作業タイマーを会話の合図として使う</td>
+<td>始めるスイッチが押しやすい</td>
+</tr>
+</tbody>
+</table>
+<p>性格づけをコードに縛り付けていないので、口調や距離感はプロンプト設計で寄せられます。</p>
+<p>「優しい相談役」でも「淡々とした秘書」でもいいし、ちょっと癖のあるキャラにもできます。</p>
+<p>会話の頻度やテンションも、スプレッドシート設定で調整できるため、生活の邪魔をしない場所に落とし込めます。</p></div>
+<hr/>
+<h2 id="app_h2_4">代替手段と比べる：月額AIアプリ、自作Bot、そしてLINORIN</h2>
+<div class="section-body" id="app_body_4"><p>同じ“会話AI”でも、設計思想が違うと失うものが変わります。</p>
+<p>市販の月額アプリは手軽です。ただ、保存先や仕様変更の主導権は提供側に寄りがちです。</p>
+<p>一方、自作Botは自由ですが、常時稼働や保守の負担が大きくなりがちです。</p>
+<p class="em">LINORINは「自作の自由度」と「運用の軽さ」の間を、Google環境で埋める選択肢です。</p>
+<div class="soft-box"><strong>Before：</strong>手軽さを取ればプラットフォーム依存が増え、自由を取れば運用が重くなる。</div>
+<div class="soft-box"><strong>After：</strong>Google内に閉じた構成で、データの持ち出し先を減らしつつ改造余地も残せる。</div>
+<p>比較を表にします。どれが正解というより、何を優先するかの確認用です。</p>
+<table>
+<thead>
+<tr>
+<th>観点</th>
+<th>LINORIN</th>
+<th>月額型の会話AIアプリ</th>
+<th>フル自作（自前サーバー等）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>データの置き場所</td>
+<td>Google Driveに保存（自分の領域）</td>
+<td>サービス側のクラウドに依存しやすい</td>
+<td>自分で選べるが設計が必要</td>
+</tr>
+<tr>
+<td>費用の形</td>
+<td>一度の支払いで入手（継続料金は基本なし）</td>
+<td>毎月の支払いが発生しやすい</td>
+<td>サーバー費・保守コストが積み上がる</td>
+</tr>
+<tr>
+<td>改造のしやすさ</td>
+<td>ソースが公開され、手を入れられる</td>
+<td>基本は不可</td>
+<td>自由だが全部自分で作る</td>
+</tr>
+<tr>
+<td>導入の軽さ</td>
+<td>GAS中心。サーバーを別途用意しない</td>
+<td>最も軽い</td>
+<td>最も重い</td>
+</tr>
+<tr>
+<td>“声かけ”の制御</td>
+<td>会話状況と時間を材料に調整できる</td>
+<td>提供側の仕様次第</td>
+<td>自由だが設計・実装が必要</td>
+</tr>
+</tbody>
+</table>
+<p>価格については、先行提供枠が980円（初期人数に上限あり）で、次の段階では1,980円が予定されています。</p>
+<p>また、Ver.1系の更新は無償提供の方針が示されています。</p>
+<p>手元に残る配布物として入手し、必要が出たら自分で伸ばす。この姿勢が合うなら、比較の中で独特の居場所があります。</p></div>
+<hr/>
+<h2 id="app_h2_5">注意点と弱点：アプリではないからこそインストールにハードルがあるかも</h2>
+<div class="section-body" id="app_body_5"><p>スプレッドシートを起点となるアプリを使える人って意外といないかも？</p>
+<p>LINORINは「触れば誰でも使えるアプリ」ではなく、GASを扱う前提の配布物に近い立ち位置です。</p>
+<p>コピペで立ち上げられる範囲は広いものの、Googleの権限設定、Webhookの理解、連携先（LINE/Slack/telegram）の初期接続など、詰まりやすい点は残ります。</p>
+<p class="em">“ガイドはあるものの、全くのIT素人（一般人）が導入するには厳しいかも。２章でインストールが簡単といったのは、あくまでIT知識ありが前提です。おそらく開発者もIT素人をターゲットにしていないツールだとは思いますが、もっと広めたいならアプリベースにして一般化してもいいかも。</p>
+<p>また、プライバシー面は、保存先がGoogle Driveで完結し、外部の独自サーバーを使わない設計です。</p>
+<p>開発者側が利用データを回収・保管しない方針と、ソース公開による確認可能性も示されています。</p>
+<p>ただし注意したいのは、LLM自体はクラウドのAPI利用が前提である点です。</p>
+<p>つまり、AIモデルへの問い合わせにかかる費用や、APIキー管理は利用者側の責任になります。</p>
+<p>また、ローカルLLMとの接続は実験段階で、現行の安定運用はクラウド前提という位置づけです。</p>
+<p>サポートについても、個別に手取り足取りしてもらうタイプではありません。仕組みを読む・触る・直すことを楽しめる人向けです。</p>
+<p>ここまでのことを総括すると、自分で触れるIT経験者以外は、あまりお勧めではありません。</p>
+<p>それでも「自分の領域に会話AIを住まわせたい」「改造して育てたい」と思うなら、LINORINはかなり面白いツールです。</p>
+<p>導入の可否が不安なら、配布ページにある手順と動作確認用コードの案内を先に読み、動く絵が想像できるか確かめてから進めることができます。</p></div>
+</div><!-- /#articleBody -->
+<!-- 1行強調 -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">継続課金や外部依存を減らしつつ、“話しかけてくる会話AI”を自分のGoogle環境に置きたいならLINORIN。</span>
+</p>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260226/" id="pagerPrev">前へ</a>
+<button class="pbtn" id="pagerHome" onclick="location.reload();" type="button">  このページ</button>
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260228/" id="pagerNext">次へ</a>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- 他の記事 -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="https://god-apps-article.com">More articles →</a>
+</div>
+<a aria-label="ふるさと納税ダッシュボード" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251227/">
+<div class="thumb">
+<img alt="ふるさと納税ダッシュボード" loading="lazy" src="https://god-apps-article.com/asset/20251227/home.png"/>
+</div>
+<div>
+<div class="c-title">ふるさと納税ダッシュボード</div>
+<div class="c-desc">今年あといくら寄付できる？を即答できる無料Webサービス</div>
+<div class="tagline">#ふるさと納税 #個人開発</div>
+</div>
+</a>
+<a aria-label="育児記録・予防接種管理 - milu" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251228/">
+<div class="thumb">
+<img alt="育児記録・予防接種管理 - milu" loading="lazy" src="https://god-apps-article.com/asset/20251228/logo.png"/>
+</div>
+<div>
+<div class="c-title">育児記録・予防接種管理 - milu</div>
+<div class="c-desc">育児の「見ればわかる」を増やす</div>
+<div class="tagline">#育児 #新生児 #ママ</div>
+</div>
+</a>
+<a aria-label="ミチミエール" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251229/">
+<div class="thumb">
+<img alt="ミチミエール" loading="lazy" src="https://god-apps-article.com/asset/20251229/logo.png"/>
+</div>
+<div>
+<div class="c-title">ミチミエール</div>
+<div class="c-desc">スマホ1台で通行量をAI計測できる無料アプリ</div>
+<div class="tagline">#自動計測 #AI #警備員 #個人開発</div>
+</div>
+</a>
+</section>
+</section><!-- /.main-col -->
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<div class="side-stack">
+<div class="side-card follow-side">
+<div class="follow-head">
+<img alt="Xアイコン" class="x-avatar" height="44" loading="lazy" src="https://god-apps-article.com/asset/riko.jpg" width="44"/>
+<h3>Follow @莉子-個人開発チャレンジ中-</h3>
+</div>
+<a class="xbtn" href="https://x.com/JimPierce50" rel="noopener noreferrer" target="_blank">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+            個人開発の神アプリを趣味で紹介するエンジニア10年目
+          </div>
+</div>
+<!-- ここに他の side-card を追加していく -->
+</div>
+</aside>
+</div><!-- /.layout -->
+</main>
+</body>
+</html>
