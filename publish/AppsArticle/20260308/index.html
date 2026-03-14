@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>FAMI-KAN（ファミカン）— 立替・返金の関係を自動で整理するブラウザアプリ</title>
+<meta content="最後に残るのは、思い出よりも「お金の整理」だったりします。FAMI-KAN（ファミカン）は、人数や負担がバラバラな集まりでも、立替と返金の関係を自動でまとめてくれるブラウザアプリです。共有リンクで一緒に見られるので、相手にアプリ導入をお願いしなくて済みます。" id="app_meta_description" name="description"/>
+<meta content="index,follow" name="robots"/>
+<!-- canonical -->
+<script id="app_schema_article_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "FAMI-KAN（ファミカン）— 立替・返金の関係を自動で整理するブラウザアプリ", "description": "最後に残るのは、思い出よりも「お金の整理」だったりします。FAMI-KAN（ファミカン）は、人数や負担がバラバラな集まりでも、立替と返金の関係を自動でまとめてくれるブラウザアプリです。共有リンクで一緒に見られるので、相手にアプリ導入をお願いしなくて済みます。", "datePublished": "2026-03-08", "dateModified": "2026-03-08", "author": {"@type": "Organization", "name": "神アプ！編集部"}, "publisher": {"@type": "Organization", "name": "神アプ！"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://god-apps-article.com/publish/AppsArticle/20260308/"}, "url": "https://god-apps-article.com/publish/AppsArticle/20260308/", "image": ["https://god-apps-article.com/asset/20260308/logo.png"]}</script>
+<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://god-apps-article.com"}, {"@type": "ListItem", "position": 2, "name": "ファミカンで立替精算", "item": "https://god-apps-article.com/publish/AppsArticle/20260308/"}]}</script>
+<meta content="article" id="app_og_type" property="og:type"/>
+<meta content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" property="og:site_name"/>
+<meta content="FAMI-KAN（ファミカン）— 立替・返金の関係を自動で整理するブラウザアプリ" id="app_og_title" property="og:title"/>
+<meta content="最後に残るのは、思い出よりも「お金の整理」だったりします。FAMI-KAN（ファミカン）は、人数や負担がバラバラな集まりでも、立替と返金の関係を自動でまとめてくれるブラウザアプリです。共有リンクで一緒に見られるので、相手にアプリ導入をお願いしなくて済みます。" id="app_og_description" property="og:description"/>
+<meta content="https://god-apps-article.com/publish/AppsArticle/20260308/" id="app_og_url" property="og:url"/>
+<meta content="https://god-apps-article.com/asset/20260308/logo.png" id="app_og_image" property="og:image"/>
+<meta content="summary_large_image" id="app_tw_card" name="twitter:card"/>
+<meta content="FAMI-KAN（ファミカン）— 立替・返金の関係を自動で整理するブラウザアプリ" id="app_tw_title" name="twitter:title"/>
+<meta content="最後に残るのは、思い出よりも「お金の整理」だったりします。FAMI-KAN（ファミカン）は、人数や負担がバラバラな集まりでも、立替と返金の関係を自動でまとめてくれるブラウザアプリです。共有リンクで一緒に見られるので、相手にアプリ導入をお願いしなくて済みます。" id="app_tw_description" name="twitter:description"/>
+<meta content="https://god-apps-article.com/asset/20260308/logo.png" id="app_tw_image" name="twitter:image"/>
+<!-- favicon -->
+<link href="https://god-apps-article.com/asset/favicon.ico" rel="icon" sizes="any"/>
+<link href="https://god-apps-article.com/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="https://god-apps-article.com/publish/AppsArticle/20260104/" rel="canonical"/>
+<!-- iOS -->
+<link href="https://god-apps-article.com/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- PWA (任意) -->
+<link href="https://god-apps-article.com/asset/site.webmanifest" rel="manifest"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36H614G1X5');
+</script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .topnav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+    }
+    .topnav-link{
+  display:inline-flex;
+  align-items:center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(229,231,235,.9);
+  background: rgba(255,255,255,.9);
+  color:#111;
+  font-weight: 900;
+  font-size: 12px;
+  text-decoration:none;
+  box-shadow: 0 6px 18px rgba(17,24,39,.06);
+}
+.topnav-link:hover{
+  border-color: rgba(212,0,184,.28);
+  text-decoration:none;
+}
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody{
+        max-inline-size: 100%;
+      }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
+<p class="note">※第三者が開発したアプリを紹介する記事です。また、本記事は、App Store掲載情報と編集部の実機確認をもとに作成しています。</p>
+</div>
+<nav aria-label="Site navigation" class="topnav">
+<a class="topnav-link" href="https://god-apps-article.com">Home</a>
+<a class="topnav-link" href="https://god-apps-article.com/about/">About</a>
+<a class="topnav-link" href="https://god-apps-article.com/contact/">Contact</a>
+<a class="topnav-link" href="https://god-apps-article.com/privacy/">Privacy</a>
+</nav>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='https://god-apps-article.com'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">ファミカンで立替精算</div>
+</div>
+<!-- 記事ヘッダー -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">FAMI-KAN（ファミカン）— 立替・返金の関係を自動で整理するブラウザアプリ</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2026-03-08</div>
+<a class="cta" href="https://famikan.tetras-ltd.com/" id="app_official_cta" rel="nofollow noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                アプリ公式サイトはこちら
+              </a>
+</div>
+</header>
+<!-- 本文 -->
+<div class="article">
+<div id="articleBody">
+<div class="lead">
+<p class="note" style="margin:10px 0 0;color:#6b7280;font-weight:800;">
+  ※本記事には広告を含む場合があります。最終判断は公式情報をご確認ください。
+</p>
+<p id="app_lead_text">最後に残るのは、思い出よりも「お金の整理」だったりします。FAMI-KAN（ファミカン）は、人数や負担がバラバラな集まりでも、立替と返金の関係を自動でまとめてくれるブラウザアプリです。共有リンクで一緒に見られるので、相手にアプリ導入をお願いしなくて済みます。</p>
+<img alt="FAMI-KAN ロゴ" decoding="async" id="app_lead_logo" loading="lazy" src="https://god-apps-article.com/asset/20260308/logo.png"/>
+</div>
+<h2 id="app_h2_1">結論：立替と返金の“迷子”を止める。遠出・集まり・二人暮らしの会計</h2>
+<div class="section-body" id="app_body_1"><figure><img alt="アプリ画面" src="https://god-apps-article.com/asset/20260308/home.png"/><figcaption>アプリ画面（イメージ）</figcaption></figure>
+<p>精算は、揉める前に仕組みで終わらせるのが一番です。</p>
+<p>FAMI-KAN（ファミカン）は、複数人がそれぞれ支払い、あとで帳尻を合わせるタイプの集まりに強いブラウザアプリです。特徴は「均等に割る」だけで終わらない点にあります。家族単位で参加人数が違う、子ども分は少し軽くしたい、途中参加の人は少なめにしたい――そういう“現実のズレ”を、入力の段階で吸収できる設計です。</p>
+<p>さらに、会計係が先にお金を預かってそこから支払う運用にも対応しており、預かった金額と実際の支出の差分が見えるため、最後に封筒の中身を前に固まる時間が減ります。立替の流れを整理する際も、誰から誰へ振り込むべきかを自動で組み替え、無駄なやり取りを増やさないでくれます。</p>
+<p class="em">「計算の正しさ」だけでなく、「言い出しにくさ」までケアしたい人向けです。</p>
+<p>使いどころは、家族での遠出、趣味の集まり、友人同士の食事、二人暮らしの生活費など、立替が発生しやすい場面全般。特に20〜40代で子育て中の世帯は、子どもの扱いをどうするかで気まずさが生まれやすいので相性が良いはずです。</p>
+<div class="soft-box"><strong>Before：</strong>レシートを見ながら電卓を叩き、結局「あとでいい？」が積み上がる。</div>
+<div class="soft-box"><strong>After：</strong>支払いを入れてリンクを共有し、各自が自分の差額だけ確認して終われる。</div>
+<p>料金は0円と案内されており、画面もシンプル。思い出の最後を事務作業で冷やさないための、ちょうどいい“裏方”になってくれます。</p></div>
+<hr/>
+<h2 id="app_h2_2">触って分かった：作成→入力→共有まで、詰まらない導線だった</h2>
+<div class="section-body" id="app_body_2"><p>こういうツールは、最初の一歩で面倒だと負けます。</p>
+<p>ファミカンはインストール型ではなく、リンクからそのまま開いて始めるタイプでした。まず「今回の集まり」を作り、参加者（または家族のまとまり）を並べ、支払った内容を足していく流れ。途中で入力を間違えても、やり直しの心理的コストが低く、会計係が片手間で触っても置いていかれにくい印象です。</p>
+<p>特に便利だと感じたのは、負担を一律にしない前提が最初から用意されていること。大人と子どもで負担を変える、家族ごとに人数が違う、といった条件を“後付けの例外処理”ではなく、自然な入力として扱えます。だからこそ現場でありがちな「え、うちは子ども2人いるのに同額？」の火種を先に消せます。</p>
+<p class="em">“その場で確認できる形”に落ちるので、会計係が一人で抱え込みません。</p>
+<p>共有もスムーズで、計算結果にたどり着くためのリンクを渡せば相手側の準備はほぼ不要。相手に新しいアプリを入れてもらうお願いがいらないのはとても都合がいいです。</p>
+<p>そして地味に良かったのが、請求の見せ方に気を配る発想がある点です。数字だけ投げると冷たくなりがちですが、メッセージカードのような形で“支払いのお願い”を作れるので、連絡が事務的になりすぎない。旅行やイベントの終わりに残る感情を、必要以上に削らない工夫だと感じました。</p>
+<p>なお、操作の雰囲気を掴むための例入力も用意されているので、いきなり本番データを入れるのが怖い人でも試しやすいはずです。</p></div>
+<hr/>
+<h2 id="app_h2_3">おすすめユースケース：子ども連れ・複数世帯・途中参加があるほど真価が出る</h2>
+<div class="section-body" id="app_body_3"><p>精算のストレスは、「条件の違い」を誰かが飲み込むことで発生します。</p>
+<p>ファミカンは、条件の違いを飲み込む役を人間からアプリに移してくれます。20〜40代の子育て世帯におすすめとされているのも納得で、子ども料金、家族単位の参加、車ごとのガソリン代など、単純な人数割りでは説明しづらい支払いが日常的に発生するからです。</p>
+<p>また、集まりの規模が大きいと「誰がどれだけ立て替えたか」の記憶が曖昧になります。入力して見える化し、差額だけに話題を絞れるのは、揉めないための近道。会計係が“計算担当”から“入力担当”に変わるだけで、負担はかなり軽くなります。</p>
+<p class="em">条件が複雑だと、手作業よりも差が開きます。</p>
+<p>どんな場面で効果的かを整理すると、次のようになります。</p>
+<table>
+<thead>
+<tr>
+<th>場面</th>
+<th>ありがちな詰まりどころ</th>
+<th>ファミカンで起きる変化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>複数家族での遠出</td>
+<td>子どもの負担をどう扱うかで空気が固まる</td>
+<td>重み付けで納得ラインを作りやすい</td>
+</tr>
+<tr>
+<td>趣味の集まり・イベント</td>
+<td>遅れて来た人／参加が短い人の調整が面倒</td>
+<td>調整を前提に組めるので説明が短くなる</td>
+</tr>
+<tr>
+<td>会計係が一括で預かる運用</td>
+<td>預かり金と支出のズレ、返金の計算が混線</td>
+<td>預かりと支出を分けて追えるため、残額の扱いが明確</td>
+</tr>
+<tr>
+<td>二人暮らしの生活費</td>
+<td>立替が積み上がって“精算日”が重い</td>
+<td>都度入力して差額だけ見られるので、話が短い</td>
+</tr>
+</tbody>
+</table>
+<p>「精算のための会議」を開かないための道具として、かなり実用的です。</p></div>
+<hr/>
+<h2 id="app_h2_4">代替サービスと比べて：均等割り系では拾えない“家族単位”と“預かり金”</h2>
+<div class="section-body" id="app_body_4"><p>似た道具は多いのに、なぜわざわざ乗り換えるのか。</p>
+<p>先行例としてワリカのような精算系サービスもあります。ただ、世の中の多くは「人数で割る」「立替を並べる」あたりが中心で、家族単位の参加や、負担の強弱、会計係の預かり金といった“現場の運用”を丸ごと受け止めるところまでは届きにくい印象があります。結果として、結局は別のメモや電卓が必要になり、共有もスムーズに進まないことがある。</p>
+<p>ファミカンは、そこを最初から狙って作られているのが分かります。参加者ごとに負担の重さを変える発想、家族という単位で登録できる発想、そして預かり金を前提にした追跡。ここまで揃うと、幹事・会計係の仕事は「複雑な説明」ではなく「入力と確認」になる。</p>
+<p class="em">“均等に割れない日”のための設計が、他と一線を画します。</p>
+<p>もう一つの差は共有方法です。多くのアプリは各自の端末に何かしらの準備が必要だったり、アカウント前提だったりしますが、ファミカンはリンクで同じ結果にたどり着ける方式。参加者がアプリ慣れしていない場面は特にこの差は大きいです。</p>
+<p>さらに、請求の伝え方を柔らかくする“カード”の仕組みは珍しいポイント。数字の正しさだけでは完結しないのが、人間同士のお金の話です。気まずさを減らすためのアウトプットがあるのは、実務上の強みになります。</p>
+<p>「均等割りで済む日は別ツール」「複雑な日は手作業」になっている人は一本化の候補として検討する価値があります。</p></div>
+<hr/>
+<h2 id="app_h2_5">注意点と弱点：円前提、リンクの扱い、そして“残るデータ”の向き不向き</h2>
+<div class="section-body" id="app_body_5"><p>便利さは、ときに油断を連れてきます。</p>
+<p>ファミカンは日本円での利用を想定した作りです。海外での支払いが混ざる場合は、入力前に円に換算しておく必要があります。現地通貨のまま並べて自動換算、といった挙動は期待しないほうが良いでしょう。</p>
+<p>また、アクセスはランダム性のあるリンクによって管理される仕組みと案内されています。ログインで縛らない代わりに「リンクを知っている人が見られる」性質になるため、グループ外に転送されないよう取り扱いは慎重に。特に、金額の内訳を見られたくない相手がいる場合は、共有範囲の線引きを先に決めるのが安全です。</p>
+<p class="em">“手軽さ”は、“共有のしやすさ”と表裏一体です。</p>
+<p>データについても同様で、リンクから再訪できる利便性がある一方、いつまでも残ってほしくない精算内容にはおすすめできないケースがあります。必要がなくなったらリンクの管理をどうするか、端末の履歴やチャットの固定投稿をどう扱うか、といった運用面の工夫が必要です。</p>
+<p>加えて、プライバシーポリシーが用意されているので、使う前に一度目を通すのがおすすめです。入力項目は個人を特定する情報を求めない方向で設計されている旨が示されていますが、安心のしかたは人それぞれ。自分の基準に合うかどうかを確認してから本番利用に移すと、あとで迷いません。</p>
+<p>弱点を理解したうえで使えば、会計係の負担を“ちゃんと”減らせる道具になります。</p></div>
+</div><!-- /#articleBody -->
+<!-- 1行強調 -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">条件が複雑な立替にファミカンの自動整理はおすすめ。</span>
+</p>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260307/" id="pagerPrev">前へ</a>
+<button class="pbtn" id="pagerHome" onclick="location.reload();" type="button">  このページ</button>
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260309/" id="pagerNext">次へ</a>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- 他の記事 -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="https://god-apps-article.com">More articles →</a>
+</div>
+<a aria-label="ふるさと納税ダッシュボード" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251227/">
+<div class="thumb">
+<img alt="ふるさと納税ダッシュボード" loading="lazy" src="https://god-apps-article.com/asset/20251227/home.png"/>
+</div>
+<div>
+<div class="c-title">ふるさと納税ダッシュボード</div>
+<div class="c-desc">今年あといくら寄付できる？を即答できる無料Webサービス</div>
+<div class="tagline">#ふるさと納税 #個人開発</div>
+</div>
+</a>
+<a aria-label="育児記録・予防接種管理 - milu" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251228/">
+<div class="thumb">
+<img alt="育児記録・予防接種管理 - milu" loading="lazy" src="https://god-apps-article.com/asset/20251228/logo.png"/>
+</div>
+<div>
+<div class="c-title">育児記録・予防接種管理 - milu</div>
+<div class="c-desc">育児の「見ればわかる」を増やす</div>
+<div class="tagline">#育児 #新生児 #ママ</div>
+</div>
+</a>
+<a aria-label="ミチミエール" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251229/">
+<div class="thumb">
+<img alt="ミチミエール" loading="lazy" src="https://god-apps-article.com/asset/20251229/logo.png"/>
+</div>
+<div>
+<div class="c-title">ミチミエール</div>
+<div class="c-desc">スマホ1台で通行量をAI計測できる無料アプリ</div>
+<div class="tagline">#自動計測 #AI #警備員 #個人開発</div>
+</div>
+</a>
+</section>
+</section><!-- /.main-col -->
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<div class="side-stack">
+<div class="side-card follow-side">
+<div class="follow-head">
+<img alt="Xアイコン" class="x-avatar" height="44" loading="lazy" src="https://god-apps-article.com/asset/riko.jpg" width="44"/>
+<h3>Follow @莉子-個人開発の神アプリ紹介-</h3>
+</div>
+<a class="xbtn" href="https://x.com/JimPierce50" rel="noopener noreferrer" target="_blank">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+            個人開発の神アプリを趣味で紹介するエンジニア10年目
+          </div>
+</div>
+<!-- ここに他の side-card を追加していく -->
+</div>
+</aside>
+</div><!-- /.layout -->
+</main>
+</body>
+</html>
