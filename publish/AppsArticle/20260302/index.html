@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>おかんカロリー計算：写真から栄養を見える化し、声かけで習慣化する食事記録</title>
+<meta content="食事記録が続かない理由の多くは、意志の弱さではなく“入力の摩擦”です。おかんカロリー計算は、写真を起点に栄養の見当をつけ、母（必要なら父）みたいな一言で次の選択を整えるアプリです。" id="app_meta_description" name="description"/>
+<meta content="index,follow" name="robots"/>
+<!-- canonical -->
+<script id="app_schema_article_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "おかんカロリー計算：写真から栄養を見える化し、声かけで習慣化する食事記録", "description": "食事記録が続かない理由の多くは、意志の弱さではなく“入力の摩擦”です。おかんカロリー計算は、写真を起点に栄養の見当をつけ、母（必要なら父）みたいな一言で次の選択を整えるアプリです。", "datePublished": "2026-03-02", "dateModified": "2026-03-02", "author": {"@type": "Organization", "name": "神アプ！編集部"}, "publisher": {"@type": "Organization", "name": "神アプ！"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://god-apps-article.com/publish/AppsArticle/20260302/"}, "url": "https://god-apps-article.com/publish/AppsArticle/20260302/", "image": ["https://god-apps-article.com/asset/20260302/logo.png"]}</script>
+<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://god-apps-article.com"}, {"@type": "ListItem", "position": 2, "name": "食事写真で続く栄養記録アプリ", "item": "https://god-apps-article.com/publish/AppsArticle/20260302/"}]}</script>
+<meta content="article" id="app_og_type" property="og:type"/>
+<meta content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" property="og:site_name"/>
+<meta content="おかんカロリー計算：写真から栄養を見える化し、声かけで習慣化する食事記録" id="app_og_title" property="og:title"/>
+<meta content="食事記録が続かない理由の多くは、意志の弱さではなく“入力の摩擦”です。おかんカロリー計算は、写真を起点に栄養の見当をつけ、母（必要なら父）みたいな一言で次の選択を整えるアプリです。" id="app_og_description" property="og:description"/>
+<meta content="https://god-apps-article.com/publish/AppsArticle/20260302/" id="app_og_url" property="og:url"/>
+<meta content="https://god-apps-article.com/asset/20260302/logo.png" id="app_og_image" property="og:image"/>
+<meta content="summary_large_image" id="app_tw_card" name="twitter:card"/>
+<meta content="おかんカロリー計算：写真から栄養を見える化し、声かけで習慣化する食事記録" id="app_tw_title" name="twitter:title"/>
+<meta content="食事記録が続かない理由の多くは、意志の弱さではなく“入力の摩擦”です。おかんカロリー計算は、写真を起点に栄養の見当をつけ、母（必要なら父）みたいな一言で次の選択を整えるアプリです。" id="app_tw_description" name="twitter:description"/>
+<meta content="https://god-apps-article.com/asset/20260302/logo.png" id="app_tw_image" name="twitter:image"/>
+<!-- favicon -->
+<link href="https://god-apps-article.com/asset/favicon.ico" rel="icon" sizes="any"/>
+<link href="https://god-apps-article.com/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="https://god-apps-article.com/publish/AppsArticle/20260104/" rel="canonical"/>
+<!-- iOS -->
+<link href="https://god-apps-article.com/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- PWA (任意) -->
+<link href="https://god-apps-article.com/asset/site.webmanifest" rel="manifest"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36H614G1X5');
+</script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .topnav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+    }
+    .topnav-link{
+  display:inline-flex;
+  align-items:center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(229,231,235,.9);
+  background: rgba(255,255,255,.9);
+  color:#111;
+  font-weight: 900;
+  font-size: 12px;
+  text-decoration:none;
+  box-shadow: 0 6px 18px rgba(17,24,39,.06);
+}
+.topnav-link:hover{
+  border-color: rgba(212,0,184,.28);
+  text-decoration:none;
+}
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody{
+        max-inline-size: 100%;
+      }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
+<p class="note">※第三者が開発したアプリを紹介する記事です。また、本記事は、App Store掲載情報と編集部の実機確認をもとに作成しています。</p>
+</div>
+<nav aria-label="Site navigation" class="topnav">
+<a class="topnav-link" href="https://god-apps-article.com">Home</a>
+<a class="topnav-link" href="https://god-apps-article.com/about/">About</a>
+<a class="topnav-link" href="https://god-apps-article.com/contact/">Contact</a>
+<a class="topnav-link" href="https://god-apps-article.com/privacy/">Privacy</a>
+</nav>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='https://god-apps-article.com'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">食事写真で続く栄養記録アプリ</div>
+</div>
+<!-- 記事ヘッダー -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">おかんカロリー計算：写真から栄養を見える化し、声かけで習慣化する食事記録</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2026-03-02</div>
+<a class="cta" href="https://apps.apple.com/jp/app/おかんカロリー計算-おかんが見守る食事記録アプリ/id6755507316" id="app_official_cta" rel="nofollow noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                アプリ公式サイトはこちら
+              </a>
+</div>
+</header>
+<!-- 本文 -->
+<div class="article">
+<div id="articleBody">
+<div class="lead">
+<p class="note" style="margin:10px 0 0;color:#6b7280;font-weight:800;">
+  ※本記事には広告を含む場合があります。最終判断は公式情報をご確認ください。
+</p>
+<p id="app_lead_text">食事記録が続かない理由の多くは、意志の弱さではなく“入力の摩擦”です。おかんカロリー計算は、写真を起点に栄養の見当をつけ、母（必要なら父）みたいな一言で次の選択を整えるアプリです。</p>
+<img alt="おかんカロリー計算 アプリアイコン" decoding="async" id="app_lead_logo" loading="lazy" src="https://god-apps-article.com/asset/20260302/logo.png"/>
+</div>
+<h2 id="app_h2_1">結論：このアプリでできること</h2>
+<div class="section-body" id="app_body_1"><p>続ける仕組みが、最初から入っています。</p>
+<p><img alt="おかんカロリー計算の説明" src="https://god-apps-article.com/asset/20260302/home.png"/></p>
+<p class="caption">画像：おかんカロリー説明）</p>
+<p>おかんカロリー計算は、食事の写真を手がかりに、摂取エネルギーの目安と、主要栄養素（たんぱく質・脂質・炭水化物）の内訳を推定してくれる食事記録アプリです。</p>
+<p>特徴的なのが、記録のたびに“家族っぽい距離感”でコメントが返ってくること。淡々とした数値の羅列に生活に刺さる一言というスパイスが入ります。</p>
+<p>日々の記録がカレンダー上で可視化されるので、連続して記録できた日が増えるほど達成感が得られます。</p>
+<p>また、見守り役は母キャラだけでなく父キャラに切り替えられるため、言葉の温度感も調整できます。やったね！</p>
+<p class="em">つまり、数値入力をちょっと楽しくしてくれるアプリです。</p>
+<table>
+<thead>
+<tr><th>利用シーン</th><th>起きがちな課題</th><th>このアプリが効くポイント</th></tr>
+</thead>
+<tbody>
+<tr><td>外食やコンビニが多い日</td><td>正確な量が分からず放置しがち</td><td>写真から目安を出して、とにかく記録を前に進められる</td></tr>
+<tr><td>夜に食べすぎた翌日</td><td>罪悪感で記録を止めてしまう</td><td>コメントが入ることで、立て直しの行動に意識が向く</td></tr>
+<tr><td>忙しい平日</td><td>入力の手間が続かない</td><td>写真起点で、操作量を最小限にできる</td></tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>食事記録＝細かい入力作業になり、数日で触らなくなる。</div>
+<div class="soft-box"><strong>After：</strong>写真→推定→一言コメント、の流れで“記録が生活の動線”に入る。</div></div>
+<hr/>
+<h2 id="app_h2_2">ダウンロードして触ると分かる：記録が儀式にならない</h2>
+<div class="section-body" id="app_body_2"><p>やることは「食べたものを写真に残す」から始まり、細かな品目登録の作業もあまり必要ない。</p>
+<p>写真を撮って記録すると、摂取エネルギーの推定値に加えて主要栄養素の内訳も表示されます。数字だけで終わらず、母キャラ（もしくは父キャラ）から短いコメントが返ってくるので、ちょっと手間が軽くなる気がします（プラシーボ）。</p>
+<p>そして、記録が積み上がっていく体験が“画面のどこか”に置かれているのも大きいところ。連続して記録できた日が視覚的に分かると、たった数日でも「途切れさせたくない」という気持ちが生まれます。</p>
+<p>言い方のテンションが合わないときは、見守り役を父キャラに変えられるのも助かります。アドバイスを受け取りたいけれど、圧は弱めがいい、という人に逃げ道があるのは継続に直結します。</p>
+<p class="em">触ってみると、入力の負担を下げるだけでなく“次の行動”まで導線が伸びていると分かります。</p>
+<div class="soft-box"><strong>Before：</strong>「あとでまとめて入力しよう」と思って結局やらない。</div>
+<div class="soft-box"><strong>After：</strong>食事の直前・直後に写真で残し、その場で振り返れる。</div></div>
+<hr/>
+<h2 id="app_h2_3">おすすめユースケース：続ける。それだけ。</h2>
+<div class="section-body" id="app_body_3"><p>成果が出る人は、頑張り方より続けてる人。</p>
+<p>おかんカロリー計算は、記録を根性論にしないのが強みなので、使いどころを少し工夫すると継続力が跳ね上がります。</p>
+<p>たとえば「昼だけは必ず記録する」と決めると、生活リズムの中に記録入力のフックができます。すると継続率が上がります。</p>
+<p>また、外食の写真を残す使い方も相性がいいです。量の推定が難しい場面ほど、写真から目安を作ってくれる価値が出ます。</p>
+<p>家での食事では、栄養素の内訳を見て「次は主菜をこうしよう」「副菜を足そう」と微修正がしやすくなります。大幅な制限ではなく、微調整をを繰り返して理想へと近づきましょう。</p>
+<p class="em">“毎食完璧”ではなく、“迷った瞬間に戻れる記録”として使うと強いです。</p>
+<table>
+<thead>
+<tr><th>タイミング</th><th>やること</th><th>得られる変化</th></tr>
+</thead>
+<tbody>
+<tr><td>昼休憩</td><td>食事を撮影して記録</td><td>午後の間食を選ぶ基準が生まれる</td></tr>
+<tr><td>外食</td><td>写真で残して推定を見る</td><td>「何を減らすか」より「何を足すか」に意識が向く</td></tr>
+<tr><td>連続記録が途切れそうな日</td><td>父キャラに切り替えて軽く続ける</td><td>自責で止まらず、リズムを維持できる</td></tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>気合いがある日にだけ記録して、途切れたら全部やめる。</div>
+<div class="soft-box"><strong>After：</strong>固定のタイミングを決めて、薄く長く積み上げる。</div></div>
+<hr/>
+<h2 id="app_h2_4">代替アプリと比べる：手入力型・データベース型との違いはやっぱり“動機づけ”</h2>
+<div class="section-body" id="app_body_4"><p>同じ食事記録でも、思想が違うと続き方が変わります。</p>
+<p>一般的な代替としては、食材データベースから検索して入力するタイプ、バーコード読み取りで管理するタイプ、運動記録と統合するタイプなどがあります。これらは細かく管理したい人に向く一方で、継続ができず離脱も起きやすいのが現実です。</p>
+<p>おかんカロリー計算は、写真から推定する入口の軽さと、コメントによる行動の補正、連続記録の可視化で“やめない設計”です。</p>
+<p>もちろん、手入力型のほうが情報を精緻に詰められる場面はあります。ただ、減量や食習慣改善で最初に必要なのは、精度より継続であることが多いはずです。</p>
+<p class="em">比較軸は「どれが高機能か」ではなく「自分が1か月後も開けるか」です。</p>
+<table>
+<thead>
+<tr><th>比較観点</th><th>おかんカロリー計算</th><th>一般的な代替（傾向）</th></tr>
+</thead>
+<tbody>
+<tr><td>記録の起点</td><td>写真から推定</td><td>検索・手入力が中心になりやすい</td></tr>
+<tr><td>フィードバック</td><td>家族キャラの短いコメント</td><td>数値やグラフ中心になりやすい</td></tr>
+<tr><td>継続の仕掛け</td><td>連続記録の可視化</td><td>目標設定や統計でモチベーションを作ることが多い</td></tr>
+<tr><td>好みの調整</td><td>見守り役を母／父で切替可能</td><td>トーン変更がない、または限定的な場合がある</td></tr>
+</tbody>
+</table>
+<div class="soft-box"><strong>Before：</strong>高機能な記録を選んだのに、操作が億劫で続かない。</div>
+<div class="soft-box"><strong>After：</strong>入口が軽い仕組みで、まず“開く習慣”を作ってから精度を上げる。</div></div>
+<hr/>
+<h2 id="app_h2_5">注意点と弱点：写真推定ゆえの限界と、相性の分かれどころ</h2>
+<div class="section-body" id="app_body_5"><p>便利な機能ほど、割り切りが必要です。</p>
+<p>おかんカロリー計算の中心は写真からの推定なので、数値はあくまで目安になります。盛り付けの角度、照明、料理の混ざり具合（丼もの、鍋、定食の副菜が多いケースなど）によって、推定が揺れる可能性は考えておくのが安全です。</p>
+<p>また、コメントで背中を押す作りは、人によっては「コメントは今日はええて」という気分になる可能性があります。その場合は父キャラへの切り替えで気分転換する余地がありますが、声かけがそもそもいらない人は子のアプリのターゲットじゃないです。</p>
+<p>食事写真を残すという性質上、周囲に画面を見られたくない場面や、撮影しづらい場面もあります。外では無理をせず、撮れる食事だけ記録する運用にしておくと、継続が途切れにくいです。</p>
+<p>配布リンクはApp Storeです。</p>
+<p class="em">“完璧な栄養計算”を求めるより、“行動を整える材料”として使うと満足度が上がります。</p>
+<div class="soft-box"><strong>Before：</strong>数字の誤差が気になって、記録そのものをやめてしまう。</div>
+<div class="soft-box"><strong>After：</strong>目安でいいと割り切り、選択のクセを修正するために使い続ける。</div></div>
+</div><!-- /#articleBody -->
+<!-- 1行強調 -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">写真で記録のハードルを下げ、家族キャラの一言で翌日の食事を変えていく——続く人ほど効くアプリです。</span>
+</p>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260301/" id="pagerPrev">前へ</a>
+<button class="pbtn" id="pagerHome" onclick="location.reload();" type="button">  このページ</button>
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260303/" id="pagerNext">次へ</a>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- 他の記事 -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="https://god-apps-article.com">More articles →</a>
+</div>
+<a aria-label="ふるさと納税ダッシュボード" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251227/">
+<div class="thumb">
+<img alt="ふるさと納税ダッシュボード" loading="lazy" src="https://god-apps-article.com/asset/20251227/home.png"/>
+</div>
+<div>
+<div class="c-title">ふるさと納税ダッシュボード</div>
+<div class="c-desc">今年あといくら寄付できる？を即答できる無料Webサービス</div>
+<div class="tagline">#ふるさと納税 #個人開発</div>
+</div>
+</a>
+<a aria-label="育児記録・予防接種管理 - milu" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251228/">
+<div class="thumb">
+<img alt="育児記録・予防接種管理 - milu" loading="lazy" src="https://god-apps-article.com/asset/20251228/logo.png"/>
+</div>
+<div>
+<div class="c-title">育児記録・予防接種管理 - milu</div>
+<div class="c-desc">育児の「見ればわかる」を増やす</div>
+<div class="tagline">#育児 #新生児 #ママ</div>
+</div>
+</a>
+<a aria-label="ミチミエール" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251229/">
+<div class="thumb">
+<img alt="ミチミエール" loading="lazy" src="https://god-apps-article.com/asset/20251229/logo.png"/>
+</div>
+<div>
+<div class="c-title">ミチミエール</div>
+<div class="c-desc">スマホ1台で通行量をAI計測できる無料アプリ</div>
+<div class="tagline">#自動計測 #AI #警備員 #個人開発</div>
+</div>
+</a>
+</section>
+</section><!-- /.main-col -->
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<div class="side-stack">
+<div class="side-card follow-side">
+<div class="follow-head">
+<img alt="Xアイコン" class="x-avatar" height="44" loading="lazy" src="https://god-apps-article.com/asset/riko.jpg" width="44"/>
+<h3>Follow @莉子-個人開発の神アプリ紹介-</h3>
+</div>
+<a class="xbtn" href="https://x.com/JimPierce50" rel="noopener noreferrer" target="_blank">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+            個人開発の神アプリを趣味で紹介するエンジニア10年目
+          </div>
+</div>
+<!-- ここに他の side-card を追加していく -->
+</div>
+</aside>
+</div><!-- /.layout -->
+</main>
+</body>
+</html>

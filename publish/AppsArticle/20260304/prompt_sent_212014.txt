@@ -1,0 +1,191 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/f2ca86b7-8ddf-4a32-9c55-acf691857ed6
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+スワルマップ
+国内最大級の街なかベンチ検索サービス
+地図
+Web
+個人開発
+レビューする
+Visit Product
+地図
+Web
+個人開発
+プロダクトの感想・意見はこのエリアに表示されます
+＼全国のちょっと座りたいが見つかる／
+国内最大級のベンチ情報を掲載しているwebサービスです。
+「カフェに入るほどでもないけど、座って休憩したい」と思ったことはありませんか？ スワルマップなら、現在地近くにあるベンチや休憩場所がサクサク見つかります。
+すべて現地調査によるレビューつき。
+ほかにも、ベンチを投稿することでベンチマップ作りに参加したり、街を歩きながら集められる「ベンチカード」で楽しく利用できます！
+人力で調査しているのでベンチが無いエリアは、ぜひ投稿もお待ちしております！
+【主な機能】
+■地図でベンチ・休憩場所が見つかる
+地図上で「屋内」や「テーブル」など、用途に合わせてぱっと見つかります。
+■現在地から見つかる
+最寄りの休憩スポットが一目でわかります。
+■現地調査レビュー
+現地で撮影した写真とともに、雰囲気や感想、オススメポイントなどのリアルな情報も掲載。
+■お気に入り機能
+気に入ったベンチを保存。よく使うスポットをすぐ閲覧できます。
+■ベンチカード
+ベンチにチェックインすることで、デジタルスタンプラリーのように、自分だけのオリジナルカードを集められます！
+■ベンチの投稿
+あなたの街のベンチはお任せします！
+自分が知っているベンチを投稿することで、多くの方が助かります。いいねやコメントがつくことも。
+管理人だけではなく、ユーザーの皆さんの投稿が半数を占めています。
+みんなの力でベンチマップを作り上げていけるサービスです。
+【こんな方におすすめ】
+・お散歩や自転車での休憩スポットを探したい
+・お弁当を食べたりテイクアウトを楽しめる広場を探している
+・お年寄りやお子様連れで、すぐに座れる場所を見つけたい
+・営業の外回りで、PC作業やメールチェックができる場所を探している
+・カフェ代わりに屋外で作業・読書したい
+・街歩き・撮影・公園めぐりが好き
+【運営について】
+本サービスは、「街の居心地を良くしたい」という想いのもと、個人開発者が運営しています。1つずつ歩き回って現地調査しています。データは日々更新しています。あなたの街の隠れた休憩スポットも見つかるかもしれません。
+【スワルマップで街はもっと優しく】
+「お出かけしても、ほっとできる場所がある」
+街なかにある休憩スポットを見つけやすくし、人と街のつながりを豊かにします。
+Explore More
+関連記事はありません。
+Trends
+自分で作る鳥類図鑑 Bird Collection
+Taka@個人開発
+2026年2月23日
+Tickemo
+Kou
+2026年2月28日
+Image Inverter
+indiehacker
+2026年2月22日
+Claude Code で、広告バナー200本を15分で作るえぐい手順（やってみた）
+コムテ
+2026年2月22日
+ペン太│スワルマップ
+国内最大級のベンチ検索サービスを1人で開発・運営しています！普段は非IT系エンジニアですが、よろしくお願いします！
+Individual Developer
+Next.js
+Follow
+{
+  "final_url": "https://izanami.dev/post/f2ca86b7-8ddf-4a32-9c55-acf691857ed6",
+  "og_image": "https://izanami.dev/post/f2ca86b7-8ddf-4a32-9c55-acf691857ed6/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F236ad76b-5912-4af7-9d20-5f4387b17cb8%2F6fefa532-9c96-4612-894f-f0963245da16.png&w=128&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "スワルマップのアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F236ad76b-5912-4af7-9d20-5f4387b17cb8%2Fe8f7d5ad-4db2-4a90-ab2f-4417c72679de.png&w=1920&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F8b3a8a48-0d08-4339-87cf-7d058e22d280%2Fb2d97871-4b8c-4c25-90d1-f19e0492b19c.JPG&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Kou"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocK3C9KFZUbWPRrIW81cE7RyQZKtFR9e4SZV6ZYRYPeqRVjJBw%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "indiehacker"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F98d916d2-43c3-4ded-a3f0-08a21feaf18c%2F241972b5-53a1-444a-84b7-12661aa4b8eb.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "コムテ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F236ad76b-5912-4af7-9d20-5f4387b17cb8%2F41b5d76f-6ec0-4e7b-8612-f371d657fe8f.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://suwarumap.com/"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/f2ca86b7-8ddf-4a32-9c55-acf691857ed6 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}
