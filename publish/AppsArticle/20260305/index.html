@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>こころのリビング 〜治療の記録と気持ちの投稿を、同じ目線の人へ〜</title>
+<meta content="SNSだと、言葉を選びすぎて何も書けない日があります。こころのリビングは、心の不調や治療の話ができるSNS。短い投稿とタグ、そして治療メモのプロフィールで、読みたい記録に辿り着きやすくします。" id="app_meta_description" name="description"/>
+<meta content="index,follow" name="robots"/>
+<!-- canonical -->
+<script id="app_schema_article_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "こころのリビング 〜治療の記録と気持ちの投稿を、同じ目線の人へ〜", "description": "SNSだと、言葉を選びすぎて何も書けない日があります。こころのリビングは、心の不調や治療の話ができるSNS。短い投稿とタグ、そして治療メモのプロフィールで、読みたい記録に辿り着きやすくします。", "datePublished": "2026-03-05", "dateModified": "2026-03-05", "author": {"@type": "Organization", "name": "神アプ！編集部"}, "publisher": {"@type": "Organization", "name": "神アプ！"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://god-apps-article.com/publish/AppsArticle/20260305/"}, "url": "https://god-apps-article.com/publish/AppsArticle/20260305/", "image": ["https://god-apps-article.com/asset/20260305/logo.png"]}</script>
+<script id="app_schema_breadcrumb_jsonld" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://god-apps-article.com"}, {"@type": "ListItem", "position": 2, "name": "こころのリビングで話せる場所を作る", "item": "https://god-apps-article.com/publish/AppsArticle/20260305/"}]}</script>
+<meta content="article" id="app_og_type" property="og:type"/>
+<meta content="神アプ！～個人開発の便利アプリ紹介～" id="app_og_site_name" property="og:site_name"/>
+<meta content="こころのリビング 〜治療の記録と気持ちの投稿を、同じ目線の人へ〜" id="app_og_title" property="og:title"/>
+<meta content="SNSだと、言葉を選びすぎて何も書けない日があります。こころのリビングは、心の不調や治療の話ができるSNS。短い投稿とタグ、そして治療メモのプロフィールで、読みたい記録に辿り着きやすくします。" id="app_og_description" property="og:description"/>
+<meta content="https://god-apps-article.com/publish/AppsArticle/20260305/" id="app_og_url" property="og:url"/>
+<meta content="https://god-apps-article.com/asset/20260305/logo.png" id="app_og_image" property="og:image"/>
+<meta content="summary_large_image" id="app_tw_card" name="twitter:card"/>
+<meta content="こころのリビング 〜治療の記録と気持ちの投稿を、同じ目線の人へ〜" id="app_tw_title" name="twitter:title"/>
+<meta content="SNSだと、言葉を選びすぎて何も書けない日があります。こころのリビングは、心の不調や治療の話ができるSNS。短い投稿とタグ、そして治療メモのプロフィールで、読みたい記録に辿り着きやすくします。" id="app_tw_description" name="twitter:description"/>
+<meta content="https://god-apps-article.com/asset/20260305/logo.png" id="app_tw_image" name="twitter:image"/>
+<!-- favicon -->
+<link href="https://god-apps-article.com/asset/favicon.ico" rel="icon" sizes="any"/>
+<link href="https://god-apps-article.com/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="https://god-apps-article.com/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="https://god-apps-article.com/publish/AppsArticle/20260104/" rel="canonical"/>
+<!-- iOS -->
+<link href="https://god-apps-article.com/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- PWA (任意) -->
+<link href="https://god-apps-article.com/asset/site.webmanifest" rel="manifest"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-36H614G1X5');
+</script>
+<style>
+    :root{
+      --ink:#111;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --soft:#f6f7fb;
+
+      --pink:#d400b8;
+      --purple:#6d28d9;
+
+      --shadow: 0 18px 60px rgba(17,24,39,.10);
+      --shadow2: 0 10px 30px rgba(17,24,39,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1200px;
+      --sidebar: 340px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+      color:var(--ink);
+      background: var(--soft);
+      overflow-x:hidden;
+    }
+
+    /* ===== 背景（スクロールで境目が出ない：fixedのレイヤーで全面敷き） ===== */
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+    }
+    body::before{
+      background:
+        radial-gradient(900px 700px at 10% 25%, rgba(255, 0, 200, .10), rgba(255,255,255,0) 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(80, 170, 255, .18), rgba(255,255,255,0) 60%),
+        radial-gradient(1100px 900px at 80% 80%, rgba(120, 70, 255, .12), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+      z-index:-2;
+    }
+    body::after{
+      background:
+        radial-gradient(1200px 900px at 25% 85%, rgba(0, 255, 170, .10), rgba(255,255,255,0) 65%);
+      z-index:-3;
+      opacity:.9;
+    }
+
+    a{ color:var(--pink); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    /* ===== Topbar ===== */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(229,231,235,.75);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .topnav{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+    }
+    .topnav-link{
+  display:inline-flex;
+  align-items:center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(229,231,235,.9);
+  background: rgba(255,255,255,.9);
+  color:#111;
+  font-weight: 900;
+  font-size: 12px;
+  text-decoration:none;
+  box-shadow: 0 6px 18px rgba(17,24,39,.06);
+}
+.topnav-link:hover{
+  border-color: rgba(212,0,184,.28);
+  text-decoration:none;
+}
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+      min-width: 200px;
+    }
+    .brand .site-title{
+      margin:0;
+      font-weight: 900;
+      letter-spacing:.2px;
+      font-size: 18px;
+      color:#0b0f1a;
+      line-height:1.15;
+      white-space:nowrap;
+    }
+    .brand .note{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ===== Main layout ===== */
+    .stage{
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px 18px 44px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar);
+      gap: 20px;
+      align-items:start;
+    }
+
+    /* ===== Article card ===== */
+    .card{
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .post{
+      padding: 18px 18px 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color:#fff;
+      background:#111827;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(229,231,235,.85);
+    }
+    .home-link{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      border:0;
+      background:transparent;
+      padding: 6px 8px;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 900;
+      color:#111;
+    }
+    .home-link:hover{
+      background: rgba(17,24,39,.06);
+    }
+    .home-link:active{
+      transform: translateY(1px);
+    }
+    .home-link svg{ width:18px; height:18px; opacity:.9; }
+    .crumb-sep{
+      color:#9ca3af;
+      font-weight:900;
+    }
+    .crumb-current{
+      color:#111;
+      font-weight:800;
+      line-height:1.35;
+    }
+
+    /* ===== Post header ===== */
+    .post-header{
+      margin-top: 14px;
+      padding: 6px 0 10px;
+    }
+    .page-title{
+      margin: 12px 0 10px;
+      font-weight: 950;
+      letter-spacing: .2px;
+      line-height: 1.10;
+      font-size: clamp(28px, 3.2vw, 46px);
+      color:#0b0f1a;
+    }
+    .meta-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap: 10px 12px;
+      margin: 8px 0 6px;
+    }
+    .date{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(109,40,217,.10));
+      border: 1px solid rgba(212,0,184,.18);
+      color:#111;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    .cta:hover{
+      border-color: rgba(212,0,184,.28);
+      text-decoration:none;
+    }
+    .cta .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--pink);
+      box-shadow: 0 0 0 4px rgba(212,0,184,.12);
+    }
+
+    /* ===== Ad blocks ===== */
+    .ad-slot{
+      display:block;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 14px;
+    }
+    .ad-wrap{
+      display:flex;
+      justify-content:center;
+      padding: 14px 0 6px;
+    }
+    /* ヒーロー広告：横幅は画面に合わせる */
+    .ad-hero .ad-slot{
+      width: min(100%, 728px);
+      min-height: 200px;
+    }
+    /* 336x280（移動先：本文側） */
+    .ad-336 .ad-slot{
+      width: min(100%, 336px);
+      height: 280px;
+    }
+
+    /* ===== Article content typography ===== */
+    .article{
+      padding: 8px 0 4px;
+    }
+    .article #articleBody{
+      /* 読みやすい幅（chで制御） */
+      max-inline-size: 72ch;
+    }
+    .article .lead{
+      margin: 14px 0 18px;
+      padding: 14px 14px;
+      background: rgba(248,250,252,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      border-radius: 16px;
+      color:#111827;
+      line-height: 1.9;
+      box-shadow: var(--shadow2);
+    }
+    .article h2{
+      margin: 22px 0 10px;
+      font-size: 19px;
+      line-height: 1.45;
+      color:#0f172a;
+      font-weight: 950;
+      letter-spacing:.2px;
+    }
+    .article .section-body{
+      color:#0f172a;
+      line-height: 2.0;
+      font-size: 16px;
+    }
+    .article p{ margin: 14px 0; }
+    .article hr{
+      border: none;
+      border-top: 1px solid rgba(229,231,235,.9);
+      margin: 22px 0;
+    }
+    .article img{
+      max-width: 100%;
+      height: auto;
+      display:block;
+      margin: 12px auto 0;
+    }
+
+    /* 本文内の強調引用（既存.emを活かす） */
+    .article .em,
+    p.em{
+      font-style: italic;
+      color:#6b7280;
+      font-size: clamp(18px, 2.2vw, 26px);
+      line-height: 1.6;
+      letter-spacing: .2px;
+      text-align:center;
+      margin: 28px 0;
+    }
+
+    /* soft-box（本文に出てくるのに未定義だったので整える） */
+    .soft-box{
+      margin: 14px 0;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.9);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      line-height: 1.9;
+    }
+    .soft-box strong{
+      font-weight: 950;
+    }
+
+    .article table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(229,231,235,.9);
+      background:#fff;
+      box-shadow: 0 12px 28px rgba(17,24,39,.06);
+      margin: 14px 0;
+    }
+    .article th, .article td{
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      border-right: 1px solid rgba(229,231,235,.9);
+      padding: 10px 10px;
+      vertical-align: top;
+    }
+    .article th:last-child, .article td:last-child{ border-right:none; }
+    .article tr:last-child td{ border-bottom:none; }
+    .article th{
+      background: rgba(248,250,252,.9);
+      font-weight: 950;
+      color:#0f172a;
+    }
+
+
+    /* ===== Pager ===== */
+    .pager{
+      display:flex;
+      justify-content:center;
+      gap: 14px;
+      margin: 18px 0 10px;
+      flex-wrap:wrap;
+    }
+    .pbtn{
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(229,231,235,.9);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      color:#6b7280;
+      font-weight: 950;
+      user-select:none;
+      min-width: 92px;
+      text-align:center;
+    }
+    .pbtn:hover{ text-decoration:none; border-color: rgba(212,0,184,.28); }
+    .pbtn:active{ transform: translateY(1px); }
+
+
+
+    /* ===== Campaign list ===== */
+    .list-shell{
+      margin-top: 18px;
+      background: rgba(255,255,255,.85);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229,231,235,.85);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .list-head{
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .list-head a{
+      color: var(--pink);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .campaign{
+      border-top:1px solid rgba(229,231,235,.9);
+      padding: 12px 12px;
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items:start;
+      background:#fff;
+    }
+    .thumb{
+      width: 90px; height: 56px;
+      background:#ddd;
+      border: 1px solid rgba(229,231,235,.9);
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .c-title{
+      font-size: 14px;
+      font-weight: 950;
+      color:#111827;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .c-desc{
+      font-size: 12px;
+      color:#6b7280;
+      line-height: 1.55;
+    }
+    .tagline{
+      margin-top: 6px;
+      font-size: 11px;
+      color:#9ca3af;
+      font-weight: 800;
+    }
+
+    /* ===== Sidebar (非固定・スクロールで下に消える) ===== */
+    aside.side{
+      /* sticky/fixed禁止：何も付けない */
+    }
+    .side-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .side-card{
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      padding: 12px 12px;
+    }
+    .follow-side h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .xbtn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#111827;
+      color:#fff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      font-size: 13px;
+    }
+    .xicon{
+      width:14px;height:14px;
+      display:inline-block;
+      background: conic-gradient(from 0deg, #fff, #fff);
+      clip-path: polygon(18% 0, 50% 38%, 82% 0, 100% 0, 63% 50%, 100% 100%, 82% 100%, 50% 62%, 18% 100%, 0 100%, 37% 50%, 0 0);
+    }
+
+    /* 右側広告：3個（300x250） */
+    .ad-stack{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+      align-items:center;
+    }
+    .ad-300{
+      width: 300px;
+      max-width: 100%;
+    }
+    .ad-300 .ad-slot{
+      width: 300px;
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .popular h3{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      font-weight: 950;
+      color:#0b0f1a;
+    }
+    .popular-card{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(229,231,235,.85);
+      border-radius: 16px;
+      padding: 10px 10px 12px;
+      overflow:hidden;
+    }
+    .popular-card img{
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      display:block;
+      border: 1px solid rgba(229,231,235,.9);
+    }
+    .popular-card .ptext{
+      margin-top: 10px;
+      color: #ff5a3d;
+      font-weight: 950;
+      line-height: 1.55;
+      font-size: 16px;
+      text-shadow: 0 2px 10px rgba(255,255,255,.35);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px){
+      .layout{ grid-template-columns: 1fr; }
+      .article #articleBody{
+        max-inline-size: 100%;
+      }
+      .tile:last-child{ border-bottom:none; }
+
+      .ad-hero .ad-slot{ min-height: 180px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar-inner{ padding: 12px 12px; }
+      .stage{ padding: 14px 12px 34px; }
+      .post{ padding: 14px 14px 8px; }
+      .breadcrumb{ padding: 10px 10px; }
+      .home-link{ padding: 6px 6px; }
+      .pbtn{ min-width: 86px; }
+      .ad-300{ width: 100%; }
+      .ad-300 .ad-slot{ width: 100%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-inner">
+<div class="brand">
+<div class="site-title">神アプリ！～個人開発の便利アプリ紹介～</div>
+<p class="note">※第三者が開発したアプリを紹介する記事です。また、本記事は、App Store掲載情報と編集部の実機確認をもとに作成しています。</p>
+</div>
+<nav aria-label="Site navigation" class="topnav">
+<a class="topnav-link" href="https://god-apps-article.com">Home</a>
+<a class="topnav-link" href="https://god-apps-article.com/about/">About</a>
+<a class="topnav-link" href="https://god-apps-article.com/contact/">Contact</a>
+<a class="topnav-link" href="https://god-apps-article.com/privacy/">Privacy</a>
+</nav>
+</div>
+</header>
+<main class="stage">
+<div class="layout">
+<!-- ===== Main column ===== -->
+<section class="main-col">
+<article class="card">
+<div class="post">
+<div class="breadcrumb">
+<button aria-label="Homeへ移動" class="home-link" onclick="location.href='https://god-apps-article.com'" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 10.5 12 3l9 7.5"></path>
+<path d="M5 10v10h14V10"></path>
+</svg>
+<span>Home</span>
+</button>
+<span class="crumb-sep">/</span>
+<div class="crumb-current" id="app_crumb_current">こころのリビングで話せる場所を作る</div>
+</div>
+<!-- 記事ヘッダー -->
+<header class="post-header">
+<h1 class="page-title" id="app_page_title">こころのリビング 〜治療の記録と気持ちの投稿を、同じ目線の人へ〜</h1>
+<div class="meta-row">
+<div class="date" id="app_published_date">Published: 2026-03-05</div>
+<a class="cta" href="https://apps.apple.com/jp/app/こころのリビング/id6755748925" id="app_official_cta" rel="nofollow noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="dot"></span>
+                アプリ公式サイトはこちら
+              </a>
+</div>
+</header>
+<!-- 本文 -->
+<div class="article">
+<div id="articleBody">
+<div class="lead">
+<p class="note" style="margin:10px 0 0;color:#6b7280;font-weight:800;">
+  ※本記事には広告を含む場合があります。最終判断は公式情報をご確認ください。
+</p>
+<p id="app_lead_text">SNSだと、言葉を選びすぎて何も書けない日があります。こころのリビングは、心の不調や治療の話ができるSNS。短い投稿とタグ、そして治療メモのプロフィールで、読みたい記録に辿り着きやすくします。</p>
+<img alt="こころのリビング アイコン" decoding="async" id="app_lead_logo" loading="lazy" src="https://god-apps-article.com/asset/20260305/logo.png"/>
+</div>
+<h2 id="app_h2_1">結論：短文×タグ×治療メモで、「似た状況の声」へ最短で届く</h2>
+<div class="section-body" id="app_body_1"><p>吐き出す場所が広すぎると、かえって息が詰まる。</p>
+<figure>
+<img alt="アプリのイメージ" loading="lazy" src="https://god-apps-article.com/asset/20260305/home.png"/>
+<figcaption>画像：公開ページ掲載のビジュアル</figcaption>
+</figure>
+<p>こころのリビングは、心の調子や治療にまつわる話題を中心にしたSNSアプリです。投稿は短文寄りで、今の状態を重くせずに話せる。さらに、診断名や服薬、カウンセリング等の治療歴、仕事や生活の状態といった情報をプロフィール側にまとめておけるので、毎回いちいち前置きする必要がありません。</p>
+<p>タグを付けて投稿できるため、話題が散らばりがちな“治療と生活のリアル”を、同じテーマで追いかけやすいのもポイントです。また、返信・いいね・ブックマークが用意されているので関わり方を選べます。関係を断ちたい相手にはブロック、距離を取りたい相手にはミュート、不適切な投稿には通報と、コミュニティを守るためのSNSの基本動線も揃っています。</p>
+<p class="em">短い投稿に「前提（診断・薬・治療）」を重ねられるから、同じ状況の人を探しやすい。</p>
+<div class="soft-box"><strong>Before：</strong>大きなSNSでは、誰に届くか分からず言葉を飲み込む。</div>
+<div class="soft-box"><strong>After：</strong>投稿にタグ付けして、プロフィールで病気についての前提を共有して会話が始まる。</div>
+<p>おすすめの使いどころはこんな感じ。</p>
+<table>
+<thead>
+<tr>
+<th>場面</th>
+<th>こころのリビングで起きる変化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>朝、体が動かない</td>
+<td>似た調子の投稿を眺めて、状態を言語化するヒントが増える</td>
+</tr>
+<tr>
+<td>薬の反応がつらい</td>
+<td>同じ薬・近いテーマの記録を辿り、対処の工夫を見つけやすい</td>
+</tr>
+<tr>
+<td>受診前に不安が膨らむ</td>
+<td>同じ治療経験の話を読んで、質問や相談の整理が進む</td>
+</tr>
+<tr>
+<td>調子が戻ってきた</td>
+<td>回復のメモが誰かの参考になり、次の落ち込みへの備えにもなる</td>
+</tr>
+</tbody>
+</table>
+<p>ログインはX（Twitter）のOAuth、またはSign in with Appleに対応。日本語で使えます。</p></div>
+<hr/>
+<h2 id="app_h2_2">初回ログイン〜最初の投稿まで</h2>
+<div class="section-body" id="app_body_2"><p>ここでは公開されている機能情報をもとに、インストール後の導線を“手順として”追ってみます。まず認証は、X（Twitter）OAuthかSign in with Apple。実名を出す必要はなく、表示名はアプリ内で任意に設定できるため、アカウントの素性を表に出さずに始められます。</p>
+<p>次に触りたくなるのがプロフィールの整備です。診断名の記録（うつ、不安、双極、ADHDなど代表的なものを含む）、現在・過去の服薬履歴、カウンセリングや認知行動療法、入院などの治療歴、そして生活・就労の状態を登録できる構成になっています。これがあると、投稿の文面だけでは伝えきれない背景が“先に置かれる”ので、やり取りが噛み合いやすくなります。</p>
+<p>投稿は短文中心で、気持ちや体調の変化を軽く残せるタイプ。タグで診断や治療法、服薬の話題を紐づけられるため、読み手側も「今欲しい情報」を集めやすい。反応は返信・いいね・ブックマークがあり、距離感を調整しながら関われます。</p>
+<p class="em">プロフィールを先に作るほど、投稿が“説明”から“共有”に変わります。</p>
+<div class="soft-box"><strong>Before：</strong>薬名や症状のメモが、複数アプリや投稿に散らばって振り返れない。</div>
+<div class="soft-box"><strong>After：</strong>服薬・治療の履歴がまとまり、同じテーマの記録へ線で辿れる。</div>
+<p>合わない相手への対処も、導線がはっきりしています。完全に接点を切るブロック、関係は保ちつつ表示だけ消すミュート、不適切な内容を届け出る通報。加えて、コミュニティ運用のためのガイドラインが用意されています。</p>
+<p>退会はマイページのメニューから行え、手続き後は保存データが削除される仕様です。始める前に「残したい記録／消していい記録」を自分の中で分けておくと、気持ちよく使えます。</p>
+<p>データはSupabaseを使った管理方式が示されており、技術的な裏付けが欲しい人にも判断材料になります。</p></div>
+<hr/>
+<h2 id="app_h2_3">おすすめユースケース：当事者だけじゃない、読む人にも効く設計</h2>
+<div class="section-body" id="app_body_3"><p>「書く」より「読む」から救われる日もある。</p>
+<p>こころのリビングは、投稿の居場所であると同時に、治療の記録が集まりやすいコミュニティでもあります。たとえば当事者なら、同じ薬を使っている人の工夫や、通院のペース、生活の立て直し方といった“実際にやっていること”に触れやすい。タグとプロフィール情報が揃っているぶん、気合いを入れて検索しなくても、近い条件の投稿が視界に入りやすくなります。</p>
+<p>回復期・寛解期にいる人は、過去の自分の記録を残しておくことで、次に落ちた時の手がかりを作れます。「前は何が効いたか」「どんな時に崩れたか」を、短文で断片的にでも蓄積できるのは強い。そりゃあ長文をかけない日だってあるでしょう。さらに、調子が良い日の投稿は、同じ波を抱える誰かの指標になりやすい。言葉を盛らなくても、淡々とした記録が価値になります。</p>
+<p>家族や支援者にとっても有用です。教科書的な説明では拾えない、生活の細部の困りごとや、声のかけ方で変わることが見えてきます。もちろん全てを鵜呑みにするのではなく、「そう感じる人もいる」という幅を知るための読み方が合います。</p>
+<p class="em">“背景説明のコスト”が下がると、相談と共感は続きやすくなります。</p>
+<div class="soft-box"><strong>Before：</strong>初対面のたびに、症状や治療の前提を一から説明して疲れる。</div>
+<div class="soft-box"><strong>After：</strong>プロフィールが前提を担い、会話は「いま困っている一点」から始められる。</div>
+<p>使い方のコツは、投稿を「結論」ではなく「経過」として扱うことです。今日は0点でも、明日は20点かもしれない。短文を投稿し続けると、後から見返したときに自分の波が見えるようになります。</p>
+<p>反対に、他人の投稿は“刺激”にもなり得ます。ブックマークで残す投稿を厳選し、ミュートをためらわない運用が、長期利用のコツになります。</p></div>
+<hr/>
+<h2 id="app_h2_4">代替手段と比べて見える、こころのリビングの立ち位置</h2>
+<div class="section-body" id="app_body_4"><p>似ているようで、決定的に違うところがある。</p>
+<p>心の話題は、どこで語るかが内容そのものを変えます。大手SNSは人が多く拡散性も高く、文脈が混ざって誤解されやすい。匿名掲示板は気軽でも、継続的な関係が生まれにくい。日記・気分記録アプリは内省に強い反面、同じ条件の他者の記録に出会うには工夫が必要です。こころのリビングは、その中間に“治療の前提つきでつながるSNS”ということを置きにきています。</p>
+<p>比較を、使い方の観点でまとめます。</p>
+<table>
+<thead>
+<tr>
+<th>選択肢</th>
+<th>出会いやすさ</th>
+<th>記録の残り方</th>
+<th>前提共有（治療情報）</th>
+<th>距離の取り方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大手SNS</td>
+<td>広いが混線しやすい</td>
+<td>流れやすい</td>
+<td>自分で毎回書く必要</td>
+<td>機能はあるが疲れやすいことも</td>
+</tr>
+<tr>
+<td>匿名掲示板</td>
+<td>瞬間的</td>
+<td>スレッド次第</td>
+<td>断片になりがち</td>
+<td>場の空気に左右されやすい</td>
+</tr>
+<tr>
+<td>日記・気分記録</td>
+<td>基本は自分のため</td>
+<td>残しやすい</td>
+<td>自分のメモとして強い</td>
+<td>他者との接点は少なめ</td>
+</tr>
+<tr>
+<td>こころのリビング</td>
+<td>タグと前提情報で寄せやすい</td>
+<td>短文で積み上がる</td>
+<td>プロフィールに統合できる</td>
+<td>ブロック・ミュート・通報が用意</td>
+</tr>
+</tbody>
+</table>
+<p class="em">“投稿”と“治療メモ”が同じ文脈で並ぶことで、探し物が速くなります。</p>
+<div class="soft-box"><strong>Before：</strong>コミュニティはSNS、治療の記録はメモ帳…と分かれて見返さない。</div>
+<div class="soft-box"><strong>After：</strong>読んだ投稿と自分の履歴が近づき、判断材料が一箇所に集まる。</div>
+<p>日本語対応、iOS対応です。</p></div>
+<hr/>
+<h2 id="app_h2_5">注意点と弱点：医療の代わりにはならない／見られ方の設計を理解する</h2>
+<div class="section-body" id="app_body_5"><p>優しい場所でも、使い方次第で疲れる。</p>
+<p>まず押さえるべき前提として、このアプリは当事者同士の経験や工夫の共有を目的とした場で、診断や治療の判断を代替するものではありません。薬の増減や通院方針のような重要な意思決定は、必ず主治医に相談する必要があります。こころのリビングは「相談の材料」を整理したり、「自分の状態を言葉にする」助けとして使いましょう。</p>
+<p>公開範囲の感覚も把握しておきたい点です。投稿はフォロー関係のタイムラインに載る設計で、検索結果に出てくる可能性も示されています。匿名で使えるとはいえ、固有名詞や勤務先、通院先など、身元につながる情報は投稿に混ぜないほうが安全です。</p>
+<p>機能面の弱点は、対応OSがiOSに限られること。Android中心の人や、端末を分けられない人には壁になります。また短文中心のため、複雑な経緯を一度に書きたい人は物足りなさを感じるかもしれません。その場合は、ブックマークで自分の投稿を束ねたり、治療歴のプロフィール側で補う使い方が現実的です。</p>
+<p class="em">治療は医療へ、気持ちの置き場と経験の交換はアプリへ——役割分担が崩れない限り強い味方になります。</p>
+<div class="soft-box"><strong>Before：</strong>気持ちが高ぶった勢いで詳細を書きすぎ、後から後悔する。</div>
+<div class="soft-box"><strong>After：</strong>検索に出る前提で情報を削ぎ、必要ならブロック・ミュートで環境を整える。</div>
+<p>退会はメニューからでき、手続き後にデータが削除される仕様です。これはプライバシー面では利点ですが、「後から取り戻せない」側面もあります。残したい記録がある人は、退会前に自分のメモとして別途保全するなど、段取りを決めておくと安心です。</p>
+<p>始めるなら、まずは読む専からでも十分。合いそうだと感じたら短文で一行だけ投稿してみる。それくらいの軽さが、続けるコツになります。</p></div>
+</div><!-- /#articleBody -->
+<!-- 1行強調 -->
+<p class="em" id="emphasisLine" style="display:block;">
+<span id="app_emphasis_line">短文の気持ちと治療の前提を一緒に置ける——それが、こころのリビングを試す理由です。</span>
+</p>
+<!-- Pager -->
+<div aria-label="pager" class="pager" id="pager" style="display:flex;">
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260304/" id="pagerPrev">前へ</a>
+<button class="pbtn" id="pagerHome" onclick="location.reload();" type="button">  このページ</button>
+<a class="pbtn" href="https://god-apps-article.com/publish/AppsArticle/20260306/" id="pagerNext">次へ</a>
+</div>
+</div><!-- /.article -->
+</div><!-- /.post -->
+</article>
+<!-- 他の記事 -->
+<section aria-label="campaign-list" class="list-shell">
+<div class="list-head">
+<div style="font-weight:950;color:#0b0f1a;">他の神アプリ記事を読む</div>
+<a href="https://god-apps-article.com">More articles →</a>
+</div>
+<a aria-label="ふるさと納税ダッシュボード" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251227/">
+<div class="thumb">
+<img alt="ふるさと納税ダッシュボード" loading="lazy" src="https://god-apps-article.com/asset/20251227/home.png"/>
+</div>
+<div>
+<div class="c-title">ふるさと納税ダッシュボード</div>
+<div class="c-desc">今年あといくら寄付できる？を即答できる無料Webサービス</div>
+<div class="tagline">#ふるさと納税 #個人開発</div>
+</div>
+</a>
+<a aria-label="育児記録・予防接種管理 - milu" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251228/">
+<div class="thumb">
+<img alt="育児記録・予防接種管理 - milu" loading="lazy" src="https://god-apps-article.com/asset/20251228/logo.png"/>
+</div>
+<div>
+<div class="c-title">育児記録・予防接種管理 - milu</div>
+<div class="c-desc">育児の「見ればわかる」を増やす</div>
+<div class="tagline">#育児 #新生児 #ママ</div>
+</div>
+</a>
+<a aria-label="ミチミエール" class="campaign" href="https://god-apps-article.com/publish/AppsArticle/20251229/">
+<div class="thumb">
+<img alt="ミチミエール" loading="lazy" src="https://god-apps-article.com/asset/20251229/logo.png"/>
+</div>
+<div>
+<div class="c-title">ミチミエール</div>
+<div class="c-desc">スマホ1台で通行量をAI計測できる無料アプリ</div>
+<div class="tagline">#自動計測 #AI #警備員 #個人開発</div>
+</div>
+</a>
+</section>
+</section><!-- /.main-col -->
+<!-- ===== Sidebar column ===== -->
+<aside class="side">
+<div class="side-stack">
+<div class="side-card follow-side">
+<div class="follow-head">
+<img alt="Xアイコン" class="x-avatar" height="44" loading="lazy" src="https://god-apps-article.com/asset/riko.jpg" width="44"/>
+<h3>Follow @莉子-個人開発の神アプリ紹介-</h3>
+</div>
+<a class="xbtn" href="https://x.com/JimPierce50" rel="noopener noreferrer" target="_blank">
+<span class="xicon"></span>
+<span>Follow on X</span>
+</a>
+<div style="margin-top:10px;color:#6b7280;font-size:13px;line-height:1.7;font-weight:800;">
+            個人開発の神アプリを趣味で紹介するエンジニア10年目
+          </div>
+</div>
+<!-- ここに他の side-card を追加していく -->
+</div>
+</aside>
+</div><!-- /.layout -->
+</main>
+</body>
+</html>
