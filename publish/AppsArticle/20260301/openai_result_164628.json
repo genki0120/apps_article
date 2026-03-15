@@ -1,9 +1,9 @@
 {
   "app_crumb_current": "VoiceTagEditorで音声ライブラリ整備",
-  "app_page_title": "VoiceTagEditor：ASMR音声に情報を埋め込み、あとから“探せる”状態にする",
+  "app_page_title": "音声タグ編集ソフトおすすめ2026｜ASMR整理ツールVoiceTagEditor",
   "app_published_date": "Published: 2026-03-01",
   "app_official_cta_href": "https://github.com/coder-yuuki/VoiceTagEditor/releases",
-  "app_lead_text": "ASMR作品は音声ファイルなので後々探せない。VoiceTagEditorは、音声ファイル自体にタイトル・作者名・順番・タグ・ジャケット画像などを入れて、管理の土台を作るデスクトップアプリです。",
+  "app_lead_text": "ASMR音声管理ツールを探している人向けに、音声ファイルへメタデータを書き込める「VoiceTagEditor」を紹介。タイトル・作者・トラック番号・タグ・ジャケット画像などを直接埋め込めるため、増え続けるASMR音声ライブラリを検索しやすく整理できるデスクトップアプリです。",
   "app_lead_logo_alt": "VoiceTagEditor キービジュアル",
   "app_lead_logo_src": "https://god-apps-article.com/asset/20260301/logo.png",
   "app_h2_1": "結論：VoiceTagEditorは「あのASMR作品どれだっけ」を消す整備ツール。",

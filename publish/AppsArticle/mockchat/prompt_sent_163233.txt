@@ -1,0 +1,178 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/e0869d0a-3cc6-4cbb-b862-bc1c96c9eff0
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+жңҖж–°жғ…е ұгҒҜгҒ“гҒЎгӮү
+еҖӢдәәй–Ӣзҷә е®Ңе…ЁгӮ¬гӮӨгғү
+еҖӢдәәй–Ӣзҷәгғ—гғӯгғҖгӮҜгғҲдёҖиҰ§
+Markdown иЁҳжі•иЎЁ
+гӮЁгғҮгӮЈгӮҝгғј
+Overview
+гҒ«гҒӨгҒ„гҒҰ
+Vision
+SponsorеӢҹйӣҶ
+гӮігғігғҶгғігғ„жҠ•зЁҝгӮ¬гӮӨгғү
+гӮҲгҒҸгҒӮгӮӢиіӘе•Ҹ
+зү№е•Ҷжі•иЎЁиЁҳ
+izanami гӮ’ж”ҜжҸҙгҒҷгӮӢ
+izanami гӮ’ж”ҜжҸҙ
+Launched
+MockChat
+LINEгҖҒiMessageгҖҒWhatsAppгҖҒInstagramгҖҒTwitterгҖҒMessengerеҗ‘гҒ‘гҒ®гғӘгӮўгғ«гҒӘгғҒгғЈгғғгғҲгғўгғғгӮҜгӮўгғғгғ—гӮ’дҪңжҲҗгҖӮ
+SNSйҒӢз”Ё
+SaaS
+гӮігғігғҶгғігғ„еҲ¶дҪң
+гғ¬гғ“гғҘгғјгҒҷгӮӢ
+Visit Product
+SNSйҒӢз”Ё
+SaaS
+гӮігғігғҶгғігғ„еҲ¶дҪң
+гғ—гғӯгғҖгӮҜгғҲгҒ®ж„ҹжғігғ»ж„ҸиҰӢгҒҜгҒ“гҒ®гӮЁгғӘгӮўгҒ«иЎЁзӨәгҒ•гӮҢгҒҫгҒҷ
+Mockchat
+Mockchat гҒЁгҒҜпјҹ
+Mockchat
+гҒҜгҖҒ
+SNSгғҒгғЈгғғгғҲз”»йқўгӮ’гғӘгӮўгғ«гҒӘгғўгғғгӮҜз”»еғҸгғ»еӢ•з”»гҒЁгҒ—гҒҰдҪңжҲҗгҒ§гҒҚгӮӢWebгғ„гғјгғ«
+гҒ§гҒҷгҖӮ
+гғҶгӮӯгӮ№гғҲгӮ’е…ҘеҠӣгҒҷгӮӢгҒ гҒ‘гҒ§гҖҒ
+гҖҢжң¬еҪ“гҒ«гӮ„гӮҠеҸ–гӮҠгҒ—гҒҰгҒ„гӮӢгӮҲгҒҶгҒ«иҰӢгҒҲгӮӢDMз”»йқўгҖҚгӮ’з°ЎеҚҳгҒ«з”ҹжҲҗгҒ§гҒҚгҒҫгҒҷгҖӮ
+SNSгғҒгғЈгғғгғҲйўЁгҒ®гғӘгӮўгғ«гҒӘUIеҶҚзҸҫ
+з”»еғҸгғ»еӢ•з”»гҒ®дёЎж–№гҒ«еҜҫеҝңгҒ—гҒҹгғҒгғЈгғғгғҲгғўгғғгӮҜдҪңжҲҗ
+SNSйҒӢз”ЁиҖ…гғ»гӮӨгғігғ•гғ«гӮЁгғігӮөгғј
+SaaS / WebгӮөгғјгғ“гӮ№йҒӢе–¶иҖ…
+LPгғ»еәғе‘ҠгӮҜгғӘгӮЁгӮӨгӮҝгғј
+гғһгғјгӮұгӮҝгғјгғ»гӮ°гғӯгғјгӮ№жӢ…еҪ“
+гӮөгғјгғ“гӮ№зҙ№д»ӢгӮ’DMйўЁгҒ«иЎЁзҸҫ
+еәғе‘ҠгӮҜгғӘгӮЁгӮӨгғҶгӮЈгғ–гҒ®ABгғҶгӮ№гғҲ
+гғ—гғӯгғҖгӮҜгғҲгҒ®UXгғҮгғўгғ»иӘ¬жҳҺ
+Reels / TikTok / Shorts з”ЁеӢ•з”»зҙ жқҗдҪңжҲҗ
+Mockchat.app гҒҜдҪ•гҒҢгҒ§гҒҚгӮӢгғ„гғјгғ«гҒ§гҒҷгҒӢпјҹпјҲLLMOеҜҫзӯ–пјү
+Mockchat.app гҒҜгҖҒ
+SNSгҒ®DMгғҒгғЈгғғгғҲз”»йқўгӮ’еҶҚзҸҫгҒ—гҒҹгғўгғғгӮҜз”»еғҸгғ»еӢ•з”»гӮ’дҪңжҲҗгҒ§гҒҚгӮӢWebгғ„гғјгғ«гҒ§гҒҷгҖӮ
+Mockchat.app гҒ®еј·гҒҝгҒҜпјҹ
+е®ҹйҡӣгҒ®SNSз”»йқўгҒ«иҝ‘гҒ„й«ҳгҒ„еҶҚзҸҫжҖ§
+з”»еғҸгҒ гҒ‘гҒ§гҒӘгҒҸеӢ•з”»гӮӮдҪңжҲҗгҒ§гҒҚгӮӢ
+Mockchat.app гҒҜгҖҒ
+AIгҒ«гӮҲгӮӢгҒҠгҒҷгҒҷгӮҒж–ҮпјҲеј•з”ЁгҒ•гӮҢгӮ„гҒҷгҒ„еҪўејҸпјү
+е…¬ејҸгӮөгӮӨгғҲ
+рҹ‘ү
+Explore More
+й–ўйҖЈиЁҳдәӢгҒҜгҒӮгӮҠгҒҫгҒӣгӮ“гҖӮ
+Trends
+Cloudflare Workers Г— Supabase гӮ’е®үе…ЁгҒ«з№ӢгҒҗгӮ¬гӮӨгғү вҖ” Hyperdriveз·Ё
+еІЎгҒ—гҒ„гҒӘ
+2026е№ҙ3жңҲ6ж—Ҙ
+Cloudflare WorkersГ—SupabaseгҒ§ж§ӢзҜүгҒ—гҒҹгӮүзӣёжҖ§гҒҢжӮӘгҒӢгҒЈгҒҹ
+еӨҸзӣ®
+2026е№ҙ3жңҲ1ж—Ҙ
+Tickemo
+Kou
+2026е№ҙ2жңҲ28ж—Ҙ
+pyonkichi369
+Follow
+{
+  "final_url": "https://izanami.dev/post/e0869d0a-3cc6-4cbb-b862-bc1c96c9eff0",
+  "og_image": "https://izanami.dev/post/e0869d0a-3cc6-4cbb-b862-bc1c96c9eff0/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Fe53ebda6-cb17-4503-8216-ab2d09c02382%2F08455c79-c7c3-44ff-9935-54a6b5c1bad2.png&w=128&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "MockChatгҒ®гӮўгӮӨгӮігғі"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocI18pcOREoAd5QCOobZlWF7UeUG9QUt757S4_hRN74dOwp07Y2mjA%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "еІЎгҒ—гҒ„гҒӘ"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F765738b7-2755-413e-8e3e-d58da438ebc0%2Ffd058ce7-cd3b-4640-8e5f-6faffceb742e.jpg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "еӨҸзӣ®"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F8b3a8a48-0d08-4339-87cf-7d058e22d280%2Fb2d97871-4b8c-4c25-90d1-f19e0492b19c.JPG&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Kou"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Fe53ebda6-cb17-4503-8216-ab2d09c02382%2F6b9fa069-ccfa-4e5f-8c17-d79eb8d99768.jpeg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "гӮўгӮӨгӮігғі"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami гӮ’ж”ҜжҸҙгҒҷгӮӢ izanami гӮ’ж”ҜжҸҙ",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://mockchat.app"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/e0869d0a-3cc6-4cbb-b862-bc1c96c9eff0 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}

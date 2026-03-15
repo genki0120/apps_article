@@ -1,9 +1,9 @@
 {
   "app_crumb_current": "放置でも届く相棒AIを自分の手元に",
-  "app_page_title": "LINORIN（リノリン）—Google上で動かす“話しかけてくる”会話AIフレーム",
+  "app_page_title": "AIパートナー作成ツールおすすめ2026｜GASで作るLINORIN",
   "app_published_date": "Published: 2026-02-27",
   "app_official_cta_href": "https://note.com/nou_yakareta/n/nf336055007b5",
-  "app_lead_text": "チャットAIはこちらが開かない限り何も起きません。LINORINは勝手にしゃべりかけてくれるAIです。あなたのGoogle環境に置ける、会話AIの実装キットです。",
+  "app_lead_text": "AIパートナーを自分で作りたい人向けに、Google Apps Script上で動くAIフレームワーク「LINORIN」を紹介。会話記録・画像理解・ファイル読解・通知などを自分のGoogle環境内で動かせるため、外部サービスに依存しないAI相棒を構築できる開発ツールです。",
   "app_lead_logo_alt": "LINORIN ロゴ",
   "app_lead_logo_src": "https://god-apps-article.com/asset/20260227/logo.png",
   "app_h2_1": "結論：LINORINは「会話が止まらない設計」を自分のGoogle内で実現する",
