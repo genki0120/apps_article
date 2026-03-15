@@ -1,9 +1,10 @@
 {
+  "app_name":"kokokite",
   "app_crumb_current": "リンクで場所を伝える「ココきて！」",
-  "app_page_title": "ココきて！｜居場所をリンクで渡して、迷い時間を減らす",
+  "app_page_title": "位置情報共有アプリおすすめ｜リンクで現在地を送る使い方【ココきて！】",
   "app_published_date": "Published: 2025-12-23",
   "app_official_cta_href": "https://coco.txt365.org/",
-  "app_lead_text": "待ち合わせの失敗は、だいたい「場所の説明」から始まります。ココきて！は、端末の位置情報をリンク化して相手に共有できるWebサービス。インストールやアカウント作成に縛られず、必要な瞬間だけ使えます。",
+  "app_lead_text": "待ち合わせで「どこにいる？」が何度も発生して困ったことありませんか？位置情報共有ツール「ココきて！」なら、現在地をURLリンクで一発共有。アプリ登録なし・インストール不要で使えるので、迷子になりがちな集合場所でも最短で位置を伝えられるWebサービスです。",
   "app_lead_logo_alt": "ココきて！ ロゴ",
   "app_lead_logo_src": "https://god-apps-article.com/asset/20251223/logo.png",
   "app_h2_1": "結論：説明が苦手でも「地点」だけは正確に渡せる",
