@@ -1,0 +1,299 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/9a07b090-131a-4c0c-8fe0-72694f59060c
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+すごい家計簿 - AIレシート読み取りで簡単家計管理
+面倒な登録なし！
+AI家計簿アプリ「すごい家計簿」は、レシートを撮るだけでAIが自動入力し、封筒家計簿で予算管理までしてくれる次世代の家計簿です。
+高精度レシートOCRとTinder風スワイプ入力で手入力の手間をほぼゼロにし、月ごとのレポートでが支出傾向を分析してくれます
+家計簿
+アプリ
+レビューする
+Visit Product
+家計簿
+アプリ
+プロダクトの感想・意見はこのエリアに表示されます
+今回はアイデア出し=>リリースまで3日で行いました
+AI家計簿「すごい家計簿」— レシート撮影とAIだけで続く、ズボラ専用家計簿
+家計簿アプリは星の数ほどあるのに、続く人はごく一部。
+入力が面倒、カテゴリ分けがダルい、月末に見るのが怖い——気づけばアプリごと消している。
+すごい家計簿
+は、そんな三日坊主常連組に向けて、
+「レシートを撮る」「スワイプする」だけで完結するAI家計簿として個人開発したプロダクトです。
+スクリーンショット
+すごい家計簿とは
+AIで家計管理をもっとスマートに。手入力ゼロを目指す、次世代の家計簿アプリ。
+レシートを撮ると、Gemini 2.0 Flash が
+店舗名 / 日付 / 合計金額 / 個別の商品まで一括で読み取り
+読み取った明細は、Tinder風のカードUIで右・左にスワイプするだけで登録 or 破棄
+商品名と履歴から、AIがカテゴリを自動推定
+使いすぎを防ぐために、古典的だけど強力な 「封筒家計簿（袋分け）」 を採用
+「テキスト入力」「カテゴリ選択」「グラフを自分で読む」といった摩擦を、
+できるだけAIとUI側に押し付ける思想で設計しています。
+なぜ作ったのか
+妹から「最強の家計簿を作ってほしい」というLINEをいただいたというのが、「すごい家計簿」を作り始めたきっかけです。
+主な特徴
+Gemini 2.0 Flash によるレシートOCR
+カメラでレシートを撮るだけで、
+店舗名 / 日付 / 合計金額 / 商品名 / 金額をAIが抽出
+モデルは Gemini 2.0 Flash を利用
+軽量かつ高精度なので、「個人開発のコスト感」でも現実的に回せる構成を目指しています
+誤認識があっても、その場でサクッと編集可能
+「API料金を払ってまでOCRやる価値あるの？」という疑問に対して、
+“手入力の摩擦をゼロにできれば、家計簿の継続率は確実に上がる” という実験でもあります。
+Tinder風スワイプUIで、入力を「作業」から「操作」に
+読み取った商品は、1件1件フォームで入力…ではなく、
+1枚ずつカードになって、Tinderのようにスワイプしていきます。
+右スワイプ：登録
+左スワイプ：破棄
+上 or 下スワイプ：詳細編集（カテゴリ / メモ など）
+「リストを埋める」のではなく、
+「カードをさばく」ミニゲーム感覚を意識しています。
+AIカテゴリ推定で「分類地獄」から解放
+レシート家計簿で地味に面倒なのが、カテゴリ分けです。
+「これは食費？交際費？」
+「これは事業経費？プライベート？」
+すごい家計簿では、
+商品名
+店舗名
+過去に似た支出をどう分類したか
+といった履歴をもとに、AIがカテゴリ候補を自動提案します。
+ユーザーは基本的に「OK」か「ちょっと違う」を選ぶだけ。
+完全に任せるわけではないけれど、90%はAIに投げるイメージです。
+確実に貯まる「封筒家計簿」×リアルタイム残高
+アプリ内に、カテゴリごとの**「封筒」**を用意しています。
+食費
+生活費
+ガジェット & 開発投資
+交際費
+娯楽費
+など、自分のルールで封筒を作り、
+月初（給料日）にそれぞれへ予算をアロケーションします。
+支出が記録されるたびに、封筒の残高がリアルタイムに減っていき、
+「今月の食費、あと 12,300 円」「ガジェット封筒 残り 0 円（赤表示）」
+といった形で視覚的に「ヤバさ」がわかるようにしています。
+日々の振り返りを邪魔しない基本機能
+カレンダー表示
+日付ごとの支出合計がひと目でわかる
+日付タップでその日の明細表示
+ウォレット / 口座管理
+現金／銀行口座／電子マネーなどを一元管理
+柔軟な集計期間
+月の開始日を「1〜28日」で自由に設定（給料日に合わせられる）
+匿名ログイン
+メール登録なしで「とりあえず試す」ができる
+こんな人に使ってほしい
+家計簿アプリは何個も入れたけど、全部三日坊主で終わった人
+「固定費は把握したいけど、1円単位の完璧な記録は求めていない」人
+技術的なところ
+アーキテクチャ概要
+フロントエンド
+: Flutter (Dart) + Riverpod
+バックエンド
+: Go 1.23.0 + Echo
+インフラ
+: Cloud Run
+データベース
+: Turso (LibSQL) - SQLite互換の分散データベース
+認証
+: Firebase Authentication
+OCR
+: Gemini 2.0 Flash Exp (Google AI)
+エラートラッキング
+: Sentry
+バックエンド技術スタック
+フレームワーク・言語
+Go 1.23.0
+: 高速なコンパイルと実行性能、シンプルな並行処理
+Echo v4
+: 軽量で高速なGoのWebフレームワーク。REST APIの構築に使用
+データベース
+Turso (LibSQL)
+: SQLite互換の分散データベース
+ローカル開発ではDocker ComposeでLibSQLサーバーを起動
+本番環境ではTursoのクラウドサービスを利用
+SQLiteの軽量さとクラウドのスケーラビリティを両立
+OCR処理
+Gemini 2.0 Flash Exp
+: Googleの最新マルチモーダルAIモデル
+レシート画像から店舗名・日付・金額・商品明細を一括抽出
+JSON形式で構造化データを返す
+カテゴリ推定も同時に実行
+Temperature 0.1で安定した出力を実現
+フロントエンド技術スタック
+フレームワーク
+Flutter 3.4.0
+: クロスプラットフォーム対応（iOS/Android）
+状態管理
+Riverpod 2.5.1
+: モダンな状態管理ライブラリ
+UIライブラリ
+flutter_card_swiper 7.0.1
+: Tinder風のスワイプUI実装
+fl_chart 0.68.0
+: 美しいグラフ描画
+table_calendar 3.1.1
+: カレンダー表示
+レシート撮影
+image_picker 1.0.7
+: ギャラリーからの画像選択
+camera 0.11.0
+: リアルタイムカメラ撮影
+開発期間・コスト
+開発期間
+: アイデア出しからリリースまで3日間
+技術選定の理由
+:
+Go + Echo
+: シンプルで高速、個人開発でも保守しやすい
+Flutter
+: iOS/Androidを1つのコードベースで開発
+Turso
+: SQLiteの軽量さを保ちながらクラウド対応
+Gemini 2.0 Flash
+: 最新のマルチモーダルAIで高精度なOCR
+Explore More
+関連記事はありません。
+Trends
+OutfitJudge - 洋服選びサポートアプリ
+Taka@個人開発
+2026年3月18日
+Hottoly - 家族をそっと見守ろう
+YOKKO
+2026年3月18日
+サポラバ
+Lovanaut
+2026年3月17日
+ソロプレ太郎
+個人開発で生きていく
+Individual Developer
+Go
+React
+Google Cloud
+Follow
+{
+  "final_url": "https://izanami.dev/post/9a07b090-131a-4c0c-8fe0-72694f59060c",
+  "og_image": "https://izanami.dev/post/9a07b090-131a-4c0c-8fe0-72694f59060c/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Feffb741d-56a5-4851-a54f-95237484568c%2F8c5ab7c9-7db1-4443-9bd0-a5f9d3268835.png&w=128&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "すごい家計簿 - AIレシート読み取りで簡単家計管理のアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Feffb741d-56a5-4851-a54f-95237484568c%2F6fa68cf1-7c73-4c64-b3b4-574c801ec5f2.png&w=1920&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/effb741d-56a5-4851-a54f-95237484568c/8a188924-9836-4ba9-9be1-ed37cf16e863.png",
+      "alt": "画像の説明を入れてください"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F1d230905-abda-47bc-a9e3-60e0a56898a9%2F11852632-184c-470c-9157-96e8d2e78c3f.jpeg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Taka@個人開発"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F91f9bf99-815a-430e-b17c-101178091760%2Fbcefb920-7358-4e72-98ad-0d26d99199fb.jpeg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "YOKKO"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F6eefbe56-7c92-4415-bf57-82275595cb4f%2Ffca840b4-05dd-418c-9029-3bf58c193333.jpeg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Lovanaut"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocIZJkjxcWoAw6bk7G9p1cejdxK61PRxFGDJzTaPpZfE1ZVhmsII%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://apps.apple.com/jp/app/すごい家計簿-aiレシート読み取りで簡単家計管理/id6755940930"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/9a07b090-131a-4c0c-8fe0-72694f59060c にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- [重要]章構成は、結論（アプリができること＋おすすめ使用シーン）→主な機能→実際の使用感レビュー→おすすめユースケース・活用シーン→注意点と弱点。章タイトルは下記のjsonの（）内の形式を遵守せよ。
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策ルール】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_name は "izanami"は使用不可。アプリ名が日本語の場合、このキーでのみローマ字に変換せよ。
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+- [最重要]app_page_title は検索流入を狙うSEOタイトルにせよ。検索されやすいキーワード（用途・カテゴリ）を先頭に置き、「おすすめ」「比較」「ランキング」「使い方」など検索意図の強い語を含める。可能であれば数字や年号（2026年版など）を入れ、クリック率が高い32〜40文字のタイトルにする。アプリ名は本文で紹介する前提でサブ要素として含める。
+- [最重要]app_lead_text は「検索されやすいキーワード（用途・カテゴリ・問題解決）」＋「アプリ名」＋「ベネフィット」を含め、80〜120文字程度でクリック率が高くなる構成にせよ。特にカテゴリと用途を手厚く記載せよ。
+
+{
+  "app_name":"アプリの名前"
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(「検索されやすいキーワード（用途・カテゴリ・問題解決）」＋「アプリ名」＋「ベネフィット」)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード([カテゴリキーワード][アプリ名]のレビュー。[できること]ができるiPhoneアプリ。[利用シーン]におすすめ。)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル([アプリ名]とは？どんなアプリ？)",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル([アプリ名]でできること（主な機能）)",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル([アプリ名]の使い方・実際の使用感レビュー)",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル([アプリ名]がおすすめな人・活用シーン)",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル([アプリ名]の注意点・デメリット)",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}

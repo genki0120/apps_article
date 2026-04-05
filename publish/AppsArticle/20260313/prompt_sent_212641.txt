@@ -1,0 +1,189 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/c426042a-7597-4865-9077-439d2f7a4cb8
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Launched
+【ランキング5位獲得】OneTapMoney - 広告無しのシンプル家計簿アプリ！
+ランキング５位獲得！広告無し！面倒な家計簿を超シンプル管理！
+お金
+家計
+シンプル
+レビューする
+Visit Product
+お金
+家計
+シンプル
+プロダクトの感想・意見はこのエリアに表示されます
+OneTapMoneyとは
+onetapmoney
+主な特徴
+ワンタップ
+: 入金、支出（３カテゴリ）をワンタップで記録できます。
+履歴
+: 入力を間違えてもあとから修正できます。
+日付指定
+: 入力を忘れても過去の記録ができます。
+こんな方におすすめ
+既存の家計簿アプリで失敗した方
+家計簿管理を試したいけどズボラな方
+とにかくシンプルを追求したい方
+主要機能
+入金
+アプリのホーム画面から入金をタップ。
+金額と必要があればメモを入力して完了。
+支出
+アプリのホーム画面から支出をタップ。
+金額と、必要があればメモを入力。
+生活費、雑費、その他をタップして完了
+履歴
+入金、支出の履歴を確認できる。
+履歴をタップすることで、データの修正が可能。
+導入効果
+収支の見える化
+: 収支を見える化して金銭感覚を最適化しましょう！
+シンプル管理
+: これまで家計管理失敗した人も再チャレンジしてみましょう！
+Q: OneTapMoneyの導入にはどのくらい時間がかかりますか？
+A: アプリをインストールするのみです。1-2分で完了します。
+Q: 無料プランと有料プランの主な違いは何ですか？
+A: 有料プラン（490円）のみ提供しています。一度購入していただけば、その後料金はかからず広告も表示されません。
+Q: セキュリティ面での対策はどうなっていますか？
+A: 外部への通信はありません。データはお使いの端末に保存しているため、本アプリからの漏洩等はございません。
+Q: サポート体制はどのようになっていますか？
+A: アプリストアからのレビューか、掲載の連絡先にご連絡をお願い致します。
+Q: モバイルでも利用できますか？
+A: IOSのみ対応です。需要があればAndroidも対応します。
+Explore More
+関連記事はありません。
+Trends
+AI Form
+にしゅう
+2026年3月9日
+ラストダイエット（仮名）
+torimune
+2026年3月8日
+SUMUMA
+にしゅう
+2026年3月12日
+tasukari
+にしゅう
+2026年3月13日
+関友也（せき）
+Follow
+{
+  "final_url": "https://izanami.dev/post/c426042a-7597-4865-9077-439d2f7a4cb8",
+  "og_image": "https://izanami.dev/post/c426042a-7597-4865-9077-439d2f7a4cb8/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F3a921374-959a-4e58-99ad-7563720a7e5e%2F2a61947d-2424-4ac2-b806-e9876536ee30.png&w=128&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "【ランキング5位獲得】OneTapMoney - 広告無しのシンプル家計簿アプリ！のアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2F3a921374-959a-4e58-99ad-7563720a7e5e%2Fd8c350e4-0ba4-4302-9acd-05548d085dfc.PNG&w=1920&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/3a921374-959a-4e58-99ad-7563720a7e5e/844e0d9e-c649-46c9-8f9c-cf2ec37993d4.PNG",
+      "alt": "画像の説明を入れてください"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocJ_C1WjUyTwRyiyZpiGUi96oVb7LCvrLUpWqRKiVziHbPToDrw%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "にしゅう"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Fb8b010d2-d860-4098-8c10-fed7c90e9e68%2Ff057597a-450d-4563-8188-9fb4195120e1.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "torimune"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocI__9boH67CH2TZStOpQhrPwI8eNYjKA_r2FbvLxzNKPIGFD40M%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://apps.apple.com/jp/app/onetapmoney/id6755353216"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/c426042a-7597-4865-9077-439d2f7a4cb8 にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- 章構成は、結論（アプリができること＋おすすめ使用シーン）→実際にダウンロードして使ってみた→おすすめユースケース→代替アプリとの比較→注意点と弱点
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+
+{
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(正式名+一言)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード(1-3文)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}
