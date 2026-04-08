@@ -1,0 +1,244 @@
+あなたは日本語のプロダクト紹介記事を書くコピーライターです。
+以下の「抽出した本文」を一次情報として読み、内容と矛盾しない範囲で、ダウンロードしたくなる紹介記事をHTMLで作成してください。
+
+参照URL：
+https://izanami.dev/post/a633ab9e-efc8-40fc-af48-4570ddea6d3d
+
+以下は上記URLが「抽出した本文」です（ここにないことは断定しない）（Explore Moreからfollowまでは無関係のテキストであるため無視し、一次情報として扱わない）：
+Log in
+個人開発者がプロダクトを登録したり、エンジニアが技術情報を投稿するためのプラットフォームです。SEO/LLMO最適化の設計やツールで、集客と露出を強化できます。全て無料・無制限です。
+個人開発 完全ガイド
+個人開発プロダクト一覧
+エディター
+Overview
+について
+Vision
+Beta
+Codex CLIを快適に使うためのVSCode拡張を自作した
+Codex CLIのapp-server（公式VSCode拡張向けバックエンド）を利用し、公式よりも使いやすいVSCode拡張を作った。
+VSCode
+Codex
+レビューする
+Visit Product
+VSCode
+Codex
+プロダクトの感想・意見はこのエリアに表示されます
+Codex CLIを快適に使うためのVSCode拡張を自作した
+Codex CLI便利ですよね。直感的で、開発フローに組み込みやすくて。
+ただ、Macユーザーの方なら共感してもらえると思うんですが、TUIでの日本語入力、つらくないですか？
+表示が崩れたり、変換中の挙動が怪しかったりして、ストレスを感じることが多々ありました。
+「これをTUIのまま解決するのは骨が折れそうだな...」
+そう思って公式のVSCode拡張も試したんですが、今度は「複数セッションを行き来するのが面倒」という別のストレスが。
+じゃあ、自分の理想の環境を作ってしまおうと。
+幸いCodex CLIには
+app-server
+という機能があり、フロントエンドを自作しやすくなっています。
+今回はVibe Codingを活用して、サクッと自分好みの拡張機能を作ってみました。
+コンセプト：ストレスフリーな日本語入力と、軽快なセッション管理
+Codex UI
+目指したのは、「スムーズに日本語で対話できること」。
+TUIの問題（日本語入力）をVSCodeのWebViewで解決し、
+公式拡張の問題（セッション切り替えの手間）を、独自のタブ管理UIで解消しました。
+結果的にモダンなUIにはなりましたが、それはCodexが優秀だったからです笑
+主な機能
+1. 複数セッションの同時管理
+SESSIONSから選んで開く・隠すことができます
+公式拡張では1つのチャットセッションしか持てませんでしたが、この拡張ではタブのように複数のセッションを切り替えられます。
+「機能Aの実装」について聞きながら、並行して「エラーログの調査」を別スレッドで投げるといった使い方が可能です。
+過去のセッションも履歴から呼び出せます
+また、「◯◯のバグ調査用」「設計案の壁打ち」みたいにまた、セッションに名前をつけられるので、「あの時の会話どこだっけ？」と探す手間も減ります。
+セッションに名前をつけられます
+2. ワークスペース利用時のディレクトリ選択
+VSCodeには複数のディレクトリをひとつのWindowで開ける「マルチルートワークスペース」という機能があります。
+公式拡張では、マルチルートワークスペースを開いている際、Codex起動時に「どのディレクトリで起動するか」を選べないという課題がありました。
+そこで、セッション開始時に「どのディレクトリ（ルート）でCodexを起動するか」を明示的に選べるようにしました。
+仕組み的な話：VSCodeとCLIの分離運用
+この拡張の裏側は、実はかなりシンプルかつ堅牢に作っています。
+アーキテクチャ
+VSCode拡張（Frontend）の中にAIのロジックを持っているわけではありません。
+codex app-server
+というCLIコマンドを子プロセスとして起動し、JSON-RPCで対話
+しています。
+Backend (Codex CLI)
+:
+ワークスペースごとのルートディレクトリで
+codex app-server
+を起動。
+ファイル読み込みやツール実行は、このプロセスが行います。
+標準入出力（stdio）を通じて、対話内容やツール実行結果をJSON形式でやり取りします。
+Frontend (VSCode Extension)
+:
+ユーザーの入力を受け取り、JSON-RPCリクエストとしてBackendに投げます。
+BackendからのストリーミングレスポンスをWebViewに描画します。
+複数のセッションID（VSCode側で生成）を管理し、どのチャットがどのスレッドに紐づくかを制御します。
+技術的なメリット
+この「分離構成」にはいくつかメリットがあります。
+動作が軽い
+: 重たい推論やファイル操作は別プロセスなので、VSCode自体の動作を阻害しません。
+CLIの進化に追従できる
+: Codex CLI本体がアップデートされれば、拡張側を変更しなくても新機能（新しいモデルやツールなど）が使えるようになります。
+純正の安心感
+: 通信プロトコルはCodex公式のものをそのまま使っているので、挙動の食い違いが起きにくいです。
+今後
+とりあえずローカルでガシガシ使ってますが、今のところかなり快適です。
+TUIの日本語入力問題から開放されたのが一番デカイかも。
+公開していますが、まずは自分好みに育てていこうと思います。
+Codex CLIユーザーで同じ悩みを持ってる方、自作拡張おすすめです。
+Explore More
+関連記事はありません。
+Trends
+deariary : ツールを繋ぐだけで日記が毎朝届く、全自動日記サービス
+deariary
+2026年3月15日
+ETL + LLM + File Storage がなぜ最強か : 全自動日記サービスの設計判断
+deariary
+2026年3月15日
+Cafect
+にしゅう
+2026年3月15日
+Makasete AI
+にしゅう
+2026年3月14日
+Retro Device Clock
+Haru
+2026年3月15日
+tasukari
+にしゅう
+2026年3月13日
+Haruka
+ロボット系学生→メーカーで食関連ソフトウェア研究開発→自然言語系。
+個人開発をしています。
+Individual Developer
+LLM
+Python
+Follow
+{
+  "final_url": "https://izanami.dev/post/a633ab9e-efc8-40fc-af48-4570ddea6d3d",
+  "og_image": "https://izanami.dev/post/a633ab9e-efc8-40fc-af48-4570ddea6d3d/opengraph-image-1umokf?5589478d64c13f8a",
+  "favicon": "https://izanami.dev/favicon.ico",
+  "images": [
+    {
+      "src": "https://izanami.dev/_next/static/media/logo.69628d85.svg",
+      "alt": "logo"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Ff730a654-3ade-4e85-9f22-ca5ccd4a7619%2F12218ac4-572b-4a5c-81ce-9f69a5df3f01.png&w=128&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Codex CLIを快適に使うためのVSCode拡張を自作したのアイコン"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Feyecatch%2Ff730a654-3ade-4e85-9f22-ca5ccd4a7619%2Fa0eda0db-470e-4768-8941-ec6007d6b4da.png&w=1920&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイキャッチ画像"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/f730a654-3ade-4e85-9f22-ca5ccd4a7619/c3aaf029-9bb6-46e0-b8a7-47f1df149c15.png",
+      "alt": "UI"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/f730a654-3ade-4e85-9f22-ca5ccd4a7619/499c2ec4-8d1c-4e32-876e-9db230b004b0.png",
+      "alt": "session_menu"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/f730a654-3ade-4e85-9f22-ca5ccd4a7619/812c4718-dd96-4216-a885-6d9165da2cb5.png",
+      "alt": "resume"
+    },
+    {
+      "src": "https://api.izanami.dev/storage/v1/object/public/pictures/eyecatch/f730a654-3ade-4e85-9f22-ca5ccd4a7619/795609e8-ade0-4874-95fb-8be17abf2db4.png",
+      "alt": "rename"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F5558d05c-4213-4742-8b2f-0b33c3b968cc%2F87f3fbba-85e2-48ef-a1e8-d5fa403ca223.png&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "deariary"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Flh3.googleusercontent.com%2Fa%2FACg8ocJ_C1WjUyTwRyiyZpiGUi96oVb7LCvrLUpWqRKiVziHbPToDrw%3Ds96-c&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "にしゅう"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2F7af38c54-79ac-499e-8251-296cfaebd818%2Fe88907f2-34d8-47ed-bb2c-cd2575ca77e5.jpg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "Haru"
+    },
+    {
+      "src": "https://izanami.dev/_next/image?url=https%3A%2F%2Fapi.izanami.dev%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fpictures%2Fprofile%2Ff730a654-3ade-4e85-9f22-ca5ccd4a7619%2Fb98a0adc-c152-4cde-9f63-18df729f6bfa.jpg&w=96&q=75&dpl=dpl_FKTSZtrSdhmyGY8UFWDqH2hgsx2K",
+      "alt": "アイコン"
+    }
+  ],
+  "product_links": [
+    {
+      "label": "izanami community",
+      "url": "https://github.com/izanami-dev/izanami-community/discussions"
+    },
+    {
+      "label": "izanami を支援する izanami を支援",
+      "url": "https://github.com/sponsors/izanami-dev"
+    },
+    {
+      "label": "Visit Product",
+      "url": "https://marketplace.visualstudio.com/items?itemName=harukary7518.codex-ui-vscode-extension"
+    },
+    {
+      "label": "",
+      "url": "https://github.com/harukary"
+    }
+  ]
+}
+--- PAGE_ASSETS_JSON_END ---
+
+【画像・リンクの反映ルール（重要）】
+- linksBlock.links には、PAGE_ASSETS_JSON内の product_links を優先して反映する（存在する場合）
+- bigBanner.tiles[0].imgSrc は、PAGE_ASSETS_JSON内の og_image があればそれを使う。なければ images[0].src を使う
+- bigBanner.tiles[0].linkUrl は、PAGE_ASSETS_JSON内の product_links[0].url があればそれを使う。なければ参照URL https://izanami.dev/post/a633ab9e-efc8-40fc-af48-4570ddea6d3d にする
+- article.bodyHtml 内では、一次情報に含まれる画像URLやリンクURLを必要に応じて引用してよい（捏造禁止）
+PAGE_ASSETS_JSON の images が存在する場合、本文冒頭（lead直後など）に <img> を1枚だけ入れてよい。なるべくアプリ名に紐づくアイキャッチ画像かロゴの画像を反映すること（srcは assets から、altは不明なら短く一般的にしたのち画像の下に表示）。
+
+【要件】
+- 全体<h1>＋<h2>×5章
+- [重要]章構成は、結論（アプリができること＋おすすめ使用シーン）→主な機能→実際の使用感レビュー→おすすめユースケース・活用シーン→注意点と弱点。章タイトルは下記のjsonの（）内の形式を遵守せよ。
+- 各章500文字以上
+- 章ごとに役割と語り口を変える（同一構成禁止）
+- 定型句・冗長な言い換え・無難な説明は禁止
+- 「抽出した本文」とは違う順序で記事を構成すること
+- 「抽出した本文」内にあるフレーズや言い回しは絶対に使用不可。
+- 少なくとも1回は<table>を使う
+- 各章の本文中に、必ず1行だけ強調文（<p class="em">〜</p>）を挿入する。
+
+【単調さ対策（追加ルール）】
+- 章の本文冒頭に「短い1文の導入」を置いてよい（説明調ではなく、気づき/違和感/一言コメントにする）。
+- 箇条書き（ul/ol/li）は使用禁止。代わりに短い1文だけの<p>を2〜4行連続で置いてよい。
+- 中見出し（h3等）は使用禁止。
+- Before/Afterを必ずボックス化せよ（1章につき最大1セット）。使用HTMLは固定：
+  <div class="soft-box"><strong>Before：</strong>...</div>
+  <div class="soft-box"><strong>After：</strong>...</div>
+- <table>は料金比較以外にも「利用シーン×効果」「場面×変化」などの整理用途で使ってよい。tableは<thead><tbody>を必ず含める。
+
+【出力】
+JSONのみ。下のJSONの各value(説明文)を消して、適切な値に置換して返せ。キー順維持。
+- URLは生URLのみ。Markdown禁止。（Markdown形式の [...](...) は禁止）
+- *_src は画像URLのみ（ページURL禁止）
+- *_href はリンクURL
+- app_name は "izanami"は使用不可。アプリ名が日本語の場合、このキーでのみローマ字に変換せよ。
+- app_published_date は "Published: YYYY-MM-DD"
+- app_body_*_html はHTML断片。JSONとして正しくエスケープ（"→\"、改行→\n）
+- [重要]app_page_title は検索流入を狙うSEOタイトルにせよ。検索されやすいキーワード（用途・カテゴリ）を先頭に置き、「おすすめ」「比較」「ランキング」「使い方」など検索意図の強い語を含める。可能であれば数字や年号（2026年版など）を入れ、クリック率が高い32〜40文字のタイトルにする。アプリ名は本文で紹介する前提でサブ要素として含める。
+- [重要]app_lead_text は「検索されやすいキーワード（用途・カテゴリ・問題解決）」＋「アプリ名」＋「ベネフィット」を含め、80〜120文字程度でクリック率が高くなる構成にせよ。特にカテゴリと用途を手厚く記載せよ。
+
+{
+  "app_name":"アプリの名前"
+  "app_crumb_current":"パンくずの現在ページ名(短い記事タイトル)",
+  "app_page_title":"H1記事タイトル(「検索されやすいキーワード（用途・カテゴリ・問題解決）」＋「アプリ名」＋「ベネフィット」)",
+  "app_published_date":"Published: YYYY-MM-DD",
+  "app_official_cta_href":"公式サイトURL(CTA)",
+  "app_lead_text":"導入リード([カテゴリキーワード][アプリ名]のレビュー。[できること]ができるiPhoneアプリ。[利用シーン]におすすめ。)",
+  "app_lead_logo_alt":"ロゴ画像alt(例: App名 ロゴ)",
+  "app_lead_logo_src":"ロゴ/アイキャッチ画像URL",
+  "app_h2_1":"第1章タイトル([アプリ名]とは？どんなアプリ？)",
+  "app_body_1_html":"第1章本文HTML(<p>中心)",
+  "app_h2_2":"第2章タイトル([アプリ名]でできること（主な機能）)",
+  "app_body_2_html":"第2章本文HTML",
+  "app_h2_3":"第3章タイトル([アプリ名]の使い方・実際の使用感レビュー)",
+  "app_body_3_html":"第3章本文HTML",
+  "app_h2_4":"第4章タイトル([アプリ名]がおすすめな人・活用シーン)",
+  "app_body_4_html":"第4章本文HTML",
+  "app_h2_5":"第5章タイトル([アプリ名]の注意点・デメリット)",
+  "app_body_5_html":"第5章本文HTML",
+  "app_emphasis_line":"本文後の強調1行(短い結論)",
+}
