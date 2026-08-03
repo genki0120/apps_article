@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>プライバシーポリシー | 計画de災対</title>
+<meta name="description" content="計画de災対のプライバシーポリシー。完全オフラインで動作し、個人情報を収集・送信しません。すべてのデータは端末内にのみ保存されます。" />
+<meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0F172A; --navy:#1E3A8A; --blue:#2563EB; --bluec:#DBEAFE;
+    --bg:#F8FAFC; --muted:#475569; --outline:#E2E8F0; --card:#FFFFFF;
+    --orange:#EA580C; --orange2:#DB440D;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; }
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:'Noto Sans JP', system-ui, -apple-system, sans-serif;
+    line-height:1.85; font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:var(--blue); }
+  .lang.en{ display:none; }
+  body.en .lang.ja{ display:none; }
+  body.en .lang.en{ display:block; }
+  /* ヘッダー */
+  .hero{
+    background:linear-gradient(135deg, #EFF6FF 0%, var(--bluec) 100%);
+    border-bottom:1px solid var(--outline);
+  }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 22px; }
+  .bar{ display:flex; align-items:center; gap:14px; padding:22px 0 0; }
+  .logo{
+    width:46px; height:46px; border-radius:13px; flex:0 0 auto;
+    background:linear-gradient(180deg,#FF7A3D,var(--orange2));
+    box-shadow:0 4px 10px rgba(219,68,13,.28);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .brand{ font-weight:900; font-size:20px; letter-spacing:.5px; }
+  .brand b{ color:var(--orange2); }
+  .langtoggle{ margin-left:auto; display:flex; gap:6px; }
+  .langtoggle button{
+    font-family:inherit; font-weight:800; font-size:13px; cursor:pointer;
+    border:1.5px solid var(--blue); background:#fff; color:var(--blue);
+    border-radius:999px; padding:6px 14px;
+  }
+  .langtoggle button.active{ background:var(--blue); color:#fff; }
+  .hero h1{
+    font-weight:900; font-size:34px; line-height:1.35; margin:26px 0 6px;
+    letter-spacing:-.5px;
+  }
+  .meta{ color:var(--muted); font-size:14px; font-weight:700; padding-bottom:30px; }
+  /* 本文 */
+  main{ padding:38px 0 60px; }
+  .lead{
+    background:var(--card); border:1px solid var(--outline); border-left:5px solid var(--blue);
+    border-radius:14px; padding:18px 20px; margin:0 0 34px;
+    font-weight:700; color:var(--navy);
+  }
+  h2{
+    font-weight:800; font-size:20px; color:var(--navy); margin:38px 0 10px;
+    padding-top:6px;
+  }
+  h2 .num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:28px; height:28px; border-radius:8px; background:var(--bluec); color:var(--navy);
+    font-size:14px; font-weight:900; margin-right:10px; vertical-align:2px;
+  }
+  p{ margin:8px 0; color:#1e293b; }
+  ul{ margin:8px 0; padding-left:22px; }
+  li{ margin:6px 0; }
+  .pill{
+    display:inline-block; background:#DCFCE7; color:#166534; font-weight:800;
+    font-size:13px; border-radius:999px; padding:3px 12px; margin-right:6px;
+  }
+  .contact{
+    background:var(--card); border:1px solid var(--outline); border-radius:14px;
+    padding:18px 20px; margin-top:14px;
+  }
+  .contact a{ font-weight:800; }
+  footer{
+    border-top:1px solid var(--outline); background:#fff;
+    padding:24px 0 40px; color:var(--muted); font-size:13px;
+  }
+  footer .links{ display:flex; gap:18px; flex-wrap:wrap; margin-bottom:10px; }
+  footer .links a{ font-weight:800; text-decoration:none; }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="bar">
+        <div class="logo" aria-hidden="true">
+          <svg width="30" height="30" viewBox="-190 -300 380 520" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M -80 -205 C -80 -295 80 -295 80 -205" stroke="#fff" stroke-width="46"/>
+            <rect x="-190" y="-205" width="380" height="415" rx="115" fill="#fff"/>
+            <rect x="-108" y="-20" width="216" height="200" rx="58" fill="#FFE0CF"/>
+            <path d="M 0 40 V 130 M -45 85 H 45" stroke="#DB440D" stroke-width="44"/>
+          </svg>
+        </div>
+        <div class="brand">計画<b>de</b>災対</div>
+        <div class="langtoggle">
+          <button id="btn-ja" class="active" onclick="setLang('ja')">日本語</button>
+          <button id="btn-en" onclick="setLang('en')">English</button>
+        </div>
+      </div>
+      <h1><span class="lang ja">プライバシーポリシー</span><span class="lang en">Privacy Policy</span></h1>
+      <div class="meta">
+        <span class="lang ja">最終更新日：2026年8月3日</span>
+        <span class="lang en">Last updated: August 3, 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ============ 日本語 ============ -->
+    <div class="lang ja">
+      <div class="lead">
+        「計画de災対」（以下「本アプリ」）は、<b>完全オフラインで動作し、個人情報を収集・送信しません</b>。あなたが入力したデータは、すべてお使いの端末内にのみ保存されます。
+      </div>
+
+      <h2><span class="num">1</span>収集する情報</h2>
+      <p>本アプリは、個人情報を含むいかなる利用者情報も収集しません。世帯人数、備蓄物資、賞味期限、次回配給日、緊急連絡先、チェックリストなど、アプリ内で入力・作成される情報は、<b>すべて端末内のローカルデータベースにのみ保存</b>され、開発者や第三者のサーバーへ送信されることはありません。</p>
+
+      <h2><span class="num">2</span>通信・トラッキング</h2>
+      <p>本アプリは、機能提供のためにインターネット通信を行いません。次のいずれも<b>使用しません</b>。</p>
+      <ul>
+        <li>アクセス解析・利用状況の計測（アナリティクス）</li>
+        <li>広告および広告識別子（IDFA 等）</li>
+        <li>行動トラッキング、プロファイリング</li>
+        <li>クラッシュログ・診断情報の外部送信</li>
+      </ul>
+
+      <h2><span class="num">3</span>端末の権限について</h2>
+      <p>本アプリは、以下の目的でのみ端末機能を利用します。個人情報の外部送信は一切行いません。</p>
+      <ul>
+        <li><b>通知</b>：在庫や期限などのお知らせを表示するためのローカル通知のみ。通知本文に個人情報は含めません。</li>
+        <li><b>画面の明るさ</b>：節電モード・画面ライトのため、アプリ画面の輝度を調整します。</li>
+        <li><b>音声の再生</b>：笛・サイレンなどの緊急音の再生のみ。録音は行わず、マイク権限は要求しません。</li>
+        <li><b>ファイル</b>：バックアップの保存・復元のため、あなたが選んだ端末内のファイルの読み書きのみを行います。</li>
+      </ul>
+      <p>カメラ・位置情報・端末の連絡先へのアクセスは要求しません（緊急連絡先はアプリ内で手入力し、端末内に保存します）。</p>
+
+      <h2><span class="num">4</span>データの保存と削除</h2>
+      <p>データは端末内にのみ保存されます。<b>本アプリを削除すると、保存されたデータも端末から削除</b>されます。バックアップ機能を使う場合、データはあなたの操作により端末内のファイルとして保存・復元され、外部へ送信されることはありません。</p>
+
+      <h2><span class="num">5</span>第三者への提供</h2>
+      <p>本アプリは情報を収集しないため、<b>第三者への提供・共有・販売は一切ありません</b>。</p>
+
+      <h2><span class="num">6</span>お子さまのプライバシー</h2>
+      <p>本アプリは個人情報を収集しません。年齢を問わず安心してご利用いただけます。</p>
+
+      <h2><span class="num">7</span>本ポリシーの変更</h2>
+      <p>本ポリシーは、法令の変更や機能の追加に応じて改定する場合があります。重要な変更がある場合は、本ページで告知します。</p>
+
+      <h2><span class="num">8</span>お問い合わせ</h2>
+      <div class="contact">
+        <p style="margin:0 0 4px"><span class="pill">提供者</span>屋号「テンキ」</p>
+        <p style="margin:0">ご質問・ご要望は下記までご連絡ください。<br />
+        メール：<a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a></p>
+      </div>
+    </div>
+
+    <!-- ============ English ============ -->
+    <div class="lang en">
+      <div class="lead">
+        “Keikaku de Saitai” (the “App”) <b>works completely offline and does not collect or transmit any personal information</b>. All data you enter is stored only on your device.
+      </div>
+
+      <h2><span class="num">1</span>Information We Collect</h2>
+      <p>The App collects no user information, personal or otherwise. Everything you enter or create in the App — household size, stockpiled supplies, expiry dates, next distribution date, emergency contacts, checklists, and so on — is <b>stored only in a local database on your device</b> and is never sent to the developer or any third party.</p>
+
+      <h2><span class="num">2</span>Network & Tracking</h2>
+      <p>The App does not use the internet to provide its features. It uses <b>none</b> of the following:</p>
+      <ul>
+        <li>Analytics or usage measurement</li>
+        <li>Advertising or advertising identifiers (e.g. IDFA)</li>
+        <li>Behavioral tracking or profiling</li>
+        <li>Sending crash logs or diagnostics externally</li>
+      </ul>
+
+      <h2><span class="num">3</span>Device Permissions</h2>
+      <p>The App uses device capabilities only for the purposes below. No personal information is ever transmitted.</p>
+      <ul>
+        <li><b>Notifications</b>: local notifications only, to show reminders about stock and expiry. No personal information is included in notification text.</li>
+        <li><b>Screen brightness</b>: adjusts the App's screen brightness for power-saving mode and the screen light.</li>
+        <li><b>Audio playback</b>: plays emergency sounds such as a whistle or siren only. It does not record audio and requests no microphone permission.</li>
+        <li><b>Files</b>: reads and writes only the on-device file you choose, for backup and restore.</li>
+      </ul>
+      <p>The App does not request access to your camera, location, or device contacts (emergency contacts are entered manually in the App and stored on your device).</p>
+
+      <h2><span class="num">4</span>Data Storage & Deletion</h2>
+      <p>Data is stored only on your device. <b>Deleting the App removes the stored data from your device.</b> If you use the backup feature, data is saved and restored as an on-device file by your own action and is never sent externally.</p>
+
+      <h2><span class="num">5</span>Sharing with Third Parties</h2>
+      <p>Because the App collects no information, there is <b>no sharing, disclosure, or sale to any third party</b>.</p>
+
+      <h2><span class="num">6</span>Children's Privacy</h2>
+      <p>The App collects no personal information and is safe to use at any age.</p>
+
+      <h2><span class="num">7</span>Changes to This Policy</h2>
+      <p>We may update this policy as laws change or features are added. Significant changes will be announced on this page.</p>
+
+      <h2><span class="num">8</span>Contact</h2>
+      <div class="contact">
+        <p style="margin:0 0 4px"><span class="pill">Provider</span>Tenki (sole proprietor)</p>
+        <p style="margin:0">For questions or requests, please contact us:<br />
+        Email: <a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a></p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="links">
+        <a href="./privacy.html"><span class="lang ja">プライバシーポリシー</span><span class="lang en">Privacy Policy</span></a>
+        <a href="./support.html"><span class="lang ja">サポート</span><span class="lang en">Support</span></a>
+      </div>
+      <div>© 2026 テンキ / 計画de災対</div>
+    </div>
+  </footer>
+
+<script>
+  function setLang(l){
+    document.body.className = l;
+    document.documentElement.lang = l;
+    document.getElementById('btn-ja').classList.toggle('active', l==='ja');
+    document.getElementById('btn-en').classList.toggle('active', l==='en');
+    try{ localStorage.setItem('kds_lang', l); }catch(e){}
+  }
+  (function(){
+    var saved='ja';
+    try{
+      var stored = localStorage.getItem('kds_lang');
+      if(stored==='ja' || stored==='en') saved = stored;
+      else if((navigator.language||'').slice(0,2)==='en') saved = 'en';
+    }catch(e){}
+    setLang(saved);
+  })();
+</script>
+</body>
+</html>

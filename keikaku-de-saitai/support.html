@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>サポート | 計画de災対</title>
+<meta name="description" content="計画de災対のサポートページ。よくある質問とお問い合わせ先。完全オフラインで動作する防災・備蓄管理アプリです。" />
+<meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0F172A; --navy:#1E3A8A; --blue:#2563EB; --bluec:#DBEAFE;
+    --bg:#F8FAFC; --muted:#475569; --outline:#E2E8F0; --card:#FFFFFF;
+    --orange:#EA580C; --orange2:#DB440D;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; }
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:'Noto Sans JP', system-ui, -apple-system, sans-serif;
+    line-height:1.85; font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:var(--blue); }
+  .lang.en{ display:none; }
+  body.en .lang.ja{ display:none; }
+  body.en .lang.en{ display:block; }
+  .hero{
+    background:linear-gradient(135deg, #EFF6FF 0%, var(--bluec) 100%);
+    border-bottom:1px solid var(--outline);
+  }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 22px; }
+  .bar{ display:flex; align-items:center; gap:14px; padding:22px 0 0; }
+  .logo{
+    width:46px; height:46px; border-radius:13px; flex:0 0 auto;
+    background:linear-gradient(180deg,#FF7A3D,var(--orange2));
+    box-shadow:0 4px 10px rgba(219,68,13,.28);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .brand{ font-weight:900; font-size:20px; letter-spacing:.5px; }
+  .brand b{ color:var(--orange2); }
+  .langtoggle{ margin-left:auto; display:flex; gap:6px; }
+  .langtoggle button{
+    font-family:inherit; font-weight:800; font-size:13px; cursor:pointer;
+    border:1.5px solid var(--blue); background:#fff; color:var(--blue);
+    border-radius:999px; padding:6px 14px;
+  }
+  .langtoggle button.active{ background:var(--blue); color:#fff; }
+  .hero h1{ font-weight:900; font-size:34px; line-height:1.35; margin:26px 0 6px; letter-spacing:-.5px; }
+  .meta{ color:var(--muted); font-size:14px; font-weight:700; padding-bottom:30px; }
+  main{ padding:38px 0 60px; }
+  .lead{
+    background:var(--card); border:1px solid var(--outline); border-left:5px solid var(--blue);
+    border-radius:14px; padding:18px 20px; margin:0 0 34px; font-weight:700; color:var(--navy);
+  }
+  h2{ font-weight:800; font-size:20px; color:var(--navy); margin:38px 0 14px; }
+  .faq{
+    background:var(--card); border:1px solid var(--outline); border-radius:14px;
+    padding:6px 20px; margin-bottom:14px;
+  }
+  .faq details{ border-bottom:1px solid var(--outline); }
+  .faq details:last-child{ border-bottom:0; }
+  .faq summary{
+    cursor:pointer; font-weight:800; color:var(--ink); padding:16px 30px 16px 0;
+    position:relative; list-style:none;
+  }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{
+    content:"+"; position:absolute; right:2px; top:14px; font-size:22px;
+    color:var(--blue); font-weight:900;
+  }
+  .faq details[open] summary::after{ content:"–"; }
+  .faq .ans{ padding:0 0 16px; color:#1e293b; }
+  .faq .ans ul{ margin:6px 0; padding-left:20px; }
+  .env{ display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 0; }
+  .tag{
+    display:inline-block; background:var(--bluec); color:var(--navy); font-weight:800;
+    font-size:13px; border-radius:999px; padding:5px 14px;
+  }
+  .contact{
+    background:linear-gradient(135deg,#EFF6FF,#fff); border:1px solid var(--outline);
+    border-radius:14px; padding:20px; margin-top:14px;
+  }
+  .contact .pill{
+    display:inline-block; background:#DCFCE7; color:#166534; font-weight:800;
+    font-size:13px; border-radius:999px; padding:3px 12px; margin-right:6px;
+  }
+  .contact a{ font-weight:800; }
+  footer{
+    border-top:1px solid var(--outline); background:#fff;
+    padding:24px 0 40px; color:var(--muted); font-size:13px;
+  }
+  footer .links{ display:flex; gap:18px; flex-wrap:wrap; margin-bottom:10px; }
+  footer .links a{ font-weight:800; text-decoration:none; }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="bar">
+        <div class="logo" aria-hidden="true">
+          <svg width="30" height="30" viewBox="-190 -300 380 520" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M -80 -205 C -80 -295 80 -295 80 -205" stroke="#fff" stroke-width="46"/>
+            <rect x="-190" y="-205" width="380" height="415" rx="115" fill="#fff"/>
+            <rect x="-108" y="-20" width="216" height="200" rx="58" fill="#FFE0CF"/>
+            <path d="M 0 40 V 130 M -45 85 H 45" stroke="#DB440D" stroke-width="44"/>
+          </svg>
+        </div>
+        <div class="brand">計画<b>de</b>災対</div>
+        <div class="langtoggle">
+          <button id="btn-ja" class="active" onclick="setLang('ja')">日本語</button>
+          <button id="btn-en" onclick="setLang('en')">English</button>
+        </div>
+      </div>
+      <h1><span class="lang ja">サポート</span><span class="lang en">Support</span></h1>
+      <div class="meta">
+        <span class="lang ja">計画de災対 — オフラインの防災・備蓄管理アプリ</span>
+        <span class="lang en">Keikaku de Saitai — offline disaster-prep &amp; stockpile app</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ============ 日本語 ============ -->
+    <div class="lang ja">
+      <div class="lead">
+        「計画de災対」は、家族の備蓄や持ち出し品を<b>完全オフライン</b>で管理できる防災アプリです。以下によくある質問をまとめています。解決しない場合はお気軽にお問い合わせください。
+      </div>
+
+      <h2>対応環境</h2>
+      <div class="env">
+        <span class="tag">iOS 16.4 以降</span>
+        <span class="tag">インターネット不要</span>
+        <span class="tag">アカウント登録不要</span>
+        <span class="tag">完全無料・広告なし</span>
+      </div>
+
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details open>
+          <summary>データはどこに保存されますか？</summary>
+          <div class="ans">入力したデータはすべて<b>お使いの端末内にのみ</b>保存されます。外部サーバーへの送信は行いません。そのため、圏外や機内モードでも問題なくご利用いただけます。</div>
+        </details>
+        <details>
+          <summary>インターネット接続は必要ですか？</summary>
+          <div class="ans">いいえ。本アプリはすべての機能をオフラインで提供します。通信・アカウント登録・ログインは不要です。</div>
+        </details>
+        <details>
+          <summary>機種変更のときにデータを移せますか？</summary>
+          <div class="ans">「設定 → データのバックアップ」から、端末内にバックアップファイルを書き出し、新しい端末で復元できます。バックアップは外部へ送信されず、あなたの操作で端末内ファイルとして扱われます。</div>
+        </details>
+        <details>
+          <summary>通知が届きません。</summary>
+          <div class="ans">
+            端末の設定で通知が許可されているかご確認ください。
+            <ul>
+              <li>iOS：設定 → 通知 → 計画de災対 → 「通知を許可」をオン</li>
+            </ul>
+            なお、通知を許可しなくても、アプリ内の「お知らせ」には引き続き表示されます。
+          </div>
+        </details>
+        <details>
+          <summary>笛・サイレン・SOS の音が鳴りません。</summary>
+          <div class="ans">
+            次をご確認ください。
+            <ul>
+              <li>端末の消音（サイレント）スイッチがオンになっていないか</li>
+              <li>音量が十分に上がっているか</li>
+              <li>他のアプリが音声を占有していないか</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>「今日使える量」はどう計算されますか？</summary>
+          <div class="ans">現在の在庫を、次回の配給日までの日数で割った「1日に使ってよい上限の目安」です。安全側（切り捨て）で計算し、最も早く尽きる物資を表示します。配給日を設定すると表示されます。</div>
+        </details>
+        <details>
+          <summary>節電モードとは何ですか？</summary>
+          <div class="ans">画面を暗めにして電池の消費を抑えるモードです。停電時など、バッテリーを長持ちさせたいときにご利用ください。</div>
+        </details>
+        <details>
+          <summary>個人情報は収集されますか？</summary>
+          <div class="ans">いいえ。本アプリは個人情報を含むいかなる情報も収集・送信しません。詳しくは<a href="./privacy.html">プライバシーポリシー</a>をご覧ください。</div>
+        </details>
+      </div>
+
+      <h2>お問い合わせ</h2>
+      <div class="contact">
+        <p style="margin:0 0 6px"><span class="pill">提供者</span>屋号「テンキ」</p>
+        <p style="margin:0">不具合のご報告・ご要望・ご質問は、下記メールまでお気軽にご連絡ください（日本語・English 対応）。<br />
+        メール：<a href="mailto:fukupro2026release@gmail.com?subject=%E8%A8%88%E7%94%BBde%E7%81%BD%E5%AF%BE%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">fukupro2026release@gmail.com</a></p>
+      </div>
+    </div>
+
+    <!-- ============ English ============ -->
+    <div class="lang en">
+      <div class="lead">
+        “Keikaku de Saitai” is a disaster-preparedness app that manages your family's stockpile and go-bag <b>completely offline</b>. Frequently asked questions are below. If they don't help, feel free to contact us.
+      </div>
+
+      <h2>Requirements</h2>
+      <div class="env">
+        <span class="tag">iOS 16.4+</span>
+        <span class="tag">No internet needed</span>
+        <span class="tag">No account required</span>
+        <span class="tag">Free · No ads</span>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq">
+        <details open>
+          <summary>Where is my data stored?</summary>
+          <div class="ans">All data you enter is stored <b>only on your device</b>. Nothing is sent to any external server, so the App works fine offline or in airplane mode.</div>
+        </details>
+        <details>
+          <summary>Do I need an internet connection?</summary>
+          <div class="ans">No. The App provides all features offline. No network, account, or login is required.</div>
+        </details>
+        <details>
+          <summary>Can I move my data to a new device?</summary>
+          <div class="ans">From “Settings → Data backup”, you can export a backup file on your device and restore it on a new one. The backup is never sent externally; it is handled as an on-device file by your own action.</div>
+        </details>
+        <details>
+          <summary>I'm not receiving notifications.</summary>
+          <div class="ans">
+            Please check that notifications are allowed in your device settings.
+            <ul>
+              <li>iOS: Settings → Notifications → Keikaku de Saitai → turn on “Allow Notifications”.</li>
+            </ul>
+            Even without notification permission, in-app “Notices” will still appear.
+          </div>
+        </details>
+        <details>
+          <summary>The whistle / siren / SOS sound doesn't play.</summary>
+          <div class="ans">
+            Please check the following:
+            <ul>
+              <li>The device's silent (mute) switch is not on.</li>
+              <li>The volume is turned up.</li>
+              <li>No other app is holding the audio output.</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>How is “Usable today” calculated?</summary>
+          <div class="ans">It is a guideline for the maximum amount to use per day: current stock divided by the number of days until the next distribution. It rounds down (safety side) and shows the supply that runs out soonest. It appears once you set a distribution date.</div>
+        </details>
+        <details>
+          <summary>What is power-saving mode?</summary>
+          <div class="ans">It dims the screen to reduce battery drain — useful during a power outage when you want the battery to last longer.</div>
+        </details>
+        <details>
+          <summary>Do you collect personal information?</summary>
+          <div class="ans">No. The App collects and transmits no information of any kind. See our <a href="./privacy.html">Privacy Policy</a> for details.</div>
+        </details>
+      </div>
+
+      <h2>Contact</h2>
+      <div class="contact">
+        <p style="margin:0 0 6px"><span class="pill">Provider</span>Tenki (sole proprietor)</p>
+        <p style="margin:0">For bug reports, requests, or questions, please email us (Japanese &amp; English supported):<br />
+        Email: <a href="mailto:fukupro2026release@gmail.com?subject=Keikaku%20de%20Saitai%20Support">fukupro2026release@gmail.com</a></p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="links">
+        <a href="./privacy.html"><span class="lang ja">プライバシーポリシー</span><span class="lang en">Privacy Policy</span></a>
+        <a href="./support.html"><span class="lang ja">サポート</span><span class="lang en">Support</span></a>
+      </div>
+      <div>© 2026 テンキ / 計画de災対</div>
+    </div>
+  </footer>
+
+<script>
+  function setLang(l){
+    document.body.className = l;
+    document.documentElement.lang = l;
+    document.getElementById('btn-ja').classList.toggle('active', l==='ja');
+    document.getElementById('btn-en').classList.toggle('active', l==='en');
+    try{ localStorage.setItem('kds_lang', l); }catch(e){}
+  }
+  (function(){
+    var saved='ja';
+    try{
+      var stored = localStorage.getItem('kds_lang');
+      if(stored==='ja' || stored==='en') saved = stored;
+      else if((navigator.language||'').slice(0,2)==='en') saved = 'en';
+    }catch(e){}
+    setLang(saved);
+  })();
+</script>
+</body>
+</html>
