@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!-- 推しゲット掲示板 プライバシーポリシー / Privacy Policy -->
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>プライバシーポリシー | 推しゲット掲示板</title>
+<meta name="description" content="推しゲット掲示板が取得する情報、利用目的、取引に伴う個人情報（住所・支払先等）の取扱い、広告・トラッキング、第三者提供、保存期間、ユーザーの権利について説明します。" />
+<meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* アプリのデザイントークン（theme.ts 由来） */
+    --bg:#FFFBF8; --cream:#FFF3F7; --ink:#3A3440; --ink-soft:#6E6570; --muted:#9A8F96;
+    --accent:#FF7CA3; --accentStrong:#D6417A; --accentSoft:#FFE4EC; --surfaceAlt:#FBF3EE;
+    --card:#FFFFFF; --line:#EFE3DB;
+    --shadow:0 12px 34px rgba(214,65,122,.12);
+    --grad:linear-gradient(135deg,#FF9AB5,#D6417A);
+    --radius:22px; --maxw:820px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Zen Maru Gothic','M PLUS Rounded 1c',-apple-system,BlinkMacSystemFont,"Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;
+    line-height:1.9; -webkit-font-smoothing:antialiased;}
+  a{color:var(--accentStrong)}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+  header.site{position:sticky; top:0; z-index:10; background:rgba(255,251,248,.92);
+    backdrop-filter:saturate(1.2) blur(8px); border-bottom:2px solid var(--accentSoft);}
+  .bar{display:flex; align-items:center; gap:12px; padding:12px 20px; max-width:var(--maxw); margin:0 auto}
+  .badge{width:46px;height:46px;border-radius:50%;background:var(--grad);
+    display:grid;place-items:center; font-size:22px; flex:0 0 auto; box-shadow:0 8px 18px rgba(255,124,163,.45);}
+  .brand{font-weight:900; letter-spacing:.5px}
+  .brand small{display:block; font-weight:700; color:var(--ink-soft); font-size:12px; letter-spacing:.08em}
+  .langtoggle{margin-left:auto; display:flex; border:2px solid var(--accent); border-radius:999px; overflow:hidden}
+  .langtoggle button{border:0; background:transparent; padding:6px 14px; font-weight:800; cursor:pointer; color:var(--ink-soft); font-family:inherit}
+  .langtoggle button[aria-pressed="true"]{background:var(--accent); color:#fff}
+  .hero{padding:44px 0 8px}
+  .hero h1{font-size:clamp(28px,6vw,44px); line-height:1.2; margin:.2em 0 .1em; font-weight:900}
+  .hero .kicker{display:inline-block; background:var(--grad); color:#fff; font-weight:800; padding:6px 16px;
+    border-radius:999px; font-size:13px; letter-spacing:1px; box-shadow:0 8px 18px rgba(255,124,163,.4)}
+  .meta{color:var(--ink-soft); font-size:14px; margin-top:8px}
+  main{padding:8px 0 64px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:26px 26px; margin:18px 0}
+  .toc{font-size:14px}
+  .toc ol{margin:8px 0 0; padding-left:1.3em}
+  .toc a{color:var(--ink); text-decoration:none}
+  .toc a:hover{color:var(--accentStrong)}
+  h2{font-size:21px; margin:1.6em 0 .5em; padding-top:6px; display:flex; gap:10px; align-items:baseline; font-weight:900}
+  h2 .n{color:var(--accentStrong); font-weight:900}
+  h3{font-size:16px; margin:1.2em 0 .3em; font-weight:700}
+  p,li{font-size:15.5px}
+  ul,ol{padding-left:1.35em}
+  table{width:100%; border-collapse:collapse; margin:10px 0; font-size:14.5px}
+  th,td{border:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top}
+  th{background:var(--accentSoft)}
+  .note{background:var(--surfaceAlt); border:2px dashed var(--accent); border-radius:16px; padding:14px 16px; font-size:14px}
+  .highlight{background:var(--accentSoft); border:2px solid var(--accent); border-radius:16px; padding:14px 18px; font-weight:700}
+  footer{border-top:2px solid var(--accentSoft); padding:24px 0; color:var(--ink-soft); font-size:13px}
+  .lang[hidden]{display:none}
+  @media print{header.site{position:static} .badge{box-shadow:none} .card{box-shadow:none}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <div class="badge">🎁</div>
+    <div class="brand">推しゲット掲示板<small id="doclabel">プライバシーポリシー</small></div>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 日本語 ================= -->
+<div class="lang ja">
+  <div class="wrap">
+    <section class="hero">
+      <span class="kicker">推しゲット掲示板</span>
+      <h1>プライバシーポリシー</h1>
+      <div class="meta">最終改定日：2026年8月7日　／　事業者：テンキ</div>
+    </section>
+
+    <main>
+      <div class="card toc">
+        <strong>目次</strong>
+        <ol>
+          <li><a href="#jp-1">本サービスについて</a></li>
+          <li><a href="#jp-2">取得する情報</a></li>
+          <li><a href="#jp-3">利用目的</a></li>
+          <li><a href="#jp-4">取引に伴う個人情報（住所・支払先等）の取扱い</a></li>
+          <li><a href="#jp-5">広告・トラッキング（AdMob・ATT・UMP）</a></li>
+          <li><a href="#jp-6">第三者提供・業務委託</a></li>
+          <li><a href="#jp-7">データの保存期間・削除</a></li>
+          <li><a href="#jp-8">国外へのデータ移転</a></li>
+          <li><a href="#jp-9">ユーザーの権利</a></li>
+          <li><a href="#jp-10">セキュリティ</a></li>
+          <li><a href="#jp-11">対象年齢</a></li>
+          <li><a href="#jp-12">改定</a></li>
+          <li><a href="#jp-13">お問い合わせ</a></li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <p>本プライバシーポリシーは、テンキ（以下「当社」）が提供するアプリ「推しゲット掲示板」（以下「本アプリ」）における個人情報等の取扱いについて定めます。</p>
+
+        <h2 id="jp-1"><span class="n">1.</span> 本サービスについて</h2>
+        <p>本アプリは、ユーザー同士が推し活グッズ等の交換・譲渡・売買に関する情報を投稿し、当事者間で取引を行うための掲示板・取引仲介の場を提供するサービスです。当社は、個々の取引の当事者ではありません。取引に必要な範囲でユーザー間の連絡・配送・支払に関する情報の授受を仲介します。</p>
+
+        <h2 id="jp-2"><span class="n">2.</span> 取得する情報</h2>
+        <table>
+          <tr><th>区分</th><th>内容</th></tr>
+          <tr><td>アカウント情報</td><td>Apple / Google のサインインから得られる識別子、メールアドレス（提供される場合。Apple の非公開メール（Private Relay）を含む）、プロフィール（ニックネーム等）</td></tr>
+          <tr><td>投稿・取引情報</td><td>投稿・返信の本文、取引種別・配送方法・進捗状況、ユーザー間の相互評価、通報・ブロックの情報（本アプリは画像に依存せず、投稿への写真アップロードは行いません）</td></tr>
+          <tr><td>取引用の連絡・配送・支払情報</td><td>郵送取引に用いる受取人氏名・郵便番号・住所・電話番号、および支払先情報（振込先等のテキスト）。<strong>これらは暗号化して保存</strong>し、双方が提出した後に取引の相手方に対してのみ開示します</td></tr>
+          <tr><td>通知情報</td><td>プッシュ通知トークン（Expo Push 経由）。<strong>通知の内容に個人情報は含めません</strong></td></tr>
+          <tr><td>利用状況・分析イベント</td><td>アプリ内の操作イベント（サインイン、投稿、取引状態の変化 等）。<strong>メールアドレス・住所・電話番号等の個人情報は含めません</strong>（内部ユーザーID等の識別子のみ）</td></tr>
+          <tr><td>広告識別子</td><td>広告の配信・計測のための広告識別子（IDFA / AAID 等。iOS ではトラッキングの許可（ATT）がある場合）</td></tr>
+          <tr><td>端末・ログ情報</td><td>アクセス日時、エラー情報、リクエスト識別子等の技術情報</td></tr>
+        </table>
+        <div class="note">本アプリは、カメラ・位置情報・連絡先・写真ライブラリへのアクセスを要求しません。使用する端末権限は、プッシュ通知と iOS のトラッキング許可（ATT）のみです。本アプリは AI による処理を行いません。</div>
+
+        <h2 id="jp-3"><span class="n">3.</span> 利用目的</h2>
+        <ul>
+          <li>本サービスの提供（投稿・取引の仲介、当事者間の連絡・配送・支払に必要な情報の授受）</li>
+          <li>取引の安全確保、不正利用・規約違反の防止、通報対応・利用停止等の措置</li>
+          <li>プッシュ通知の送信</li>
+          <li>サービスの品質改善、不具合対応、統計・分析</li>
+          <li>広告の配信・計測</li>
+          <li>お問い合わせ対応、法令の遵守</li>
+        </ul>
+
+        <h2 id="jp-4"><span class="n">4.</span> 取引に伴う個人情報（住所・支払先等）の取扱い</h2>
+        <ul>
+          <li>郵送取引では、発送に必要な受取人氏名・住所・電話番号を、<strong>双方が提出した時点で相手方に対してのみ</strong>開示します（住所の同時開示）。手渡し取引では住所を開示しません。</li>
+          <li>支払先情報は、代金の授受のために支払う側に対してのみ開示します。</li>
+          <li>これらの情報は、他の情報とは分離した領域で、保存時に暗号化して管理します。</li>
+          <li>取引が完了またはキャンセルとなった分の住所・支払先情報は、速やかに削除します。トラブル報告中の取引は、解決まで保持します。</li>
+          <li><strong>当社は、アプリ内で代金の決済を処理しません。</strong>代金の授受はユーザー間で直接（銀行振込・電子マネー等）行われ、当社はカード番号等の決済情報を保持しません。</li>
+        </ul>
+        <div class="highlight">住所・氏名・電話番号を相手方に開示することには、相手方による目的外利用等のリスクが伴います。本アプリでは、取引の相手方に対してのみ、取引の遂行に必要な範囲で開示し、開示された情報を目的外に利用・保存・提供する行為を利用規約で禁止しています。開示にあたってはこのリスクをご理解のうえご利用ください。</div>
+
+        <h2 id="jp-5"><span class="n">5.</span> 広告・トラッキング（AdMob・ATT・UMP）</h2>
+        <p>本アプリは、Google の広告配信サービス「Google AdMob」を通じて広告を配信します。</p>
+        <ul>
+          <li>iOS では、App Tracking Transparency（ATT）により、トラッキングの許可を求める場合があります。許可されない場合や、地域の同意状況に応じて、<strong>非パーソナライズ広告</strong>を配信します（この場合もアプリの機能は継続してご利用いただけます）。</li>
+          <li>地域（EU / 英国等）に応じて、UMP（User Messaging Platform）による同意取得を行います。既定では非パーソナライズを基本とします。</li>
+          <li>広告の配信・計測のため、広告識別子・端末情報・利用データが Google 及びその広告パートナーによって処理される場合があります。取扱いの詳細は Google のポリシーに従います。</li>
+          <li>広告は全ユーザーに表示され、広告を非表示にする有料導線はありません。</li>
+          <li>当社は、取得した情報を広告目的で第三者に販売することはありません。</li>
+        </ul>
+
+        <h2 id="jp-6"><span class="n">6.</span> 第三者提供・業務委託</h2>
+        <p>当社は、法令に基づく場合を除き、ユーザーの同意なく個人情報を第三者に提供しません（取引相手への配送・支払情報の開示は、取引の成立に必要な範囲で、ユーザーの操作に基づいて行われます）。サービス提供のため、以下の事業者を利用します。</p>
+        <ul>
+          <li>サインイン認証：Apple Inc. / Google LLC</li>
+          <li>広告配信・同意管理：Google（AdMob・UMP）</li>
+          <li>プッシュ通知配信：Expo（Expo Push Service）／ Apple（APNs）・Google（FCM）</li>
+          <li>クラウド基盤（サーバ・データベース等）：Google Cloud（Google LLC）</li>
+        </ul>
+
+        <h2 id="jp-7"><span class="n">7.</span> データの保存期間・削除</h2>
+        <ul>
+          <li>取引用の住所・支払先等の個人情報は、取引の完了・キャンセル後すみやかに削除します（トラブル対応中のものを除く）。</li>
+          <li>完了・キャンセルから<strong>30日</strong>を経過した取引の提案条件・待ち合わせ場所・目印、および終了した投稿・返信の本文等は削除します（通報・対応中のものを除く）。</li>
+          <li>アカウント削除のリクエスト後、原則として<strong>30日以内</strong>に関連データを削除します。ただし、不正防止・紛争対応・法令上の必要に基づき、信用評価・違反履歴・利用停止に関する記録等は必要な範囲で保持することがあります。</li>
+          <li>無効となったプッシュ通知トークンは削除します。</li>
+        </ul>
+
+        <h2 id="jp-8"><span class="n">8.</span> 国外へのデータ移転</h2>
+        <p>クラウド基盤や広告の利用に伴い、データが日本国外（米国等）で処理される場合があります。ユーザーは本ポリシーに同意することで、当該移転に同意するものとします。</p>
+
+        <h2 id="jp-9"><span class="n">9.</span> ユーザーの権利</h2>
+        <ul>
+          <li>ユーザーは、自己の情報について開示・訂正・削除・利用停止を求めることができます。</li>
+          <li>アカウントおよびデータの削除は、本アプリ内の「アカウント削除」から実行できます。</li>
+          <li>広告のトラッキング許可（ATT）は、端末の設定からいつでも変更できます。</li>
+          <li>同意の撤回や権利行使のご要望は、下記お問い合わせ窓口までご連絡ください。</li>
+        </ul>
+
+        <h2 id="jp-10"><span class="n">10.</span> セキュリティ</h2>
+        <p>当社は、取得した情報の漏えい・改ざん・不正アクセスを防止するため、通信の暗号化、取引用個人情報の保存時の暗号化、アクセス制御等の合理的な安全管理措置を講じます。</p>
+
+        <h2 id="jp-11"><span class="n">11.</span> 対象年齢</h2>
+        <p>本アプリは、ユーザー間の金銭を伴う取引を含むため、<strong>18歳以上</strong>の方を対象としています。18歳未満の方はご利用いただけません。</p>
+
+        <h2 id="jp-12"><span class="n">12.</span> 改定</h2>
+        <p>当社は、本ポリシーを必要に応じて改定します。重要な変更は本アプリ内または本ページで告知します。</p>
+
+        <h2 id="jp-13"><span class="n">13.</span> お問い合わせ</h2>
+        <p>本ポリシーおよび個人情報の取扱いに関するお問い合わせは、<a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a> までご連絡ください。</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- ================= English ================= -->
+<div class="lang en" hidden>
+  <div class="wrap">
+    <section class="hero">
+      <span class="kicker">Oshi Get Board</span>
+      <h1>Privacy Policy</h1>
+      <div class="meta">Last updated: 2026-08-07 &nbsp;/&nbsp; Provider: Tenki</div>
+    </section>
+
+    <main>
+      <div class="card toc">
+        <strong>Contents</strong>
+        <ol>
+          <li><a href="#en-1">About the Service</a></li>
+          <li><a href="#en-2">Information We Collect</a></li>
+          <li><a href="#en-3">How We Use Information</a></li>
+          <li><a href="#en-4">Personal Data in Transactions (Address, Payee, etc.)</a></li>
+          <li><a href="#en-5">Advertising & Tracking (AdMob, ATT, UMP)</a></li>
+          <li><a href="#en-6">Sharing & Processors</a></li>
+          <li><a href="#en-7">Data Retention & Deletion</a></li>
+          <li><a href="#en-8">International Transfers</a></li>
+          <li><a href="#en-9">Your Rights</a></li>
+          <li><a href="#en-10">Security</a></li>
+          <li><a href="#en-11">Age Requirement</a></li>
+          <li><a href="#en-12">Changes</a></li>
+          <li><a href="#en-13">Contact</a></li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <p>This Privacy Policy describes how Tenki ("we", "us") handles information in the "Oshi Get Board" app (the "App").</p>
+
+        <h2 id="en-1"><span class="n">1.</span> About the Service</h2>
+        <p>The App provides a bulletin-board and transaction-intermediation service where users post information about exchanging, giving, or selling fan ("oshi-katsu") goods, and carry out transactions directly with one another. We are not a party to any individual transaction. We facilitate the exchange of information needed for communication, shipping, and payment between users to the extent necessary for a transaction.</p>
+
+        <h2 id="en-2"><span class="n">2.</span> Information We Collect</h2>
+        <table>
+          <tr><th>Category</th><th>Details</th></tr>
+          <tr><td>Account</td><td>Identifiers from Apple / Google sign-in, email address where provided (including Apple's Private Relay email), and profile (nickname, etc.)</td></tr>
+          <tr><td>Posts & transactions</td><td>Post and reply text, transaction type / delivery method / progress status, mutual ratings between users, and report/block information (the App is image-independent and does not allow photo uploads to posts)</td></tr>
+          <tr><td>Contact / shipping / payment data for transactions</td><td>For shipping transactions: recipient name, postal code, address, and phone number; and payee information (bank transfer details, etc.) as text. <strong>This data is stored encrypted</strong> and disclosed only to the transaction counterparty after both parties have submitted it</td></tr>
+          <tr><td>Notifications</td><td>Push notification token (via Expo Push). <strong>Notification content contains no personal data</strong></td></tr>
+          <tr><td>Usage & analytics events</td><td>In-app events (sign-in, posting, transaction status changes, etc.). <strong>We do not include personal data such as email, address, or phone</strong> (only identifiers such as an internal user ID)</td></tr>
+          <tr><td>Advertising identifiers</td><td>Advertising identifiers (IDFA / AAID, etc.) for ad delivery and measurement (on iOS, where tracking permission (ATT) is granted)</td></tr>
+          <tr><td>Device & logs</td><td>Access timestamps, error information, request identifiers, and similar technical data</td></tr>
+        </table>
+        <div class="note">The App does not request access to your camera, location, contacts, or photo library. The only device permissions used are push notifications and iOS tracking permission (ATT). The App does not perform any AI processing.</div>
+
+        <h2 id="en-3"><span class="n">3.</span> How We Use Information</h2>
+        <ul>
+          <li>To provide the Service (intermediating posts and transactions, and exchanging information needed for communication, shipping, and payment between parties).</li>
+          <li>To keep transactions safe, prevent abuse and violations, and take measures such as handling reports and suspending accounts.</li>
+          <li>To send push notifications.</li>
+          <li>To improve quality, fix issues, and produce statistics/analytics.</li>
+          <li>To deliver and measure advertising.</li>
+          <li>To respond to inquiries and comply with laws.</li>
+        </ul>
+
+        <h2 id="en-4"><span class="n">4.</span> Personal Data in Transactions (Address, Payee, etc.)</h2>
+        <ul>
+          <li>For shipping transactions, the recipient name, address, and phone number needed for delivery are disclosed <strong>only to the counterparty, and only after both parties have submitted them</strong> (simultaneous address disclosure). For in-person handover, addresses are not disclosed.</li>
+          <li>Payee information is disclosed only to the paying party, for the purpose of payment.</li>
+          <li>This information is stored encrypted, in an area separated from other data.</li>
+          <li>Address and payee information for completed or cancelled transactions is deleted promptly. Transactions under a trouble report are retained until resolved.</li>
+          <li><strong>We do not process payments within the App.</strong> Payments are made directly between users (e.g., bank transfer, e-money), and we do not store payment details such as card numbers.</li>
+        </ul>
+        <div class="highlight">Disclosing your name, address, and phone number to a counterparty carries risks, such as misuse by the counterparty. Within the App, such information is disclosed only to the transaction counterparty and only to the extent necessary to perform the transaction, and our Terms of Use prohibit using, storing, or sharing disclosed information for any other purpose. Please use the App with an understanding of this risk.</div>
+
+        <h2 id="en-5"><span class="n">5.</span> Advertising & Tracking (AdMob, ATT, UMP)</h2>
+        <p>The App serves advertising through Google's ad service "Google AdMob."</p>
+        <ul>
+          <li>On iOS, we may request tracking permission via App Tracking Transparency (ATT). Where permission is not granted, or depending on regional consent status, we serve <strong>non-personalized ads</strong> (the App remains fully usable in this case).</li>
+          <li>Depending on region (EU / UK, etc.), we obtain consent via the User Messaging Platform (UMP), defaulting to non-personalized ads.</li>
+          <li>For ad delivery and measurement, advertising identifiers, device information, and usage data may be processed by Google and its advertising partners. Details follow Google's policies.</li>
+          <li>Ads are shown to all users, and there is no paid option to remove ads.</li>
+          <li>We do not sell collected information to third parties for advertising.</li>
+        </ul>
+
+        <h2 id="en-6"><span class="n">6.</span> Sharing & Processors</h2>
+        <p>Except as required by law, we do not share personal information with third parties without consent (disclosure of shipping/payment information to a counterparty is performed based on your actions, to the extent necessary to complete a transaction). We use the following providers to operate the service:</p>
+        <ul>
+          <li>Sign-in authentication: Apple Inc. / Google LLC</li>
+          <li>Ad delivery / consent management: Google (AdMob, UMP)</li>
+          <li>Push notification delivery: Expo (Expo Push Service) / Apple (APNs), Google (FCM)</li>
+          <li>Cloud infrastructure (servers, database, etc.): Google Cloud (Google LLC)</li>
+        </ul>
+
+        <h2 id="en-7"><span class="n">7.</span> Data Retention & Deletion</h2>
+        <ul>
+          <li>Personal data such as addresses and payee details for transactions is deleted promptly after the transaction is completed or cancelled (except items under a trouble report).</li>
+          <li>Proposed conditions, meeting places/markers, and the text of closed posts and replies are deleted <strong>30 days</strong> after completion or cancellation (except items under report or in progress).</li>
+          <li>After an account deletion request, related data is generally deleted <strong>within 30 days</strong>. However, records relating to reputation, violation history, and suspensions may be retained to the extent necessary for abuse prevention, dispute handling, or legal requirements.</li>
+          <li>Invalid push notification tokens are deleted.</li>
+        </ul>
+
+        <h2 id="en-8"><span class="n">8.</span> International Transfers</h2>
+        <p>Due to cloud infrastructure and advertising, data may be processed outside Japan (e.g., in the United States). By agreeing to this Policy, you consent to such transfers.</p>
+
+        <h2 id="en-9"><span class="n">9.</span> Your Rights</h2>
+        <ul>
+          <li>You may request disclosure, correction, deletion, or suspension of use of your information.</li>
+          <li>You can delete your account and data from "Delete Account" in the App.</li>
+          <li>You can change advertising tracking permission (ATT) at any time from your device settings.</li>
+          <li>To withdraw consent or exercise your rights, contact us below.</li>
+        </ul>
+
+        <h2 id="en-10"><span class="n">10.</span> Security</h2>
+        <p>We implement reasonable safeguards such as encryption in transit, encryption at rest for transaction-related personal data, and access controls to protect information against leakage, alteration, and unauthorized access.</p>
+
+        <h2 id="en-11"><span class="n">11.</span> Age Requirement</h2>
+        <p>Because the App involves transactions between users that may include money, it is intended for users <strong>aged 18 or older</strong>. Persons under 18 may not use the App.</p>
+
+        <h2 id="en-12"><span class="n">12.</span> Changes</h2>
+        <p>We may update this Policy as needed. Material changes will be announced in the App or on this page.</p>
+
+        <h2 id="en-13"><span class="n">13.</span> Contact</h2>
+        <p>For questions about this Policy or our handling of personal information, contact <a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a>.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> 推しゲット掲示板 · テンキ / Tenki</div>
+</footer>
+
+<script>
+  (function(){
+    var y=document.getElementById('yr'); if(y) y.textContent="2026";
+    var labels={ja:'プライバシーポリシー',en:'Privacy Policy'};
+    var btns=document.querySelectorAll('.langtoggle button');
+    function set(lang){
+      document.documentElement.lang=lang;
+      document.querySelectorAll('.lang').forEach(function(el){el.hidden=!el.classList.contains(lang);});
+      btns.forEach(function(b){b.setAttribute('aria-pressed', b.dataset.lang===lang?'true':'false');});
+      var dl=document.getElementById('doclabel'); if(dl) dl.textContent=labels[lang];
+      try{localStorage.setItem('oshiget-legal-lang',lang);}catch(e){}
+    }
+    btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang);});});
+    var saved; try{saved=localStorage.getItem('oshiget-legal-lang');}catch(e){}
+    var initial = saved || ((navigator.language||'ja').toLowerCase().indexOf('ja')===0?'ja':'en');
+    set(initial);
+  })();
+</script>
+</body>
+</html>
