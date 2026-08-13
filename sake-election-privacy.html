@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>プライバシーポリシー｜SAKE ELECTION</title>
+<meta name="description" content="日本酒の人気投票アプリ「SAKE ELECTION」のプライバシーポリシー。取得する情報、広告・トラッキング、第三者提供、保存期間、削除、利用者の権利について説明します。" />
+<meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#11110F; --surface:#1C1B18; --elev:#24221E;
+    --text:#E8E0D0; --muted:#A69E90; --gold:#B08A4A; --vermilion:#A84432;
+    --border:#332F28; --maxw:840px;
+    --serif:'Shippori Mincho',serif;
+    --sans:'Zen Kaku Gothic New',system-ui,-apple-system,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:var(--gold);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* header */
+  header.site{position:sticky;top:0;z-index:20;background:rgba(17,17,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .bar{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:12px}
+  .seal{width:40px;height:40px;flex:none;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--gold);font-size:20px;letter-spacing:0}
+  .brandwrap{display:flex;flex-direction:column;line-height:1.2;margin-right:auto}
+  .brand{font-family:var(--serif);font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--text)}
+  .brand em{color:var(--gold);font-style:normal}
+  .brandsub{font-size:11px;color:var(--muted);letter-spacing:.22em;text-transform:uppercase}
+  .langtoggle{display:flex;gap:4px;flex:none}
+  .langtoggle button{font-family:var(--sans);font-size:12px;color:var(--muted);background:transparent;border:1px solid var(--border);border-radius:999px;padding:5px 11px;cursor:pointer;transition:.15s}
+  .langtoggle button:hover{color:var(--text);border-color:var(--gold)}
+  .langtoggle button[aria-pressed="true"]{color:var(--bg);background:var(--gold);border-color:var(--gold);font-weight:700}
+
+  /* layout */
+  main{max-width:var(--maxw);margin:0 auto;padding:0 20px 80px}
+  .doc[hidden]{display:none}
+
+  .hero{padding:56px 0 24px;border-bottom:1px solid var(--border)}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:5px 14px;margin-bottom:22px}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(30px,6vw,44px);margin:0 0 14px;letter-spacing:.04em;line-height:1.25}
+  .meta{color:var(--muted);font-size:13.5px;letter-spacing:.04em}
+  .lead{margin:26px 0 0;color:var(--text);font-size:15.5px}
+
+  /* toc */
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin:34px 0}
+  .toc h2{font-family:var(--sans);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:700}
+  .toc ol{margin:0;padding-left:0;list-style:none;counter-reset:toc;column-gap:36px}
+  .toc li{counter-increment:toc;padding:5px 0;font-size:14.5px;border-bottom:1px dashed transparent}
+  .toc li::before{content:counter(toc,decimal-leading-zero);color:var(--gold);font-family:var(--serif);margin-right:12px;font-size:13px}
+  @media(min-width:640px){.toc ol{columns:2}}
+
+  /* sections */
+  section{padding:34px 0;border-top:1px solid var(--border)}
+  section:first-of-type{border-top:none}
+  h2.sec{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 16px;display:flex;align-items:baseline;gap:14px;letter-spacing:.03em}
+  h2.sec .n{flex:none;font-size:14px;color:var(--gold);border:1px solid var(--gold);border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-family:var(--serif)}
+  h3{font-family:var(--sans);font-size:16px;color:var(--gold);margin:24px 0 8px;font-weight:700}
+  p{margin:12px 0}
+  ul{margin:12px 0;padding-left:22px}
+  li{margin:7px 0}
+  strong{color:#F3EBDC;font-weight:700}
+
+  .note{background:var(--elev);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--muted)}
+  .highlight{background:rgba(168,68,50,.12);border:1px solid var(--vermilion);border-radius:10px;padding:16px 18px;margin:18px 0}
+  .highlight strong{color:#E9B4AA}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+  th{color:var(--gold);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+  .tablewrap{overflow-x:auto}
+
+  footer{max-width:var(--maxw);margin:0 auto;padding:32px 20px 60px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer .links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:14px}
+  .contactcard{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin:8px 0}
+  .contactcard a{font-weight:700}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <div class="seal">酒</div>
+    <div class="brandwrap">
+      <span class="brand">SAKE <em>ELECTION</em></span>
+      <span class="brandsub">Sake Collection</span>
+    </div>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-set="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+      <button type="button" data-set="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ JAPANESE ============ -->
+  <div class="doc" data-lang="ja">
+    <div class="hero">
+      <span class="kicker">プライバシーポリシー</span>
+      <h1>プライバシーポリシー</h1>
+      <div class="meta">最終更新日：2026年8月13日　／　事業者：テンキ（Tenki）</div>
+      <p class="lead">本プライバシーポリシー（以下「本ポリシー」）は、テンキ（以下「当社」）が提供するアプリ「SAKE ELECTION」（アプリ名：Sake Collection、以下「本サービス」）における利用者情報の取扱いについて定めるものです。本サービスは日本酒（酒類）に関する人気投票・SNS・段位・分析・購入ガイドを提供するアプリであり、お住まいの国・地域の法定飲酒年齢以上の方のみご利用いただけます。</p>
+    </div>
+
+    <nav class="toc">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="#ja-1">本サービスについて</a></li>
+        <li><a href="#ja-2">取得する情報</a></li>
+        <li><a href="#ja-3">利用目的</a></li>
+        <li><a href="#ja-4">お酒・年齢に関する取扱い</a></li>
+        <li><a href="#ja-5">広告とトラッキング</a></li>
+        <li><a href="#ja-6">第三者提供・業務委託先</a></li>
+        <li><a href="#ja-7">保存期間と削除</a></li>
+        <li><a href="#ja-8">データの国外移転</a></li>
+        <li><a href="#ja-9">利用者の権利</a></li>
+        <li><a href="#ja-10">セキュリティ</a></li>
+        <li><a href="#ja-11">未成年者の利用</a></li>
+        <li><a href="#ja-12">本ポリシーの変更</a></li>
+        <li><a href="#ja-13">お問い合わせ</a></li>
+      </ol>
+    </nav>
+
+    <section id="ja-1">
+      <h2 class="sec"><span class="n">1</span>本サービスについて</h2>
+      <p>本サービスは、日本酒の銘柄に対する人気投票（エレクション）、投稿・レビュー・いいね・リポスト・コメントなどの交流機能（SNS）、活動に応じた段位（Rank）、ご自身の嗜好傾向の分析、受賞銘柄などの購入ガイド（ドロップ）を提供します。</p>
+      <p>当社はアプリ内で酒類の販売や決済を行いません。商品の購入は、当社とは別の外部の販売事業者のサイトで行われます。本サービスは情報提供および交流の場を提供するものです。</p>
+    </section>
+
+    <section id="ja-2">
+      <h2 class="sec"><span class="n">2</span>取得する情報</h2>
+      <h3>アカウント・認証情報</h3>
+      <p>Apple または Google のサインインで得られる識別子、および提供された場合のメールアドレス（Apple の非公開メール転送を含む）を取得します。当社がパスワードを保持することはありません。</p>
+      <h3>プロフィール情報</h3>
+      <ul>
+        <li>ニックネーム、選択したアバター</li>
+        <li><strong>生年月日</strong>（法定飲酒年齢の確認のみに使用します。他の利用者には表示せず、当社のAPIでも返却しません）</li>
+        <li>国・地域、表示言語、タイムゾーン</li>
+        <li>利用規約・本ポリシーへの同意および年齢確認の記録</li>
+      </ul>
+      <h3>活動情報</h3>
+      <p>投稿・レビューの本文、評価（星）、いいね・リポスト・コメント、投票、購入意思（YES／NO）、通報・ブロックの記録。</p>
+      <h3>分析イベント</h3>
+      <p>アプリ内の操作ログ（表示・投票・購入意思・評価・詳細閲覧など）を取得します。<strong>分析データは分析専用の識別子で記録し、氏名・メールアドレス・アカウントIDとは結び付けません</strong>（個人を特定する情報を含みません）。おおまかな地域（国・地域）を含むことがあります。</p>
+      <h3>端末・ログ情報</h3>
+      <p>アクセス日時、エラー情報、リクエスト識別子などを、安定した運用と不正防止のために取得します。</p>
+      <div class="note">本サービスは、カメラ・写真ライブラリ・位置情報・連絡先へのアクセスを要求しません。写真のアップロード機能は現在提供していません。AI による自動処理は行いません。</div>
+    </section>
+
+    <section id="ja-3">
+      <h2 class="sec"><span class="n">3</span>利用目的</h2>
+      <ul>
+        <li>本サービスの提供・維持・改善</li>
+        <li>投票結果・段位・嗜好分析の算出および表示</li>
+        <li>SNS 機能の運営と安全確保（通報・ブロック・不適切な投稿への対応）</li>
+        <li>不正利用・不正投票の防止</li>
+        <li>広告の表示（下記のとおり非パーソナライズ広告のみ）</li>
+        <li>お問い合わせへの対応</li>
+        <li>法令上の義務の履行</li>
+      </ul>
+    </section>
+
+    <section id="ja-4">
+      <h2 class="sec"><span class="n">4</span>お酒・年齢に関する取扱い</h2>
+      <p>本サービスは酒類（日本酒）を対象とするため、お住まいの国・地域の<strong>法定飲酒年齢以上</strong>の方のみご利用いただけます（日本：20歳、米国：21歳、その他の地域：既定18歳）。</p>
+      <p>生年月日は年齢確認のみに使用します。法定飲酒年齢未満と判定された場合、本サービスのすべての機能をご利用いただけません。投票・購入意思・ドロップのご利用には、成人であることに加え地域の設定が必要です。購入への導線は対応する国・地域に限定して表示されます。</p>
+    </section>
+
+    <section id="ja-5">
+      <h2 class="sec"><span class="n">5</span>広告とトラッキング</h2>
+      <p>本サービスは Google AdMob による広告を表示することがあります。</p>
+      <div class="highlight">
+        <p><strong>当社は追跡型広告（トラッキング）を行いません。</strong>本サービスは iOS の App Tracking Transparency（ATT）のプロンプトを表示せず、端末をまたいだ追跡や広告識別子の目的外利用を行いません。表示される広告は<strong>非パーソナライズ広告のみ</strong>です。</p>
+      </div>
+      <p>地域の法令に応じて、Google のユーザーメッセージングプラットフォーム（UMP）により広告に関する同意を取得します。段位が<strong>「四段」以上</strong>の利用者には広告を表示しません。当社が広告目的で個人情報を第三者に販売することはありません。</p>
+    </section>
+
+    <section id="ja-6">
+      <h2 class="sec"><span class="n">6</span>第三者提供・業務委託先</h2>
+      <p>当社は、法令に基づく場合等を除き、ご本人の同意なく個人情報を第三者に提供しません。本サービスの提供のため、以下の事業者を利用します。</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>委託先</th><th>役割</th></tr></thead>
+          <tbody>
+            <tr><td>Apple</td><td>サインイン（認証）</td></tr>
+            <tr><td>Google</td><td>サインイン（認証）、AdMob（広告）、UMP（同意管理）、Google Cloud（サーバー・データベース基盤）</td></tr>
+            <tr><td>Cloudflare</td><td>R2（画像・分析データの保管）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>ドロップからの商品購入は、当社とは別の外部の販売事業者のサイトで行われます。当該サイトでの情報の取扱いには、その事業者のプライバシーポリシーが適用されます。</p>
+    </section>
+
+    <section id="ja-7">
+      <h2 class="sec"><span class="n">7</span>保存期間と削除</h2>
+      <p>分析イベントは、サービス改善に必要な一定期間（おおむね90日程度）を目安に保持し、その後は削除または個人を特定できない集計データに変換します。</p>
+      <p>アカウントの削除をご依頼いただいた場合、削除を予約し、原則として<strong>30日後に本削除</strong>を行います（下記「削除案内」もご覧ください）。本削除後も、匿名化・集計済みのデータ（個人を特定できないもの）や、法令の遵守・不正防止・紛争対応のために必要な記録を保持することがあります。</p>
+    </section>
+
+    <section id="ja-8">
+      <h2 class="sec"><span class="n">8</span>データの国外移転</h2>
+      <p>本サービスのサーバーは主に日本国内（アジア北東リージョン）に設置しています。ただし、上記の委託先の一部は日本国外でデータを処理する場合があります。当社は、適用される法令に従い、適切な保護措置を講じます。</p>
+    </section>
+
+    <section id="ja-9">
+      <h2 class="sec"><span class="n">9</span>利用者の権利</h2>
+      <p>利用者は、当社が保有するご自身の個人情報について、開示・訂正・利用停止・削除を請求できます。ご自身のアカウントおよび関連データは、アプリ内の「設定」＞「アカウントを削除」からいつでも削除できます。ご不明な場合は下記までお問い合わせください。</p>
+    </section>
+
+    <section id="ja-10">
+      <h2 class="sec"><span class="n">10</span>セキュリティ</h2>
+      <p>当社は、通信の暗号化、認証トークンのハッシュ化保存、アクセス制御などの技術的・組織的な安全管理措置を講じます。アカウントの削除など重要な操作には、再認証（Apple／Google での再サインイン）を求めます。</p>
+    </section>
+
+    <section id="ja-11">
+      <h2 class="sec"><span class="n">11</span>未成年者の利用</h2>
+      <p>本サービスは、お住まいの国・地域の法定飲酒年齢未満の方の利用を想定していません。該当する方は本サービスを利用しないでください。</p>
+    </section>
+
+    <section id="ja-12">
+      <h2 class="sec"><span class="n">12</span>本ポリシーの変更</h2>
+      <p>当社は、必要に応じて本ポリシーを変更することがあります。重要な変更を行う場合は、本サービスまたは本ページ上で告知します。変更後に本サービスを継続してご利用いただいた場合、変更後の本ポリシーに同意いただいたものとみなします。</p>
+    </section>
+
+    <section id="ja-13">
+      <h2 class="sec"><span class="n">13</span>お問い合わせ</h2>
+      <p>本ポリシーに関するお問い合わせは、以下までご連絡ください。</p>
+      <div class="contactcard">
+        事業者：テンキ（Tenki）<br />
+        メール：<a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div class="doc" data-lang="en" hidden>
+    <div class="hero">
+      <span class="kicker">Privacy Policy</span>
+      <h1>Privacy Policy</h1>
+      <div class="meta">Last updated: August 13, 2026　／　Provider: Tenki</div>
+      <p class="lead">This Privacy Policy ("Policy") describes how Tenki ("we", "us") handles user information in the app "SAKE ELECTION" (app name: Sake Collection, the "Service"). The Service provides sake popularity voting, social features, ranks, taste analytics, and purchase guides. It may only be used by people who are at or above the legal drinking age in their country or region.</p>
+    </div>
+
+    <nav class="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#en-1">About the Service</a></li>
+        <li><a href="#en-2">Information We Collect</a></li>
+        <li><a href="#en-3">How We Use Information</a></li>
+        <li><a href="#en-4">Alcohol &amp; Age</a></li>
+        <li><a href="#en-5">Advertising &amp; Tracking</a></li>
+        <li><a href="#en-6">Third Parties &amp; Processors</a></li>
+        <li><a href="#en-7">Retention &amp; Deletion</a></li>
+        <li><a href="#en-8">International Transfers</a></li>
+        <li><a href="#en-9">Your Rights</a></li>
+        <li><a href="#en-10">Security</a></li>
+        <li><a href="#en-11">Minors</a></li>
+        <li><a href="#en-12">Changes</a></li>
+        <li><a href="#en-13">Contact</a></li>
+      </ol>
+    </nav>
+
+    <section id="en-1">
+      <h2 class="sec"><span class="n">1</span>About the Service</h2>
+      <p>The Service offers popularity voting ("elections") for sake, social features (posts, reviews, likes, reposts, comments), an activity-based rank, analytics of your own taste, and purchase guides ("drops") for featured sake.</p>
+      <p>We do not sell alcohol or process payments inside the app. Any purchase takes place on an external seller's website operated by a party other than us. The Service provides information and a place to interact.</p>
+    </section>
+
+    <section id="en-2">
+      <h2 class="sec"><span class="n">2</span>Information We Collect</h2>
+      <h3>Account &amp; authentication</h3>
+      <p>An identifier obtained through Apple or Google sign-in, and your email address where provided (including Apple's private email relay). We never store your password.</p>
+      <h3>Profile</h3>
+      <ul>
+        <li>Nickname and chosen avatar</li>
+        <li><strong>Date of birth</strong> (used only to confirm legal drinking age; never shown to other users and never returned by our API)</li>
+        <li>Country/region, display language, time zone</li>
+        <li>Records of consent to the Terms and this Policy, and of age confirmation</li>
+      </ul>
+      <h3>Activity</h3>
+      <p>Post and review text, ratings (stars), likes, reposts, comments, votes, purchase intent (YES/NO), and report/block records.</p>
+      <h3>Analytics events</h3>
+      <p>In-app interaction logs (impressions, votes, purchase intent, ratings, detail views, etc.). <strong>Analytics data is recorded under a separate analytics identifier and is not linked to your name, email, or account ID</strong> (it contains no personally identifying information). It may include a coarse region (country/region).</p>
+      <h3>Device &amp; logs</h3>
+      <p>Access timestamps, error information, and request identifiers, used for reliable operation and abuse prevention.</p>
+      <div class="note">The Service does not request access to your camera, photo library, location, or contacts. Photo upload is not currently offered. No AI-based processing is performed.</div>
+    </section>
+
+    <section id="en-3">
+      <h2 class="sec"><span class="n">3</span>How We Use Information</h2>
+      <ul>
+        <li>Providing, maintaining, and improving the Service</li>
+        <li>Computing and displaying vote results, ranks, and taste analytics</li>
+        <li>Operating social features and keeping them safe (reports, blocks, moderation)</li>
+        <li>Preventing abuse and fraudulent voting</li>
+        <li>Showing advertising (non-personalized only, as described below)</li>
+        <li>Responding to your inquiries</li>
+        <li>Complying with legal obligations</li>
+      </ul>
+    </section>
+
+    <section id="en-4">
+      <h2 class="sec"><span class="n">4</span>Alcohol &amp; Age</h2>
+      <p>Because the Service concerns alcoholic beverages (sake), it may only be used by people <strong>at or above the legal drinking age</strong> in their country or region (Japan: 20; United States: 21; elsewhere: 18 by default).</p>
+      <p>Date of birth is used only for age verification. If you are found to be below the legal drinking age, you cannot use any part of the Service. Voting, purchase intent, and drops additionally require an adult status and a region setting. Purchase links are shown only for supported countries/regions.</p>
+    </section>
+
+    <section id="en-5">
+      <h2 class="sec"><span class="n">5</span>Advertising &amp; Tracking</h2>
+      <p>The Service may show advertising through Google AdMob.</p>
+      <div class="highlight">
+        <p><strong>We do not perform tracking-based advertising.</strong> The Service does not present the iOS App Tracking Transparency (ATT) prompt and does not track you across apps or repurpose advertising identifiers. Ads are <strong>non-personalized only</strong>.</p>
+      </div>
+      <p>Where required by regional law, consent relating to advertising is obtained via Google's User Messaging Platform (UMP). Users at <strong>rank 4 or above</strong> are not shown ads. We do not sell personal information to third parties for advertising.</p>
+    </section>
+
+    <section id="en-6">
+      <h2 class="sec"><span class="n">6</span>Third Parties &amp; Processors</h2>
+      <p>Except as required by law, we do not disclose personal information to third parties without consent. We use the following processors to provide the Service.</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Processor</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>Apple</td><td>Sign-in (authentication)</td></tr>
+            <tr><td>Google</td><td>Sign-in, AdMob (advertising), UMP (consent), Google Cloud (server &amp; database infrastructure)</td></tr>
+            <tr><td>Cloudflare</td><td>R2 (storage of images and analytics data)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>A purchase from a drop happens on an external seller's website operated by a party other than us. That site's own privacy policy governs how it handles information.</p>
+    </section>
+
+    <section id="en-7">
+      <h2 class="sec"><span class="n">7</span>Retention &amp; Deletion</h2>
+      <p>Analytics events are retained for a limited period needed to improve the Service (on the order of about 90 days), after which they are deleted or converted into aggregated data that cannot identify an individual.</p>
+      <p>When you request account deletion, we schedule it and, as a rule, <strong>permanently delete after 30 days</strong> (see the "Account Deletion" guide). Even after deletion, we may retain anonymized/aggregated data (which cannot identify you) and records required for legal compliance, abuse prevention, and dispute resolution.</p>
+    </section>
+
+    <section id="en-8">
+      <h2 class="sec"><span class="n">8</span>International Transfers</h2>
+      <p>Our servers are located primarily in Japan (Asia Northeast region). However, some of the processors above may process data outside Japan. We apply appropriate safeguards in accordance with applicable law.</p>
+    </section>
+
+    <section id="en-9">
+      <h2 class="sec"><span class="n">9</span>Your Rights</h2>
+      <p>You may request access to, correction of, suspension of use of, or deletion of the personal information we hold about you. You can delete your account and related data at any time from <strong>Settings &gt; Delete account</strong> in the app. If you have questions, contact us below.</p>
+    </section>
+
+    <section id="en-10">
+      <h2 class="sec"><span class="n">10</span>Security</h2>
+      <p>We apply technical and organizational safeguards including encryption in transit, hashed storage of authentication tokens, and access controls. Sensitive actions such as account deletion require re-authentication (signing in again with Apple/Google).</p>
+    </section>
+
+    <section id="en-11">
+      <h2 class="sec"><span class="n">11</span>Minors</h2>
+      <p>The Service is not intended for anyone below the legal drinking age in their country or region. If that applies to you, please do not use the Service.</p>
+    </section>
+
+    <section id="en-12">
+      <h2 class="sec"><span class="n">12</span>Changes</h2>
+      <p>We may update this Policy as needed. For material changes we will provide notice within the Service or on this page. Continued use after a change constitutes acceptance of the updated Policy.</p>
+    </section>
+
+    <section id="en-13">
+      <h2 class="sec"><span class="n">13</span>Contact</h2>
+      <p>For questions about this Policy, please contact:</p>
+      <div class="contactcard">
+        Provider: Tenki<br />
+        Email: <a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ SPANISH ============ -->
+  <div class="doc" data-lang="es" hidden>
+    <div class="hero">
+      <span class="kicker">Política de Privacidad</span>
+      <h1>Política de Privacidad</h1>
+      <div class="meta">Última actualización: 13 de agosto de 2026　／　Proveedor: Tenki</div>
+      <p class="lead">Esta Política de Privacidad ("Política") describe cómo Tenki ("nosotros") trata la información de los usuarios en la aplicación "SAKE ELECTION" (nombre de la app: Sake Collection, el "Servicio"). El Servicio ofrece votaciones de popularidad de sake, funciones sociales, rangos, análisis de gustos y guías de compra. Solo pueden usarlo personas que tengan la edad legal para consumir alcohol en su país o región.</p>
+    </div>
+
+    <nav class="toc">
+      <h2>Contenido</h2>
+      <ol>
+        <li><a href="#es-1">Sobre el Servicio</a></li>
+        <li><a href="#es-2">Información que recopilamos</a></li>
+        <li><a href="#es-3">Cómo usamos la información</a></li>
+        <li><a href="#es-4">Alcohol y edad</a></li>
+        <li><a href="#es-5">Publicidad y seguimiento</a></li>
+        <li><a href="#es-6">Terceros y encargados</a></li>
+        <li><a href="#es-7">Conservación y eliminación</a></li>
+        <li><a href="#es-8">Transferencias internacionales</a></li>
+        <li><a href="#es-9">Sus derechos</a></li>
+        <li><a href="#es-10">Seguridad</a></li>
+        <li><a href="#es-11">Menores</a></li>
+        <li><a href="#es-12">Cambios</a></li>
+        <li><a href="#es-13">Contacto</a></li>
+      </ol>
+    </nav>
+
+    <section id="es-1">
+      <h2 class="sec"><span class="n">1</span>Sobre el Servicio</h2>
+      <p>El Servicio ofrece votaciones de popularidad ("elecciones") de sake, funciones sociales (publicaciones, reseñas, "me gusta", republicaciones, comentarios), un rango basado en la actividad, análisis de sus propios gustos y guías de compra ("drops") de sake destacado.</p>
+      <p>No vendemos alcohol ni procesamos pagos dentro de la app. Cualquier compra se realiza en el sitio web de un vendedor externo operado por un tercero distinto de nosotros. El Servicio proporciona información y un espacio de interacción.</p>
+    </section>
+
+    <section id="es-2">
+      <h2 class="sec"><span class="n">2</span>Información que recopilamos</h2>
+      <h3>Cuenta y autenticación</h3>
+      <p>Un identificador obtenido mediante el inicio de sesión de Apple o Google y su dirección de correo cuando se proporcione (incluido el reenvío privado de Apple). Nunca almacenamos su contraseña.</p>
+      <h3>Perfil</h3>
+      <ul>
+        <li>Apodo y avatar elegido</li>
+        <li><strong>Fecha de nacimiento</strong> (se usa solo para confirmar la edad legal para consumir alcohol; nunca se muestra a otros usuarios ni la devuelve nuestra API)</li>
+        <li>País/región, idioma de visualización, zona horaria</li>
+        <li>Registro del consentimiento a los Términos y a esta Política, y de la verificación de edad</li>
+      </ul>
+      <h3>Actividad</h3>
+      <p>Texto de publicaciones y reseñas, valoraciones (estrellas), "me gusta", republicaciones, comentarios, votos, intención de compra (SÍ/NO) y registros de denuncias/bloqueos.</p>
+      <h3>Eventos de análisis</h3>
+      <p>Registros de interacción dentro de la app (impresiones, votos, intención de compra, valoraciones, vistas de detalle, etc.). <strong>Los datos de análisis se registran con un identificador de análisis independiente y no se vinculan con su nombre, correo o ID de cuenta</strong> (no contienen información que le identifique). Pueden incluir una región aproximada (país/región).</p>
+      <h3>Dispositivo y registros</h3>
+      <p>Marcas de tiempo de acceso, información de errores e identificadores de solicitud, usados para una operación estable y la prevención de abusos.</p>
+      <div class="note">El Servicio no solicita acceso a su cámara, fototeca, ubicación ni contactos. La subida de fotos no se ofrece actualmente. No se realiza ningún procesamiento basado en IA.</div>
+    </section>
+
+    <section id="es-3">
+      <h2 class="sec"><span class="n">3</span>Cómo usamos la información</h2>
+      <ul>
+        <li>Proporcionar, mantener y mejorar el Servicio</li>
+        <li>Calcular y mostrar resultados de votos, rangos y análisis de gustos</li>
+        <li>Operar las funciones sociales y mantenerlas seguras (denuncias, bloqueos, moderación)</li>
+        <li>Prevenir el abuso y el voto fraudulento</li>
+        <li>Mostrar publicidad (solo no personalizada, como se describe abajo)</li>
+        <li>Responder a sus consultas</li>
+        <li>Cumplir obligaciones legales</li>
+      </ul>
+    </section>
+
+    <section id="es-4">
+      <h2 class="sec"><span class="n">4</span>Alcohol y edad</h2>
+      <p>Dado que el Servicio trata sobre bebidas alcohólicas (sake), solo pueden usarlo personas que tengan <strong>la edad legal para consumir alcohol</strong> en su país o región (Japón: 20; Estados Unidos: 21; en otros lugares: 18 por defecto).</p>
+      <p>La fecha de nacimiento se usa únicamente para verificar la edad. Si se determina que no alcanza la edad legal, no podrá usar ninguna parte del Servicio. Votar, la intención de compra y los drops requieren además la condición de adulto y un ajuste de región. Los enlaces de compra solo se muestran en los países/regiones admitidos.</p>
+    </section>
+
+    <section id="es-5">
+      <h2 class="sec"><span class="n">5</span>Publicidad y seguimiento</h2>
+      <p>El Servicio puede mostrar publicidad a través de Google AdMob.</p>
+      <div class="highlight">
+        <p><strong>No realizamos publicidad basada en seguimiento.</strong> El Servicio no muestra el aviso de App Tracking Transparency (ATT) de iOS y no le rastrea entre apps ni reutiliza identificadores publicitarios. Los anuncios son <strong>únicamente no personalizados</strong>.</p>
+      </div>
+      <p>Cuando lo exige la ley regional, el consentimiento relativo a la publicidad se obtiene mediante la User Messaging Platform (UMP) de Google. Los usuarios con <strong>rango 4 o superior</strong> no ven anuncios. No vendemos información personal a terceros con fines publicitarios.</p>
+    </section>
+
+    <section id="es-6">
+      <h2 class="sec"><span class="n">6</span>Terceros y encargados</h2>
+      <p>Salvo cuando lo exija la ley, no divulgamos información personal a terceros sin consentimiento. Utilizamos los siguientes encargados para prestar el Servicio.</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Encargado</th><th>Función</th></tr></thead>
+          <tbody>
+            <tr><td>Apple</td><td>Inicio de sesión (autenticación)</td></tr>
+            <tr><td>Google</td><td>Inicio de sesión, AdMob (publicidad), UMP (consentimiento), Google Cloud (infraestructura de servidor y base de datos)</td></tr>
+            <tr><td>Cloudflare</td><td>R2 (almacenamiento de imágenes y datos de análisis)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>La compra desde un drop se realiza en el sitio web de un vendedor externo operado por un tercero distinto de nosotros. La política de privacidad de ese sitio rige cómo trata la información.</p>
+    </section>
+
+    <section id="es-7">
+      <h2 class="sec"><span class="n">7</span>Conservación y eliminación</h2>
+      <p>Los eventos de análisis se conservan durante un periodo limitado necesario para mejorar el Servicio (del orden de unos 90 días), tras lo cual se eliminan o se convierten en datos agregados que no permiten identificar a una persona.</p>
+      <p>Cuando solicita la eliminación de la cuenta, la programamos y, por regla general, <strong>eliminamos de forma permanente a los 30 días</strong> (consulte la guía de "Eliminación de cuenta"). Incluso tras la eliminación, podemos conservar datos anonimizados/agregados (que no le identifican) y registros necesarios para el cumplimiento legal, la prevención de abusos y la resolución de disputas.</p>
+    </section>
+
+    <section id="es-8">
+      <h2 class="sec"><span class="n">8</span>Transferencias internacionales</h2>
+      <p>Nuestros servidores se ubican principalmente en Japón (región Asia Nordeste). No obstante, algunos de los encargados anteriores pueden procesar datos fuera de Japón. Aplicamos las salvaguardas adecuadas conforme a la ley aplicable.</p>
+    </section>
+
+    <section id="es-9">
+      <h2 class="sec"><span class="n">9</span>Sus derechos</h2>
+      <p>Puede solicitar el acceso, la rectificación, la suspensión del uso o la eliminación de la información personal que tenemos sobre usted. Puede eliminar su cuenta y los datos relacionados en cualquier momento desde <strong>Ajustes &gt; Eliminar cuenta</strong> en la app. Si tiene dudas, contáctenos abajo.</p>
+    </section>
+
+    <section id="es-10">
+      <h2 class="sec"><span class="n">10</span>Seguridad</h2>
+      <p>Aplicamos salvaguardas técnicas y organizativas, incluido el cifrado en tránsito, el almacenamiento con hash de los tokens de autenticación y controles de acceso. Las acciones sensibles como la eliminación de la cuenta requieren volver a autenticarse (iniciar sesión de nuevo con Apple/Google).</p>
+    </section>
+
+    <section id="es-11">
+      <h2 class="sec"><span class="n">11</span>Menores</h2>
+      <p>El Servicio no está destinado a personas por debajo de la edad legal para consumir alcohol en su país o región. Si es su caso, no utilice el Servicio.</p>
+    </section>
+
+    <section id="es-12">
+      <h2 class="sec"><span class="n">12</span>Cambios</h2>
+      <p>Podemos actualizar esta Política cuando sea necesario. Ante cambios importantes, avisaremos dentro del Servicio o en esta página. El uso continuado tras un cambio implica la aceptación de la Política actualizada.</p>
+    </section>
+
+    <section id="es-13">
+      <h2 class="sec"><span class="n">13</span>Contacto</h2>
+      <p>Para preguntas sobre esta Política, contacte con:</p>
+      <div class="contactcard">
+        Proveedor: Tenki<br />
+        Correo: <a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="links">
+    <a href="sake-election-privacy.html">プライバシーポリシー / Privacy</a>
+    <a href="sake-election-terms.html">利用規約 / Terms</a>
+    <a href="sake-election-delete-account.html">アカウント削除 / Delete account</a>
+  </div>
+  <div>© <span id="yr"></span> テンキ / Tenki ・ SAKE ELECTION (Sake Collection)</div>
+</footer>
+
+<script>
+  (function () {
+    var KEY = 'sake-election-legal-lang';
+    var docs = document.querySelectorAll('.doc');
+    var btns = document.querySelectorAll('.langtoggle button');
+    function apply(lang) {
+      var ok = false;
+      docs.forEach(function (d) {
+        var on = d.getAttribute('data-lang') === lang;
+        d.hidden = !on;
+        if (on) ok = true;
+      });
+      if (!ok) return apply('ja');
+      btns.forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-set') === lang ? 'true' : 'false');
+      });
+      document.documentElement.lang = lang;
+      try { localStorage.setItem(KEY, lang); } catch (e) {}
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { apply(b.getAttribute('data-set')); });
+    });
+    var saved = 'ja';
+    try { saved = localStorage.getItem(KEY) || 'ja'; } catch (e) {}
+    apply(saved);
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>

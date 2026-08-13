@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>利用規約｜SAKE ELECTION</title>
+<meta name="description" content="日本酒の人気投票アプリ「SAKE ELECTION」の利用規約。アカウント・対象年齢、投票・SNS・ドロップのルール、禁止事項、料金、免責、準拠法について定めます。" />
+<meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#11110F; --surface:#1C1B18; --elev:#24221E;
+    --text:#E8E0D0; --muted:#A69E90; --gold:#B08A4A; --vermilion:#A84432;
+    --border:#332F28; --maxw:840px;
+    --serif:'Shippori Mincho',serif;
+    --sans:'Zen Kaku Gothic New',system-ui,-apple-system,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:var(--gold);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header.site{position:sticky;top:0;z-index:20;background:rgba(17,17,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .bar{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:12px}
+  .seal{width:40px;height:40px;flex:none;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--gold);font-size:20px}
+  .brandwrap{display:flex;flex-direction:column;line-height:1.2;margin-right:auto}
+  .brand{font-family:var(--serif);font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--text)}
+  .brand em{color:var(--gold);font-style:normal}
+  .brandsub{font-size:11px;color:var(--muted);letter-spacing:.22em;text-transform:uppercase}
+  .langtoggle{display:flex;gap:4px;flex:none}
+  .langtoggle button{font-family:var(--sans);font-size:12px;color:var(--muted);background:transparent;border:1px solid var(--border);border-radius:999px;padding:5px 11px;cursor:pointer;transition:.15s}
+  .langtoggle button:hover{color:var(--text);border-color:var(--gold)}
+  .langtoggle button[aria-pressed="true"]{color:var(--bg);background:var(--gold);border-color:var(--gold);font-weight:700}
+  main{max-width:var(--maxw);margin:0 auto;padding:0 20px 80px}
+  .doc[hidden]{display:none}
+  .hero{padding:56px 0 24px;border-bottom:1px solid var(--border)}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:5px 14px;margin-bottom:22px}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(30px,6vw,44px);margin:0 0 14px;letter-spacing:.04em;line-height:1.25}
+  .meta{color:var(--muted);font-size:13.5px;letter-spacing:.04em}
+  .lead{margin:26px 0 0;color:var(--text);font-size:15.5px}
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin:34px 0}
+  .toc h2{font-family:var(--sans);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:700}
+  .toc ol{margin:0;padding-left:0;list-style:none;counter-reset:toc}
+  .toc li{counter-increment:toc;padding:5px 0;font-size:14.5px}
+  .toc li::before{content:counter(toc,decimal-leading-zero);color:var(--gold);font-family:var(--serif);margin-right:12px;font-size:13px}
+  @media(min-width:640px){.toc ol{columns:2;column-gap:36px}}
+  section{padding:34px 0;border-top:1px solid var(--border)}
+  section:first-of-type{border-top:none}
+  h2.sec{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 16px;display:flex;align-items:baseline;gap:14px;letter-spacing:.03em}
+  h2.sec .n{flex:none;font-size:14px;color:var(--gold);border:1px solid var(--gold);border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-family:var(--serif)}
+  h3{font-family:var(--sans);font-size:16px;color:var(--gold);margin:24px 0 8px;font-weight:700}
+  p{margin:12px 0}
+  ul{margin:12px 0;padding-left:22px}
+  li{margin:7px 0}
+  strong{color:#F3EBDC;font-weight:700}
+  .note{background:var(--elev);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--muted)}
+  .highlight{background:rgba(168,68,50,.12);border:1px solid var(--vermilion);border-radius:10px;padding:16px 18px;margin:18px 0}
+  .highlight strong{color:#E9B4AA}
+  footer{max-width:var(--maxw);margin:0 auto;padding:32px 20px 60px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer .links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:14px}
+  .contactcard{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin:8px 0}
+  .contactcard a{font-weight:700}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <div class="seal">酒</div>
+    <div class="brandwrap">
+      <span class="brand">SAKE <em>ELECTION</em></span>
+      <span class="brandsub">Sake Collection</span>
+    </div>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-set="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+      <button type="button" data-set="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ JAPANESE ============ -->
+  <div class="doc" data-lang="ja">
+    <div class="hero">
+      <span class="kicker">利用規約</span>
+      <h1>利用規約</h1>
+      <div class="meta">最終更新日：2026年8月13日　／　事業者：テンキ（Tenki）</div>
+      <p class="lead">本利用規約（以下「本規約」）は、テンキ（以下「当社」）が提供するアプリ「SAKE ELECTION」（アプリ名：Sake Collection、以下「本サービス」）の利用条件を定めるものです。本サービスを利用することで、利用者は本規約に同意したものとみなされます。</p>
+    </div>
+
+    <nav class="toc">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="#ja-1">総則</a></li>
+        <li><a href="#ja-2">定義</a></li>
+        <li><a href="#ja-3">アカウント・対象年齢</a></li>
+        <li><a href="#ja-4">本サービスの位置づけ</a></li>
+        <li><a href="#ja-5">エレクション（投票）</a></li>
+        <li><a href="#ja-6">SNS・ユーザーコンテンツ</a></li>
+        <li><a href="#ja-7">ドロップと購入意思</a></li>
+        <li><a href="#ja-8">禁止事項</a></li>
+        <li><a href="#ja-9">通報・ブロック・利用停止</a></li>
+        <li><a href="#ja-10">広告</a></li>
+        <li><a href="#ja-11">料金</a></li>
+        <li><a href="#ja-12">知的財産権</a></li>
+        <li><a href="#ja-13">サービスの変更・終了</a></li>
+        <li><a href="#ja-14">免責・責任の制限</a></li>
+        <li><a href="#ja-15">本規約の変更</a></li>
+        <li><a href="#ja-16">準拠法・裁判管轄</a></li>
+        <li><a href="#ja-17">お問い合わせ</a></li>
+      </ol>
+    </nav>
+
+    <section id="ja-1">
+      <h2 class="sec"><span class="n">1</span>総則</h2>
+      <p>本規約は、本サービスの提供条件および当社と利用者との間の権利義務関係を定めるものです。利用者は、本規約および当社が別途定めるプライバシーポリシーに従って本サービスを利用するものとします。</p>
+    </section>
+
+    <section id="ja-2">
+      <h2 class="sec"><span class="n">2</span>定義</h2>
+      <ul>
+        <li><strong>本サービス</strong>：日本酒の人気投票（エレクション）、SNS、段位、分析、購入ガイド（ドロップ）を提供するアプリおよび関連サービス。</li>
+        <li><strong>利用者</strong>：本規約に同意し本サービスを利用する個人。</li>
+        <li><strong>投稿</strong>：利用者が本サービスに送信する投稿・レビュー・コメント・評価等の情報。</li>
+        <li><strong>エレクション</strong>：日本酒の銘柄を対象とする人気投票。</li>
+        <li><strong>ドロップ</strong>：受賞銘柄などの購入ガイドを提示する機能。</li>
+        <li><strong>購入意思</strong>：ドロップ対象商品への購入意向（YES／NO）の意思表示。</li>
+      </ul>
+    </section>
+
+    <section id="ja-3">
+      <h2 class="sec"><span class="n">3</span>アカウント・対象年齢</h2>
+      <p>本サービスの利用には、Apple または Google のサインインによるアカウント登録が必要です。利用者は正確な情報を登録し、なりすましや不正なアカウント作成を行ってはなりません。</p>
+      <div class="highlight">
+        <p>本サービスは酒類（日本酒）を対象とするため、お住まいの国・地域の<strong>法定飲酒年齢以上</strong>の方のみ利用できます（日本：20歳、米国：21歳、その他：既定18歳）。年齢確認のため生年月日の登録が必要です。</p>
+      </div>
+    </section>
+
+    <section id="ja-4">
+      <h2 class="sec"><span class="n">4</span>本サービスの位置づけ</h2>
+      <p>本サービスは、日本酒に関する情報提供、投票および利用者間の交流の場を提供するものです。</p>
+      <div class="highlight">
+        <p><strong>当社は酒類の販売者ではなく、決済も行いません。</strong>ドロップに表示される商品の購入は、当社とは別の外部の販売事業者のサイトで完結します。商品の在庫・価格・品質・表示、注文・発送・返品・返金、および購入時の年齢確認その他の対応は、当該販売事業者の責任において行われ、当該事業者の規約が適用されます。</p>
+      </div>
+    </section>
+
+    <section id="ja-5">
+      <h2 class="sec"><span class="n">5</span>エレクション（投票）</h2>
+      <p>投票は本サービスの定めるルールに従って行われます。利用者は、1つのエレクションにつき定められた範囲でのみ投票でき、投票後の変更・取消はできない場合があります。複数アカウントの利用や自動化ツール等による不正投票を禁止します。投票結果は所定の集計・公開のタイミングに従って表示されます。</p>
+    </section>
+
+    <section id="ja-6">
+      <h2 class="sec"><span class="n">6</span>SNS・ユーザーコンテンツ</h2>
+      <p>利用者は、投稿・レビュー・コメント等を通じて本サービスに情報を送信できます（本サービスに他者を「フォロー」する機能はありません）。</p>
+      <p>投稿に関する著作権その他の権利は利用者に帰属します。ただし利用者は、本サービスの提供・運営・改善・宣伝に必要な範囲で、投稿を無償で利用（複製・表示・翻訳・配信等）する権利を当社に許諾するものとします。</p>
+      <p>利用者は、自ら投稿する内容について責任を負い、第三者の権利を侵害せず、法令および本規約に違反しないことを保証するものとします。当社は、本規約に違反する投稿を予告なく非表示・削除することができます。</p>
+      <p>段位（Rank）は、本サービス上の活動に応じて自動的に付与されます。段位は購入できず、また当社の裁量により調整されることがあります。</p>
+    </section>
+
+    <section id="ja-7">
+      <h2 class="sec"><span class="n">7</span>ドロップと購入意思</h2>
+      <p>ドロップでは、受賞銘柄などの購入ガイドを表示します。利用者は購入意思（YES／NO）を表明できますが、これは意向の表明であり、売買契約の成立を意味しません。実際の購入は前記のとおり外部の販売事業者のサイトで行われます。購入意思の表明可否や早期アクセス等の条件は、本サービスの定めに従います。</p>
+    </section>
+
+    <section id="ja-8">
+      <h2 class="sec"><span class="n">8</span>禁止事項</h2>
+      <ul>
+        <li>法令または公序良俗に反する行為</li>
+        <li>不正投票、複数アカウントの不正利用、自動化ツールによる操作</li>
+        <li>他者へのなりすまし、他者の権利・プライバシーの侵害</li>
+        <li>誹謗中傷、ハラスメント、差別的・暴力的・わいせつな内容の投稿</li>
+        <li>虚偽情報・スパム・広告・勧誘の投稿</li>
+        <li>未成年者の飲酒を助長する行為</li>
+        <li>本サービスの運営を妨害し、または不正にアクセスする行為</li>
+        <li>その他、当社が不適切と合理的に判断する行為</li>
+      </ul>
+    </section>
+
+    <section id="ja-9">
+      <h2 class="sec"><span class="n">9</span>通報・ブロック・利用停止</h2>
+      <p>利用者は、不適切な投稿や利用者を通報し、また特定の利用者をブロックすることができます。当社は、本規約への違反があると判断した場合、投稿の非表示・削除、機能の制限、アカウントの一時停止または削除等の措置を講じることができます。</p>
+    </section>
+
+    <section id="ja-10">
+      <h2 class="sec"><span class="n">10</span>広告</h2>
+      <p>本サービスは広告を表示することがあります（非パーソナライズ広告のみ・追跡は行いません。詳細はプライバシーポリシーをご覧ください）。段位が「四段」以上の利用者には広告を表示しません。</p>
+    </section>
+
+    <section id="ja-11">
+      <h2 class="sec"><span class="n">11</span>料金</h2>
+      <p>本サービスは無料で提供されます。現在、アプリ内課金（有料機能・サブスクリプション等）はありません。通信料等は利用者の負担となります。</p>
+    </section>
+
+    <section id="ja-12">
+      <h2 class="sec"><span class="n">12</span>知的財産権</h2>
+      <p>本サービスおよびこれに関連するソフトウェア・デザイン・商標等に関する知的財産権は、当社または正当な権利者に帰属します。利用者は、これらを権利者の許諾なく利用してはなりません。</p>
+    </section>
+
+    <section id="ja-13">
+      <h2 class="sec"><span class="n">13</span>サービスの変更・中断・終了</h2>
+      <p>当社は、利用者への事前の通知なく、本サービスの内容を変更し、または提供を中断・終了することができます。これにより利用者に生じた損害について、当社は本規約に定める範囲で責任を負います。</p>
+    </section>
+
+    <section id="ja-14">
+      <h2 class="sec"><span class="n">14</span>免責・責任の制限</h2>
+      <p>本サービスは現状有姿で提供され、当社は、本サービスの完全性・正確性・特定目的への適合性等について保証しません。当社は、外部の販売事業者のサイトでの取引、外部サービスの不具合、利用者の投稿、または本サービスの利用・利用不能により生じた損害について、当社の故意または重過失による場合を除き、責任を負いません。</p>
+    </section>
+
+    <section id="ja-15">
+      <h2 class="sec"><span class="n">15</span>本規約の変更</h2>
+      <p>当社は、必要に応じて本規約を変更することがあります。重要な変更を行う場合は、本サービスまたは本ページ上で告知します。変更後に本サービスを継続して利用した場合、変更後の本規約に同意したものとみなします。</p>
+    </section>
+
+    <section id="ja-16">
+      <h2 class="sec"><span class="n">16</span>準拠法・裁判管轄</h2>
+      <p>本規約は日本法に準拠します。本サービスに関して当社と利用者との間に生じた紛争については、当社の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
+    </section>
+
+    <section id="ja-17">
+      <h2 class="sec"><span class="n">17</span>お問い合わせ</h2>
+      <div class="contactcard">
+        事業者：テンキ（Tenki）<br />
+        メール：<a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div class="doc" data-lang="en" hidden>
+    <div class="hero">
+      <span class="kicker">Terms of Use</span>
+      <h1>Terms of Use</h1>
+      <div class="meta">Last updated: August 13, 2026　／　Provider: Tenki</div>
+      <p class="lead">These Terms of Use ("Terms") set out the conditions for using the app "SAKE ELECTION" (app name: Sake Collection, the "Service") provided by Tenki ("we", "us"). By using the Service, you are deemed to have agreed to these Terms.</p>
+    </div>
+
+    <nav class="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#en-1">General</a></li>
+        <li><a href="#en-2">Definitions</a></li>
+        <li><a href="#en-3">Account &amp; Age</a></li>
+        <li><a href="#en-4">Nature of the Service</a></li>
+        <li><a href="#en-5">Elections (Voting)</a></li>
+        <li><a href="#en-6">Social &amp; User Content</a></li>
+        <li><a href="#en-7">Drops &amp; Purchase Intent</a></li>
+        <li><a href="#en-8">Prohibited Conduct</a></li>
+        <li><a href="#en-9">Reports, Blocks &amp; Suspension</a></li>
+        <li><a href="#en-10">Advertising</a></li>
+        <li><a href="#en-11">Fees</a></li>
+        <li><a href="#en-12">Intellectual Property</a></li>
+        <li><a href="#en-13">Changes &amp; Termination</a></li>
+        <li><a href="#en-14">Disclaimers &amp; Liability</a></li>
+        <li><a href="#en-15">Changes to Terms</a></li>
+        <li><a href="#en-16">Governing Law</a></li>
+        <li><a href="#en-17">Contact</a></li>
+      </ol>
+    </nav>
+
+    <section id="en-1">
+      <h2 class="sec"><span class="n">1</span>General</h2>
+      <p>These Terms govern the conditions for providing the Service and the rights and obligations between us and you. You shall use the Service in accordance with these Terms and our separate Privacy Policy.</p>
+    </section>
+
+    <section id="en-2">
+      <h2 class="sec"><span class="n">2</span>Definitions</h2>
+      <ul>
+        <li><strong>Service</strong>: the app and related services providing sake popularity voting (elections), social features, ranks, analytics, and purchase guides (drops).</li>
+        <li><strong>User</strong>: an individual who agrees to these Terms and uses the Service.</li>
+        <li><strong>Content</strong>: posts, reviews, comments, ratings, and other information you submit to the Service.</li>
+        <li><strong>Election</strong>: popularity voting for sake products.</li>
+        <li><strong>Drop</strong>: a feature presenting purchase guides for featured sake.</li>
+        <li><strong>Purchase intent</strong>: an expression of intent to buy (YES/NO) for a drop item.</li>
+      </ul>
+    </section>
+
+    <section id="en-3">
+      <h2 class="sec"><span class="n">3</span>Account &amp; Age</h2>
+      <p>Using the Service requires an account via Apple or Google sign-in. You must register accurate information and must not impersonate others or create fraudulent accounts.</p>
+      <div class="highlight">
+        <p>Because the Service concerns alcoholic beverages (sake), it may only be used by people <strong>at or above the legal drinking age</strong> in their country or region (Japan: 20; United States: 21; elsewhere: 18 by default). A date of birth is required for age verification.</p>
+      </div>
+    </section>
+
+    <section id="en-4">
+      <h2 class="sec"><span class="n">4</span>Nature of the Service</h2>
+      <p>The Service provides information about sake, voting, and a place for users to interact.</p>
+      <div class="highlight">
+        <p><strong>We are not a seller of alcohol and do not process payments.</strong> Any purchase of an item shown in a drop is completed on an external seller's website operated by a party other than us. Stock, price, quality, and listing of goods; ordering, shipping, returns, and refunds; and age verification and other handling at the point of purchase are the responsibility of that seller and are governed by that seller's terms.</p>
+      </div>
+    </section>
+
+    <section id="en-5">
+      <h2 class="sec"><span class="n">5</span>Elections (Voting)</h2>
+      <p>Voting is conducted according to the rules set by the Service. You may vote only within the defined scope for each election, and a vote may not be changeable or revocable after it is cast. Fraudulent voting using multiple accounts or automated tools is prohibited. Results are shown according to the prescribed tallying and disclosure timing.</p>
+    </section>
+
+    <section id="en-6">
+      <h2 class="sec"><span class="n">6</span>Social &amp; User Content</h2>
+      <p>You may submit information to the Service through posts, reviews, comments, and the like (the Service does not include a feature to "follow" other users).</p>
+      <p>Copyright and other rights in your content remain yours. However, you grant us a royalty-free license to use your content (reproduce, display, translate, distribute, etc.) to the extent necessary to provide, operate, improve, and promote the Service.</p>
+      <p>You are responsible for the content you submit and warrant that it does not infringe third-party rights and does not violate laws or these Terms. We may hide or remove content that violates these Terms without prior notice.</p>
+      <p>Ranks are granted automatically based on activity within the Service. Ranks cannot be purchased and may be adjusted at our discretion.</p>
+    </section>
+
+    <section id="en-7">
+      <h2 class="sec"><span class="n">7</span>Drops &amp; Purchase Intent</h2>
+      <p>Drops display purchase guides for featured sake. You may express purchase intent (YES/NO), but this is only an expression of intent and does not form a contract of sale. Actual purchases occur on an external seller's website as described above. Whether purchase intent can be expressed and conditions such as early access follow the rules of the Service.</p>
+    </section>
+
+    <section id="en-8">
+      <h2 class="sec"><span class="n">8</span>Prohibited Conduct</h2>
+      <ul>
+        <li>Acts that violate laws or public order and morals</li>
+        <li>Fraudulent voting, misuse of multiple accounts, or use of automated tools</li>
+        <li>Impersonation, or infringement of others' rights or privacy</li>
+        <li>Defamation, harassment, or discriminatory, violent, or obscene content</li>
+        <li>False information, spam, advertising, or solicitation</li>
+        <li>Encouraging underage drinking</li>
+        <li>Interfering with the operation of the Service or unauthorized access</li>
+        <li>Any other conduct we reasonably deem inappropriate</li>
+      </ul>
+    </section>
+
+    <section id="en-9">
+      <h2 class="sec"><span class="n">9</span>Reports, Blocks &amp; Suspension</h2>
+      <p>You may report inappropriate content or users and block specific users. Where we determine a violation of these Terms, we may hide or remove content, restrict features, and suspend or delete accounts.</p>
+    </section>
+
+    <section id="en-10">
+      <h2 class="sec"><span class="n">10</span>Advertising</h2>
+      <p>The Service may show advertising (non-personalized only; no tracking — see the Privacy Policy). Users at rank 4 or above are not shown ads.</p>
+    </section>
+
+    <section id="en-11">
+      <h2 class="sec"><span class="n">11</span>Fees</h2>
+      <p>The Service is provided free of charge. There are currently no in-app purchases (paid features, subscriptions, etc.). Communication charges are borne by you.</p>
+    </section>
+
+    <section id="en-12">
+      <h2 class="sec"><span class="n">12</span>Intellectual Property</h2>
+      <p>Intellectual property rights in the Service and its related software, design, and trademarks belong to us or the rightful holders. You may not use them without the rights holder's permission.</p>
+    </section>
+
+    <section id="en-13">
+      <h2 class="sec"><span class="n">13</span>Changes &amp; Termination</h2>
+      <p>We may change the content of the Service or suspend or terminate its provision without prior notice to you. We are liable for resulting damage only to the extent set out in these Terms.</p>
+    </section>
+
+    <section id="en-14">
+      <h2 class="sec"><span class="n">14</span>Disclaimers &amp; Liability</h2>
+      <p>The Service is provided "as is" and we do not warrant its completeness, accuracy, or fitness for a particular purpose. Except in cases of our intent or gross negligence, we are not liable for damage arising from transactions on external sellers' sites, malfunction of external services, user content, or the use or inability to use the Service.</p>
+    </section>
+
+    <section id="en-15">
+      <h2 class="sec"><span class="n">15</span>Changes to Terms</h2>
+      <p>We may update these Terms as needed. For material changes we will provide notice within the Service or on this page. Continued use after a change constitutes acceptance of the updated Terms.</p>
+    </section>
+
+    <section id="en-16">
+      <h2 class="sec"><span class="n">16</span>Governing Law</h2>
+      <p>These Terms are governed by the laws of Japan. Any dispute between us and you regarding the Service shall be subject to the exclusive jurisdiction of the court having jurisdiction over our location as the court of first instance.</p>
+    </section>
+
+    <section id="en-17">
+      <h2 class="sec"><span class="n">17</span>Contact</h2>
+      <div class="contactcard">
+        Provider: Tenki<br />
+        Email: <a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ SPANISH ============ -->
+  <div class="doc" data-lang="es" hidden>
+    <div class="hero">
+      <span class="kicker">Términos de Uso</span>
+      <h1>Términos de Uso</h1>
+      <div class="meta">Última actualización: 13 de agosto de 2026　／　Proveedor: Tenki</div>
+      <p class="lead">Estos Términos de Uso ("Términos") establecen las condiciones para usar la aplicación "SAKE ELECTION" (nombre de la app: Sake Collection, el "Servicio") proporcionada por Tenki ("nosotros"). Al usar el Servicio, se considera que acepta estos Términos.</p>
+    </div>
+
+    <nav class="toc">
+      <h2>Contenido</h2>
+      <ol>
+        <li><a href="#es-1">General</a></li>
+        <li><a href="#es-2">Definiciones</a></li>
+        <li><a href="#es-3">Cuenta y edad</a></li>
+        <li><a href="#es-4">Naturaleza del Servicio</a></li>
+        <li><a href="#es-5">Elecciones (votación)</a></li>
+        <li><a href="#es-6">Social y contenido del usuario</a></li>
+        <li><a href="#es-7">Drops e intención de compra</a></li>
+        <li><a href="#es-8">Conductas prohibidas</a></li>
+        <li><a href="#es-9">Denuncias, bloqueos y suspensión</a></li>
+        <li><a href="#es-10">Publicidad</a></li>
+        <li><a href="#es-11">Tarifas</a></li>
+        <li><a href="#es-12">Propiedad intelectual</a></li>
+        <li><a href="#es-13">Cambios y terminación</a></li>
+        <li><a href="#es-14">Exención y responsabilidad</a></li>
+        <li><a href="#es-15">Cambios en los Términos</a></li>
+        <li><a href="#es-16">Ley aplicable</a></li>
+        <li><a href="#es-17">Contacto</a></li>
+      </ol>
+    </nav>
+
+    <section id="es-1">
+      <h2 class="sec"><span class="n">1</span>General</h2>
+      <p>Estos Términos rigen las condiciones de prestación del Servicio y los derechos y obligaciones entre nosotros y usted. Usará el Servicio conforme a estos Términos y a nuestra Política de Privacidad independiente.</p>
+    </section>
+
+    <section id="es-2">
+      <h2 class="sec"><span class="n">2</span>Definiciones</h2>
+      <ul>
+        <li><strong>Servicio</strong>: la app y los servicios relacionados que ofrecen votaciones de popularidad de sake (elecciones), funciones sociales, rangos, análisis y guías de compra (drops).</li>
+        <li><strong>Usuario</strong>: la persona que acepta estos Términos y usa el Servicio.</li>
+        <li><strong>Contenido</strong>: publicaciones, reseñas, comentarios, valoraciones y demás información que envía al Servicio.</li>
+        <li><strong>Elección</strong>: votación de popularidad de productos de sake.</li>
+        <li><strong>Drop</strong>: función que presenta guías de compra de sake destacado.</li>
+        <li><strong>Intención de compra</strong>: manifestación de la intención de comprar (SÍ/NO) un artículo de un drop.</li>
+      </ul>
+    </section>
+
+    <section id="es-3">
+      <h2 class="sec"><span class="n">3</span>Cuenta y edad</h2>
+      <p>Para usar el Servicio se necesita una cuenta mediante el inicio de sesión de Apple o Google. Debe registrar información veraz y no suplantar a otros ni crear cuentas fraudulentas.</p>
+      <div class="highlight">
+        <p>Dado que el Servicio trata sobre bebidas alcohólicas (sake), solo pueden usarlo personas con <strong>la edad legal para consumir alcohol</strong> en su país o región (Japón: 20; Estados Unidos: 21; en otros lugares: 18 por defecto). Se requiere la fecha de nacimiento para verificar la edad.</p>
+      </div>
+    </section>
+
+    <section id="es-4">
+      <h2 class="sec"><span class="n">4</span>Naturaleza del Servicio</h2>
+      <p>El Servicio proporciona información sobre sake, votaciones y un espacio de interacción entre usuarios.</p>
+      <div class="highlight">
+        <p><strong>No somos vendedores de alcohol ni procesamos pagos.</strong> Cualquier compra de un artículo mostrado en un drop se completa en el sitio web de un vendedor externo operado por un tercero distinto de nosotros. El stock, el precio, la calidad y la descripción de los productos; el pedido, el envío, las devoluciones y los reembolsos; y la verificación de edad y demás gestiones en el momento de la compra son responsabilidad de dicho vendedor y se rigen por sus términos.</p>
+      </div>
+    </section>
+
+    <section id="es-5">
+      <h2 class="sec"><span class="n">5</span>Elecciones (votación)</h2>
+      <p>La votación se realiza según las reglas fijadas por el Servicio. Solo puede votar dentro del alcance definido para cada elección, y un voto puede no ser modificable ni revocable una vez emitido. Se prohíbe el voto fraudulento mediante varias cuentas o herramientas automatizadas. Los resultados se muestran según el recuento y los tiempos de divulgación establecidos.</p>
+    </section>
+
+    <section id="es-6">
+      <h2 class="sec"><span class="n">6</span>Social y contenido del usuario</h2>
+      <p>Puede enviar información al Servicio mediante publicaciones, reseñas, comentarios y similares (el Servicio no incluye una función para "seguir" a otros usuarios).</p>
+      <p>Los derechos de autor y otros derechos sobre su contenido siguen siendo suyos. No obstante, nos concede una licencia gratuita para usar su contenido (reproducir, mostrar, traducir, distribuir, etc.) en la medida necesaria para prestar, operar, mejorar y promocionar el Servicio.</p>
+      <p>Usted es responsable del contenido que envía y garantiza que no infringe derechos de terceros ni vulnera las leyes o estos Términos. Podemos ocultar o eliminar sin previo aviso el contenido que infrinja estos Términos.</p>
+      <p>Los rangos se otorgan automáticamente según la actividad en el Servicio. Los rangos no pueden comprarse y pueden ajustarse a nuestra discreción.</p>
+    </section>
+
+    <section id="es-7">
+      <h2 class="sec"><span class="n">7</span>Drops e intención de compra</h2>
+      <p>Los drops muestran guías de compra de sake destacado. Puede manifestar su intención de compra (SÍ/NO), pero es solo una manifestación de intención y no constituye un contrato de compraventa. Las compras reales se realizan en el sitio de un vendedor externo, como se describe arriba. La posibilidad de manifestar la intención de compra y condiciones como el acceso anticipado siguen las reglas del Servicio.</p>
+    </section>
+
+    <section id="es-8">
+      <h2 class="sec"><span class="n">8</span>Conductas prohibidas</h2>
+      <ul>
+        <li>Actos que infrinjan la ley o el orden público y las buenas costumbres</li>
+        <li>Voto fraudulento, uso indebido de varias cuentas o uso de herramientas automatizadas</li>
+        <li>Suplantación o vulneración de los derechos o la privacidad de otros</li>
+        <li>Difamación, acoso o contenido discriminatorio, violento u obsceno</li>
+        <li>Información falsa, spam, publicidad o captación</li>
+        <li>Fomentar el consumo de alcohol por menores</li>
+        <li>Interferir en la operación del Servicio o el acceso no autorizado</li>
+        <li>Cualquier otra conducta que razonablemente consideremos inadecuada</li>
+      </ul>
+    </section>
+
+    <section id="es-9">
+      <h2 class="sec"><span class="n">9</span>Denuncias, bloqueos y suspensión</h2>
+      <p>Puede denunciar contenido o usuarios inadecuados y bloquear a usuarios concretos. Cuando determinemos una infracción de estos Términos, podemos ocultar o eliminar contenido, restringir funciones y suspender o eliminar cuentas.</p>
+    </section>
+
+    <section id="es-10">
+      <h2 class="sec"><span class="n">10</span>Publicidad</h2>
+      <p>El Servicio puede mostrar publicidad (solo no personalizada; sin seguimiento — consulte la Política de Privacidad). Los usuarios con rango 4 o superior no ven anuncios.</p>
+    </section>
+
+    <section id="es-11">
+      <h2 class="sec"><span class="n">11</span>Tarifas</h2>
+      <p>El Servicio se ofrece de forma gratuita. Actualmente no hay compras dentro de la app (funciones de pago, suscripciones, etc.). Los gastos de comunicación corren por su cuenta.</p>
+    </section>
+
+    <section id="es-12">
+      <h2 class="sec"><span class="n">12</span>Propiedad intelectual</h2>
+      <p>Los derechos de propiedad intelectual sobre el Servicio y su software, diseño y marcas relacionados pertenecen a nosotros o a sus legítimos titulares. No puede usarlos sin la autorización del titular.</p>
+    </section>
+
+    <section id="es-13">
+      <h2 class="sec"><span class="n">13</span>Cambios y terminación</h2>
+      <p>Podemos cambiar el contenido del Servicio o suspender o terminar su prestación sin previo aviso. Solo respondemos por los daños resultantes en la medida establecida en estos Términos.</p>
+    </section>
+
+    <section id="es-14">
+      <h2 class="sec"><span class="n">14</span>Exención y responsabilidad</h2>
+      <p>El Servicio se presta "tal cual" y no garantizamos su integridad, exactitud o idoneidad para un fin concreto. Salvo dolo o negligencia grave por nuestra parte, no respondemos por los daños derivados de transacciones en sitios de vendedores externos, del mal funcionamiento de servicios externos, del contenido de los usuarios o del uso o la imposibilidad de uso del Servicio.</p>
+    </section>
+
+    <section id="es-15">
+      <h2 class="sec"><span class="n">15</span>Cambios en los Términos</h2>
+      <p>Podemos actualizar estos Términos cuando sea necesario. Ante cambios importantes, avisaremos dentro del Servicio o en esta página. El uso continuado tras un cambio implica la aceptación de los Términos actualizados.</p>
+    </section>
+
+    <section id="es-16">
+      <h2 class="sec"><span class="n">16</span>Ley aplicable</h2>
+      <p>Estos Términos se rigen por las leyes de Japón. Cualquier disputa entre nosotros y usted relativa al Servicio se someterá a la jurisdicción exclusiva del tribunal competente del lugar de nuestro domicilio como tribunal de primera instancia.</p>
+    </section>
+
+    <section id="es-17">
+      <h2 class="sec"><span class="n">17</span>Contacto</h2>
+      <div class="contactcard">
+        Proveedor: Tenki<br />
+        Correo: <a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="links">
+    <a href="sake-election-privacy.html">プライバシーポリシー / Privacy</a>
+    <a href="sake-election-terms.html">利用規約 / Terms</a>
+    <a href="sake-election-delete-account.html">アカウント削除 / Delete account</a>
+  </div>
+  <div>© <span id="yr"></span> テンキ / Tenki ・ SAKE ELECTION (Sake Collection)</div>
+</footer>
+
+<script>
+  (function () {
+    var KEY = 'sake-election-legal-lang';
+    var docs = document.querySelectorAll('.doc');
+    var btns = document.querySelectorAll('.langtoggle button');
+    function apply(lang) {
+      var ok = false;
+      docs.forEach(function (d) {
+        var on = d.getAttribute('data-lang') === lang;
+        d.hidden = !on;
+        if (on) ok = true;
+      });
+      if (!ok) return apply('ja');
+      btns.forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-set') === lang ? 'true' : 'false');
+      });
+      document.documentElement.lang = lang;
+      try { localStorage.setItem(KEY, lang); } catch (e) {}
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { apply(b.getAttribute('data-set')); });
+    });
+    var saved = 'ja';
+    try { saved = localStorage.getItem(KEY) || 'ja'; } catch (e) {}
+    apply(saved);
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>

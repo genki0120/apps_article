@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>アカウント削除のご案内｜SAKE ELECTION</title>
+<meta name="description" content="日本酒の人気投票アプリ「SAKE ELECTION」のアカウントとデータを削除する方法、削除の対象、30日間の猶予、保持されるデータについて説明します。" />
+<meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#11110F; --surface:#1C1B18; --elev:#24221E;
+    --text:#E8E0D0; --muted:#A69E90; --gold:#B08A4A; --vermilion:#A84432;
+    --border:#332F28; --maxw:840px;
+    --serif:'Shippori Mincho',serif;
+    --sans:'Zen Kaku Gothic New',system-ui,-apple-system,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:var(--gold);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header.site{position:sticky;top:0;z-index:20;background:rgba(17,17,15,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .bar{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:12px}
+  .seal{width:40px;height:40px;flex:none;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--gold);font-size:20px}
+  .brandwrap{display:flex;flex-direction:column;line-height:1.2;margin-right:auto}
+  .brand{font-family:var(--serif);font-weight:700;font-size:18px;letter-spacing:.14em;color:var(--text)}
+  .brand em{color:var(--gold);font-style:normal}
+  .brandsub{font-size:11px;color:var(--muted);letter-spacing:.22em;text-transform:uppercase}
+  .langtoggle{display:flex;gap:4px;flex:none}
+  .langtoggle button{font-family:var(--sans);font-size:12px;color:var(--muted);background:transparent;border:1px solid var(--border);border-radius:999px;padding:5px 11px;cursor:pointer;transition:.15s}
+  .langtoggle button:hover{color:var(--text);border-color:var(--gold)}
+  .langtoggle button[aria-pressed="true"]{color:var(--bg);background:var(--gold);border-color:var(--gold);font-weight:700}
+  main{max-width:var(--maxw);margin:0 auto;padding:0 20px 80px}
+  .doc[hidden]{display:none}
+  .hero{padding:56px 0 24px;border-bottom:1px solid var(--border)}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:5px 14px;margin-bottom:22px}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,5.5vw,42px);margin:0 0 14px;letter-spacing:.04em;line-height:1.25}
+  .meta{color:var(--muted);font-size:13.5px;letter-spacing:.04em}
+  .lead{margin:26px 0 0;color:var(--text);font-size:15.5px}
+  section{padding:34px 0;border-top:1px solid var(--border)}
+  h2.sec{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 16px;display:flex;align-items:baseline;gap:14px;letter-spacing:.03em}
+  h2.sec .n{flex:none;font-size:14px;color:var(--gold);border:1px solid var(--gold);border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-family:var(--serif)}
+  p{margin:12px 0}
+  ul{margin:12px 0;padding-left:22px}
+  li{margin:7px 0}
+  strong{color:#F3EBDC;font-weight:700}
+  .steps{list-style:none;counter-reset:st;margin:20px 0;padding:0}
+  .steps li{counter-increment:st;position:relative;padding:16px 18px 16px 64px;background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:12px 0}
+  .steps li::before{content:counter(st);position:absolute;left:16px;top:14px;width:34px;height:34px;border:1.5px solid var(--gold);color:var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700}
+  .steps b{color:#F3EBDC}
+  .note{background:var(--elev);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0;font-size:14.5px;color:var(--muted)}
+  .highlight{background:rgba(168,68,50,.12);border:1px solid var(--vermilion);border-radius:10px;padding:16px 18px;margin:18px 0}
+  .highlight strong{color:#E9B4AA}
+  .cols{display:grid;gap:16px;margin:18px 0}
+  @media(min-width:640px){.cols{grid-template-columns:1fr 1fr}}
+  .cols .box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+  .cols h3{margin:0 0 8px;font-size:15px;color:var(--gold);font-weight:700}
+  .cols ul{padding-left:20px;margin:6px 0}
+  footer{max-width:var(--maxw);margin:0 auto;padding:32px 20px 60px;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+  footer .links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:14px}
+  .contactcard{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin:8px 0}
+  .contactcard a{font-weight:700}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <div class="seal">酒</div>
+    <div class="brandwrap">
+      <span class="brand">SAKE <em>ELECTION</em></span>
+      <span class="brandsub">Sake Collection</span>
+    </div>
+    <div class="langtoggle" role="group" aria-label="Language">
+      <button type="button" data-set="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+      <button type="button" data-set="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ JAPANESE ============ -->
+  <div class="doc" data-lang="ja">
+    <div class="hero">
+      <span class="kicker">アカウント削除のご案内</span>
+      <h1>アカウントとデータの削除</h1>
+      <div class="meta">最終更新日：2026年8月13日　／　事業者：テンキ（Tenki）</div>
+      <p class="lead">「SAKE ELECTION」（アプリ名：Sake Collection）では、アプリ内からいつでもご自身のアカウントと関連データを削除できます。以下に手順、削除の対象、タイムライン、保持されるデータをご案内します。</p>
+    </div>
+
+    <section>
+      <h2 class="sec"><span class="n">1</span>アプリ内での削除手順</h2>
+      <ol class="steps">
+        <li><b>「SAKE ELECTION」を開く</b><br />ログインした状態で開いてください。</li>
+        <li><b>「設定」タブを開く</b><br />画面下部のタブから「設定」を選びます。</li>
+        <li><b>「アカウントを削除」を選択</b></li>
+        <li><b>再認証する</b><br />本人確認のため、Apple または Google で再度サインインを求められます。</li>
+        <li><b>削除を確定する</b><br />確認のうえ、削除を実行します。</li>
+      </ol>
+      <div class="note">セキュリティのため、削除には再認証（Apple／Google での再サインイン）が必要です。</div>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">2</span>タイムライン（30日間の猶予）</h2>
+      <p>削除を実行すると、直ちにログイン中のセッションが無効になり、削除が予約されます。原則として<strong>30日後に本削除</strong>が行われます。誤操作を防ぐため、この猶予期間が設けられています。</p>
+      <div class="highlight">
+        <p><strong>本削除の完了後、データを復元することはできません。</strong></p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">3</span>削除の対象と保持されるデータ</h2>
+      <div class="cols">
+        <div class="box">
+          <h3>削除されるもの</h3>
+          <ul>
+            <li>プロフィール（ニックネーム・アバター・生年月日・地域等）</li>
+            <li>投稿・レビュー・コメント</li>
+            <li>いいね・リポスト・投票・購入意思</li>
+            <li>段位（Rank）に関する記録</li>
+            <li>ブロック・通報の記録</li>
+            <li>サインインの識別子・セッション等の認証情報</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>保持される場合があるもの</h3>
+          <ul>
+            <li>個人を特定できない、匿名化・集計済みの分析データ</li>
+            <li>法令の遵守・不正防止・紛争対応のために必要な記録</li>
+          </ul>
+        </div>
+      </div>
+      <p>詳細は<a href="sake-election-privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">4</span>アプリから操作できない場合</h2>
+      <p>アプリにログインできないなど、アプリ内から削除できない場合は、下記のメールアドレスまでご連絡ください。ご本人確認のうえ、削除のお手続きを行います。</p>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">5</span>お問い合わせ</h2>
+      <div class="contactcard">
+        事業者：テンキ（Tenki）<br />
+        メール：<a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div class="doc" data-lang="en" hidden>
+    <div class="hero">
+      <span class="kicker">Account Deletion</span>
+      <h1>Delete Your Account &amp; Data</h1>
+      <div class="meta">Last updated: August 13, 2026　／　Provider: Tenki</div>
+      <p class="lead">In "SAKE ELECTION" (app name: Sake Collection) you can delete your account and related data at any time from within the app. Below are the steps, what is deleted, the timeline, and what may be retained.</p>
+    </div>
+
+    <section>
+      <h2 class="sec"><span class="n">1</span>How to delete in the app</h2>
+      <ol class="steps">
+        <li><b>Open "SAKE ELECTION"</b><br />Open the app while signed in.</li>
+        <li><b>Open the "Settings" tab</b><br />Choose "Settings" from the bottom tab bar.</li>
+        <li><b>Select "Delete account"</b></li>
+        <li><b>Re-authenticate</b><br />For verification, you will be asked to sign in again with Apple or Google.</li>
+        <li><b>Confirm deletion</b><br />Review and confirm to proceed.</li>
+      </ol>
+      <div class="note">For security, deletion requires re-authentication (signing in again with Apple/Google).</div>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">2</span>Timeline (30-day grace period)</h2>
+      <p>When you confirm deletion, your active sessions are immediately invalidated and the deletion is scheduled. As a rule, <strong>permanent deletion occurs after 30 days</strong>. This grace period exists to guard against mistakes.</p>
+      <div class="highlight">
+        <p><strong>Once permanent deletion is complete, data cannot be restored.</strong></p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">3</span>What is deleted &amp; what may be retained</h2>
+      <div class="cols">
+        <div class="box">
+          <h3>Deleted</h3>
+          <ul>
+            <li>Profile (nickname, avatar, date of birth, region, etc.)</li>
+            <li>Posts, reviews, comments</li>
+            <li>Likes, reposts, votes, purchase intent</li>
+            <li>Rank records</li>
+            <li>Block and report records</li>
+            <li>Sign-in identifiers, sessions, and other authentication data</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>May be retained</h3>
+          <ul>
+            <li>Anonymized/aggregated analytics data that cannot identify you</li>
+            <li>Records required for legal compliance, abuse prevention, and dispute resolution</li>
+          </ul>
+        </div>
+      </div>
+      <p>For details, see the <a href="sake-election-privacy.html">Privacy Policy</a>.</p>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">4</span>If you cannot use the app</h2>
+      <p>If you cannot delete from within the app (for example, you cannot sign in), please contact us at the email below. We will verify your identity and process the deletion.</p>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">5</span>Contact</h2>
+      <div class="contactcard">
+        Provider: Tenki<br />
+        Email: <a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ SPANISH ============ -->
+  <div class="doc" data-lang="es" hidden>
+    <div class="hero">
+      <span class="kicker">Eliminación de Cuenta</span>
+      <h1>Eliminar su cuenta y datos</h1>
+      <div class="meta">Última actualización: 13 de agosto de 2026　／　Proveedor: Tenki</div>
+      <p class="lead">En "SAKE ELECTION" (nombre de la app: Sake Collection) puede eliminar su cuenta y los datos relacionados en cualquier momento desde la propia app. A continuación se indican los pasos, qué se elimina, el plazo y qué puede conservarse.</p>
+    </div>
+
+    <section>
+      <h2 class="sec"><span class="n">1</span>Cómo eliminar en la app</h2>
+      <ol class="steps">
+        <li><b>Abra "SAKE ELECTION"</b><br />Ábrala con la sesión iniciada.</li>
+        <li><b>Abra la pestaña "Ajustes"</b><br />Elija "Ajustes" en la barra de pestañas inferior.</li>
+        <li><b>Seleccione "Eliminar cuenta"</b></li>
+        <li><b>Vuelva a autenticarse</b><br />Para verificar su identidad, se le pedirá iniciar sesión de nuevo con Apple o Google.</li>
+        <li><b>Confirme la eliminación</b><br />Revise y confirme para continuar.</li>
+      </ol>
+      <div class="note">Por seguridad, la eliminación requiere volver a autenticarse (iniciar sesión de nuevo con Apple/Google).</div>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">2</span>Plazo (periodo de gracia de 30 días)</h2>
+      <p>Al confirmar la eliminación, sus sesiones activas se invalidan de inmediato y la eliminación queda programada. Por regla general, la <strong>eliminación permanente se produce a los 30 días</strong>. Este periodo de gracia existe para evitar errores.</p>
+      <div class="highlight">
+        <p><strong>Una vez completada la eliminación permanente, los datos no pueden restaurarse.</strong></p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">3</span>Qué se elimina y qué puede conservarse</h2>
+      <div class="cols">
+        <div class="box">
+          <h3>Se elimina</h3>
+          <ul>
+            <li>Perfil (apodo, avatar, fecha de nacimiento, región, etc.)</li>
+            <li>Publicaciones, reseñas, comentarios</li>
+            <li>"Me gusta", republicaciones, votos, intención de compra</li>
+            <li>Registros de rango</li>
+            <li>Registros de bloqueos y denuncias</li>
+            <li>Identificadores de inicio de sesión, sesiones y otros datos de autenticación</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Puede conservarse</h3>
+          <ul>
+            <li>Datos de análisis anonimizados/agregados que no le identifican</li>
+            <li>Registros necesarios para el cumplimiento legal, la prevención de abusos y la resolución de disputas</li>
+          </ul>
+        </div>
+      </div>
+      <p>Para más detalles, consulte la <a href="sake-election-privacy.html">Política de Privacidad</a>.</p>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">4</span>Si no puede usar la app</h2>
+      <p>Si no puede eliminar desde la app (por ejemplo, no puede iniciar sesión), contáctenos en el correo indicado abajo. Verificaremos su identidad y tramitaremos la eliminación.</p>
+    </section>
+
+    <section>
+      <h2 class="sec"><span class="n">5</span>Contacto</h2>
+      <div class="contactcard">
+        Proveedor: Tenki<br />
+        Correo: <a href="mailto:fukupro2026release@gmail.com">fukupro2026release@gmail.com</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="links">
+    <a href="sake-election-privacy.html">プライバシーポリシー / Privacy</a>
+    <a href="sake-election-terms.html">利用規約 / Terms</a>
+    <a href="sake-election-delete-account.html">アカウント削除 / Delete account</a>
+  </div>
+  <div>© <span id="yr"></span> テンキ / Tenki ・ SAKE ELECTION (Sake Collection)</div>
+</footer>
+
+<script>
+  (function () {
+    var KEY = 'sake-election-legal-lang';
+    var docs = document.querySelectorAll('.doc');
+    var btns = document.querySelectorAll('.langtoggle button');
+    function apply(lang) {
+      var ok = false;
+      docs.forEach(function (d) {
+        var on = d.getAttribute('data-lang') === lang;
+        d.hidden = !on;
+        if (on) ok = true;
+      });
+      if (!ok) return apply('ja');
+      btns.forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-set') === lang ? 'true' : 'false');
+      });
+      document.documentElement.lang = lang;
+      try { localStorage.setItem(KEY, lang); } catch (e) {}
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { apply(b.getAttribute('data-set')); });
+    });
+    var saved = 'ja';
+    try { saved = localStorage.getItem(KEY) || 'ja'; } catch (e) {}
+    apply(saved);
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
