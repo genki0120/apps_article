@@ -1,0 +1,35 @@
+name: Fix Sake Picks index icon crop
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-sake-index-crop.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch Sake Picks index icon crop
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          marker='/* SAKE INDEX ICON CROP 20260905 */'
+          css='''\n/* SAKE INDEX ICON CROP 20260905 */\n.product-card.sake .app-icon-wrap{background:#0d0d0b}\n.product-card.sake .app-icon-wrap img{\n  width:100%;height:100%;object-fit:cover;\n  transform:scale(1.74) translateY(7%);\n  transform-origin:50% 31%;\n}\n@media(max-width:680px){\n  .product-card.sake .app-icon-wrap{background:#0d0d0b}\n  .product-card.sake .app-icon-wrap img{\n    transform:scale(1.82) translateY(8%);\n    transform-origin:50% 30%;\n  }\n}\n'''
+          if marker not in s:
+              s=s.replace('</style>', css+'\n</style>')
+          else:
+              start=s.index(marker)
+              end=s.index('</style>', start)
+              s=s[:start]+css+s[end:]
+          p.write_text(s)
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name genki0120
+          git config user.email igagenki@outlook.com
+          git add index.html
+          git commit -m 'Crop Sake Picks icon cleanly on TENKI index [skip ci]' || exit 0
+          git push
