@@ -1,0 +1,85 @@
+name: Build Sake Picks icon
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-icon:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build static Sake Picks icon and patch pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat \
+            products/assets/sake-icon-p1.txt \
+            products/assets/sake-icon-p2.txt \
+            products/assets/sake-icon-p3.txt \
+            products/assets/sake-icon-p4.txt \
+            products/assets/sake-icon-p5.txt \
+            products/assets/sake-icon-p6.txt \
+            products/assets/sake-icon-p7.txt \
+            products/assets/sake-icon-p8.txt \
+            products/assets/sake-icon-p9.txt \
+            products/assets/sake-icon-p10.txt \
+            products/assets/sake-icon-p11.txt \
+            products/assets/sake-icon-p12.txt \
+            | tr -d '\n\r\t ' \
+            | base64 --decode \
+            > products/assets/sakepicks-app-icon.png
+
+          python - <<'PY'
+          from pathlib import Path
+
+          version = '20260905-2220'
+          icon = f'/products/assets/sakepicks-app-icon.png?v={version}'
+
+          replacements = {
+              'index.html': [
+                  ('<img data-sake-app-icon alt="Sake Picks app icon"><span class="sake-fallback">酒</span>',
+                   f'<img class="actual-icon-loaded" src="{icon}" alt="Sake Picks app icon">'),
+                  ('<script src="/products/assets/load-sake-icon.js"></script>', ''),
+              ],
+              'products/sakepicks.html': [
+                  ('<img data-sake-app-icon alt="Sake Picks"><span class="brand-fallback">酒</span>',
+                   f'<img class="actual-icon-loaded" src="{icon}" alt="Sake Picks">'),
+                  ('<img data-sake-app-icon alt="Sake Picks actual app icon"><span class="brand-fallback">酒</span>',
+                   f'<img class="actual-icon-loaded" src="{icon}" alt="Sake Picks actual app icon">'),
+                  ('<img data-sake-app-icon alt="Sake Picks product icon"><span class="brand-fallback">酒</span>',
+                   f'<img class="actual-icon-loaded" src="{icon}" alt="Sake Picks product icon">'),
+                  ('<script src="/products/assets/load-sake-icon.js"></script>', ''),
+              ],
+          }
+
+          for path, reps in replacements.items():
+              p = Path(path)
+              s = p.read_text(encoding='utf-8')
+              for old, new in reps:
+                  s = s.replace(old, new)
+              p.write_text(s, encoding='utf-8')
+          PY
+
+          file products/assets/sakepicks-app-icon.png
+
+      - name: Commit generated icon
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add products/assets/sakepicks-app-icon.png index.html products/sakepicks.html
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Use static Sake Picks app icon [skip ci]"
+          git push
