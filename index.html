@@ -1,1055 +1,523 @@
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>神アプ！～個人開発の便利アプリ紹介～</title>
-<meta content="個人開発アプリを中心に、使って良かったポイントを“使う人目線”で短く深くまとめます。最新記事・カテゴリ・アーカイブから探せます。" name="description"/>
-<link href="/" rel="canonical"/>
-<meta content="index,follow" name="robots"/>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305117750688740"></script>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
-<!-- favicon -->
-<link href="https://god-apps-article.com/asset/favicon.ico" rel="icon" sizes="any"/>
-<link href="https://god-apps-article.com/asset/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="https://god-apps-article.com/asset/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="https://god-apps-article.com/asset/favicon-48.png" rel="icon" sizes="48x48" type="image/png"/>
-<link href="https://god-apps-article.com/asset/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
-<!-- iOS -->
-<link href="https://god-apps-article.com/asset/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<!-- PWA (任意) -->
-<link href="https://god-apps-article.com/asset/site.webmanifest" rel="manifest"/>
-<meta content="#ffffff" name="theme-color"/>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>テンキ｜AI Agent・業務AI化支援</title>
+  <meta name="description" content="テンキは、AI Agentを専門とする業務AI化支援サービスです。Copilot Studio、Dify、Langflowなどを活用し、業務整理からAI Agent設計・PoC・実装・定着まで支援します。" />
+  <link rel="canonical" href="https://god-apps-article.com/" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0a0d0f" />
 
-  gtag('config', 'G-36H614G1X5');
-</script>
-<style>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="テンキ" />
+  <meta property="og:title" content="テンキ｜AI Agent・業務AI化支援" />
+  <meta property="og:description" content="AIを、デモで終わらせない。業務理解からAI Agentの設計・実装・定着まで一気通貫で支援します。" />
+  <meta property="og:url" content="https://god-apps-article.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-36H614G1X5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-36H614G1X5');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "テンキ",
+    "url": "https://god-apps-article.com/",
+    "description": "AI Agent・業務AI化支援。Copilot Studio、Dify、Langflowなどを活用し、業務整理から設計・PoC・実装・定着まで支援。",
+    "areaServed": "JP",
+    "knowsAbout": ["AI Agent", "Copilot Studio", "Dify", "Langflow", "RAG", "Generative AI", "Business Process Automation"]
+  }
+  </script>
+
+  <style>
     :root{
-      --ink:#222;
-      --muted:#777;
-      --line:#e7e7e7;
-      --pink:#d400b8;
-      --purple:#b300ff;
-      --card:#ffffff;
-      --soft:#f7f7f7;
-      --shadow: 0 14px 40px rgba(0,0,0,.10);
+      --bg:#f4f1ea;
+      --paper:#fbfaf6;
+      --ink:#101416;
+      --muted:#5f6668;
+      --line:rgba(16,20,22,.14);
+      --dark:#0a0d0f;
+      --dark2:#111719;
+      --lime:#c8ff36;
+      --cyan:#6ce5e8;
+      --orange:#ff8a4c;
+      --white:#fff;
+      --max:1180px;
+      --radius:28px;
+      --shadow:0 30px 80px rgba(15,20,22,.10);
     }
 
-    *{ box-sizing:border-box; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
       color:var(--ink);
-      background:#fff;
+      background:var(--bg);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
     }
-    a{ color:var(--pink); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+    a{color:inherit;text-decoration:none}
+    button,a{touch-action:manipulation}
+    ::selection{background:var(--lime);color:#080b0c}
 
-    /* ===== Header ===== */
-    .topbar{
-      background:#fff;
-      border-bottom:1px solid var(--line);
-      height: 120px;
+    .container{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
     }
-    .topbar-inner{
-      max-width: 1500px;
-      margin:0 auto;
-      padding: 18px 28px;
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap: 20px;
-    }
-    .brand h1{
-      margin:0;
-      font-weight:700;
-      letter-spacing:.2px;
-      font-size: 28px;
-      color:#333;
-    }
-    .brand .note{
-      margin-top:8px;
-      font-size:14px;
-      color:#666;
-    }
-    .controls{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-end;
-      gap:12px;
-      padding-top: 8px;
-      min-width: 320px;
-    }
-    .controls .search-ghost{
-      width: 240px;
-      height: 34px;
-      background:#f0f0f0;
-      border-radius: 3px;
-      opacity:.75;
-    }
-    select.lang{
-      font-size:16px;
-      padding: 2px 8px;
-    }
+    .eyebrow::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 6px rgba(200,255,54,.15)}
+    .section{padding:112px 0}
+    .section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:end;margin-bottom:54px}
+    .section-head h2{font-size:clamp(38px,5vw,72px);line-height:1.04;letter-spacing:-.045em;margin:14px 0 0;font-weight:900}
+    .section-head p{margin:0;color:var(--muted);font-size:17px;max-width:680px}
+    .marker{background:linear-gradient(transparent 62%,rgba(200,255,54,.85) 62%)}
 
-    /* ===== Page background like screenshots ===== */
-    .stage{
-      position:relative;
-      overflow:hidden;
-      min-height: 150vh;
+    /* header */
+    .site-header{
+      position:fixed;z-index:100;top:0;left:0;right:0;
+      transition:.3s ease;
     }
-    .stage::before{
-      content:"";
-      position:absolute;
-      left:0; top:0; bottom:0;
-      width: 35%;
+    .site-header.scrolled{background:rgba(244,241,234,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{
+      height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .brand{display:flex;align-items:center;gap:13px;font-weight:950;letter-spacing:-.03em}
+    .brand-mark{width:38px;height:38px;border-radius:12px;background:var(--dark);display:grid;place-items:center;color:var(--lime);font-size:12px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+    .brand-copy{display:flex;flex-direction:column;line-height:1.05}
+    .brand-copy strong{font-size:20px}
+    .brand-copy span{font-size:9px;letter-spacing:.18em;color:var(--muted);margin-top:5px}
+    .nav-links{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:800}
+    .nav-links a{position:relative}
+    .nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:2px;background:var(--ink);transition:.25s}
+    .nav-links a:hover::after{right:0}
+    .nav-cta{padding:11px 18px;border-radius:999px;background:var(--dark);color:#fff}
+    .nav-cta span{color:var(--lime);margin-left:6px}
+    .menu-btn{display:none;background:none;border:0;padding:8px;font:inherit;font-weight:900}
+
+    /* hero */
+    .hero{min-height:100svh;padding:132px 0 64px;display:flex;align-items:center;position:relative}
+    .hero::before{
+      content:"";position:absolute;inset:0;pointer-events:none;
       background:
-        radial-gradient(1200px 900px at 40% 40%, rgba(0,255,170,.22), rgba(255,255,255,0)),
-        linear-gradient(180deg, rgba(120,255,200,.35), rgba(200,255,220,.25));
-      z-index:0;
+        radial-gradient(circle at 85% 22%,rgba(108,229,232,.25),transparent 23%),
+        radial-gradient(circle at 74% 76%,rgba(200,255,54,.18),transparent 25%),
+        linear-gradient(rgba(16,20,22,.045) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(16,20,22,.045) 1px,transparent 1px);
+      background-size:auto,auto,52px 52px,52px 52px;
+      mask-image:linear-gradient(to bottom,#000 75%,transparent);
     }
-    .stage::after{
-      content:"";
-      position:absolute;
-      right:0; top:0; bottom:0;
-      width: 48%;
-      background:
-        radial-gradient(900px 700px at 20% 10%, rgba(255,255,255,.65), rgba(255,255,255,0)),
-        radial-gradient(900px 700px at 70% 35%, rgba(120,210,255,.55), rgba(255,255,255,0)),
-        radial-gradient(1200px 900px at 80% 70%, rgba(130,140,255,.35), rgba(255,255,255,0)),
-        linear-gradient(180deg, rgba(170,230,255,.45), rgba(150,170,255,.15));
-      z-index:0;
-    }
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:58px;align-items:center}
+    .hero h1{font-size:clamp(58px,8vw,112px);line-height:.91;letter-spacing:-.07em;margin:24px 0 28px;font-weight:950}
+    .hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+    .hero-lead{font-size:clamp(17px,1.8vw,22px);max-width:680px;color:#353b3d;margin:0 0 32px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 22px;border-radius:999px;font-weight:900;font-size:14px;border:1px solid var(--ink);transition:.25s ease}
+    .btn.primary{background:var(--dark);color:#fff}
+    .btn.primary i{font-style:normal;color:var(--lime)}
+    .btn.secondary{background:rgba(255,255,255,.4)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(10,13,15,.12)}
+    .micro-trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:38px;font-size:12px;font-weight:800;color:var(--muted)}
+    .micro-trust span{display:flex;align-items:center;gap:8px}
+    .micro-trust span::before{content:"✓";width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:rgba(16,20,22,.08);color:var(--ink)}
 
-    /* ===== Main layout ===== */
-    .layout{
-      position:relative;
-      z-index:1;
-      max-width: 1500px;
-      margin: 0 auto;
-      padding: 34px 28px;
-      display:grid;
-      grid-template-columns: minmax(640px, 1fr) 520px;
-      gap: 30px;
-      align-items:start;
+    .agent-stage{position:relative;min-height:580px}
+    .orb{position:absolute;border-radius:50%;filter:blur(1px);animation:float 7s ease-in-out infinite}
+    .orb.one{width:170px;height:170px;background:var(--cyan);right:10px;top:18px}
+    .orb.two{width:120px;height:120px;background:var(--lime);left:10px;bottom:45px;animation-delay:-2s}
+    .agent-card{
+      position:absolute;inset:64px 18px 38px 46px;background:rgba(10,13,15,.96);color:#fff;border-radius:36px;padding:32px;
+      box-shadow:0 40px 90px rgba(10,13,15,.26);overflow:hidden;transform:rotate(2.2deg);
     }
+    .agent-card::after{content:"";position:absolute;width:240px;height:240px;border:1px solid rgba(255,255,255,.1);border-radius:50%;right:-90px;bottom:-80px;box-shadow:0 0 0 40px rgba(255,255,255,.025),0 0 0 80px rgba(255,255,255,.018)}
+    .agent-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:900;letter-spacing:.16em;color:#aeb9ba}
+    .status{display:flex;align-items:center;gap:8px}.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 18px var(--lime)}
+    .agent-title{font-size:34px;line-height:1.1;letter-spacing:-.04em;margin:34px 0 28px;font-weight:900}
+    .workflow{display:grid;gap:13px}
+    .flow-row{display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:13px;padding:13px 14px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.04)}
+    .flow-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#1d2629;color:var(--cyan);font-weight:950}
+    .flow-row:nth-child(2) .flow-icon{color:var(--lime)}
+    .flow-row:nth-child(3) .flow-icon{color:var(--orange)}
+    .flow-row:nth-child(4) .flow-icon{color:#fff}
+    .flow-copy strong{display:block;font-size:13px}.flow-copy span{display:block;font-size:10px;color:#9aa6a7;margin-top:2px}
+    .flow-state{font-size:10px;color:#aab4b5;font-weight:800}
+    .agent-foot{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+    .agent-foot span{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.07);font-size:10px;color:#c5cecf}
+    @keyframes float{50%{transform:translateY(-18px) translateX(6px)}}
 
-    .main-col{ background: transparent; }
+    .trust-bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.28)}
+    .trust-inner{display:grid;grid-template-columns:repeat(4,1fr)}
+    .trust-item{padding:28px 22px;border-right:1px solid var(--line)}
+    .trust-item:last-child{border-right:0}.trust-item b{display:block;font-size:15px}.trust-item span{display:block;color:var(--muted);font-size:11px;margin-top:4px}
 
-    .post-shell{
-      position:relative;
-      background: var(--card);
-      border-radius: 44px;
-      box-shadow: var(--shadow);
-      padding: 28px 34px 26px;
-      margin: 10px 0 22px;
-    }
-    .post-shell::before{
-      content:"";
-      position:absolute;
-      left:-26px; right:-26px;
-      top:-28px; height: 220px;
-      border-radius: 40px;
-      background:
-        radial-gradient(900px 260px at 50% 30%, rgba(0,0,0,.20), rgba(0,0,0,0)),
-        linear-gradient(90deg, rgba(0,0,0,.10), rgba(0,0,0,0));
-      filter: blur(18px);
-      opacity:.25;
-      z-index:-1;
-    }
+    /* problem */
+    .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .problem-card{min-height:220px;padding:26px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.38);display:flex;flex-direction:column;justify-content:space-between;transition:.25s}
+    .problem-card:hover{background:var(--paper);transform:translateY(-4px);box-shadow:var(--shadow)}
+    .problem-num{font-size:11px;font-weight:950;color:var(--muted);letter-spacing:.12em}
+    .problem-card h3{font-size:21px;line-height:1.35;margin:34px 0 10px;letter-spacing:-.025em}
+    .problem-card p{font-size:13px;color:var(--muted);margin:0}
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      color:#fff;
-      background:#111;
-    }
+    /* about */
+    .dark-section{background:var(--dark);color:#fff;position:relative;overflow:hidden}
+    .dark-section::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 86% 10%,rgba(108,229,232,.16),transparent 28%),radial-gradient(circle at 8% 88%,rgba(200,255,54,.12),transparent 25%);pointer-events:none}
+    .dark-section .section-head p{color:#a9b3b4}.dark-section .eyebrow{color:#d6dddd}
+    .concept-grid{position:relative;display:grid;grid-template-columns:.95fr 1.05fr;gap:24px}
+    .concept-copy{padding:36px 8px 36px 0}.concept-copy h3{font-size:clamp(34px,4vw,58px);line-height:1.08;letter-spacing:-.045em;margin:0 0 24px}
+    .concept-copy p{color:#aab4b5;font-size:16px;max-width:520px}
+    .concept-quote{margin-top:38px;padding-left:20px;border-left:3px solid var(--lime);font-size:14px;color:#d8dfdf}
+    .system-map{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.035);border-radius:30px;padding:24px;display:grid;gap:14px}
+    .map-node{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:center;padding:16px;border-radius:20px;background:rgba(255,255,255,.05)}
+    .map-node em{font-style:normal;width:72px;height:54px;border-radius:15px;display:grid;place-items:center;font-size:11px;font-weight:950;letter-spacing:.08em;background:#1c2426;color:var(--cyan)}
+    .map-node:nth-child(2) em{color:var(--lime)}.map-node:nth-child(3) em{color:var(--orange)}.map-node:nth-child(4) em{color:#fff}
+    .map-node b{display:block;font-size:15px}.map-node span{display:block;color:#91a0a2;font-size:12px;margin-top:3px}
 
-    .crumbbox{
-      margin-top: 10px;
-      background:#fff;
-      border:1px solid #f0f0f0;
-      border-radius: 10px;
-      padding: 14px 16px;
-      display:flex;
-      gap: 16px;
-      align-items:center;
-    }
-    .crumb-left{
-      width: 140px;
-      display:flex;
-      flex-direction:column;
-      gap: 6px;
-      color:#444;
-      font-weight:700;
-      font-size: 16px;
-      line-height: 1.2;
-    }
-    .crumb-left .home{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:600;
-      color:#111;
-      margin-top: 6px;
-    }
-    .home svg{ width:18px; height:18px; opacity:.85; }
-    .crumb-right{
-      flex:1;
-      font-size: 18px;
-      font-weight:700;
-      line-height:1.55;
-      color:#111;
-    }
+    /* field */
+    .field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .field-card{padding:32px;border-radius:26px;background:var(--paper);border:1px solid rgba(16,20,22,.08);min-height:300px;display:flex;flex-direction:column;transition:.25s}
+    .field-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .field-icon{width:54px;height:54px;border-radius:16px;background:var(--dark);color:var(--lime);display:grid;place-items:center;font-weight:950}
+    .field-card:nth-child(2) .field-icon,.field-card:nth-child(5) .field-icon{color:var(--cyan)}
+    .field-card:nth-child(3) .field-icon,.field-card:nth-child(6) .field-icon{color:var(--orange)}
+    .field-card h3{font-size:24px;letter-spacing:-.03em;margin:26px 0 10px}.field-card p{color:var(--muted);font-size:14px;margin:0}
+    .field-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;padding-top:25px}.field-tags span{font-size:10px;font-weight:850;padding:6px 9px;border-radius:999px;border:1px solid var(--line)}
 
-    h2.title{
-      margin: 16px 0 8px;
-      font-size: 34px;
-      line-height:1.3;
-      color:#6a6a6a;
-      font-weight: 800;
-      letter-spacing: .2px;
-    }
-    .date{
-      font-size: 12px;
-      color:#8a8a8a;
-      margin-bottom: 14px;
-    }
+    .tools-band{margin-top:24px;padding:30px;border-radius:26px;background:var(--dark);color:#fff;display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:center}
+    .tools-band h3{font-size:20px;margin:0;line-height:1.35}.tools-band p{font-size:11px;color:#95a3a5;margin:7px 0 0}
+    .tools{display:flex;gap:9px;flex-wrap:wrap}.tool{padding:10px 13px;border-radius:10px;background:#171e20;border:1px solid rgba(255,255,255,.1);font-size:12px;font-weight:900}.tool.featured{color:var(--lime)}
 
-    .hero{
-      display:flex;
-      justify-content:center;
-      padding: 8px 0 12px;
-    }
-    .hero .hero-card{
-      width: 100%;
-      border: 1px solid #efefef;
-      background:#fff;
-      border-radius: 16px;
-      overflow:hidden;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 0;
-      min-height: 160px;
-    }
-    .hero .hero-left{
-      padding: 16px 16px 14px;
-      border-right: 1px solid #efefef;
-    }
-    .hero .hero-right{
-      padding: 16px;
-      background:
-        radial-gradient(900px 400px at 20% 20%, rgba(212,0,184,.18), rgba(255,255,255,0)),
-        radial-gradient(900px 400px at 70% 60%, rgba(179,0,255,.12), rgba(255,255,255,0)),
-        linear-gradient(180deg, rgba(247,247,247,.9), rgba(255,255,255,.9));
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      gap: 10px;
-    }
-    .hero-kicker{
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing:.14em;
-      color:#111;
-      opacity:.75;
-    }
-    .hero-h{
-      margin: 6px 0 8px;
-      font-size: 22px;
-      line-height: 1.5;
-      font-weight: 900;
-      color:#222;
-    }
-    .hero-p{
-      margin:0;
-      color:#444;
-      line-height:1.9;
-    }
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      border: 1px solid #eee;
-      background:#fff;
-      padding: 10px 12px;
-      border-radius: 999px;
-      font-weight: 900;
-      color:#111;
-      box-shadow: 0 8px 18px rgba(0,0,0,.06);
-    }
-    .btn.primary{
-      border-color: rgba(212,0,184,.25);
-      background: linear-gradient(135deg, rgba(212,0,184,.10), rgba(179,0,255,.08));
-    }
-    .btn small{ font-weight:800; color:#666; }
+    /* works */
+    .works-section{background:#e8e3d9}
+    .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .work-card{border-radius:28px;overflow:hidden;background:var(--paper);border:1px solid rgba(16,20,22,.09)}
+    .work-visual{height:210px;position:relative;padding:22px;background:var(--dark);color:#fff;overflow:hidden}
+    .work-card:nth-child(2) .work-visual{background:#15242b}.work-card:nth-child(3) .work-visual{background:#281d1a}
+    .work-visual::after{content:"AI";position:absolute;right:-5px;bottom:-54px;font-size:180px;font-weight:950;line-height:1;color:rgba(255,255,255,.055);letter-spacing:-.09em}
+    .industry{font-size:10px;letter-spacing:.14em;font-weight:950;color:var(--lime)}.work-card:nth-child(2) .industry{color:var(--cyan)}.work-card:nth-child(3) .industry{color:#ffb07f}
+    .work-visual h3{font-size:30px;line-height:1.1;letter-spacing:-.035em;margin:50px 0 0;max-width:240px}
+    .work-body{padding:26px}.work-body p{font-size:13px;color:var(--muted);margin:0 0 20px}.work-body strong{font-size:12px}
+    .works-note{margin-top:22px;color:var(--muted);font-size:11px}
 
-    /* ===== "article" style (reuse) ===== */
-    .article h1{
-      margin: 10px 0 10px;
-      font-size: 28px;
-      line-height: 1.35;
-      color:#333;
-      font-weight: 900;
-    }
-    .article .lead{
-      margin: 10px 0 18px;
-      padding: 12px 14px;
-      background: #fafafa;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      color:#444;
-      line-height: 1.9;
-    }
-    .article h2{
-      margin: 22px 0 10px;
-      font-size: 20px;
-      line-height: 1.4;
-      color:#222;
-      font-weight: 900;
-    }
-    .article .section-body{
-      color:#333;
-      line-height: 2.0;
-    }
-    .article hr{
-      border: none;
-      border-top: 1px solid #eee;
-      margin: 22px 0;
-    }
-    .article table{
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    .article th, .article td{
-      border: 1px solid #eee;
-      padding: 10px;
-      vertical-align: top;
-    }
-    .article th{
-      background: #fafafa;
-      font-weight: 900;
-    }
-    .article p{ margin: 14px 0; }
-    .article .em{
-      font-style: italic;
-      color:#8a8a8a;
-      font-size: 22px;
-      line-height: 1.6;
-      letter-spacing: .2px;
-      text-align:center;
-      margin: 26px 0;
-    }
-    .article .soft-box{
-      background: #f7f7f7;
-      border: 1px solid #ededed;
-      border-left: 4px solid #dcdcdc;
-      border-radius: 10px;
-      padding: 12px 14px;
-      margin: 12px 0;
-      color:#333;
-      line-height: 1.9;
-    }
+    /* process */
+    .process-line{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .process-item{padding:34px 25px 38px;border-right:1px solid var(--line);position:relative}
+    .process-item:last-child{border-right:0}.process-item::before{content:"";position:absolute;top:-5px;left:25px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
+    .process-item span{font-size:10px;letter-spacing:.13em;color:var(--muted);font-weight:950}.process-item h3{font-size:21px;margin:18px 0 10px}.process-item p{font-size:12px;color:var(--muted);margin:0}
 
-    /* ===== list ===== */
-    .list-shell{
-      background:#fff;
-      border-radius: 10px;
-      padding: 8px 0 0;
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-      overflow:hidden;
-    }
-    .list-head{
-      padding: 12px 14px 14px;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    .list-head a{
-      color: var(--pink);
-      font-weight:800;
-      display:block;
-      margin: 6px 0;
-    }
-    .campaign{
-      border-top:1px solid #ececec;
-      padding: 10px 12px;
-      display:grid;
-      grid-template-columns: 110px 1fr;
-      gap: 12px;
-      align-items:start;
-      background:#fff;
-    }
-    .thumb{
-      width: 110px; height: 70px;
-      background:#ddd;
-      border: 1px solid #e6e6e6;
-      overflow:hidden;
-      border-radius: 6px;
-    }
-    .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .c-title{
-      font-size: 14px;
-      font-weight: 900;
-      color:#222;
-      line-height: 1.55;
-      margin-bottom: 6px;
-    }
-    .c-desc{
-      font-size: 12px;
-      color:#666;
-      line-height: 1.6;
-    }
-    .tagline{
-      margin-top: 6px;
-      font-size: 11px;
-      color:#888;
-    }
-    .meta{
-      margin-top: 6px;
-      display:flex;
-      flex-wrap:wrap;
-      gap: 8px;
-      align-items:center;
-      color:#888;
-      font-size: 11px;
-    }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      border: 1px solid #eee;
-      background:#fff;
-      color:#666;
-      font-weight: 800;
-    }
+    /* plans */
+    .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .plan{border-radius:28px;padding:30px;border:1px solid var(--line);background:rgba(255,255,255,.38);display:flex;flex-direction:column;min-height:390px}
+    .plan.featured{background:var(--dark);color:#fff;border-color:var(--dark);transform:translateY(-12px)}
+    .plan-label{font-size:10px;letter-spacing:.13em;font-weight:950;color:var(--muted)}.featured .plan-label{color:var(--lime)}
+    .plan h3{font-size:28px;line-height:1.15;margin:15px 0 8px}.plan-sub{font-size:12px;color:var(--muted);min-height:50px}.featured .plan-sub{color:#9eaaab}
+    .price{font-size:18px;font-weight:950;margin:20px 0}.plan ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:10px;font-size:12px}.plan li::before{content:"→";margin-right:8px;color:var(--orange)}.featured li::before{color:var(--lime)}
+    .plan .btn{margin-top:auto;font-size:12px;padding:12px 16px}.featured .btn{background:var(--lime);color:#0b0f10;border-color:var(--lime)}
 
-    /* ===== Sidebar cards (no fake ads) ===== */
-    .side-col{
-      position:relative;
-      padding: 0 10px;
-    }
-    .side-card{
-      margin: 10px 0 18px 120px;
-      width: 330px;
-      background: rgba(255,255,255,.65);
-      border: 1px solid rgba(255,255,255,.75);
-      border-radius: 12px;
-      padding: 14px 14px 12px;
-      box-shadow: 0 10px 26px rgba(0,0,0,.05);
-      backdrop-filter: blur(6px);
-    }
-    .side-card h3{
-      margin:0 0 10px;
-      font-size: 18px;
-      font-weight: 900;
-      color:#111;
-    }
-    .side-card p{
-      margin: 10px 0;
-      color:#444;
-      line-height:1.85;
-      font-size: 13px;
-    }
-    .side-links{
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-      margin-top: 8px;
-    }
-    .side-links a{
-      font-weight: 900;
-      color: var(--pink);
-    }
-    .kv{
-      display:grid;
-      grid-template-columns: 92px 1fr;
-      gap: 8px;
-      font-size: 13px;
-      line-height: 1.7;
-      color:#444;
-      margin-top: 8px;
-    }
-    .kv b{ color:#111; }
+    /* profile */
+    .profile-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:44px;align-items:start}
+    .profile-card{background:var(--dark);color:#fff;border-radius:32px;min-height:430px;padding:32px;position:sticky;top:110px;overflow:hidden}
+    .profile-card::after{content:"TENKI";position:absolute;bottom:-32px;left:15px;font-size:96px;font-weight:950;letter-spacing:-.08em;color:rgba(255,255,255,.05)}
+    .profile-card .mini{font-size:10px;letter-spacing:.15em;color:var(--lime);font-weight:950}.profile-card h3{font-size:43px;line-height:1.02;letter-spacing:-.05em;margin:28px 0 14px}.profile-card p{font-size:13px;color:#a5b0b1;max-width:300px}
+    .profile-body{display:grid;gap:0;border-top:1px solid var(--line)}
+    .info-row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+    .info-row dt{font-size:11px;font-weight:950;color:var(--muted);letter-spacing:.07em}.info-row dd{margin:0;font-size:14px;font-weight:700}
 
-    .chip-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid #eee;
-      background:#fff;
-      color:#111;
-      font-weight: 900;
-      font-size: 12px;
-    }
-    .chip small{ color:#777; font-weight:800; }
+    /* faq */
+    .faq{display:grid;gap:10px;max-width:900px;margin:0 auto}
+    details{border-top:1px solid var(--line);padding:18px 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:16px;font-weight:900}
+    summary::-webkit-details-marker{display:none}.plus{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.25s;flex:none}details[open] .plus{transform:rotate(45deg);background:var(--dark);color:#fff}
+    details p{color:var(--muted);font-size:13px;max-width:760px;margin:14px 50px 4px 0}
 
-    footer{
-      margin: 18px auto 0;
-      padding: 24px 28px 40px;
-      max-width: 1500px;
-      color:#666;
-      line-height: 1.9;
-      font-size: 13px;
-      position:relative;
-      z-index:1;
-    }
-    footer .foot-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px 18px;
-      align-items:center;
-      margin-top: 10px;
-    }
-    footer a{ font-weight:900; }
+    /* contact */
+    .contact-section{padding:72px 0 28px}
+    .contact-card{background:var(--dark);color:#fff;border-radius:38px;padding:60px;position:relative;overflow:hidden}
+    .contact-card::before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;background:var(--lime);filter:blur(1px);right:-220px;top:-170px;opacity:.95}
+    .contact-card::after{content:"";position:absolute;width:310px;height:310px;border-radius:50%;border:1px solid rgba(255,255,255,.15);right:-55px;bottom:-175px;box-shadow:0 0 0 45px rgba(255,255,255,.03),0 0 0 90px rgba(255,255,255,.02)}
+    .contact-inner{position:relative;z-index:2;max-width:820px}.contact-card h2{font-size:clamp(42px,6vw,82px);line-height:1;letter-spacing:-.055em;margin:18px 0 24px}.contact-card p{color:#afbbbc;max-width:650px}.contact-card .btn{margin-top:20px;background:var(--lime);color:#0a0d0f;border-color:var(--lime)}
 
-    @media (max-width: 1200px){
-      .layout{ grid-template-columns: 1fr; }
-      .side-col{ padding: 0; }
-      .side-card{
-        margin-left: 0 !important;
-        width: auto !important;
-      }
-      .hero .hero-card{ grid-template-columns: 1fr; }
-      .hero .hero-left{ border-right:none; border-bottom:1px solid #efefef; }
+    footer{padding:34px 0 46px}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font-size:11px}.footer-links{display:flex;gap:18px}
+
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:900px){
+      .section{padding:82px 0}.section-head{grid-template-columns:1fr;gap:22px}.hero{padding-top:112px}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(58px,17vw,92px)}.agent-stage{min-height:520px}.agent-card{inset:45px 8px 40px 28px}.nav-links{display:none;position:absolute;top:74px;left:20px;right:20px;background:var(--paper);padding:20px;border-radius:20px;border:1px solid var(--line);box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.nav-links.open{display:flex}.menu-btn{display:block}.trust-inner{grid-template-columns:repeat(2,1fr)}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}.problem-grid,.works-grid,.plans-grid{grid-template-columns:1fr 1fr}.concept-grid,.profile-grid{grid-template-columns:1fr}.profile-card{position:relative;top:auto}.field-grid{grid-template-columns:1fr}.tools-band{grid-template-columns:1fr}.process-line{grid-template-columns:1fr 1fr}.process-item:nth-child(2){border-right:0}.process-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
     }
+    @media(max-width:620px){
+      .container{width:min(calc(100% - 28px),var(--max))}.section{padding:70px 0}.nav{height:72px}.brand-copy span{display:none}.hero{padding-top:96px}.hero-grid{gap:28px}.hero h1{font-size:clamp(52px,18vw,80px)}.hero-lead{font-size:16px}.agent-stage{min-height:470px}.agent-card{inset:40px 0 28px 10px;padding:24px;border-radius:28px}.agent-title{font-size:28px}.flow-row{grid-template-columns:38px 1fr}.flow-icon{width:38px;height:38px}.flow-state{display:none}.orb.one{width:120px;height:120px}.orb.two{width:90px;height:90px}.trust-inner,.problem-grid,.works-grid,.plans-grid,.process-line{grid-template-columns:1fr}.trust-item,.trust-item:nth-child(2),.process-item,.process-item:nth-child(2){border-right:0}.trust-item:not(:last-child),.process-item:not(:last-child){border-bottom:1px solid var(--line)}.plan.featured{transform:none}.section-head h2{font-size:42px}.field-card{min-height:260px}.work-visual{height:180px}.profile-card{min-height:360px}.info-row{grid-template-columns:1fr;gap:7px}.contact-card{padding:40px 26px;border-radius:28px}.contact-card::before{width:260px;height:260px;right:-180px}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.orb{animation:none}.reveal{opacity:1;transform:none;transition:none}}
   </style>
 </head>
 <body>
-<!-- ===== Header ===== -->
-<header class="topbar">
-<div class="topbar-inner">
-<div class="brand">
-<h1>～個人開発の便利アプリ紹介～</h1>
-<div class="note">PR / AD: 広告・アフィリエイトを含む場合があります（詳細は「広告・運営方針」へ）</div>
-<div style="margin-top:10px;">
-<select aria-label="language" class="lang">
-<option>Languages</option>
-<option>日本語</option>
-<option>English</option>
-<option>Deutsch</option>
-<option>Français</option>
-</select>
-</div>
-</div>
-<div class="controls">
-<div class="search-ghost" title="検索（静的トップのため未実装）"></div>
-<div style="font-size:12px;color:#777;">※ 現在は記事一覧から探せます</div>
-</div>
-</div>
-</header>
-<!-- ===== Background stage ===== -->
-<main class="stage">
-<div class="layout">
-<!-- ===== Left/Main column ===== -->
-<section class="main-col">
-<article class="post-shell">
-<span class="pill">HOME</span>
-<div class="crumbbox">
-<div class="crumb-left">
-<div style="opacity:.75;font-size:12px;font-weight:800;">YOU ARE HERE</div>
-<div class="home">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M3 10.5 12 3l9 7.5"></path>
-<path d="M5 10v10h14V10"></path>
-</svg>
-<span>Home</span>
-</div>
-</div>
-<div class="crumb-right">
-              「個人開発アプリ」を、使う人目線でサクッと紹介する場所
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="テンキ トップへ">
+        <span class="brand-mark">天気</span>
+        <span class="brand-copy"><strong>TENKI</strong><span>AI AGENT STUDIO</span></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">MENU</button>
+      <nav class="nav-links" id="navLinks" aria-label="メインナビゲーション">
+        <a href="#about">About</a>
+        <a href="#field">Field</a>
+        <a href="#works">Works</a>
+        <a href="#process">Process</a>
+        <a href="#plan">Plan</a>
+        <a href="#profile">Profile</a>
+        <a class="nav-cta" href="/contact.html">相談する <span>↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">AI AGENT × BUSINESS PROCESS</div>
+          <h1>AIを、<br><span class="outline">デモで</span><br>終わらせない。</h1>
+          <p class="hero-lead">テンキは、企業の業務を理解し、AI Agentが実際に働ける形へ落とし込む<strong>業務AI化の専門パートナー</strong>です。業務整理から設計、PoC、実装、定着まで一気通貫で支援します。</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="/contact.html">AI化について相談する <i>↗</i></a>
+            <a class="btn secondary" href="#works">支援実績を見る ↓</a>
+          </div>
+          <div class="micro-trust">
+            <span>AI Agent専門</span><span>ツールを限定しない設計</span><span>大手企業案件への参画実績</span>
+          </div>
+        </div>
+
+        <div class="agent-stage" aria-hidden="true">
+          <div class="orb one"></div><div class="orb two"></div>
+          <div class="agent-card">
+            <div class="agent-top"><span>BUSINESS AGENT / LIVE</span><span class="status">RUNNING</span></div>
+            <div class="agent-title">仕事の流れに、<br>AIを組み込む。</div>
+            <div class="workflow">
+              <div class="flow-row"><div class="flow-icon">01</div><div class="flow-copy"><strong>INPUT</strong><span>Teams / Forms / Mail / Documents</span></div><div class="flow-state">RECEIVE</div></div>
+              <div class="flow-row"><div class="flow-icon">02</div><div class="flow-copy"><strong>KNOWLEDGE</strong><span>RAG / SharePoint / Database</span></div><div class="flow-state">SEARCH</div></div>
+              <div class="flow-row"><div class="flow-icon">03</div><div class="flow-copy"><strong>REASONING</strong><span>Agent / Rules / Orchestration</span></div><div class="flow-state">THINK</div></div>
+              <div class="flow-row"><div class="flow-icon">04</div><div class="flow-copy"><strong>ACTION</strong><span>Reply / Create / Update / Escalate</span></div><div class="flow-state">EXECUTE</div></div>
             </div>
-</div>
-<h2 class="title">探すより、当たりを引く。</h2>
-<div class="date">Updated: <span id="updatedAt"></span></div>
-<div class="hero">
-<div aria-label="site-hero" class="hero-card" role="region">
-<div class="hero-left">
-<div class="hero-kicker">APP PICKS / SHORT &amp; REAL</div>
-<div class="hero-h">「何が良いのか」を1ページで分かるように。</div>
-<p class="hero-p">
-                  アプリの紹介って、だいたい良いことしか書いてない。<br/>
-                  だからここでは、<b>刺さる人・刺さらない人</b>が分かれるポイントも含めて、短く深くまとめます。<br/>
-                  迷ったら、最新記事からどうぞ。
-                </p>
-<div class="cta-row">
-<a class="btn primary" href="#latest"><span>最新記事を見る</span> <small>↓</small></a>
-<a class="btn" href="#policy"><span>広告・運営方針</span></a>
-<a class="btn" href="#archive"><span>アーカイブ</span></a>
-</div>
-</div>
-<div class="hero-right">
-<div class="kv">
-<b>更新頻度</b><span>不定期（いいアプリが見つかった時）</span>
-<b>対象</b><span>個人開発アプリ / 小さめツール / 作業効率系</span>
-<b>書き方</b><span>ベタ褒めではなく、<b>使いどころ</b>中心</span>
-<b>お願い</b><span>誤記があれば連絡ください（すぐ直します）</span>
-</div>
-<div aria-label="quick-tags" class="chip-row">
-<span class="chip">#個人開発 <small>個人</small></span>
-<span class="chip">#作業効率 <small>時短</small></span>
-<span class="chip">#モバイル <small>iOS/Android</small></span>
-<span class="chip">#買い切り <small>歓迎</small></span>
-</div>
-</div>
-</div>
-</div>
-<div class="article" id="policy">
-<h1>このサイトについて</h1>
-<div class="lead">
-              ここは「個人開発アプリの紹介」を中心に、使う前に知りたいこと（向き不向き・使いどころ・料金感）を、なるべく一枚で分かるようにまとめるページです。<br/>
-              公式情報に寄せつつ、使いどころは「生活の場面」で書きます。ふわっとした褒め言葉で水増ししません。
-            </div>
-<h2>運営方針</h2>
-<div class="section-body">
-<div class="soft-box">
-<b>① 独自コンテンツ：</b> 公式の説明を写すのではなく、「どこで役に立つか」「どんな人に刺さるか」を自分の言葉で追加して、同じ紹介にならないようにしています。
-              </div>
-<div class="soft-box">
-<b>② 広告・アフィリエイト：</b> 広告を表示する場合があります。リンク先で購入/登録が発生すると、運営に少額の収益が入る場合があります。<br/>
-                ただし、紹介内容や評価が収益で変わることはありません（合わない人には合わないと書きます）。
-              </div>
-<div class="soft-box">
-<b>③ プライバシー：</b> クッキーや広告の扱いはプライバシーポリシーにまとめています。必要に応じて更新します。
-              </div>
-<p class="em">“読んで損しない紹介”だけ残す。それがこのサイトの基準。</p>
-<table aria-label="site-policy-table">
-<thead>
-<tr>
-<th>見たいこと</th>
-<th>このサイトでの書き方</th>
-<th>読むメリット</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>誰向け？</td>
-<td>刺さる人 / 刺さらない人を分けて書く</td>
-<td>入れる前に“ズレ”が減る</td>
-</tr>
-<tr>
-<td>何ができる？</td>
-<td>機能の羅列より、使う場面で説明</td>
-<td>自分の生活に当てはめやすい</td>
-</tr>
-<tr>
-<td>料金は？</td>
-<td>公式に矛盾しない範囲で整理（不明は断定しない）</td>
-<td>課金で詰まるのを避けられる</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr/>
-<h2 id="latest">最新記事</h2>
-<div class="section-body">
-              下の一覧は、トップページ用にカード表示しています。<br/>
-              まずは気になるタイトルを1本だけ開いてOK。深追いしないのが一番続く。
-            </div>
-</div>
-</article>
-<section aria-label="article-list" class="list-shell">
-<div class="list-head">
-<div style="font-weight:900;color:#111;">Latest Articles</div>
-<a href="#archive">アーカイブへ →</a>
-</div>
-<!-- JSで描画 -->
-<div id="articlesList"></div>
-<!-- JSで描画 -->
-<div id="articlesList"></div>
-<!--静的HTMLにURL一覧を乗せる（search console対策） -->
-<noscript>
-<section aria-label="noscript-articles" style="margin-top:14px;">
-<h3 style="margin:0 0 8px;">記事一覧（JavaScriptが無効な場合）</h3>
-<ul style="margin:0;padding-left:18px;line-height:1.7;"><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260316/">VSCode×Codex CLI拡張の使い方比較2026｜Codex UIで日本語入力と会話整理</a>
-<small>(2026-03-16)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260315/">AI返信文生成のおすすめ使い方比較2026｜QuickRepで即レス時短</a>
-<small>(2026-03-15)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260314/">TableTrace：PostgreSQLの更新を“動き”で追えるデスクトップアプリ</a>
-<small>(2026-03-14)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260313/">家計簿アプリ使い方比較2026｜簡単操作で収支を残すiOSアプリ</a>
-<small>(2026-03-13)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260312/">家計簿アプリ使い方比較2026｜すごい家計簿のレシートOCRで予算が見える</a>
-<small>(2026-03-12)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260311/">VSCode×Codex CLI使い方おすすめ比較：Codex UI拡張レビュー【2026年版】</a>
-<small>(2026-03-11)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260310/">習慣化アプリおすすめ2026｜三日坊主でも続く記録術</a>
-<small>(2026-03-10)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260309/">予定・Todo管理アプリおすすめ2026｜Todo Bingo</a>
-<small>(2026-03-09)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260307/">チャット画像作成ツールおすすめ2026｜会話スクショ</a>
-<small>(2026-03-07)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260308/">立替精算アプリおすすめ2026｜割り勘自動計算</a>
-<small>(2026-03-08)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260306/">目標管理アプリおすすめ2026｜RPG習慣化ツール</a>
-<small>(2026-03-06)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260305/">メンタルSNSおすすめ2026｜治療記録共有アプリ</a>
-<small>(2026-03-05)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260227/">AIパートナー作成ツールおすすめ2026｜GASで作るLINORIN</a>
-<small>(2026-02-27)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260301/">音声タグ編集ソフトおすすめ2026｜ASMR整理ツールVoiceTagEditor</a>
-<small>(2026-03-01)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/mockchat/">チャット画像作成ツールおすすめ2026｜会話スクショ</a>
-<small>(2026-03-07)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260304/">休憩スポット検索アプリおすすめ2026｜ベンチ地図</a>
-<small>(2026-03-04)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260303/">コーヒー記録アプリおすすめ2026｜ドリップレシピ管理</a>
-<small>(2026-03-03)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260302/">食事記録アプリおすすめ2026｜写真でカロリー管理できる</a>
-<small>(2026-03-02)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260226/">筋トレ記録アプリおすすめ2026｜トレーニング管理できるTrainNote</a>
-<small>(2026-02-26)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260115/">グループワークツールおすすめ｜班ごとの共同編集アプリ【Tables】</a>
-<small>(2026-01-15)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260225/">動画比較アプリおすすめ2026｜動作分析できるVidPair</a>
-<small>(2026-02-23)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260224/">家計簿アプリおすすめ2026｜財布を分けて管理できるTab Wallets</a>
-<small>(2026-02-23)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260223/">多言語案内ツールおすすめ2026｜QRで動画案内を作るAIサービス</a>
-<small>(2026-02-23)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260222/">読書管理アプリおすすめ2026｜積読本を整理できるtsumu</a>
-<small>(2026-02-22)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260221/">英語学習アプリおすすめ2026｜英文OCRで発音練習できる英単語OCR</a>
-<small>(2026-02-21)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260124/">グループ予定管理アプリおすすめ2026｜約束を整理するSHITAI</a>
-<small>(2026-01-24)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20251223/">位置情報共有アプリおすすめ｜リンクで現在地を送る使い方【ココきて！】</a>
-<small>(2025-12-23)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260119/">タスク管理アプリおすすめ2026｜予定とToDoを一元化するタスピ</a>
-<small>(2026-01-19)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260118/">FPS上達ツールおすすめ2026｜試合動画をAI分析するREPL-AI</a>
-<small>(2026-01-18)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260117/">レシピ管理アプリおすすめ｜SNSや動画レシピを整理【マグネットレシピ】</a>
-<small>(2026-01-17)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20251224/">ストレス発散アプリおすすめ｜感情を書いて流す使い方【KUSO FLUSH】</a>
-<small>(2025-12-24)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260116/">OCRメモアプリおすすめ｜紙のメモを文字化して整理【シンプルOCR手帳】</a>
-<small>(2026-01-16)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20251225/">音声文字起こしAIおすすめ｜ポッドキャスト文章化ツール比較【PodCue】</a>
-<small>(2026-01-15)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260114/">旅行記録アプリおすすめ｜旅ログ共有サービス【Tripost】</a>
-<small>(2026-01-14)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260113/">税務相談AIおすすめ｜条文根拠で税金の疑問を解決【FOX】</a>
-<small>(2026-01-13)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260103/">年間カレンダーアプリおすすめ｜1年を俯瞰して予定管理【AnuCal】</a>
-<small>(2026-01-03)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20251226/">習慣化アプリおすすめ2026｜勉強・筋トレが続く時間記録【PopSpark】</a>
-<small>(2025-12-26)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260111/">リマインダーアプリおすすめ｜通知設計で締切を忘れないToDo管理【Remine】</a>
-<small>(2026-01-11)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260110/">スクリーンショット整理アプリおすすめ｜iPhoneのスクショ管理【スクショメモ】</a>
-<small>(2026-01-10)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260109/">無料2D CADソフトおすすめ｜軽量で初心者でも描ける作図ツール【NijiCAD】</a>
-<small>(2026-01-09)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260108/">プロダクト紹介サイトおすすめ｜個人開発の発信プレスサービス【MPress】</a>
-<small>(2026-01-08)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260107/">文章AIツールおすすめ｜翻訳・要約をコピペで自動化【Copipe】</a>
-<small>(2026-01-07)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260106/">スマホ依存対策アプリおすすめ｜強制ロックで使用時間制限【Timekeeper】</a>
-<small>(2026-01-06)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260105/">IT転職サービスおすすめ｜AIで企業との相性診断【HR Matcher】</a>
-<small>(2026-01-05)</small>
-</li><li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260104/">スポーツ動画分析アプリおすすめ｜フリーズフレーム解説作成【FreezeCoach】</a>
-<small>(2026-01-04)</small>
-</li>
-<li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20251227/">ふるさと納税管理ツールおすすめ｜限度額と寄付履歴を一元管理</a>
-<small>(2025-12-27)</small>
-</li>
-<li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20251228/">育児記録アプリおすすめ｜授乳・予防接種を家族共有【milu】</a>
-<small>(2025-12-27)</small>
-</li>
-<li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20251229/">交通量調査アプリおすすめ｜AIで通行量を自動カウント【ミチミエール】</a>
-<small>(2025-12-27)</small>
-</li>
-<li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20251230/">暗記アプリおすすめ2026｜単語帳・フラッシュカード学習【ReBrain】</a>
-<small>(2025-12-27)</small>
-</li>
-<li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20251231/">Tra-bell（トラベル）— 予約後の値下げを24時間監視して通知するサービス</a>
-<small>(2025-12-27)</small>
-</li>
-<li>
-<a href="https://god-apps-article.com/publish/AppsArticle/20260102/">勤怠管理アプリおすすめ｜打刻から請求書作成まで自動化【ClockClock】</a>
-<small>(2025-12-27)</small>
-</li>
-</ul>
-</section>
-</noscript>
-</section>
-<article class="post-shell" id="archive">
-<span class="pill">ARCHIVE</span>
-<h2 class="title" style="margin-top:10px;">アーカイブ（年月で探す）</h2>
-<div class="article">
-<div class="section-body">
-<div class="soft-box">
-<b>運用のコツ：</b> 記事を増やすほど、トップは「ハブ」に徹して軽くするほうが見やすい。<br/>
-                その代わり、記事ページに全力（あなたの方針、正解）。
-              </div>
-<table aria-label="archive-table">
-<thead>
-<tr>
-<th>年</th>
-<th>月</th>
-<th>リンク例（フォルダ構造に合わせて変更）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2025</td>
-<td>12</td>
-<td><a href="https://god-apps-article.com/publish/AppsArticle/20251231/">/2025/12/</a></td>
-</tr>
-<tr>
-<td>2026</td>
-<td>01</td>
-<td><a href="https://god-apps-article.com/publish/AppsArticle/20260102/">/2026/01/</a></td>
-</tr>
-<tr>
-<td>2026</td>
-<td>02</td>
-<td><a href="https://god-apps-article.com/publish/AppsArticle/20260221/">/2026/02/</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</article>
-</section>
-<!-- ===== Right/Sidebar column ===== -->
-<aside class="side-col">
-<div aria-label="sidebar-about" class="side-card">
-<h3>まずはここから</h3>
-<p>
-            トップは“入口”。記事が主役です。<br/>
-            迷ったら、最新記事を1本だけ開いてください。
-          </p>
-<div class="side-links">
-<a href="#latest">→ 最新記事へ</a>
-<a href="#policy">→ 広告・運営方針</a>
-<a href="#archive">→ アーカイブ</a>
-</div>
-</div>
-<div aria-label="sidebar-categories" class="side-card">
-<h3>カテゴリ</h3>
-<p>増えてきたら、タグで“探しやすさ”だけ足します。</p>
-<div class="chip-row">
-<span class="chip">作業効率 <small>#workflow</small></span>
-<span class="chip">学習 <small>#study</small></span>
-<span class="chip">動画/写真 <small>#media</small></span>
-<span class="chip">メモ/記録 <small>#note</small></span>
-</div>
-</div>
-<div aria-label="sidebar-links" class="side-card">
-<h3>運営・連絡先</h3>
-<p>
-            ポリシーと連絡導線は“薄いサイト”判定を避けるのに効きます。<br/>
-            ここだけは置いておくのがおすすめ。
-          </p>
-<div class="side-links">
-<a href="https://god-apps-article.com/about">→ 運営者情報（About）</a>
-<a href="https://god-apps-article.com/privacy">→ プライバシーポリシー</a>
-</div>
-</div>
-</aside>
-</div>
-<footer>
-<div style="font-weight:900;color:#111;">このサイトは個人運営です。</div>
-<div class="foot-row">
-<a href="https://god-apps-article.com/about">About</a>
-<a href="https://god-apps-article.com/privacy">Privacy</a>
-<a href="#policy">広告・運営方針</a>
-</div>
-<div style="margin-top:10px;">
-        ※ 記事内容は可能な限り正確に作成しますが、最新情報は各公式ページをご確認ください。
+            <div class="agent-foot"><span>Copilot Studio</span><span>Dify</span><span>Langflow</span><span>RAG</span><span>Workflow</span></div>
+          </div>
+        </div>
       </div>
-</footer>
-</main>
-<script>
-    // === ここだけ差し替えればトップの一覧が更新されます ===
-    // url は “生URL” で。サムネが無い場合は thumb を空にしてOK。
-    const ARTICLES = [
-      {
-        title: "VidPair｜2本並べて見比べるだけで「直す場所」が見えてくる",
-        url: "/2025/12/27/vidpair/",
-        date: "2025-12-27",
-        tags: ["iOS", "練習", "動画比較"],
-        desc: "練習動画が「撮って終わり」になりがちな人向け。比較→気づき→メモの流れが作れるアプリ。",
-        thumb: ""
-      },
-      {
-        title: "（例）作業が遅い原因が“手順”だった時に効くアプリ",
-        url: "/2025/12/26/workflow-app/",
-        date: "2025-12-26",
-        tags: ["作業効率", "タスク"],
-        desc: "機能の多さより“迷いが減る設計”に絞ったツールを紹介。",
-        thumb: ""
-      },
-      {
-        title: "（例）メモが散らかる人のための“軽い整理”アプリ",
-        url: "/2025/12/20/note-app/",
-        date: "2025-12-20",
-        tags: ["メモ", "習慣"],
-        desc: "続かない理由は気合じゃなく導線。軽く始められるタイプ。",
-        thumb: ""
-      }
-    ];
+    </section>
 
-    function escapeHtml(s){
-      return (s || "").replace(/[&<>"']/g, (c) => ({
-        "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
-      }[c]));
-    }
+    <div class="trust-bar">
+      <div class="container trust-inner">
+        <div class="trust-item"><b>業務起点</b><span>AIありきではなく、仕事から設計</span></div>
+        <div class="trust-item"><b>Tool Agnostic</b><span>用途に合わせて最適な基盤を選定</span></div>
+        <div class="trust-item"><b>PoC → 実装</b><span>検証だけで終わらない導入設計</span></div>
+        <div class="trust-item"><b>Enterprise</b><span>大手企業のAI Agent化支援に参画</span></div>
+      </div>
+    </div>
 
-    function makeThumbSvg(text){
-      const t = encodeURIComponent(text || "IMG");
-      return 'data:image/svg+xml;utf8,' +
-        `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="140">
-          <defs>
-            <linearGradient id="g" x1="0" x2="1">
-              <stop offset="0" stop-color="%23f0f0f0"/>
-              <stop offset="1" stop-color="%23dcdcdc"/>
-            </linearGradient>
-          </defs>
-          <rect width="100%25" height="100%25" fill="url(%23g)"/>
-          <text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle"
-                font-family="Arial" font-size="16" fill="%23777">${t}</text>
-        </svg>`;
-    }
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Problem</div><h2>AI導入が<br>進まない理由。</h2></div>
+          <p>モデルの性能が上がっても、業務は勝手にAI化されません。どの仕事を、どのデータで、どこまでAIに任せるのか。実務とAIの間を設計することが、導入成功の核心です。</p>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card reveal"><span class="problem-num">ISSUE 01</span><div><h3>PoCはできた。<br>でも現場で使われない。</h3><p>デモの精度ではなく、既存業務・権限・例外処理まで含めて設計する必要があります。</p></div></article>
+          <article class="problem-card reveal"><span class="problem-num">ISSUE 02</span><div><h3>どの業務から<br>AI化すべきか分からない。</h3><p>「AIで何ができるか」ではなく、業務負荷・定型性・情報量から優先順位を決めます。</p></div></article>
+          <article class="problem-card reveal"><span class="problem-num">ISSUE 03</span><div><h3>ツールが多すぎて<br>選べない。</h3><p>Copilot Studio、Dify、Langflowなど、要件と既存環境から適した構成を判断します。</p></div></article>
+          <article class="problem-card reveal"><span class="problem-num">ISSUE 04</span><div><h3>社内文書を読ませても<br>回答精度が安定しない。</h3><p>RAGはデータ投入だけでは不十分。検索設計・文書構造・評価方法まで設計します。</p></div></article>
+          <article class="problem-card reveal"><span class="problem-num">ISSUE 05</span><div><h3>AIと既存システムが<br>つながらない。</h3><p>Agent単体ではなく、API・ワークフロー・データソースを含めた業務全体を見ます。</p></div></article>
+          <article class="problem-card reveal"><span class="problem-num">ISSUE 06</span><div><h3>作った後に<br>改善できない。</h3><p>評価指標・ログ・Human in the Loopを組み込み、運用データから改善できる状態を作ります。</p></div></article>
+        </div>
+      </div>
+    </section>
 
-    function renderArticles(){
-      const list = document.getElementById("articlesList");
-      list.innerHTML = "";
+    <section class="section dark-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Approach</div><h2>現場の業務から<br>逆算する。</h2></div>
+          <p>テンキが提供するのは「AIツールの導入」ではなく、AI Agentを含んだ新しい業務プロセスの設計です。人がやること、AIがやること、システムがやることを整理し、実際に回る形まで落とし込みます。</p>
+        </div>
+        <div class="concept-grid">
+          <div class="concept-copy reveal">
+            <h3>AI Agentは、<br><span style="color:var(--lime)">業務設計</span>で<br>強くなる。</h3>
+            <p>生成AIの回答精度だけを追うのではなく、入力・参照情報・判断・アクション・エスカレーションまでを一つの仕組みとして設計します。</p>
+            <div class="concept-quote">「何をAIに聞くか」ではなく、<br>「仕事のどこをAIに任せるか」から考える。</div>
+          </div>
+          <div class="system-map reveal">
+            <div class="map-node"><em>WORK</em><div><b>業務を分解する</b><span>担当者、入力、判断、例外、成果物を整理</span></div></div>
+            <div class="map-node"><em>DATA</em><div><b>必要な情報をつなぐ</b><span>文書、SharePoint、DB、Web、APIなどを設計</span></div></div>
+            <div class="map-node"><em>AGENT</em><div><b>AIの役割を設計する</b><span>検索、推論、対話、分類、生成、オーケストレーション</span></div></div>
+            <div class="map-node"><em>ACTION</em><div><b>業務として実行する</b><span>回答、起票、更新、通知、エスカレーションへ接続</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      ARTICLES
-        .slice()
-        .sort((a,b) => (b.date || "").localeCompare(a.date || ""))
-        .forEach((a) => {
-          const wrap = document.createElement("div");
-          wrap.className = "campaign";
+    <section class="section" id="field">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Field</div><h2>AI化を、<br>一気通貫で。</h2></div>
+          <p>構想だけ、実装だけに分断しません。業務の発見から技術選定、Agent構築、評価、運用まで、必要な部分を切り出して支援できます。</p>
+        </div>
+        <div class="field-grid">
+          <article class="field-card reveal"><div class="field-icon">01</div><h3>AI化対象業務の選定</h3><p>業務ヒアリング・業務分解を行い、AI化による効果と実現性の両面から優先順位を整理します。</p><div class="field-tags"><span>業務整理</span><span>Use Case</span><span>優先順位</span></div></article>
+          <article class="field-card reveal"><div class="field-icon">02</div><h3>AI Agent設計・構築</h3><p>役割、Instruction、Knowledge、Tool、Trigger、Outputを設計し、業務で使えるAgentへ実装します。</p><div class="field-tags"><span>Agent Design</span><span>Prompt</span><span>Tool Use</span></div></article>
+          <article class="field-card reveal"><div class="field-icon">03</div><h3>RAG・Knowledge設計</h3><p>社内文書やナレッジベースをAIが適切に参照できるよう、検索・データ構造・回答方針を設計します。</p><div class="field-tags"><span>RAG</span><span>SharePoint</span><span>Search</span></div></article>
+          <article class="field-card reveal"><div class="field-icon">04</div><h3>Workflow / 外部連携</h3><p>メール、Teams、フォーム、API、データベースなどと接続し、回答だけで終わらない業務自動化へ拡張します。</p><div class="field-tags"><span>API</span><span>Automation</span><span>Workflow</span></div></article>
+          <article class="field-card reveal"><div class="field-icon">05</div><h3>PoC・効果検証</h3><p>評価シナリオとKPIを設計し、AI Agentが本当に業務時間・品質・運用負荷を改善するか検証します。</p><div class="field-tags"><span>PoC</span><span>KPI</span><span>Evaluation</span></div></article>
+          <article class="field-card reveal"><div class="field-icon">06</div><h3>運用・改善設計</h3><p>Human in the Loop、ログ、改善サイクル、利用ルールを整え、導入後に育つAgent運用を作ります。</p><div class="field-tags"><span>HITL</span><span>Governance</span><span>Improve</span></div></article>
+        </div>
+        <div class="tools-band reveal">
+          <div><h3>特定ツールに<br>縛られません。</h3><p>既存環境・要件・予算に合わせて選定</p></div>
+          <div class="tools"><span class="tool featured">Microsoft Copilot Studio</span><span class="tool featured">Dify</span><span class="tool featured">Langflow</span><span class="tool">Power Automate</span><span class="tool">RAG</span><span class="tool">LLM API</span><span class="tool">Workflow</span><span class="tool">Database / API</span></div>
+        </div>
+      </div>
+    </section>
 
-          const thumb = document.createElement("div");
-          thumb.className = "thumb";
-          const img = document.createElement("img");
-          img.alt = "thumb";
-          img.src = a.thumb ? a.thumb : makeThumbSvg("APP");
-          thumb.appendChild(img);
+    <section class="section works-section" id="works">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Works</div><h2>Enterprise<br>Experience.</h2></div>
+          <p>大手企業の業務AI Agent化に関わるプロジェクトへ参画。業務要件とAI実装の間をつなぐ役割を中心に、AI Agentの設計・検証・導入支援を行ってきました。</p>
+        </div>
+        <div class="works-grid">
+          <article class="work-card reveal"><div class="work-visual"><span class="industry">AUTOMOTIVE</span><h3>大手<br>自動車会社</h3></div><div class="work-body"><p>企業業務に対するAI活用・AI Agent化支援に参画。</p><strong>AI AGENT / BUSINESS AI</strong></div></article>
+          <article class="work-card reveal"><div class="work-visual"><span class="industry">ENERGY</span><h3>東北の<br>大手電力会社</h3></div><div class="work-body"><p>現場業務を対象としたAI AgentのPoC・業務適用支援に参画。</p><strong>POC / WORKFLOW / AGENT</strong></div></article>
+          <article class="work-card reveal"><div class="work-visual"><span class="industry">PHARMA</span><h3>外資系<br>大手製薬会社</h3></div><div class="work-body"><p>業務プロセスのAI Agent化・導入支援に参画。</p><strong>ENTERPRISE AI / AGENT DESIGN</strong></div></article>
+        </div>
+        <p class="works-note">※ 守秘義務に配慮し、公開可能な範囲で業種・支援領域のみ記載しています。</p>
+      </div>
+    </section>
 
-          const right = document.createElement("div");
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Process</div><h2>小さく作り、<br>早く確かめる。</h2></div>
+          <p>最初から大規模なAI基盤を作るのではなく、効果が出やすい業務からAgentを実装。実データ・実利用で価値を確かめながら広げます。</p>
+        </div>
+        <div class="process-line reveal">
+          <article class="process-item"><span>STEP 01</span><h3>業務を知る</h3><p>ヒアリングと現行業務の分解。負荷、判断、情報、例外を整理します。</p></article>
+          <article class="process-item"><span>STEP 02</span><h3>設計する</h3><p>AIの役割、Knowledge、Tool、Human in the Loopを決めます。</p></article>
+          <article class="process-item"><span>STEP 03</span><h3>小さく作る</h3><p>最小構成でPoCを実装し、実務に近いケースで検証します。</p></article>
+          <article class="process-item"><span>STEP 04</span><h3>測って育てる</h3><p>KPIとログをもとに改善し、対象業務やAgent機能を拡張します。</p></article>
+        </div>
+      </div>
+    </section>
 
-          const title = document.createElement("div");
-          title.className = "c-title";
-          const link = document.createElement("a");
-          link.href = a.url || "#";
-          link.textContent = a.title || "(no title)";
-          title.appendChild(link);
+    <section class="section" id="plan">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Plan</div><h2>必要なところ<br>から始める。</h2></div>
+          <p>「何ができるか相談したい」段階から、PoC、実装・改善まで対応します。案件規模や既存環境に応じて支援範囲を設計します。</p>
+        </div>
+        <div class="plans-grid">
+          <article class="plan reveal"><span class="plan-label">DISCOVERY</span><h3>AI化診断・<br>壁打ち</h3><p class="plan-sub">業務と課題を整理し、AI Agent化の可能性と進め方を明確にします。</p><div class="price">個別見積</div><ul><li>業務ヒアリング</li><li>AI化候補の整理</li><li>ツール・構成案</li><li>PoC方針の整理</li></ul><a class="btn secondary" href="/contact.html">相談する ↗</a></article>
+          <article class="plan featured reveal"><span class="plan-label">PROOF OF CONCEPT</span><h3>AI Agent<br>PoC</h3><p class="plan-sub">対象業務を絞り、実際に触って評価できるAgentを構築します。</p><div class="price">個別見積</div><ul><li>Agent要件定義</li><li>Knowledge / Tool設計</li><li>PoC実装</li><li>評価設計・改善提案</li></ul><a class="btn" href="/contact.html">PoCを相談する ↗</a></article>
+          <article class="plan reveal"><span class="plan-label">IMPLEMENT & IMPROVE</span><h3>導入・<br>継続改善</h3><p class="plan-sub">PoC後の業務組み込み、運用ルール、追加Agentまで継続して支援します。</p><div class="price">個別見積</div><ul><li>本番導入設計</li><li>Workflow連携</li><li>運用・HITL設計</li><li>継続的なAgent改善</li></ul><a class="btn secondary" href="/contact.html">相談する ↗</a></article>
+        </div>
+      </div>
+    </section>
 
-          const desc = document.createElement("div");
-          desc.className = "c-desc";
-          desc.textContent = a.desc || "";
+    <section class="section dark-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Why TENKI</div><h2>コンサルだけでも、<br>開発だけでもない。</h2></div>
+          <p>AI Agent案件では、業務理解と実装のどちらか一方だけでは前に進みません。テンキは「業務を整理して、実際に作る」までを同じ視点でつなぎます。</p>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card reveal" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><span class="problem-num" style="color:var(--lime)">01 / BUSINESS</span><div><h3>業務から考える。</h3><p style="color:#9da9aa">AIの機能一覧ではなく、現場の仕事・判断・情報からユースケースを設計します。</p></div></article>
+          <article class="problem-card reveal" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><span class="problem-num" style="color:var(--cyan)">02 / TECHNOLOGY</span><div><h3>自分で作れる。</h3><p style="color:#9da9aa">設計資料だけで終わらず、Copilot Studio、Dify、Langflow等でPoCまで実装します。</p></div></article>
+          <article class="problem-card reveal" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)"><span class="problem-num" style="color:var(--orange)">03 / NEUTRAL</span><div><h3>ツールを売らない。</h3><p style="color:#9da9aa">特定製品の導入が目的ではないため、既存環境と目的に合う方法をフラットに選びます。</p></div></article>
+        </div>
+      </div>
+    </section>
 
-          const meta = document.createElement("div");
-          meta.className = "meta";
-          const date = document.createElement("span");
-          date.className = "badge";
-          date.textContent = a.date || "";
-          meta.appendChild(date);
+    <section class="section" id="profile">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Profile</div><h2>テンキについて。</h2></div>
+          <p>AI Agentと業務AI化を専門とする個人事業。大手企業のAI Agent化支援で得た知見を活かし、構想から実装まで機動力高く支援します。</p>
+        </div>
+        <div class="profile-grid">
+          <aside class="profile-card reveal"><span class="mini">AI AGENT SPECIALIST</span><h3>仕事を、<br>AIと再設計する。</h3><p>生成AIを「便利なチャット」で終わらせず、企業の業務プロセスを動かすAgentへ。</p></aside>
+          <dl class="profile-body reveal">
+            <div class="info-row"><dt>屋号</dt><dd>テンキ</dd></div>
+            <div class="info-row"><dt>専門領域</dt><dd>AI Agent / 生成AIを活用した業務AI化</dd></div>
+            <div class="info-row"><dt>主な技術</dt><dd>Microsoft Copilot Studio / Dify / Langflow / RAG / Workflow Automation / LLM API</dd></div>
+            <div class="info-row"><dt>支援内容</dt><dd>AI化対象業務の整理、Agent要件定義、PoC、実装、Knowledge設計、外部連携、効果検証、運用改善</dd></div>
+            <div class="info-row"><dt>支援実績</dt><dd>大手自動車会社 / 東北の大手電力会社 / 外資系大手製薬会社の業務AI Agent化支援に参画</dd></div>
+            <div class="info-row"><dt>スタンス</dt><dd>特定ツールに依存せず、業務・既存環境・目的に合わせて設計</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
 
-          (a.tags || []).slice(0,4).forEach((t) => {
-            const b = document.createElement("span");
-            b.className = "badge";
-            b.textContent = "#" + t;
-            meta.appendChild(b);
-          });
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">FAQ</div><h2>よくある<br>ご相談。</h2></div>
+          <p>まだ要件が固まっていなくても問題ありません。「この業務はAI化できるか？」という段階から整理できます。</p>
+        </div>
+        <div class="faq reveal">
+          <details><summary>まだAI化する業務が決まっていません。相談できますか？ <span class="plus">＋</span></summary><p>可能です。現在の業務・困りごと・利用しているシステムを伺い、AI Agent化による効果が見込める業務を一緒に整理します。</p></details>
+          <details><summary>Copilot Studio以外でも対応できますか？ <span class="plus">＋</span></summary><p>対応できます。Copilot Studio、Dify、Langflowなどを中心に、既存のMicrosoft環境、データソース、必要な外部連携を踏まえて構成を検討します。</p></details>
+          <details><summary>小さなPoCだけでも依頼できますか？ <span class="plus">＋</span></summary><p>可能です。むしろ最初は対象業務を絞り、最小構成で価値と実現性を確認してから広げる進め方を推奨しています。</p></details>
+          <details><summary>社内文書を使った回答Agentも作れますか？ <span class="plus">＋</span></summary><p>可能です。単に文書を登録するだけでなく、検索精度、文書構造、回答ルール、評価方法まで含めたRAG・Knowledge設計を行います。</p></details>
+          <details><summary>相談時に何を用意すればよいですか？ <span class="plus">＋</span></summary><p>詳細な要件書は不要です。「誰が・何のために・どんな作業をしていて・何に困っているか」が分かれば、初期整理から始められます。</p></details>
+        </div>
+      </div>
+    </section>
 
-          right.appendChild(title);
-          right.appendChild(desc);
-          right.appendChild(meta);
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-inner">
+            <div class="eyebrow">Contact</div>
+            <h2>まず、業務を<br>聞かせてください。</h2>
+            <p>「この作業、AIで減らせないか」「Agentを作ったが精度が出ない」「PoCを短期間で形にしたい」。要件が固まる前の段階からご相談いただけます。</p>
+            <a class="btn" href="/contact.html">AI Agentについて相談する ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-          wrap.appendChild(thumb);
-          wrap.appendChild(right);
+  <footer>
+    <div class="container footer-inner">
+      <div><strong style="color:var(--ink)">TENKI</strong> — AI Agent / Business AI</div>
+      <div class="footer-links"><a href="#field">Service</a><a href="#works">Works</a><a href="#profile">Profile</a><a href="/contact.html">Contact</a></div>
+      <div>© <span id="year"></span> TENKI</div>
+    </div>
+  </footer>
 
-          list.appendChild(wrap);
-        });
-    }
+  <script>
+    const header = document.getElementById('header');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 18);
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("updatedAt").textContent = new Date().toISOString().slice(0,10);
-      renderArticles();
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
     });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false');
+    }));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-<script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"df3ea06f5ea74e2294cdde1184d7dc4a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"></script>
 </body>
 </html>
