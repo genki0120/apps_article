@@ -10,68 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Patch index
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-
-          p = Path('index.html')
-          s = p.read_text()
-
-          # Wording normalization
-          s = s.replace('東北の大手電力会社', '東北地方大手電力会社')
-          s = s.replace('東北地方の大手電力会社', '東北地方大手電力会社')
-
-          # Replace the compact trust strip with a stronger enterprise proof section.
-          new_trust = '''<section class="trust trust-showcase" id="trust"><div class="container"><div class="trust-hero reveal"><div><div class="eyebrow">Enterprise Experience</div><h2>大手企業の<br>AI Agent化支援実績。</h2><div class="trust-badge"><span></span> ENTERPRISE AI DELIVERY</div></div><p>テンキは、AIのデモを作るだけではなく、実際の企業業務へどう組み込むかを前提に支援しています。業務整理、Agent設計、Knowledge / RAG、PoC、効果検証まで一気通貫で対応します。</p></div><div class="trust-proof-grid"><article class="proof-card proof-auto reveal"><div class="proof-num">01</div><div class="proof-industry">AUTOMOTIVE</div><h3>大手自動車会社</h3><p>企業業務へのAI Agent適用を前提に、業務プロセス整理からAgent要件・設計支援まで参画。</p><div class="proof-tags"><span>業務整理</span><span>要件定義</span><span>Agent設計</span></div></article><article class="proof-card proof-energy reveal"><div class="proof-num">02</div><div class="proof-industry">ENERGY</div><h3>東北地方大手電力会社</h3><p>現場業務のAI Agent化PoCを支援。問い合わせ・判断・エスカレーション支援の設計と効果検証まで実施。</p><div class="proof-tags"><span>PoC</span><span>対話設計</span><span>効果検証</span></div></article><article class="proof-card proof-pharma reveal"><div class="proof-num">03</div><div class="proof-industry">PHARMA</div><h3>外資系大手製薬会社</h3><p>企業環境・運用条件を踏まえた生成AI / AI Agentの業務適用を支援。実運用を見据えた要件整理に参画。</p><div class="proof-tags"><span>生成AI</span><span>業務AI化</span><span>運用設計</span></div></article></div><p class="trust-note">※ 守秘義務に配慮し、企業名・機密情報は非公開です。</p></div></section>'''
-
-          # Replace first trust section only.
-          s, n = re.subn(r'<section class="trust">.*?</section>', new_trust, s, count=1, flags=re.S)
-          if n != 1:
-              raise SystemExit(f'trust section replacement failed: {n}')
-
-          # Make sure Sake icon points to the real asset without stale cache query.
-          s = re.sub(r'src="/products/assets/sakepicks-app-icon\.png[^\"]*"', 'src="/products/assets/sakepicks-app-icon.png?v=20260906-0100"', s)
-
-          css = r'''
-/* INDEX TRUST + SAKE ICON FINAL FIX 20260906 */
-.trust-showcase{padding:96px 0;background:linear-gradient(180deg,#eeebe2 0%,#f7f4ed 100%);position:relative;overflow:hidden}
-.trust-showcase:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(200,255,54,.14);right:-180px;top:-220px;pointer-events:none}
-.trust-showcase:after{content:"PROOF";position:absolute;right:4%;bottom:-40px;font-size:clamp(90px,15vw,220px);line-height:1;font-weight:950;letter-spacing:-.08em;color:rgba(16,20,22,.035);pointer-events:none}
-.trust-hero{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:end;margin-bottom:34px;position:relative;z-index:1}
-.trust-hero h2{font-size:clamp(42px,6vw,78px);line-height:.98;letter-spacing:-.055em;margin:14px 0 0}
-.trust-hero p{margin:0;color:var(--muted);font-size:16px;max-width:620px}
-.trust-badge{display:inline-flex;align-items:center;gap:9px;margin-top:20px;padding:9px 13px;border-radius:999px;background:var(--dark);color:#fff;font-size:10px;font-weight:950;letter-spacing:.1em}
-.trust-badge span{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(200,255,54,.12)}
-.trust-proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;position:relative;z-index:1}
-.proof-card{position:relative;min-height:310px;padding:26px;border-radius:30px;background:rgba(255,255,255,.72);border:1px solid rgba(16,20,22,.12);overflow:hidden;box-shadow:0 24px 60px rgba(15,20,22,.07)}
-.proof-card:before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;right:-55px;top:-65px;opacity:.24}
-.proof-auto:before{background:var(--cyan)}
-.proof-energy:before{background:var(--lime)}
-.proof-pharma:before{background:var(--orange)}
-.proof-num{font-size:54px;line-height:1;font-weight:950;letter-spacing:-.06em;color:rgba(16,20,22,.13)}
-.proof-industry{margin-top:30px;font-size:10px;font-weight:950;letter-spacing:.16em;color:var(--muted)}
-.proof-card h3{font-size:28px;line-height:1.08;letter-spacing:-.035em;margin:10px 0 12px}
-.proof-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.72}
-.proof-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}
-.proof-tags span{display:inline-flex;padding:7px 10px;border-radius:999px;background:rgba(16,20,22,.06);font-size:9px;font-weight:950;letter-spacing:.05em}
-.trust-note{position:relative;z-index:1;margin:14px 0 0;color:var(--muted);font-size:10px}
-/* Index should show the actual Sake Picks app icon in full. Remove all previous crop/zoom overrides. */
-.product-card.sake .app-icon-wrap{background:#0f0f0d!important}
-.product-card.sake .app-icon-wrap img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;transform:none!important;scale:1!important}
-@media(max-width:900px){.trust-hero{grid-template-columns:1fr;gap:18px}.trust-proof-grid{grid-template-columns:1fr}.proof-card{min-height:0}.trust-showcase{padding:72px 0}}
-@media(max-width:680px){.trust-showcase{padding:66px 0}.trust-hero h2{font-size:43px}.trust-hero p{font-size:14px}.proof-card{padding:24px;min-height:260px}.proof-num{font-size:48px}.proof-card h3{font-size:27px}.product-card.sake .app-icon-wrap img{object-fit:contain!important;object-position:center!important;transform:none!important}}
-'''
-
-          # Append as the final CSS so it wins against all old Sake/mobile overrides.
-          if 'INDEX TRUST + SAKE ICON FINAL FIX 20260906' not in s:
-              s = s.replace('</style>', css + '\n</style>', 1)
-
-          p.write_text(s)
-          PY
-      - name: Commit changes
-        run: |
+      - run: python .github/scripts/patch_index_trust_sake.py
+      - run: |
           git config user.name "genki0120"
           git config user.email "igagenki@outlook.com"
           git add index.html
