@@ -1,0 +1,33 @@
+name: Fix mobile agent card
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-mobile-agent-card.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch index mobile hero and company wording
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          s=s.replace('東北の大手電力会社','東北地方大手電力会社')
+          s=s.replace('東北地方の大手電力会社','東北地方大手電力会社')
+          marker='</style>'
+          css='''\n/* MOBILE AGENT CARD FIX 20260906 */\n@media(max-width:680px){\n  .hero{display:block;padding-bottom:58px}\n  .hero-grid{display:grid;grid-template-columns:1fr;gap:34px}\n  .agent-stage{min-height:0;height:auto;margin-top:4px;position:relative}\n  .agent-stage .orb{display:none}\n  .agent-card{position:relative;inset:auto!important;width:100%;height:auto;min-height:0;margin:0;transform:none!important;border-radius:30px;padding:24px 20px 22px;box-shadow:0 26px 64px rgba(10,13,15,.20)}\n  .agent-top{gap:12px;flex-wrap:wrap}\n  .agent-title{font-size:31px;line-height:1.08;margin:26px 0 20px}\n  .workflow{gap:10px}\n  .flow{grid-template-columns:46px 1fr;gap:12px;padding:12px;border-radius:15px}\n  .flow i{width:46px;height:46px;border-radius:12px}\n  .flow b{font-size:13px}\n  .flow span{font-size:10px;line-height:1.45}\n}\n'''
+          if 'MOBILE AGENT CARD FIX 20260906' not in s:
+              s=s.replace(marker,css+marker)
+          p.write_text(s)
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name "genki0120"
+          git config user.email "igagenki@outlook.com"
+          git add index.html
+          git commit -m "Fix mobile agent card overflow and energy company wording [skip ci]" || exit 0
+          git push
