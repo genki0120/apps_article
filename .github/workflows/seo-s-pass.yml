@@ -1,0 +1,127 @@
+name: SEO S-tier pass
+on:
+  push:
+    paths:
+      - '.github/workflows/seo-s-pass.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - name: Normalize TENKI product SEO and legacy sitemap
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, json
+
+          products = {
+            'products/jor.html': {
+              'title': 'JOR | Japanese Home Cooking from What You Have',
+              'description': 'JOR turns the ingredients you already have into Japanese home-cooking ideas with AI recognition, recipe generation and guided cooking.',
+              'canonical': 'https://god-apps-article.com/products/jor.html',
+              'name': 'JOR',
+              'category': 'LifestyleApplication',
+              'os': 'iOS',
+              'image': 'https://god-apps-article.com/products/assets/jor-app-icon.svg',
+            },
+            'products/sakepicks.html': {
+              'title': 'Sake Picks | Discover, Vote and Follow Japanese Sake',
+              'description': 'Sake Picks is a participatory sake discovery product: explore selections, vote in Sake Elections, follow results, drops, reviews and community activity.',
+              'canonical': 'https://god-apps-article.com/products/sakepicks.html',
+              'name': 'Sake Picks',
+              'category': 'LifestyleApplication',
+              'os': 'iOS',
+              'image': 'https://god-apps-article.com/products/assets/sakepicks-app-icon-fixed.svg',
+            },
+            'products/calcal.html': {
+              'title': 'Cal×Cal | AI Calorie & Nutrition Tracker',
+              'description': 'Cal×Cal analyzes a meal photo and turns it into calories, protein, fat and carbs you can track against your daily goals.',
+              'canonical': 'https://god-apps-article.com/products/calcal.html',
+              'name': 'Cal×Cal',
+              'category': 'HealthApplication',
+              'os': 'iOS 16.4 or later',
+              'image': 'https://god-apps-article.com/products/assets/calcal-app-icon.svg',
+              'download': 'https://apps.apple.com/jp/app/id6793968655',
+              'offers': {'@type':'Offer','price':0,'priceCurrency':'JPY'},
+            },
+          }
+
+          start = '<!-- TENKI SEO S PASS START -->'
+          end = '<!-- TENKI SEO S PASS END -->'
+
+          for file, m in products.items():
+              p = Path(file)
+              s = p.read_text(encoding='utf-8')
+              s = re.sub(re.escape(start) + r'.*?' + re.escape(end) + r'\n?', '', s, flags=re.S)
+
+              schema = {
+                  '@context':'https://schema.org',
+                  '@type':'MobileApplication',
+                  'name':m['name'],
+                  'url':m['canonical'],
+                  'description':m['description'],
+                  'applicationCategory':m['category'],
+                  'operatingSystem':m['os'],
+                  'image':m['image'],
+                  'publisher':{
+                      '@type':'Organization',
+                      'name':'テンキ',
+                      'alternateName':'TENKI',
+                      'url':'https://god-apps-article.com/'
+                  }
+              }
+              if 'download' in m:
+                  schema['downloadUrl'] = m['download']
+              if 'offers' in m:
+                  schema['offers'] = m['offers']
+
+              block = '\n'.join([
+                  start,
+                  '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">',
+                  f'<link rel="canonical" href="{m["canonical"]}">',
+                  '<meta property="og:type" content="website">',
+                  '<meta property="og:locale" content="ja_JP">',
+                  '<meta property="og:site_name" content="テンキ / TENKI">',
+                  f'<meta property="og:title" content="{m["title"]}">',
+                  f'<meta property="og:description" content="{m["description"]}">',
+                  f'<meta property="og:url" content="{m["canonical"]}">',
+                  '<meta name="twitter:card" content="summary">',
+                  '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False, separators=(',',':')) + '</script>',
+                  end,
+              ])
+
+              marker = re.search(r'<meta name="theme-color"[^>]*>\s*', s)
+              if not marker:
+                  raise RuntimeError(f'theme-color marker not found in {file}')
+              pos = marker.end()
+              s = s[:pos] + block + '\n' + s[pos:]
+              p.write_text(s, encoding='utf-8')
+
+          # Legacy sitemap remains responsible for the old AppsArticle site.
+          # Remove only URLs now owned by the TENKI sitemap or the sitemap file itself.
+          sp = Path('sitemap.xml')
+          sm = sp.read_text(encoding='utf-8')
+          remove_locs = {
+              'https://god-apps-article.com',
+              'https://god-apps-article.com/',
+              'https://god-apps-article.com/sitemap.xml',
+          }
+          for loc in remove_locs:
+              pattern = r'<url>\s*<loc>' + re.escape(loc) + r'</loc>.*?</url>\s*'
+              sm = re.sub(pattern, '', sm, flags=re.S)
+          sp.write_text(sm, encoding='utf-8')
+          PY
+      - name: Commit SEO S-tier changes
+        run: |
+          git config user.name "genki0120"
+          git config user.email "igagenki@outlook.com"
+          git add products/jor.html products/sakepicks.html products/calcal.html sitemap.xml
+          git rm .github/workflows/seo-s-pass.yml
+          git diff --cached --quiet || git commit -m "Complete S-tier SEO normalization [skip ci]"
+          git push
