@@ -2,3 +2,4 @@ User-agent: *
 Disallow:
 
 Sitemap: https://god-apps-article.com/sitemap.xml
+Sitemap: https://god-apps-article.com/sitemap-tenki.xml
