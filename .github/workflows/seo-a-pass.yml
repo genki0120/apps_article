@@ -1,0 +1,101 @@
+name: SEO A-tier pass
+on:
+  push:
+    paths:
+      - '.github/workflows/seo-a-pass.yml'
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install image dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk >/dev/null
+          python -m pip install --quiet pillow
+      - name: Apply SEO A-tier text changes
+        run: python .github/scripts/seo_a_pass.py
+      - name: Generate TENKI favicon, logo and OG images
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageDraw, ImageFont
+          import os
+          Path('assets/og').mkdir(parents=True,exist_ok=True)
+          Path('products/assets').mkdir(parents=True,exist_ok=True)
+          font_candidates=[
+            '/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc',
+            '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',
+            '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+          ]
+          font=next((f for f in font_candidates if Path(f).exists()),font_candidates[-1])
+          def fnt(sz,bold=True): return ImageFont.truetype(font,sz)
+          bg=(244,241,234); ink=(16,20,22); lime=(200,255,54); cyan=(108,229,232); orange=(255,138,76)
+          # square logo/favicon
+          for size,name in [(512,'assets/tenki-logo.png'),(96,'assets/favicon.png')]:
+            im=Image.new('RGB',(size,size),ink); d=ImageDraw.Draw(im)
+            r=max(5,size//11); d.ellipse((size-r*2-12,12,size-12,size-r*2+12),fill=lime)
+            txt='天'; ft=fnt(int(size*.52)); bb=d.textbbox((0,0),txt,font=ft); d.text(((size-(bb[2]-bb[0]))/2,(size-(bb[3]-bb[1]))/2-bb[1]-2),txt,font=ft,fill=bg)
+            im.save(name,optimize=True)
+          titles={
+            'tenki':'AI Agentを\n業務で動かす',
+            'ai-agent':'AI Agentとは',
+            'copilot-studio':'Copilot Studioとは',
+            'dify':'Difyとは',
+            'copilot-vs-dify':'Copilot Studio\nvs Dify',
+            'rag':'RAGとは',
+            'ai-agent-poc':'AI Agent PoCの\n進め方',
+            'about':'テンキについて',
+            'case-studies':'企業向け\nAI Agent支援実績',
+            'ai-agent-security-governance':'AI Agentの\nセキュリティと運用',
+            'ai-agent-cost':'AI Agent導入費用の\n考え方',
+            'ai-agent-implementation':'AI Agent導入の\n進め方',
+            'ai-agent-failure':'AI Agent導入の\n失敗を防ぐ',
+            'generative-ai-business-efficiency':'生成AIで\n業務効率化する',
+          }
+          accents=[cyan,lime,orange]
+          def og(title,out,accent=cyan,kicker='TENKI / BUSINESS AI'):
+            W,H=1200,630; im=Image.new('RGB',(W,H),bg); d=ImageDraw.Draw(im)
+            # grid
+            for x in range(0,W,60): d.line((x,0,x,H),fill=(226,223,215),width=1)
+            for y in range(0,H,60): d.line((0,y,W,y),fill=(226,223,215),width=1)
+            d.ellipse((900,-120,1240,220),fill=accent)
+            d.rounded_rectangle((690,110,1130,520),radius=38,fill=ink)
+            d.text((80,70),kicker,font=fnt(24),fill=ink)
+            y=145
+            for line in title.split('\n'):
+              d.text((78,y),line,font=fnt(72),fill=ink); y+=84
+            d.text((735,165),'From question',font=fnt(42),fill=(251,250,246))
+            d.text((735,220),'to business action.',font=fnt(42),fill=(251,250,246))
+            for i,(label,color) in enumerate([('Understand',cyan),('Retrieve',lime),('Act',orange)]):
+              yy=310+i*62
+              d.rounded_rectangle((735,yy,1060,yy+45),radius=12,outline=(80,86,88),width=2)
+              d.ellipse((755,yy+13,774,yy+32),fill=color)
+              d.text((795,yy+8),label,font=fnt(22),fill=(235,238,238))
+            im.save(out,optimize=True)
+          for i,(slug,title) in enumerate(titles.items()): og(title,f'assets/og/{slug}.png',accents[i%3])
+          # product og
+          prod=[('jor','JOR','Japanese Home Cooking',(233,185,72)),('sakepicks','Sake Picks','Discover · Vote · Follow',(216,173,85)),('calcal','Cal×Cal','AI Nutrition',(255,138,76))]
+          for slug,name,sub,accent in prod:
+            W,H=1200,630; im=Image.new('RGB',(W,H),bg if slug!='sakepicks' else (13,13,11)); d=ImageDraw.Draw(im)
+            fg=ink if slug!='sakepicks' else (244,240,228)
+            d.ellipse((850,-120,1220,250),fill=accent)
+            d.text((80,90),'TENKI / PRODUCT',font=fnt(24),fill=fg)
+            d.text((75,190),name,font=fnt(92),fill=fg)
+            d.text((80,315),sub,font=fnt(38),fill=accent)
+            d.rounded_rectangle((80,430,450,500),radius=35,outline=accent,width=3)
+            d.text((120,447),'Built by TENKI',font=fnt(26),fill=fg)
+            im.save(f'products/assets/og-{slug}.png',optimize=True)
+          print('generated assets')
+          PY
+      - name: Commit SEO A-tier implementation
+        run: |
+          git config user.name "genki0120"
+          git config user.email "igagenki@outlook.com"
+          git add index.html tenki.css guide.css localized-product.css assets products en es *.html sitemap-tenki.xml
+          git diff --cached --quiet || git commit -m "Implement A-tier SEO enhancements and business guides [skip ci]"
+          git push
