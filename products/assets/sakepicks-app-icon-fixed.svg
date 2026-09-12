@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Sake Picks app icon</title>
+  <desc id="desc">Black and gray app icon with a red Japanese torii gate and gold lantern.</desc>
+  <defs>
+    <linearGradient id="blackBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12110f"/>
+      <stop offset="1" stop-color="#090a09"/>
+    </linearGradient>
+    <linearGradient id="grayBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8e8e8"/>
+      <stop offset="1" stop-color="#d8d8d8"/>
+    </linearGradient>
+    <linearGradient id="redGate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d95d48"/>
+      <stop offset="1" stop-color="#a63d32"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8cf86"/>
+      <stop offset="1" stop-color="#b89745"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="710" fill="url(#blackBg)"/>
+  <rect y="710" width="1024" height="314" fill="url(#grayBg)"/>
+  <rect y="705" width="1024" height="7" fill="#c8c8c8" opacity=".85"/>
+
+  <!-- Torii: drawn after both backgrounds so the gate remains visible over the gray band -->
+  <path d="M200 310 C350 338 674 338 824 310 L804 382 C658 408 366 408 220 382 Z" fill="url(#redGate)"/>
+  <rect x="254" y="402" width="516" height="72" rx="10" fill="#bb4838"/>
+  <rect x="319" y="456" width="86" height="335" rx="12" fill="url(#redGate)"/>
+  <rect x="619" y="456" width="86" height="335" rx="12" fill="url(#redGate)"/>
+  <path d="M295 485 H429 L409 535 H315 Z" fill="#8f3129" opacity=".9"/>
+  <path d="M595 485 H729 L709 535 H615 Z" fill="#8f3129" opacity=".9"/>
+
+  <!-- Hanging lantern -->
+  <rect x="447" y="500" width="130" height="28" rx="7" fill="#6c5a2a"/>
+  <path d="M465 528 H559 L548 700 H476 Z" fill="url(#gold)" stroke="#7e682f" stroke-width="14"/>
+  <path d="M486 552 H538 L533 671 H491 Z" fill="#f5e7b4" opacity=".92"/>
+  <rect x="476" y="695" width="72" height="24" rx="5" fill="#6c5a2a"/>
+
+  <!-- subtle foreground shadow, below the graphics rather than covering them -->
+  <ellipse cx="512" cy="825" rx="245" ry="56" fill="#000" opacity=".08"/>
+</svg>
