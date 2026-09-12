@@ -1,14 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
   <title id="title">Sake Picks app icon</title>
-  <desc id="desc">Black and gray app icon with a compact red Japanese torii gate and gold lantern.</desc>
+  <desc id="desc">Black app icon with a red Japanese torii gate and gold lantern.</desc>
   <defs>
     <linearGradient id="blackBg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#12110f"/>
       <stop offset="1" stop-color="#090a09"/>
-    </linearGradient>
-    <linearGradient id="grayBg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ececec"/>
-      <stop offset="1" stop-color="#dcdcdc"/>
     </linearGradient>
     <linearGradient id="redGate" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#d95d48"/>
@@ -20,12 +16,8 @@
     </linearGradient>
   </defs>
 
-  <!-- Background split matches the original app-icon treatment -->
-  <rect width="1024" height="700" fill="url(#blackBg)"/>
-  <rect y="700" width="1024" height="324" fill="url(#grayBg)"/>
-  <rect y="696" width="1024" height="8" fill="#c8c8c8" opacity=".9"/>
+  <rect width="1024" height="1024" fill="url(#blackBg)"/>
 
-  <!-- Compact torii kept entirely inside the black field -->
   <path d="M235 250 C370 276 654 276 789 250 L772 316 C640 340 384 340 252 316 Z" fill="url(#redGate)"/>
   <rect x="292" y="336" width="440" height="62" rx="10" fill="#bb4838"/>
   <rect x="342" y="388" width="70" height="270" rx="11" fill="url(#redGate)"/>
@@ -33,12 +25,10 @@
   <path d="M326 412 H431 L414 456 H341 Z" fill="#8f3129" opacity=".9"/>
   <path d="M593 412 H698 L683 456 H610 Z" fill="#8f3129" opacity=".9"/>
 
-  <!-- Lantern is centered and finishes above the gray band -->
   <rect x="455" y="432" width="114" height="24" rx="6" fill="#6c5a2a"/>
   <path d="M472 456 H552 L543 625 H481 Z" fill="url(#gold)" stroke="#7e682f" stroke-width="12"/>
   <path d="M490 478 H534 L530 603 H494 Z" fill="#f5e7b4" opacity=".94"/>
   <rect x="484" y="621" width="56" height="20" rx="5" fill="#6c5a2a"/>
 
-  <!-- Soft grounding shadow only on the gray field -->
-  <ellipse cx="512" cy="806" rx="225" ry="48" fill="#000" opacity=".07"/>
+  <ellipse cx="512" cy="785" rx="190" ry="38" fill="#ffffff" opacity=".055"/>
 </svg>
