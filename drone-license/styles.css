@@ -43,3 +43,143 @@
 .final-cta--main{margin-bottom:0;grid-template-columns:auto 1fr auto}.final-cta--main small{display:block;color:#7c8793;font-size:9px;line-height:1.65;margin-top:8px}.final-cta__actions{display:grid;gap:8px}.final-cta__actions .btn--ghost{background:#fff}
 @media(max-width:1050px){.school-grid,.job-grid{grid-template-columns:1fr}.school-card,.job-card{min-height:0}.school-disclaimer{grid-template-columns:1fr}.phase-note{grid-template-columns:70px 1fr}.phase-note a{grid-column:2}.jobs-note{grid-template-columns:1fr}.final-cta--main{grid-template-columns:auto 1fr}.final-cta__actions{grid-column:2}.compare-strip{grid-template-columns:1fr}.compare-strip>div{border-right:0;border-bottom:1px solid var(--line)}.compare-strip>div:last-child{border-bottom:0}}
 @media(max-width:720px){.school-specs li{grid-template-columns:78px 1fr}.phase-note{grid-template-columns:1fr}.phase-note a{grid-column:auto}.section--jobs{padding-left:20px;padding-right:20px}.final-cta--main{display:block}.final-cta__actions{margin-top:22px}.final-cta__actions .btn{width:100%}}
+
+/* SECTION PHOTO BACKGROUNDS 2026-09-26 */
+/*
+  Free-photo backgrounds: Unsplash License.
+  Hero / FAQ: https://unsplash.com/photos/white-drone-flying-in-the-sky-during-daytime-M4Z7GICY5AY
+  Trust / Study: https://unsplash.com/photos/desk-with-open-book-laptop-and-study-materials-HNjWq8WPyoY
+  License overview: https://unsplash.com/photos/white-quadcopter-drone-on-air-zXO5gPb24aI
+  Guides: https://unsplash.com/photos/a-desk-with-a-pen-notebook-and-a-laptop-on-it-pu95Yl-Qp34
+  Practical: https://unsplash.com/photos/drone-flying-in-sky-XYrjl3j7smo
+  Jobs: https://unsplash.com/photos/a-drone-flying-in-the-sky-Iz9u6T3VMIk
+*/
+
+/* 02 - trust / qualification credibility */
+#trust{
+  background-image:
+    linear-gradient(rgba(246,248,251,.91),rgba(246,248,251,.91)),
+    url("https://images.unsplash.com/photo-1770681381576-fe1ca0178da1?auto=format&fit=crop&w=2400&q=82");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* 03 - qualification overview */
+#license{
+  background-image:
+    linear-gradient(rgba(246,249,253,.92),rgba(246,249,253,.92)),
+    url("https://images.unsplash.com/photo-1511674294200-df1c0668e87d?auto=format&fit=crop&w=2400&q=82");
+  background-size:cover;
+  background-position:center 45%;
+  background-repeat:no-repeat;
+}
+
+/* 04 - study */
+#study{
+  background-image:
+    linear-gradient(rgba(255,255,255,.91),rgba(255,255,255,.91)),
+    url("https://images.unsplash.com/photo-1769794371055-54436b54577e?auto=format&fit=crop&w=2400&q=82");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* 05 - guides */
+#guides{
+  background-image:
+    linear-gradient(rgba(247,249,252,.91),rgba(247,249,252,.91)),
+    url("https://images.unsplash.com/photo-1703656556329-1d582a88fe11?auto=format&fit=crop&w=2400&q=82");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* 06 - practical training */
+#practical{
+  background-image:
+    linear-gradient(rgba(255,255,255,.88),rgba(246,250,255,.91)),
+    url("https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=2400&q=82");
+  background-size:cover;
+  background-position:center 42%;
+  background-repeat:no-repeat;
+}
+
+/* 07 - jobs / career */
+#jobs{
+  background-image:
+    linear-gradient(rgba(7,28,55,.86),rgba(7,35,70,.88)),
+    url("https://images.unsplash.com/photo-1658134145031-48a0afd3280e?auto=format&fit=crop&w=2400&q=82");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* 08 - FAQ / final CTA */
+#faq{
+  background-image:
+    linear-gradient(rgba(255,255,255,.90),rgba(245,249,255,.91)),
+    url("https://images.unsplash.com/photo-1594538883485-224882654f65?auto=format&fit=crop&w=2400&q=82");
+  background-size:cover;
+  background-position:center 38%;
+  background-repeat:no-repeat;
+}
+
+/* Keep text and cards visually separated from photographs. */
+#trust .award-card,
+#trust .source-proof,
+#license .license-facts article,
+#license .license-flow-wrap,
+#license .route-compare,
+#study .feature-tabs,
+#study .study-method,
+#study .official-note,
+#guides .guide-card,
+#guides .guide-policy,
+#practical .school-card,
+#practical .school-disclaimer,
+#practical .compare-strip,
+#practical .phase-note,
+#faq .faq-list details,
+#faq .final-cta{
+  box-shadow:0 14px 34px rgba(24,60,103,.08);
+}
+
+/* Small screens: use tighter crops and slightly stronger overlays. */
+@media(max-width:720px){
+  #trust{
+    background-image:
+      linear-gradient(rgba(246,248,251,.94),rgba(246,248,251,.94)),
+      url("https://images.unsplash.com/photo-1770681381576-fe1ca0178da1?auto=format&fit=crop&w=1200&q=78");
+  }
+  #license{
+    background-image:
+      linear-gradient(rgba(246,249,253,.95),rgba(246,249,253,.95)),
+      url("https://images.unsplash.com/photo-1511674294200-df1c0668e87d?auto=format&fit=crop&w=1200&q=78");
+  }
+  #study{
+    background-image:
+      linear-gradient(rgba(255,255,255,.94),rgba(255,255,255,.94)),
+      url("https://images.unsplash.com/photo-1769794371055-54436b54577e?auto=format&fit=crop&w=1200&q=78");
+  }
+  #guides{
+    background-image:
+      linear-gradient(rgba(247,249,252,.94),rgba(247,249,252,.94)),
+      url("https://images.unsplash.com/photo-1703656556329-1d582a88fe11?auto=format&fit=crop&w=1200&q=78");
+  }
+  #practical{
+    background-image:
+      linear-gradient(rgba(255,255,255,.93),rgba(246,250,255,.94)),
+      url("https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1200&q=78");
+  }
+  #jobs{
+    background-image:
+      linear-gradient(rgba(7,28,55,.90),rgba(7,35,70,.91)),
+      url("https://images.unsplash.com/photo-1658134145031-48a0afd3280e?auto=format&fit=crop&w=1200&q=78");
+  }
+  #faq{
+    background-image:
+      linear-gradient(rgba(255,255,255,.94),rgba(245,249,255,.95)),
+      url("https://images.unsplash.com/photo-1594538883485-224882654f65?auto=format&fit=crop&w=1200&q=78");
+  }
+}
