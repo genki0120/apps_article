@@ -11,7 +11,7 @@
   updateProgress();
 
   const targets = document.querySelectorAll(
-    ".hero__copy, .quick-answer__copy, .section-title, .why-intro__copy, .why-chapter__copy, .pairing-row__copy, .taste-grid article, .bottle-card, .availability, .faq details, .closing__copy"
+    ".hero__copy, .quick-answer__copy, .section-title, .why-intro__copy, .why-chapter__copy, .history-card, .pairing-row__copy, .taste-grid article, .bottle-card, .availability, .faq details, .closing__copy"
   );
 
   targets.forEach(el => el.classList.add("reveal"));
