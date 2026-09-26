@@ -11,7 +11,7 @@
   updateProgress();
 
   const targets = document.querySelectorAll(
-    ".hero__copy, .quick-answer__copy, .section-title, .why-intro__copy, .why-chapter__copy, .history-card, .pairing-row__copy, .taste-grid article, .bottle-card, .availability, .faq details, .closing__copy"
+    ".hero__copy, .quick-answer__copy, .section-title, .why-intro__copy, .why-chapter__copy, .history-card, .rules-section__intro, .rule-grid article, .pairing-row__copy, .rice-section__intro, .seasoning-grid article, .temperature-section__intro, .temperature-card, .bottles__intro, .bottle-card, .availability, .ordering-section__intro, .order-scripts article, .faq details, .closing__copy"
   );
 
   targets.forEach(el => el.classList.add("reveal"));
