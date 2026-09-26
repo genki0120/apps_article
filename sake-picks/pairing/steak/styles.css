@@ -423,3 +423,146 @@ img{display:block;max-width:100%}
   .article-intro__list strong,.article-intro__list small{font-size:18px!important}
   .rule-detail>span,.why-card__no,.rule-list span{font-size:21px!important}
 }
+
+
+/* ==========================================================================
+   SECTION 04 LAYOUT REBALANCE 2026-09-26
+   Smaller charcoal image, wider copy, denser rule rows.
+   ========================================================================== */
+@media(min-width:1101px){
+  .rules{
+    grid-template-columns:.76fr 1.24fr;
+    min-height:900px
+  }
+
+  .rules__visual{
+    min-height:900px;
+    padding:54px 0 54px 3vw
+  }
+
+  .rules__visual figure{
+    height:100%;
+    max-height:820px
+  }
+
+  .rules__visual img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    transform:none
+  }
+
+  .rules__visual::after{
+    background:
+      linear-gradient(90deg,transparent 68%,var(--charcoal) 100%),
+      linear-gradient(0deg,var(--charcoal) 0,transparent 9%,transparent 91%,var(--charcoal) 100%)
+  }
+
+  .rules__copy{
+    padding:72px 4.5vw 72px 2.4vw;
+    justify-content:center
+  }
+
+  .rule-list--detail{
+    margin-top:34px
+  }
+
+  .rule-list--detail .rule-detail{
+    grid-template-columns:42px minmax(0,1fr);
+    gap:18px;
+    padding:17px 0
+  }
+
+  .rule-list--detail .rule-detail>div{
+    display:grid;
+    grid-template-columns:minmax(170px,.38fr) minmax(0,1.62fr);
+    gap:30px;
+    align-items:start;
+    min-height:0;
+    border-bottom:0
+  }
+
+  .rule-detail strong{
+    font-size:22px!important;
+    line-height:1.18
+  }
+
+  .rule-detail p{
+    max-width:none!important;
+    margin:0!important;
+    font-size:20px!important;
+    line-height:1.55!important
+  }
+
+  .rules__sources{
+    margin-top:26px
+  }
+}
+
+@media(min-width:761px) and (max-width:1100px){
+  .rule-list--detail .rule-detail>div{
+    display:grid;
+    grid-template-columns:minmax(150px,.38fr) minmax(0,1.62fr);
+    gap:24px;
+    align-items:start;
+    min-height:0;
+    border-bottom:0
+  }
+
+  .rule-detail p{
+    max-width:none!important;
+    margin:0!important;
+    line-height:1.6!important
+  }
+}
+
+@media(max-width:760px){
+  .rules__visual{
+    min-height:0;
+    height:42svh;
+    padding:28px 20px 0
+  }
+
+  .rules__visual figure{
+    height:100%
+  }
+
+  .rules__visual img{
+    object-fit:contain;
+    object-position:center
+  }
+
+  .rules__copy{
+    padding:58px 20px 66px
+  }
+
+  .rule-list--detail{
+    margin-top:30px
+  }
+
+  .rule-list--detail .rule-detail{
+    grid-template-columns:34px minmax(0,1fr);
+    gap:16px;
+    padding:19px 0
+  }
+
+  .rule-list--detail .rule-detail>div{
+    display:block;
+    min-height:0;
+    border-bottom:0
+  }
+
+  .rule-detail strong{
+    display:block;
+    font-size:21px!important;
+    line-height:1.18
+  }
+
+  .rule-detail p{
+    max-width:none!important;
+    margin:9px 0 0!important;
+    font-size:19px!important;
+    line-height:1.55!important
+  }
+}
