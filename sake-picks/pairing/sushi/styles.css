@@ -903,3 +903,46 @@ em{font-style:normal;color:var(--red)}
   .store-badge--apple{height:48px}
   .store-badge--google{height:57px;margin:-4px 0}
 }
+
+
+/* ==========================================================================
+   TYPOGRAPHY READABILITY AUDIT 2026-09-26
+   - smallest text tier ≈ 2x
+   - primary hero catch copy ≈ 0.8x
+   ========================================================================== */
+.hero h1{font-size:clamp(50px,5.36vw,90px)!important}
+.brand__text small{font-size:14px!important}
+.app-link{font-size:16px!important}
+.eyebrow{font-size:16px!important}
+.breadcrumbs{font-size:14px!important}
+.hero__meta{font-size:14px!important}
+.principle-no{font-size:16px!important}
+.pairing-row dt{font-size:14px!important}
+.taste-grid a{font-size:14px!important}
+.bottle-placeholder small{font-size:14px!important}
+.bottle-card__copy a{font-size:14px!important}
+.button{font-size:16px!important}
+.footer__brand small{font-size:14px!important}
+.credits>span{font-size:14px!important}
+.footer>p{font-size:16px!important}
+.hero__answer span{font-size:14px!important}
+.quick-grid strong{font-size:16px!important}
+.why-no{font-size:14px!important}
+.source-link{font-size:14px!important}
+.why-sources span{font-size:14px!important}
+.history-card__label{font-size:14px!important}
+.history-step{font-size:16px!important}
+.history-sources span{font-size:14px!important}
+.history-track__name{font-size:14px!important}
+.history-meet span{font-size:14px!important}
+.article-toc__title strong{font-size:16px!important}
+.article-toc__grid a{font-size:16px!important}
+.rule-no{font-size:16px!important}
+.temperature-card strong{font-size:14px!important}
+.order-scripts small{font-size:14px!important}
+.article-app-card__wordmark small{font-size:14px!important}
+.article-app-card__note{font-size:16px!important}
+
+@media(max-width:700px){
+  .hero h1{font-size:clamp(43px,12vw,62px)!important}
+}
