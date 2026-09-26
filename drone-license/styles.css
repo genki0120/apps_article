@@ -216,3 +216,62 @@
     border-radius:16px;
   }
 }
+
+/* FULL-BLEED SECTION BACKGROUNDS 2026-09-26 */
+/* Keep the article/card column at the same width, but let every section photo span the viewport. */
+#trust,
+#study,
+#practical,
+#faq{
+  max-width:none;
+  width:100%;
+  padding-left:max(28px,calc((100vw - var(--max))/2 + 28px));
+  padding-right:max(28px,calc((100vw - var(--max))/2 + 28px));
+}
+
+/* These sections were already full-bleed; keep the same horizontal grid explicitly. */
+#license,
+#guides,
+#jobs{
+  width:100%;
+  padding-left:max(28px,calc((100vw - var(--max))/2 + 28px));
+  padding-right:max(28px,calc((100vw - var(--max))/2 + 28px));
+}
+
+/* Trust used to look like a centered card; make its photo behave like the other section bands. */
+#trust{
+  border-radius:0;
+  margin-top:0;
+}
+
+/* Hero content stays constrained, while its photo stretches edge-to-edge. */
+.hero__bg{
+  left:50%;
+  right:auto;
+  width:100vw;
+  transform:translateX(-50%);
+}
+
+/* Avoid a white seam between adjacent full-bleed photo bands. */
+#trust,
+#license,
+#study,
+#guides,
+#practical,
+#jobs,
+#faq{
+  background-clip:border-box;
+}
+
+@media(max-width:720px){
+  #trust,
+  #license,
+  #study,
+  #guides,
+  #practical,
+  #jobs,
+  #faq{
+    padding-left:20px;
+    padding-right:20px;
+  }
+}
