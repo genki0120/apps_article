@@ -4,3 +4,4 @@ Disallow:
 Sitemap: https://god-apps-article.com/sitemap.xml
 Sitemap: https://god-apps-article.com/sitemap-tenki.xml
 Sitemap: https://god-apps-article.com/sitemap-sake-picks.xml
+Sitemap: https://god-apps-article.com/sitemap-drone-license.xml
