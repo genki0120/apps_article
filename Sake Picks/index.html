@@ -4,13 +4,93 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#080808" />
-  <meta name="description" content="Sake Picks — discover premium Japanese sake by taste, food pairing, and story." />
-  <title>Sake Picks — Discover Premium Japanese Sake by Taste & Pairing</title>
+  <meta name="description" content="Sake Picks curates exceptional Japanese sake through taste, food pairing, regional craft and real user interest." />
+  <title>Sake Picks — Exceptional Sake from Japan</title>
   <link rel="stylesheet" href="./styles.css" />
+
+  <style>
+    /* Page-specific additions for the Sake Picks main hub */
+    .hub-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+    .hub-links a{min-height:50px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(240,234,223,.28);font-size:9px;font-weight:800;letter-spacing:.16em;transition:.25s ease}
+    .hub-links a:first-child{background:#c6a35c;color:#080808;border-color:#c6a35c}
+    .hub-links a:hover{transform:translateY(-2px)}
+    .discover-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(240,234,223,.14);border:1px solid rgba(240,234,223,.14)}
+    .discover-card{min-height:320px;background:#11110f;padding:34px 28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+    .discover-card::before{content:"";position:absolute;inset:auto -15% -30% auto;width:180px;height:180px;border:1px solid rgba(198,163,92,.18);border-radius:50%}
+    .discover-card .no{font:italic 400 18px var(--serif);color:#9d1f1b}
+    .discover-card h3{font:400 38px/1 var(--serif);margin:0}
+    .discover-card p{color:rgba(240,234,223,.55);font-size:11px;line-height:1.75;margin:12px 0 0}
+    .discover-card a{margin-top:28px;font-size:8px;font-weight:800;letter-spacing:.15em;color:#c6a35c}
+    .taste-hub{background:#c6a35c;color:#080808;padding:120px var(--pad)}
+    .taste-hub .kicker{color:#57100e}
+    .taste-hub__head{max-width:var(--max);margin:0 auto 62px;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:end}
+    .taste-hub__head h2{font:400 clamp(58px,7vw,110px)/.9 var(--serif);letter-spacing:-.06em;margin:0}
+    .taste-hub__head p{max-width:520px;margin:0;color:rgba(8,8,8,.62);line-height:1.9;font-size:12px}
+    .taste-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(8,8,8,.45);border-bottom:1px solid rgba(8,8,8,.45)}
+    .taste-card{padding:30px 24px 34px;border-right:1px solid rgba(8,8,8,.26);min-height:250px;display:flex;flex-direction:column}
+    .taste-card:last-child{border-right:0}
+    .taste-card span{font:italic 400 18px var(--serif);color:#57100e}
+    .taste-card h3{font:400 38px/1 var(--serif);margin:42px 0 12px}
+    .taste-card p{font-size:11px;line-height:1.7;color:rgba(8,8,8,.62);margin:0}
+    .taste-card a{margin-top:auto;padding-top:30px;font-size:8px;font-weight:800;letter-spacing:.15em}
+    .why-section{background:#f0eadf;color:#080808;padding:130px var(--pad)}
+    .why-section .kicker{color:#9d1f1b}
+    .why-head{max-width:var(--max);margin:0 auto 70px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:end}
+    .why-head h2{font:400 clamp(54px,7vw,108px)/.9 var(--serif);letter-spacing:-.06em;margin:0}
+    .why-head p{margin:0;color:rgba(8,8,8,.58);font-size:12px;line-height:1.9}
+    .why-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(8,8,8,.35)}
+    .why-card{padding:34px 28px 26px 0;border-right:1px solid rgba(8,8,8,.18)}
+    .why-card + .why-card{padding-left:28px}
+    .why-card:last-child{border-right:0}
+    .why-card .no{font:italic 400 18px var(--serif);color:#9d1f1b}
+    .why-card h3{font:400 34px/1.05 var(--serif);margin:32px 0 14px}
+    .why-card p{margin:0;color:rgba(8,8,8,.58);font-size:11px;line-height:1.8}
+    .demand-section{background:#9d1f1b;color:#f0eadf;padding:130px var(--pad)}
+    .demand-inner{max-width:var(--max);margin:0 auto}
+    .demand-section h2{font:400 clamp(58px,8vw,128px)/.86 var(--serif);letter-spacing:-.065em;margin:0;max-width:1050px}
+    .demand-section h2 em{color:#e2c77d}
+    .demand-section>div>p:not(.kicker){max-width:720px;line-height:1.9;color:rgba(240,234,223,.72);font-size:12px;margin:30px 0 0}
+    .demand-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:64px}
+    .demand-step{border-top:1px solid rgba(240,234,223,.38);padding-top:16px;min-height:100px}
+    .demand-step span{display:block;color:#e2c77d;font-size:8px;letter-spacing:.16em;margin-bottom:12px}
+    .demand-step strong{font:400 24px/1 var(--serif)}
+    .japan-section{display:grid;grid-template-columns:1.05fr .95fr;background:#11110f;min-height:820px}
+    .japan-visual{min-height:820px}
+    .japan-copy{padding:100px var(--pad);display:flex;flex-direction:column;justify-content:center}
+    .japan-copy h2{font:400 clamp(52px,6vw,92px)/.96 var(--serif);letter-spacing:-.05em;margin:0}
+    .japan-copy>p:not(.kicker){max-width:590px;color:rgba(240,234,223,.58);line-height:1.9;font-size:12px;margin:26px 0 0}
+    .region-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+    .region-list span{border:1px solid rgba(240,234,223,.18);padding:8px 10px;font-size:8px;letter-spacing:.12em}
+    .start-section{background:#080808;color:#f0eadf;padding:130px var(--pad)}
+    .start-inner{max-width:var(--max);margin:0 auto}
+    .start-section h2{font:400 clamp(58px,8vw,120px)/.88 var(--serif);letter-spacing:-.06em;margin:0 0 70px}
+    .start-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(240,234,223,.25)}
+    .start-card{padding:30px 28px 36px 0;border-right:1px solid rgba(240,234,223,.16);min-height:290px;display:flex;flex-direction:column}
+    .start-card + .start-card{padding-left:28px}
+    .start-card:last-child{border-right:0}
+    .start-card span{font:italic 400 18px var(--serif);color:#c6a35c}
+    .start-card h3{font:400 34px/1.06 var(--serif);margin:38px 0 14px}
+    .start-card p{font-size:11px;line-height:1.75;color:rgba(240,234,223,.52);margin:0}
+    .start-card a{margin-top:auto;padding-top:30px;color:#c6a35c;font-size:8px;font-weight:800;letter-spacing:.16em}
+    @media(max-width:980px){
+      .discover-grid,.taste-grid{grid-template-columns:repeat(2,1fr)}
+      .taste-card:nth-child(2){border-right:0}.taste-card:nth-child(-n+2){border-bottom:1px solid rgba(8,8,8,.26)}
+      .why-grid,.start-grid{grid-template-columns:1fr}
+      .why-card,.why-card + .why-card,.start-card,.start-card + .start-card{padding:30px 0;border-right:0;border-bottom:1px solid rgba(8,8,8,.18)}
+      .start-card,.start-card + .start-card{border-bottom:1px solid rgba(240,234,223,.16)}
+      .demand-flow{grid-template-columns:1fr 1fr}
+      .japan-section{grid-template-columns:1fr}.japan-visual{min-height:60svh}
+    }
+    @media(max-width:640px){
+      .discover-grid,.taste-grid{grid-template-columns:1fr}
+      .taste-card{border-right:0;border-bottom:1px solid rgba(8,8,8,.26)}
+      .taste-hub__head,.why-head{grid-template-columns:1fr;gap:24px}
+      .demand-flow{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Opening curtain / brand intro -->
   <div class="intro" aria-hidden="true">
     <div class="intro__line"></div>
     <div class="intro__mark">
@@ -28,14 +108,15 @@
       <span class="logo__stamp">酒</span>
       <span class="logo__text">
         <strong>SAKE PICKS</strong>
-        <small>taste / pairing / story</small>
+        <small>Japan / taste / craft</small>
       </span>
     </a>
 
     <nav class="nav" aria-label="Primary">
-      <a href="#story">Story</a>
-      <a href="#pairing">Pairing</a>
+      <a href="#food">Food</a>
+      <a href="#taste">Taste</a>
       <a href="#bottles">Bottles</a>
+      <a href="#why">Why Sake Picks</a>
       <a href="#faq">FAQ</a>
     </nav>
 
@@ -48,100 +129,105 @@
   </header>
 
   <main id="top">
-    <!-- 01 / HERO ---------------------------------------------------- -->
+    <!-- 01. HERO — Sake Picksとは何か -->
     <section class="hero">
       <div class="hero__visual media-placeholder" data-parallax="0.12">
         <div class="media-placeholder__grid"></div>
         <div class="media-placeholder__label">
           <small>IMAGE PLACEHOLDER 01</small>
-          <strong>Sake bottle + sushi / cinematic still life</strong>
-          <span>Recommended: 1800 × 2200, dark lighting</span>
+          <strong>Exceptional Japanese sake / cinematic bottle still life</strong>
+          <span>Recommended: premium dark photography, Japan-origin atmosphere</span>
         </div>
         <span class="hero__visual-number">01</span>
       </div>
 
       <div class="hero__copy">
         <div class="eyebrow reveal-word">
-          <span>PAIRING JOURNAL</span><i></i><span>VOL.01</span>
+          <span>JAPANESE SAKE</span><i></i><span>CURATED WITH INTENT</span>
         </div>
 
         <h1 class="hero__title" data-split>
-          <span>Best Sake</span>
-          <span>with <em>Sushi</em></span>
+          <span>Beyond the</span>
+          <span><em>Familiar.</em></span>
         </h1>
 
         <p class="hero__lead reveal-up">
-          Choose by fish, texture and flavor — not by price.
-          Discover the bottle that makes the next bite feel clearer.
+          Exceptional sake from Japan — from celebrated icons to harder-to-find regional releases,
+          selected for taste, craft, provenance, and the story behind every bottle.
         </p>
 
+        <div class="hub-links reveal-up">
+          <a href="#bottles">EXPLORE THE COLLECTION</a>
+          <a href="#taste">FIND BY TASTE</a>
+        </div>
+
         <div class="hero__meta reveal-up">
-          <span>7 MIN READ</span>
-          <span>UPDATED SEP 2026</span>
+          <span>CURATED IN JAPAN</span>
+          <span>DISCOVERY FIRST</span>
           <span>FOR ADULTS 21+</span>
         </div>
 
-        <a class="scroll-link reveal-up" href="#manifesto">
-          <span>SCROLL TO DISCOVER</span>
-          <i></i>
-        </a>
-
-        <span class="hero__jp">味から、選ぶ。</span>
+        <span class="hero__jp">まだ知らない、日本酒へ。</span>
       </div>
 
       <div class="hero__ticker">
         <div class="marquee">
-          <span>TASTE BEFORE LABELS — PAIRING BEFORE PRICE — DISCOVER REGIONAL SAKE —</span>
-          <span aria-hidden="true">TASTE BEFORE LABELS — PAIRING BEFORE PRICE — DISCOVER REGIONAL SAKE —</span>
+          <span>EXCEPTIONAL SAKE FROM JAPAN — REGIONAL CRAFT — CURATED WITH INTENT —</span>
+          <span aria-hidden="true">EXCEPTIONAL SAKE FROM JAPAN — REGIONAL CRAFT — CURATED WITH INTENT —</span>
         </div>
       </div>
     </section>
 
-    <!-- 02 / MANIFESTO ------------------------------------------------ -->
-    <section id="manifesto" class="manifesto section-dark">
+    <!-- 02. POSITIONING -->
+    <section id="positioning" class="manifesto section-dark">
       <div class="manifesto__index">02</div>
 
       <div class="manifesto__text" data-stagger>
-        <p class="kicker">THE SHORT ANSWER</p>
+        <p class="kicker">A DIFFERENT WAY TO DISCOVER SAKE</p>
         <h2>
-          The right sake does not sit beside sushi.
-          <strong>It changes how the next bite lands.</strong>
+          Begin with taste.
+          <strong>Not terminology.</strong>
         </h2>
         <p class="manifesto__body">
-          Delicate white fish calls for clarity. Rich tuna can take umami and body.
-          Spice benefits from softness. The pairing begins with the food in front of you,
-          not with a hierarchy on the label.
+          You do not need to know every classification to recognize what you love.
+          Start with the flavors you enjoy, the food on your table, and the experience you want from the bottle.
+          Sake Picks translates Japan's craft into a discovery experience that feels intuitive before it feels technical.
         </p>
       </div>
 
       <div class="manifesto__seal" aria-hidden="true">
-        <span>SAKE</span>
-        <b>酒</b>
-        <span>PICKS</span>
+        <span>FROM</span>
+        <b>日</b>
+        <span>JAPAN</span>
       </div>
     </section>
 
-    <!-- 03 / STORY SEQUENCE ------------------------------------------ -->
-    <section id="story" class="story">
+    <!-- 03. DISCOVER BY FOOD -->
+    <section id="food" class="story">
       <div class="story__sticky">
-        <p class="kicker">PAIRING PRINCIPLES</p>
-        <h2>The meal leads.<br /><em>The sake follows.</em></h2>
+        <p class="kicker">DISCOVER BY FOOD</p>
+        <h2>The table comes first.<br /><em>Then the bottle.</em></h2>
 
         <div class="story__steps">
           <button class="story-step is-active" data-story-step="0">
             <span>01</span>
-            <strong>WEIGHT</strong>
-            <small>Light with light. Rich with rich.</small>
+            <strong>SUSHI</strong>
+            <small>Clean / elegant / bright</small>
           </button>
           <button class="story-step" data-story-step="1">
             <span>02</span>
-            <strong>CONTRAST</strong>
-            <small>Acidity resets fat and sauce.</small>
+            <strong>STEAK</strong>
+            <small>Rich / umami / structured</small>
           </button>
           <button class="story-step" data-story-step="2">
             <span>03</span>
-            <strong>ECHO</strong>
-            <small>Fruit and umami mirror the bite.</small>
+            <strong>CHEESE</strong>
+            <small>Savory / mature / complex</small>
+          </button>
+          <button class="story-step" data-story-step="3">
+            <span>04</span>
+            <strong>SEAFOOD</strong>
+            <small>Crisp / fresh / refined</small>
           </button>
         </div>
       </div>
@@ -151,21 +237,20 @@
           <div class="story-scene__visual media-placeholder" data-parallax="0.08">
             <div class="media-placeholder__label">
               <small>IMAGE PLACEHOLDER 02</small>
-              <strong>White fish / delicate sushi</strong>
+              <strong>Sushi / white fish / premium counter</strong>
               <span>macro food photography</span>
             </div>
             <span class="scene-number">I</span>
           </div>
           <div class="story-scene__copy">
-            <p class="kicker">WEIGHT</p>
-            <h3>Let delicate fish stay delicate.</h3>
+            <p class="kicker">SUSHI</p>
+            <h3>Preserve the delicacy of the bite.</h3>
             <p>
-              Sea bream, flounder and scallop can disappear under a sake that is too heavy.
-              Look for a clean body, fine aroma and a finish that leaves the palate open.
+              Clean, elegant sake can lift white fish, shellfish and delicate sushi without covering their sweetness.
+              Start with precision, then add body as the fish becomes richer.
             </p>
-            <div class="micro-tags">
-              <span>white fish</span><span>light body</span><span>clean finish</span>
-            </div>
+            <div class="micro-tags"><span>clean</span><span>fruity</span><span>elegant</span></div>
+            <a href="./pairing/sushi/" class="arrow-link">EXPLORE SAKE WITH SUSHI <span>↗</span></a>
           </div>
         </article>
 
@@ -173,21 +258,20 @@
           <div class="story-scene__visual media-placeholder" data-parallax="0.08">
             <div class="media-placeholder__label">
               <small>IMAGE PLACEHOLDER 03</small>
-              <strong>Fatty tuna / salmon / seared fish</strong>
-              <span>close crop, warm red highlights</span>
+              <strong>Steak / charcoal / lacquer-red highlights</strong>
+              <span>rich, premium, dark photography</span>
             </div>
             <span class="scene-number">II</span>
           </div>
           <div class="story-scene__copy">
-            <p class="kicker">CONTRAST</p>
-            <h3>Fat welcomes acidity and umami.</h3>
+            <p class="kicker">STEAK</p>
+            <h3>Richness deserves structure.</h3>
             <p>
-              Toro and salmon bring oil, sweetness and texture. A sake with savory depth
-              or a crisp, structured finish can refresh the palate without breaking the richness.
+              Beef can carry deep umami, acidity and body. Kimoto and Yamahai styles open a side of sake
+              that feels built for grilled food, savory sauces and a longer finish.
             </p>
-            <div class="micro-tags">
-              <span>toro</span><span>umami</span><span>acidity</span>
-            </div>
+            <div class="micro-tags"><span>rich</span><span>umami</span><span>dry</span></div>
+            <a href="./pairing/steak/" class="arrow-link">EXPLORE SAKE WITH STEAK <span>↗</span></a>
           </div>
         </article>
 
@@ -195,159 +279,91 @@
           <div class="story-scene__visual media-placeholder" data-parallax="0.08">
             <div class="media-placeholder__label">
               <small>IMAGE PLACEHOLDER 04</small>
-              <strong>Spicy roll / citrus / garnish</strong>
-              <span>movement, sauce, fresh herbs</span>
+              <strong>Cheese / aged texture / sake glass</strong>
+              <span>editorial still life</span>
             </div>
             <span class="scene-number">III</span>
           </div>
           <div class="story-scene__copy">
-            <p class="kicker">ECHO</p>
-            <h3>Fruit can soften heat without becoming sweet.</h3>
+            <p class="kicker">CHEESE</p>
+            <h3>Umami recognizes umami.</h3>
             <p>
-              With spicy rolls, a little fruit, softness and aroma can round the edges.
-              The point is balance — not masking the food with perfume or sugar.
+              Mature cheese can reveal the savory, lactic and structured side of sake.
+              Rich Junmai and Kimoto styles create pairings that feel less expected — and more memorable.
             </p>
-            <div class="micro-tags">
-              <span>spicy roll</span><span>fruit</span><span>soft texture</span>
+            <div class="micro-tags"><span>savory</span><span>mature</span><span>kimoto</span></div>
+          </div>
+        </article>
+
+        <article class="story-scene" data-scene="3">
+          <div class="story-scene__visual media-placeholder" data-parallax="0.08">
+            <div class="media-placeholder__label">
+              <small>IMAGE PLACEHOLDER 05</small>
+              <strong>Oysters / shellfish / chilled sake</strong>
+              <span>clean, bright, mineral visual language</span>
             </div>
+            <span class="scene-number">IV</span>
+          </div>
+          <div class="story-scene__copy">
+            <p class="kicker">SEAFOOD</p>
+            <h3>Clarity keeps the sea in focus.</h3>
+            <p>
+              Crisp finishes, subtle fruit and balanced acidity can preserve salinity and delicate sweetness.
+              The best match should leave the seafood clearer, not quieter.
+            </p>
+            <div class="micro-tags"><span>crisp</span><span>fresh</span><span>refined</span></div>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- 04 / FULL BLEED IMAGE --------------------------------------- -->
-    <section class="image-break">
-      <div class="image-break__sticky">
-        <div class="image-break__media media-placeholder">
-          <div class="media-placeholder__label">
-            <small>IMAGE PLACEHOLDER 05</small>
-            <strong>Pouring sake / glass reflection / table scene</strong>
-            <span>wide 16:9 editorial shot</span>
-          </div>
-        </div>
-        <div class="image-break__copy">
-          <span>PAIRING IS NOT A RULEBOOK.</span>
-          <h2>One bite.<br />One sip.<br /><em>Then decide.</em></h2>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05 / PAIRING MOOD ------------------------------------------- -->
-    <section id="pairing" class="pairing section-gold">
-      <div class="pairing__head">
+    <!-- 04. DISCOVER BY TASTE -->
+    <section id="taste" class="taste-hub">
+      <div class="taste-hub__head">
         <div>
-          <p class="kicker">CHOOSE BY THE BITE</p>
-          <h2>What are you eating?</h2>
+          <p class="kicker">DISCOVER BY TASTE</p>
+          <h2>Taste is a language everyone already speaks.</h2>
         </div>
         <p>
-          Inspired by a mood-first selection experience: choose the food in front of you,
-          then reveal the sake direction that fits it.
+          Start with the flavors you already understand. Sake Picks turns those preferences into a curated route
+          through Japanese sake — no glossary required.
         </p>
       </div>
 
-      <div class="pairing__selector" role="tablist" aria-label="Pairing selector">
-        <button class="pairing-choice is-active" data-pair="white" role="tab" aria-selected="true">
-          <span>01</span><strong>WHITE FISH</strong><small>clean / light / precise</small>
-        </button>
-        <button class="pairing-choice" data-pair="tuna" role="tab" aria-selected="false">
-          <span>02</span><strong>FATTY TUNA</strong><small>umami / body / acidity</small>
-        </button>
-        <button class="pairing-choice" data-pair="salmon" role="tab" aria-selected="false">
-          <span>03</span><strong>SALMON</strong><small>round / fruity / balanced</small>
-        </button>
-        <button class="pairing-choice" data-pair="shellfish" role="tab" aria-selected="false">
-          <span>04</span><strong>SHELLFISH</strong><small>bright / mineral / crisp</small>
-        </button>
-        <button class="pairing-choice" data-pair="spicy" role="tab" aria-selected="false">
-          <span>05</span><strong>SPICY ROLL</strong><small>soft / aromatic / gentle</small>
-        </button>
-      </div>
-
-      <div class="pairing__result">
-        <div class="pairing__result-visual media-placeholder">
-          <div class="media-placeholder__label">
-            <small>IMAGE PLACEHOLDER 06</small>
-            <strong class="js-pair-image">White fish pairing visual</strong>
-            <span>switch image with selected pairing</span>
-          </div>
-          <span class="pairing__kanji js-pair-kanji">白</span>
-        </div>
-
-        <div class="pairing__result-copy">
-          <p class="kicker js-pair-kicker">CLEAN · FRUITY · LIGHT</p>
-          <h3 class="js-pair-title">White fish likes precision.</h3>
-          <p class="js-pair-body">
-            Keep the aroma restrained and the finish bright. A polished Ginjo or Junmai Daiginjo
-            can lift sea bream, flounder and scallop without covering their sweetness.
-          </p>
-
-          <div class="meter-list">
-            <div class="meter">
-              <span>FRUIT</span><i><b class="js-meter" data-meter="0" style="--meter:72%"></b></i><em>72</em>
-            </div>
-            <div class="meter">
-              <span>BODY</span><i><b class="js-meter" data-meter="1" style="--meter:28%"></b></i><em>28</em>
-            </div>
-            <div class="meter">
-              <span>UMAMI</span><i><b class="js-meter" data-meter="2" style="--meter:38%"></b></i><em>38</em>
-            </div>
-          </div>
-
-          <a href="#bottles" class="arrow-link">SEE MATCHED BOTTLES <span>↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 06 / INGREDIENT / CRAFT -------------------------------------- -->
-    <section class="craft">
-      <div class="craft__intro">
-        <span class="craft__large-jp">米</span>
-        <div>
-          <p class="kicker">BEYOND THE LABEL</p>
-          <h2>Rice. Water. Fermentation.<br /><em>And the hand behind it.</em></h2>
-          <p>
-            Product facts become more useful when they explain the flavor in your glass.
-            This section is where brewery-approved facts and Sake Picks editorial reasoning meet.
-          </p>
-        </div>
-      </div>
-
-      <div class="craft__cards">
-        <article class="craft-card">
-          <div class="craft-card__image media-placeholder">
-            <div class="media-placeholder__label"><small>IMAGE PLACEHOLDER 07</small><strong>Rice / polishing</strong></div>
-          </div>
-          <span>01 / RICE</span>
-          <h3>Polishing changes the canvas.</h3>
-          <p>Explain polishing ratio only when it helps the reader understand texture, aroma or style.</p>
+      <div class="taste-grid">
+        <article class="taste-card">
+          <span>01</span>
+          <h3>Fruity</h3>
+          <p>White grape. Pear. Melon. Citrus. An elegant entry point for aromatic white-wine drinkers.</p>
+          <a href="./taste/fruity/">FIND FRUITY SAKE ↗</a>
         </article>
-
-        <article class="craft-card">
-          <div class="craft-card__image media-placeholder">
-            <div class="media-placeholder__label"><small>IMAGE PLACEHOLDER 08</small><strong>Brewery / water</strong></div>
-          </div>
-          <span>02 / PLACE</span>
-          <h3>Region is a story, not a stereotype.</h3>
-          <p>Show the brewery, water, climate and local context without reducing a prefecture to one flavor.</p>
+        <article class="taste-card">
+          <span>02</span>
+          <h3>Dry</h3>
+          <p>Clean. Crisp. Precise. Explore bottles where the finish matters as much as the aroma.</p>
+          <a href="./taste/dry/">FIND DRY SAKE ↗</a>
         </article>
-
-        <article class="craft-card">
-          <div class="craft-card__image media-placeholder">
-            <div class="media-placeholder__label"><small>IMAGE PLACEHOLDER 09</small><strong>Brewer / fermentation</strong></div>
-          </div>
-          <span>03 / METHOD</span>
-          <h3>Technique earns attention when taste follows.</h3>
-          <p>Kimoto, Yamahai and Ginjo matter because of what they can contribute to the glass and the table.</p>
+        <article class="taste-card">
+          <span>03</span>
+          <h3>Rich & Umami</h3>
+          <p>Savory. Deep. Structured. A route into Kimoto, Yamahai and food-led styles.</p>
+          <a href="./taste/">EXPLORE TASTE ↗</a>
+        </article>
+        <article class="taste-card">
+          <span>04</span>
+          <h3>Sweet</h3>
+          <p>Soft. Lush. Generous. Fruit-forward expressions with a rounded, polished feel.</p>
+          <a href="./taste/">EXPLORE TASTE ↗</a>
         </article>
       </div>
     </section>
 
-    <!-- 07 / BOTTLES ------------------------------------------------- -->
+    <!-- 05. CURATED BOTTLES -->
     <section id="bottles" class="bottles section-dark">
       <div class="bottles__head">
         <div>
-          <p class="kicker">BOTTLES TO EXPLORE</p>
-          <h2>Three bottles.<br /><em>Three reasons.</em></h2>
+          <p class="kicker">CURATED BOTTLES</p>
+          <h2>Fewer bottles.<br /><em>More reason to choose each one.</em></h2>
         </div>
         <div class="bottles__controls">
           <button class="carousel-btn" type="button" data-carousel-prev aria-label="Previous">←</button>
@@ -358,143 +374,258 @@
       <div class="bottle-track" data-carousel>
         <article class="bottle-card">
           <div class="bottle-card__image media-placeholder">
-            <div class="media-placeholder__label"><small>PRODUCT IMAGE 01</small><strong>DASSAI 39 bottle</strong></div>
+            <div class="media-placeholder__label"><small>PRODUCT IMAGE 01</small><strong>DASSAI 39</strong></div>
             <span class="bottle-card__no">01</span>
           </div>
           <div class="bottle-card__copy">
-            <p class="kicker">FRUITY & ELEGANT</p>
+            <p class="kicker">YAMAGUCHI · FRUITY & ELEGANT</p>
             <h3>DASSAI 39</h3>
-            <p>Polished, juicy and bright — a clean reference point for delicate sushi.</p>
-            <div class="pill-row"><span>white fish</span><span>scallop</span><span>tempura</span></div>
-            <a href="#" class="arrow-link">VIEW BOTTLE <span>↗</span></a>
+            <p>A polished benchmark for clean fruit, refinement and delicate food pairing.</p>
+            <div class="pill-row"><span>white fish</span><span>scallop</span><span>elegant</span></div>
+            <a href="./products/dassai-39/" class="arrow-link">VIEW BOTTLE <span>↗</span></a>
           </div>
         </article>
 
         <article class="bottle-card">
           <div class="bottle-card__image media-placeholder">
-            <div class="media-placeholder__label"><small>PRODUCT IMAGE 02</small><strong>TENBI bottle</strong></div>
+            <div class="media-placeholder__label"><small>PRODUCT IMAGE 02</small><strong>Daishichi Kimoto Classic</strong></div>
             <span class="bottle-card__no">02</span>
           </div>
           <div class="bottle-card__copy">
-            <p class="kicker">WHITE GRAPE & CITRUS</p>
-            <h3>TENBI</h3>
-            <p>Fresh white-grape fruit and citrus energy with enough acidity for seafood.</p>
-            <div class="pill-row"><span>oysters</span><span>sushi</span><span>white fish</span></div>
-            <a href="#" class="arrow-link">VIEW BOTTLE <span>↗</span></a>
+            <p class="kicker">FUKUSHIMA · RICH & UMAMI</p>
+            <h3>DAISHICHI CLASSIC</h3>
+            <p>Deep, mature and savory — a premium direction defined by food, umami and traditional Kimoto craft.</p>
+            <div class="pill-row"><span>steak</span><span>cheese</span><span>kimoto</span></div>
+            <a href="./products/daishichi-junmai-kimoto-classic/" class="arrow-link">VIEW BOTTLE <span>↗</span></a>
           </div>
         </article>
 
         <article class="bottle-card">
           <div class="bottle-card__image media-placeholder">
-            <div class="media-placeholder__label"><small>PRODUCT IMAGE 03</small><strong>Suigei Mann bottle</strong></div>
+            <div class="media-placeholder__label"><small>PRODUCT IMAGE 03</small><strong>TENBI</strong></div>
             <span class="bottle-card__no">03</span>
           </div>
           <div class="bottle-card__copy">
-            <p class="kicker">DRY & FOOD-LED</p>
-            <h3>SUIGEI MANN</h3>
-            <p>Restrained aroma, balanced acidity and a crisp finish built around the meal.</p>
-            <div class="pill-row"><span>sashimi</span><span>seafood</span><span>ponzu</span></div>
-            <a href="#" class="arrow-link">VIEW BOTTLE <span>↗</span></a>
+            <p class="kicker">YAMAGUCHI · FRESH & CITRUS</p>
+            <h3>TENBI</h3>
+            <p>White-grape softness, citrus freshness and a modern food-first personality.</p>
+            <div class="pill-row"><span>oysters</span><span>sushi</span><span>citrus</span></div>
+            <a href="./products/tenbi-junmai-ginjo/" class="arrow-link">VIEW BOTTLE <span>↗</span></a>
           </div>
         </article>
 
-        <article class="bottle-card bottle-card--cta">
-          <div class="bottle-card__cta-mark">酒</div>
+        <article class="bottle-card">
+          <div class="bottle-card__image media-placeholder">
+            <div class="media-placeholder__label"><small>PRODUCT IMAGE 04</small><strong>Izumibashi Black Dragonfly</strong></div>
+            <span class="bottle-card__no">04</span>
+          </div>
           <div class="bottle-card__copy">
-            <p class="kicker">YOUR DEMAND MATTERS</p>
-            <h3>Want it?<br />Tell us.</h3>
-            <p>
-              Save bottles you want to try. Your Want and Notify actions become signals
-              for future sourcing and Community Picks.
-            </p>
-            <div class="cta-stack">
-              <a href="#" class="button button--red">WANT THIS SAKE</a>
-              <a href="#" class="button button--outline">NOTIFY ME</a>
-            </div>
+            <p class="kicker">KANAGAWA · DRY & SAVORY</p>
+            <h3>BLACK DRAGONFLY</h3>
+            <p>Local rice, traditional Kimoto brewing and a mature dry profile with regional identity.</p>
+            <div class="pill-row"><span>red meat</span><span>miso</span><span>savory</span></div>
+            <a href="./products/izumibashi-black-dragonfly/" class="arrow-link">VIEW BOTTLE <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="bottle-card">
+          <div class="bottle-card__image media-placeholder">
+            <div class="media-placeholder__label"><small>PRODUCT IMAGE 05</small><strong>Toyo Bijin Ichibanmatoi</strong></div>
+            <span class="bottle-card__no">05</span>
+          </div>
+          <div class="bottle-card__copy">
+            <p class="kicker">YAMAGUCHI · LUSH & FRUITY</p>
+            <h3>TOYO BIJIN</h3>
+            <p>A polished, expressive bottle that brings obvious fruit and a compelling brewery story into the collection.</p>
+            <div class="pill-row"><span>salmon</span><span>tuna</span><span>lush</span></div>
+            <a href="./products/toyo-bijin-ichibanmatoi/" class="arrow-link">VIEW BOTTLE <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="bottle-card">
+          <div class="bottle-card__image media-placeholder">
+            <div class="media-placeholder__label"><small>PRODUCT IMAGE 06</small><strong>Suigei Mann</strong></div>
+            <span class="bottle-card__no">06</span>
+          </div>
+          <div class="bottle-card__copy">
+            <p class="kicker">KOCHI · PRECISE & FOOD-LED</p>
+            <h3>SUIGEI MANN</h3>
+            <p>Restrained aroma, balanced acidity and a crisp finish built to stay with the meal.</p>
+            <div class="pill-row"><span>sashimi</span><span>seafood</span><span>precise</span></div>
+            <a href="./products/suigei-mann/" class="arrow-link">VIEW BOTTLE <span>↗</span></a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- 08 / SOURCE TRANSPARENCY ------------------------------------- -->
-    <section class="source">
-      <div class="source__visual media-placeholder">
-        <div class="media-placeholder__label">
-          <small>IMAGE PLACEHOLDER 10</small>
-          <strong>Brewery / hands / bottle detail</strong>
-          <span>editorial portrait or craft detail</span>
+    <!-- 06. WHY SAKE PICKS -->
+    <section id="why" class="why-section">
+      <div class="why-head">
+        <div>
+          <p class="kicker">WHY SAKE PICKS</p>
+          <h2>Not another sake catalog.</h2>
         </div>
+        <p>
+          Taste and pairing are only the beginning. Sake Picks is built around selective curation,
+          Japanese provenance, and real signals of what people want to discover next.
+        </p>
       </div>
 
-      <div class="source__copy">
-        <p class="kicker">TRUST THE SOURCE</p>
-        <h2>Beautiful storytelling.<br /><em>Clear provenance.</em></h2>
+      <div class="why-grid">
+        <article class="why-card">
+          <span class="no">01 / CURATED</span>
+          <h3>Selected with intent.</h3>
+          <p>We are not building the largest catalog. Every bottle needs a reason to be here — taste, craft, region or story.</p>
+        </article>
+        <article class="why-card">
+          <span class="no">02 / ROOTED IN JAPAN</span>
+          <h3>Place matters.</h3>
+          <p>Brewery, region, rice, water and technique are part of the bottle — not footnotes beneath it.</p>
+        </article>
+        <article class="why-card">
+          <span class="no">03 / SHAPED BY DEMAND</span>
+          <h3>Your interest matters.</h3>
+          <p>What people save, follow and vote for helps Sake Picks understand which bottles and regional releases deserve a closer look next.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 07. WANT → WHAT COMES NEXT -->
+    <section id="demand" class="demand-section">
+      <div class="demand-inner">
+        <p class="kicker">YOUR DEMAND MATTERS</p>
+        <h2>Don't just discover the collection.<br /><em>Help shape what comes next.</em></h2>
         <p>
-          Brewery facts, official tasting notes and specifications stay source-backed.
-          Sake Picks pairing ideas are clearly presented as editorial interpretation.
+          Some of Japan's most interesting sake never becomes easy to discover abroad.
+          Save the bottles that interest you and opt in for updates.
+          Those signals help Sake Picks understand what people want to see next and guide future sourcing decisions.
         </p>
 
-        <div class="source__legend">
-          <div>
-            <i class="dot dot--gold"></i>
-            <span>SOURCE-BACKED</span>
-            <small>Brewery / importer / official industry source</small>
-          </div>
-          <div>
-            <i class="dot dot--red"></i>
-            <span>SAKE PICKS EDITORIAL</span>
-            <small>Pairing logic / discovery guidance</small>
-          </div>
+        <div class="demand-flow">
+          <div class="demand-step"><span>01</span><strong>Discover</strong></div>
+          <div class="demand-step"><span>02</span><strong>Want</strong></div>
+          <div class="demand-step"><span>03</span><strong>Notify</strong></div>
+          <div class="demand-step"><span>04</span><strong>Community Picks</strong></div>
+          <div class="demand-step"><span>05</span><strong>What Comes Next</strong></div>
         </div>
       </div>
     </section>
 
-    <!-- 09 / FAQ ----------------------------------------------------- -->
+    <!-- 08. JAPAN / BREWERY STORY -->
+    <section id="japan" class="japan-section">
+      <div class="japan-visual media-placeholder" data-parallax="0.08">
+        <div class="media-placeholder__label">
+          <small>IMAGE PLACEHOLDER 06</small>
+          <strong>Japanese brewery / rice / water / brewer hands</strong>
+          <span>Craft and provenance, not generic Japan imagery</span>
+        </div>
+      </div>
+
+      <div class="japan-copy">
+        <p class="kicker">FROM PLACE COMES CHARACTER</p>
+        <h2>Every bottle begins somewhere.</h2>
+        <p>
+          Behind every bottle is a place: its water, rice, climate, methods and the people who chose to make sake there.
+          Sake Picks treats provenance as part of the drinking experience — because Japan is not one sake style, but many regional identities.
+        </p>
+
+        <div class="region-list">
+          <span>YAMAGUCHI</span>
+          <span>FUKUSHIMA</span>
+          <span>NIIGATA</span>
+          <span>IWATE</span>
+          <span>SAGA</span>
+          <span>KOCHI</span>
+          <span>KANAGAWA</span>
+          <span>SHIZUOKA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09. HOW TO START -->
+    <section id="start" class="start-section">
+      <div class="start-inner">
+        <p class="kicker">HOW TO START</p>
+        <h2>There is no wrong place to begin.</h2>
+
+        <div class="start-grid">
+          <article class="start-card">
+            <span>01</span>
+            <h3>I know what I'm eating.</h3>
+            <p>Start from sushi, steak and other food pairings, then discover the sake style that belongs beside it.</p>
+            <a href="#food">EXPLORE BY FOOD ↗</a>
+          </article>
+          <article class="start-card">
+            <span>02</span>
+            <h3>I know what I like.</h3>
+            <p>Fruity, dry, rich, umami or sweet — begin with taste instead of terminology.</p>
+            <a href="#taste">EXPLORE BY TASTE ↗</a>
+          </article>
+          <article class="start-card">
+            <span>03</span>
+            <h3>Show me something exceptional.</h3>
+            <p>Go straight to the curated collection and discover bottles chosen for more than shelf space.</p>
+            <a href="#bottles">EXPLORE BOTTLES ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FAQ -->
     <section id="faq" class="faq">
       <div class="faq__head">
         <p class="kicker">FAQ</p>
-        <h2>Before the next bite.</h2>
+        <h2>Before you begin.</h2>
       </div>
 
       <div class="faq__list">
         <details>
-          <summary><span>01</span><strong>Is Junmai Daiginjo always best with sushi?</strong><i>+</i></summary>
-          <p>No. The fish, sauce, texture and your own taste matter more than the grade alone.</p>
+          <summary><span>01</span><strong>What is Sake Picks?</strong><i>+</i></summary>
+          <p>Sake Picks is a curated discovery platform for premium Japanese sake, built around taste, food pairing, brewery stories and real user interest.</p>
         </details>
         <details>
-          <summary><span>02</span><strong>Should sake with sushi always be chilled?</strong><i>+</i></summary>
-          <p>Many aromatic styles work beautifully chilled, while richer Junmai and Kimoto styles can open up closer to room temperature.</p>
+          <summary><span>02</span><strong>Can I buy sake through Sake Picks?</strong><i>+</i></summary>
+          <p>Sake Picks is currently focused on discovery. Availability varies by bottle and market. Save what interests you and choose Notify for future availability updates.</p>
         </details>
         <details>
-          <summary><span>03</span><strong>What sake works with fatty tuna?</strong><i>+</i></summary>
-          <p>Look for enough body, acidity or savory depth to stand beside the fat instead of disappearing.</p>
+          <summary><span>03</span><strong>How are bottles selected?</strong><i>+</i></summary>
+          <p>We look for distinctive taste, craftsmanship, regional identity, credible source information and a story worth understanding.</p>
+        </details>
+        <details>
+          <summary><span>04</span><strong>What does “Want” mean?</strong><i>+</i></summary>
+          <p>It saves a bottle to your list and gives Sake Picks a signal of real interest. That signal can help guide what we investigate and source next.</p>
+        </details>
+        <details>
+          <summary><span>05</span><strong>Is Sake Picks only for sake experts?</strong><i>+</i></summary>
+          <p>No. Sake Picks is intentionally designed so you can begin with food and flavor before learning technical classifications.</p>
         </details>
       </div>
     </section>
 
-    <!-- 10 / FINAL CTA ------------------------------------------------ -->
+    <!-- 11. APP CTA -->
     <section class="final-cta section-red">
       <div class="final-cta__visual media-placeholder">
         <div class="media-placeholder__label">
-          <small>IMAGE PLACEHOLDER 11</small>
-          <strong>Full-table sake experience / people optional</strong>
-          <span>premium, dark, intimate</span>
+          <small>IMAGE PLACEHOLDER 07</small>
+          <strong>Premium Japanese sake table / intimate evening</strong>
+          <span>dark, quiet, luxurious, unmistakably Japanese</span>
         </div>
       </div>
 
       <div class="final-cta__overlay"></div>
 
       <div class="final-cta__copy">
-        <p class="kicker">DISCOVER YOUR NEXT BOTTLE</p>
-        <h2>Start with<br /><em>what you love.</em></h2>
-        <p>Explore premium Japanese sake by taste, food pairing and story.</p>
+        <p class="kicker">DISCOVER WHAT'S NEXT</p>
+        <h2>Japan has<br /><em>more to pour.</em></h2>
+        <p>Discover the bottles worth knowing before they become familiar.</p>
         <div class="final-cta__buttons">
-          <a href="#" class="button button--gold">EXPLORE SAKE PICKS</a>
+          <a href="./products/" class="button button--gold">EXPLORE SAKE PICKS</a>
+          <!-- TODO: replace # with the production deep link / App Store URL -->
           <a href="#" class="button button--glass">OPEN IN APP ↗</a>
         </div>
       </div>
 
-      <span class="final-cta__jp">日本酒を、もっと自由に。</span>
+      <span class="final-cta__jp">日本酒を、もっと深く。</span>
     </section>
   </main>
 
@@ -504,39 +635,39 @@
         <span class="logo__stamp">酒</span>
         <strong>SAKE PICKS</strong>
       </div>
-      <p>Premium sake discovery for adults 21+.</p>
+      <p>Curated Japanese sake discovery for adults 21+.</p>
     </div>
 
     <div class="footer__grid">
       <div>
         <span>DISCOVER</span>
-        <a href="#">Pairing</a>
-        <a href="#">Taste</a>
-        <a href="#">Products</a>
+        <a href="#food">Food Pairing</a>
+        <a href="#taste">Taste</a>
+        <a href="#bottles">Bottles</a>
       </div>
       <div>
-        <span>LEARN</span>
-        <a href="#">Sake Basics</a>
-        <a href="#">Regions</a>
-        <a href="#">Breweries</a>
+        <span>EXPLORE</span>
+        <a href="./pairing/sushi/">Sushi</a>
+        <a href="./pairing/steak/">Steak</a>
+        <a href="./products/">Products</a>
       </div>
       <div>
         <span>SAKE PICKS</span>
-        <a href="#">About</a>
-        <a href="#">App</a>
-        <a href="#">Contact</a>
+        <a href="#why">Why Sake Picks</a>
+        <a href="#japan">Japan & Craft</a>
+        <a href="#faq">FAQ</a>
       </div>
     </div>
 
     <div class="footer__bottom">
-      <small>Availability varies by market. No purchase claims are shown before licensed commerce is active.</small>
+      <small>Availability varies by product and market. Sake Picks is currently a discovery experience and does not imply that every featured bottle is available for purchase.</small>
       <small>© SAKE PICKS</small>
     </div>
   </footer>
 
   <div class="mobile-cta">
-    <a href="#">♡ WANT</a>
-    <a href="#">NOTIFY ME</a>
+    <a href="#bottles">EXPLORE</a>
+    <a href="#">OPEN APP</a>
   </div>
 
   <script src="./app.js"></script>
