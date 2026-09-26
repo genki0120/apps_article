@@ -9,7 +9,7 @@
   update();
 
   const targets=document.querySelectorAll(
-    ".article-intro__contents, .article-app-card, .hero__copy, .logic__head, .logic-grid article, .rules__copy, .materials__copy, .styles-section__head, .style-cards article, .wide-photo, .closing__copy"
+    ".article-intro__contents, .article-app-card, .hero__copy, .logic__head, .logic-grid article, .why-steak__intro, .why-card, .rules__copy, .rule-detail"
   );
   targets.forEach(el=>el.classList.add("reveal"));
 
