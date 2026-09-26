@@ -873,3 +873,33 @@ em{font-style:normal;color:var(--red)}
   .article-app-card__visual{align-items:flex-start;flex-direction:column;margin-bottom:34px}
   .article-app-card__stores{grid-template-columns:1fr}
 }
+
+
+/* Official App Store / Google Play badges */
+.article-app-card__stores{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:14px;
+  margin-top:36px
+}
+.store-badge-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:0;
+  transition:transform .2s ease,opacity .2s ease
+}
+.store-badge-link:hover{transform:translateY(-2px);opacity:.9}
+.store-badge{
+  display:block;
+  width:auto;
+  object-fit:contain
+}
+.store-badge--apple{height:52px}
+.store-badge--google{height:62px;margin:-5px 0}
+@media(max-width:700px){
+  .article-app-card__stores{align-items:flex-start}
+  .store-badge--apple{height:48px}
+  .store-badge--google{height:57px;margin:-4px 0}
+}
