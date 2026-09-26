@@ -58,7 +58,7 @@
 /* 02 - trust / qualification credibility */
 #trust{
   background-image:
-    linear-gradient(rgba(246,248,251,.91),rgba(246,248,251,.91)),
+    linear-gradient(rgba(246,248,251,.76),rgba(246,248,251,.80)),
     url("https://images.unsplash.com/photo-1770681381576-fe1ca0178da1?auto=format&fit=crop&w=2400&q=82");
   background-size:cover;
   background-position:center;
@@ -68,7 +68,7 @@
 /* 03 - qualification overview */
 #license{
   background-image:
-    linear-gradient(rgba(246,249,253,.92),rgba(246,249,253,.92)),
+    linear-gradient(rgba(246,249,253,.78),rgba(246,249,253,.82)),
     url("https://images.unsplash.com/photo-1511674294200-df1c0668e87d?auto=format&fit=crop&w=2400&q=82");
   background-size:cover;
   background-position:center 45%;
@@ -78,7 +78,7 @@
 /* 04 - study */
 #study{
   background-image:
-    linear-gradient(rgba(255,255,255,.91),rgba(255,255,255,.91)),
+    linear-gradient(rgba(255,255,255,.77),rgba(255,255,255,.82)),
     url("https://images.unsplash.com/photo-1769794371055-54436b54577e?auto=format&fit=crop&w=2400&q=82");
   background-size:cover;
   background-position:center;
@@ -88,7 +88,7 @@
 /* 05 - guides */
 #guides{
   background-image:
-    linear-gradient(rgba(247,249,252,.91),rgba(247,249,252,.91)),
+    linear-gradient(rgba(247,249,252,.76),rgba(247,249,252,.82)),
     url("https://images.unsplash.com/photo-1703656556329-1d582a88fe11?auto=format&fit=crop&w=2400&q=82");
   background-size:cover;
   background-position:center;
@@ -98,7 +98,7 @@
 /* 06 - practical training */
 #practical{
   background-image:
-    linear-gradient(rgba(255,255,255,.88),rgba(246,250,255,.91)),
+    linear-gradient(rgba(255,255,255,.70),rgba(246,250,255,.78)),
     url("https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=2400&q=82");
   background-size:cover;
   background-position:center 42%;
@@ -108,7 +108,7 @@
 /* 07 - jobs / career */
 #jobs{
   background-image:
-    linear-gradient(rgba(7,28,55,.86),rgba(7,35,70,.88)),
+    linear-gradient(rgba(7,28,55,.70),rgba(7,35,70,.78)),
     url("https://images.unsplash.com/photo-1658134145031-48a0afd3280e?auto=format&fit=crop&w=2400&q=82");
   background-size:cover;
   background-position:center;
@@ -118,7 +118,7 @@
 /* 08 - FAQ / final CTA */
 #faq{
   background-image:
-    linear-gradient(rgba(255,255,255,.90),rgba(245,249,255,.91)),
+    linear-gradient(rgba(255,255,255,.74),rgba(245,249,255,.80)),
     url("https://images.unsplash.com/photo-1594538883485-224882654f65?auto=format&fit=crop&w=2400&q=82");
   background-size:cover;
   background-position:center 38%;
@@ -149,37 +149,70 @@
 @media(max-width:720px){
   #trust{
     background-image:
-      linear-gradient(rgba(246,248,251,.94),rgba(246,248,251,.94)),
+      linear-gradient(rgba(246,248,251,.84),rgba(246,248,251,.87)),
       url("https://images.unsplash.com/photo-1770681381576-fe1ca0178da1?auto=format&fit=crop&w=1200&q=78");
   }
   #license{
     background-image:
-      linear-gradient(rgba(246,249,253,.95),rgba(246,249,253,.95)),
+      linear-gradient(rgba(246,249,253,.85),rgba(246,249,253,.88)),
       url("https://images.unsplash.com/photo-1511674294200-df1c0668e87d?auto=format&fit=crop&w=1200&q=78");
   }
   #study{
     background-image:
-      linear-gradient(rgba(255,255,255,.94),rgba(255,255,255,.94)),
+      linear-gradient(rgba(255,255,255,.84),rgba(255,255,255,.88)),
       url("https://images.unsplash.com/photo-1769794371055-54436b54577e?auto=format&fit=crop&w=1200&q=78");
   }
   #guides{
     background-image:
-      linear-gradient(rgba(247,249,252,.94),rgba(247,249,252,.94)),
+      linear-gradient(rgba(247,249,252,.84),rgba(247,249,252,.88)),
       url("https://images.unsplash.com/photo-1703656556329-1d582a88fe11?auto=format&fit=crop&w=1200&q=78");
   }
   #practical{
     background-image:
-      linear-gradient(rgba(255,255,255,.93),rgba(246,250,255,.94)),
+      linear-gradient(rgba(255,255,255,.82),rgba(246,250,255,.86)),
       url("https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1200&q=78");
   }
   #jobs{
     background-image:
-      linear-gradient(rgba(7,28,55,.90),rgba(7,35,70,.91)),
+      linear-gradient(rgba(7,28,55,.80),rgba(7,35,70,.84)),
       url("https://images.unsplash.com/photo-1658134145031-48a0afd3280e?auto=format&fit=crop&w=1200&q=78");
   }
   #faq{
     background-image:
-      linear-gradient(rgba(255,255,255,.94),rgba(245,249,255,.95)),
+      linear-gradient(rgba(255,255,255,.84),rgba(245,249,255,.88)),
       url("https://images.unsplash.com/photo-1594538883485-224882654f65?auto=format&fit=crop&w=1200&q=78");
+  }
+}
+
+/* BACKGROUND EMPHASIS 2026-09-26 */
+#trust .section-heading,
+#license .section-heading,
+#study .section-heading,
+#guides .section-heading,
+#practical .section-heading,
+#faq .section-heading{
+  background:rgba(255,255,255,.54);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+  border-radius:20px;
+  padding:22px 26px;
+}
+#jobs .section-heading{
+  background:rgba(8,30,58,.38);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+  border-radius:20px;
+  padding:22px 26px;
+}
+@media(max-width:720px){
+  #trust .section-heading,
+  #license .section-heading,
+  #study .section-heading,
+  #guides .section-heading,
+  #practical .section-heading,
+  #faq .section-heading,
+  #jobs .section-heading{
+    padding:18px 18px;
+    border-radius:16px;
   }
 }
