@@ -48,3 +48,22 @@ document.querySelectorAll('.faq-list details').forEach((detail) => {
     });
   });
 });
+
+// LICENSE FLOW 2026-09-26
+const licenseFlow = document.querySelector('[data-license-flow]');
+if (licenseFlow) {
+  const track = licenseFlow.querySelector('.license-flow__track i');
+  const steps = [...licenseFlow.querySelectorAll('article')];
+  const updateLicenseFlow = () => {
+    const rect = licenseFlow.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const raw = (vh * 0.72 - rect.top) / Math.max(rect.height, 1);
+    const progress = Math.max(0, Math.min(1, raw));
+    if (track) track.style.width = `${progress * 100}%`;
+    const activeIndex = Math.min(steps.length - 1, Math.max(0, Math.floor(progress * steps.length)));
+    steps.forEach((step, i) => step.classList.toggle('is-active', i <= activeIndex));
+  };
+  updateLicenseFlow();
+  window.addEventListener('scroll', updateLicenseFlow, { passive: true });
+  window.addEventListener('resize', updateLicenseFlow);
+}
