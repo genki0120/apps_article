@@ -303,8 +303,15 @@
   }
 }
 /* HERO STORE BADGES 2026-09-26 */
+/* Same official-badge treatment used by Sake Picks */
 .store-downloads{margin-top:22px}
-.store-downloads__label{display:block;margin-bottom:8px;font-size:10px;font-weight:800;color:#65717d}
+.store-downloads__label{
+  display:block;
+  margin-bottom:10px;
+  font-size:10px;
+  font-weight:800;
+  color:#65717d
+}
 .store-badges{
   display:flex;
   flex-wrap:wrap;
@@ -319,10 +326,7 @@
   transition:transform .2s ease,opacity .2s ease
 }
 a.store-badge-link:hover{transform:translateY(-2px);opacity:.9}
-.store-badge-link.is-disabled{
-  cursor:default;
-  opacity:.58
-}
+.store-badge-link--pending{cursor:default}
 .store-badge-img{
   display:block;
   width:auto;
