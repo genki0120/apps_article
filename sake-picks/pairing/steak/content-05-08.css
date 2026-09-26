@@ -131,3 +131,32 @@
 .temperature-style__sources a{font-size:32px!important}
 .bottle-card__copy>strong{font-size:28px!important}
 .bottle-links a{font-size:28px!important}
+
+
+/* ==========================================================================
+   TYPOGRAPHY FINAL FIX 2026-09-26
+   ========================================================================== */
+.steak-row dt{font-size:14px!important}
+.temperature-band strong{font-size:14px!important}
+.style-strip small{font-size:14px!important}
+.temperature-style__sources a{font-size:16px!important}
+.bottle-card__copy>strong{font-size:14px!important}
+.bottle-links a{font-size:14px!important}
+
+.steak-row__copy>p:not(.eyebrow){font-size:23px!important}
+.steak-row dd{font-size:22px!important}
+.temperature-style__intro>div>p:last-child{font-size:24px!important}
+.temperature-band article>p:not(.eyebrow){font-size:21px!important}
+.style-strip p{font-size:20px!important}
+.temperature-style__note{font-size:20px!important}
+.bottle-card__copy>p:not(.eyebrow){font-size:22px!important}
+.faq details>p{font-size:22px!important}
+
+@media(max-width:760px){
+  .steak-row__copy>p:not(.eyebrow){font-size:19px!important}
+  .steak-row dd{font-size:18px!important}
+  .temperature-style__intro>div>p:last-child{font-size:20px!important}
+  .temperature-band article>p:not(.eyebrow){font-size:19px!important}
+  .style-strip p,.temperature-style__note{font-size:18px!important}
+  .bottle-card__copy>p:not(.eyebrow),.faq details>p{font-size:19px!important}
+}
