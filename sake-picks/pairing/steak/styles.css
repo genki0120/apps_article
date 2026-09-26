@@ -360,3 +360,66 @@ img{display:block;max-width:100%}
 @media(max-width:700px){
   .hero h1{font-size:clamp(38px,10.24vw,53px)!important}
 }
+
+
+/* ==========================================================================
+   TYPOGRAPHY FINAL FIX 2026-09-26
+   Actual smallest rendered body copy enlarged ~2x.
+   Previous round-2 label oversizing is normalized here.
+   ========================================================================== */
+.hero h1{font-size:clamp(44px,4.864vw,82px)!important}
+
+/* compact labels / UI */
+.brand__text small{font-size:12px!important}
+.site-nav a,.app-link{font-size:14px!important}
+.eyebrow{font-size:14px!important}
+.article-app-card::before{font-size:14px!important}
+.article-app-card__wordmark small{font-size:12px!important}
+.article-app-card__note{font-size:16px!important}
+.breadcrumbs{font-size:14px!important}
+.hero__meta{font-size:14px!important}
+.logic-grid small{font-size:14px!important}
+.material-words span{font-size:14px!important}
+.style-cards small{font-size:14px!important}
+.wide-photo figcaption{font-size:14px!important}
+.button{font-size:16px!important}
+.footer__brand small{font-size:12px!important}
+.credits>span{font-size:14px!important}
+.footer>p{font-size:16px!important}
+.hero__answer>span{font-size:14px!important}
+.logic-grid--five strong{font-size:14px!important}
+.rules__sources a{font-size:16px!important}
+
+/* actual smallest reading text */
+.brand__text strong{font-size:20px!important}
+.article-intro__list strong{font-size:22px!important}
+.article-intro__list small{font-size:22px!important}
+.article-app-card__wordmark strong{font-size:24px!important}
+.article-app-card__copy>p:not(.eyebrow){font-size:24px!important}
+.hero__lead{font-size:26px!important}
+.logic__head>p:last-child{font-size:24px!important}
+.logic-grid p{font-size:21px!important}
+.rule-list span{font-size:26px!important}
+.materials__copy>p:not(.eyebrow){font-size:24px!important}
+.style-cards p{font-size:21px!important}
+.closing__copy>p:not(.eyebrow){font-size:26px!important}
+.footer__brand strong{font-size:20px!important}
+.body-copy{font-size:24px!important}
+.logic-note{font-size:22px!important}
+.source-row a{font-size:18px!important}
+.why-card__no{font-size:26px!important}
+.why-card>p:not(.eyebrow):not(.why-card__mantra){font-size:22px!important}
+.rules__lead{font-size:24px!important}
+.rule-detail>span{font-size:26px!important}
+.rule-detail p{font-size:21px!important}
+
+@media(max-width:700px){
+  .hero h1{font-size:clamp(38px,10.24vw,53px)!important}
+  .hero__lead,.closing__copy>p:not(.eyebrow){font-size:21px!important}
+  .article-app-card__copy>p:not(.eyebrow),.logic__head>p:last-child,
+  .materials__copy>p:not(.eyebrow),.body-copy,.rules__lead{font-size:20px!important}
+  .logic-grid p,.style-cards p,.why-card>p:not(.eyebrow):not(.why-card__mantra),
+  .logic-note,.rule-detail p{font-size:19px!important}
+  .article-intro__list strong,.article-intro__list small{font-size:18px!important}
+  .rule-detail>span,.why-card__no,.rule-list span{font-size:21px!important}
+}
