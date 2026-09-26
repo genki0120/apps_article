@@ -946,3 +946,46 @@ em{font-style:normal;color:var(--red)}
 @media(max-width:700px){
   .hero h1{font-size:clamp(43px,12vw,62px)!important}
 }
+
+
+/* ==========================================================================
+   TYPOGRAPHY READABILITY AUDIT ROUND 2 2026-09-26
+   - previously enlarged small text ×2 again
+   - primary hero catch copy ×0.8 again
+   ========================================================================== */
+.hero h1{font-size:clamp(40px,4.288vw,72px)!important}
+.brand__text small{font-size:28px!important}
+.app-link{font-size:32px!important}
+.eyebrow{font-size:32px!important}
+.breadcrumbs{font-size:28px!important}
+.hero__meta{font-size:28px!important}
+.principle-no{font-size:32px!important}
+.pairing-row dt{font-size:28px!important}
+.taste-grid a{font-size:28px!important}
+.bottle-placeholder small{font-size:28px!important}
+.bottle-card__copy a{font-size:28px!important}
+.button{font-size:32px!important}
+.footer__brand small{font-size:28px!important}
+.credits>span{font-size:28px!important}
+.footer>p{font-size:32px!important}
+.hero__answer span{font-size:28px!important}
+.quick-grid strong{font-size:32px!important}
+.why-no{font-size:28px!important}
+.source-link{font-size:28px!important}
+.why-sources span{font-size:28px!important}
+.history-card__label{font-size:28px!important}
+.history-step{font-size:32px!important}
+.history-sources span{font-size:28px!important}
+.history-track__name{font-size:28px!important}
+.history-meet span{font-size:28px!important}
+.article-toc__title strong{font-size:32px!important}
+.article-toc__grid a{font-size:32px!important}
+.rule-no{font-size:32px!important}
+.temperature-card strong{font-size:28px!important}
+.order-scripts small{font-size:28px!important}
+.article-app-card__wordmark small{font-size:28px!important}
+.article-app-card__note{font-size:32px!important}
+
+@media(max-width:700px){
+  .hero h1{font-size:clamp(34px,9.6vw,50px)!important}
+}
