@@ -566,3 +566,43 @@ img{display:block;max-width:100%}
     line-height:1.55!important
   }
 }
+
+
+/* ==========================================================================
+   SECONDARY INK DARKEN 2026-09-26
+   Increase contrast of pale gray/brown secondary copy on ash background.
+   ========================================================================== */
+:root{--ink-soft:#514941}
+
+.article-intro__list small,
+.article-app-card__copy>p:not(.eyebrow),
+.hero__lead,
+.logic__head>p:last-child,
+.logic-grid p,
+.materials__copy>p:not(.eyebrow),
+.style-cards p,
+.body-copy,
+.logic-note,
+.why-card>p:not(.eyebrow):not(.why-card__mantra){
+  color:var(--ink-soft)!important
+}
+
+.brand__text small,
+.article-app-card::before,
+.article-app-card__wordmark small,
+.article-app-card__note,
+.breadcrumbs,
+.hero__meta,
+.footer__brand small,
+.footer>p{
+  color:rgba(37,33,29,.68)!important
+}
+
+.source-row a,
+.credits a{
+  color:rgba(37,33,29,.72)!important
+}
+
+.article-intro__list a::after{
+  color:rgba(37,33,29,.48)!important
+}
