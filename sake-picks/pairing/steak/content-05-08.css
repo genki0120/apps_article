@@ -120,3 +120,14 @@
 .temperature-style__sources a{font-size:16px!important}
 .bottle-card__copy>strong{font-size:14px!important}
 .bottle-links a{font-size:14px!important}
+
+
+/* ==========================================================================
+   TYPOGRAPHY READABILITY AUDIT ROUND 2 2026-09-26
+   ========================================================================== */
+.steak-row dt{font-size:28px!important}
+.temperature-band strong{font-size:28px!important}
+.style-strip small{font-size:28px!important}
+.temperature-style__sources a{font-size:32px!important}
+.bottle-card__copy>strong{font-size:28px!important}
+.bottle-links a{font-size:28px!important}
