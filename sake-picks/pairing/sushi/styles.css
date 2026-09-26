@@ -449,3 +449,62 @@ em{font-style:normal;color:var(--red)}
   .history-card__content{padding:20px;min-height:auto}
   .history-card__art{height:205px}
 }
+
+
+/* ==========================================================================
+   04 SHARED HISTORY — dual-track correction
+   ========================================================================== */
+.history-timeline__head{max-width:980px}
+.history-disclaimer{
+  max-width:760px;margin:18px auto 0;
+  font:300 11px/1.8 var(--serif);color:rgba(42,33,26,.52)
+}
+.history-card{width:calc(50% - 42px)}
+.history-card__content--shared{
+  grid-template-columns:minmax(0,1.2fr) minmax(180px,.8fr);
+  min-height:430px;padding:30px 30px 28px
+}
+.history-card--right .history-card__content--shared{
+  grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr)
+}
+.history-track{
+  display:grid;grid-template-columns:82px 1fr;gap:15px;
+  padding:14px 0;border-top:1px solid rgba(63,46,31,.13)
+}
+.history-track:first-of-type{margin-top:18px}
+.history-track__name{
+  padding-top:2px;font-size:7px;font-weight:600;letter-spacing:.17em;color:var(--red)
+}
+.history-track p{
+  margin:0!important;color:var(--ink-soft)!important;font-size:10.5px!important;line-height:1.75!important
+}
+.history-track em{font-style:italic;color:var(--ink)}
+.history-meet{
+  margin-top:17px;padding:16px 17px 17px;
+  background:rgba(156,116,56,.08);border-left:2px solid rgba(156,116,56,.52)
+}
+.history-meet--strong{
+  background:rgba(177,58,47,.06);border-left-color:rgba(177,58,47,.58)
+}
+.history-meet span{
+  display:block;margin-bottom:7px;font-size:7px;font-weight:600;letter-spacing:.17em;color:var(--gold)
+}
+.history-meet--strong span{color:var(--red)}
+.history-meet p{
+  margin:0!important;font:300 11px/1.75 var(--serif)!important;color:rgba(42,33,26,.72)!important
+}
+.history-card__art{height:290px}
+.history-card__copy h3{font-size:clamp(27px,2.35vw,39px)}
+@media(max-width:1050px){
+  .history-card{width:100%}
+  .history-card__content--shared,
+  .history-card--right .history-card__content--shared{grid-template-columns:1fr}
+  .history-card--right .history-card__art{order:2}
+  .history-card--right .history-card__copy{order:1}
+  .history-card__art{height:260px}
+}
+@media(max-width:700px){
+  .history-track{grid-template-columns:1fr;gap:6px}
+  .history-card__content--shared{padding:20px}
+  .history-meet{padding:14px}
+}
