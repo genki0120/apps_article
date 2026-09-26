@@ -275,3 +275,30 @@
     padding-right:20px;
   }
 }
+
+/* HERO FULL-BLEED FIX 2026-09-26 */
+/* Hero should use the same full-width background treatment as sections 02-08.
+   The content grid remains aligned to the site's --max column. */
+.hero.section-shell{
+  max-width:none;
+  width:100%;
+  margin:0;
+  padding-left:max(28px,calc((100vw - var(--max))/2 + 28px));
+  padding-right:max(28px,calc((100vw - var(--max))/2 + 28px));
+}
+
+/* Now that the hero itself is full bleed, fill it directly instead of relying on
+   an oversized child that gets clipped by .hero { overflow:hidden }. */
+.hero__bg{
+  left:0;
+  right:0;
+  width:auto;
+  transform:none;
+}
+
+@media(max-width:720px){
+  .hero.section-shell{
+    padding-left:20px;
+    padding-right:20px;
+  }
+}
