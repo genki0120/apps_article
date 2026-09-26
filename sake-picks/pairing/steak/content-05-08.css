@@ -110,3 +110,13 @@
   .style-strip article{grid-template-columns:50px 1fr}
   .bottle-card{min-height:auto;grid-template-columns:46px 1fr;padding:27px 20px}
 }
+
+/* ==========================================================================
+   TYPOGRAPHY READABILITY AUDIT 2026-09-26
+   ========================================================================== */
+.steak-row dt{font-size:14px!important}
+.temperature-band strong{font-size:14px!important}
+.style-strip small{font-size:14px!important}
+.temperature-style__sources a{font-size:16px!important}
+.bottle-card__copy>strong{font-size:14px!important}
+.bottle-links a{font-size:14px!important}
