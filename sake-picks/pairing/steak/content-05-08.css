@@ -160,3 +160,19 @@
   .style-strip p,.temperature-style__note{font-size:18px!important}
   .bottle-card__copy>p:not(.eyebrow),.faq details>p{font-size:19px!important}
 }
+
+
+/* ==========================================================================
+   SECONDARY INK DARKEN 2026-09-26
+   ========================================================================== */
+.steak-row__copy>p:not(.eyebrow),
+.steak-row dd,
+.bottle-card__copy>p:not(.eyebrow),
+.faq details>p{
+  color:#514941!important
+}
+
+.bottle-links a + a,
+.faq__sources a{
+  color:rgba(37,33,29,.72)!important
+}
